@@ -15,8 +15,52 @@
   <link rel="stylesheet" href="assets/css/custom.min.css" type="text/css">
   <link rel="stylesheet" href="assets/css/aos.min.css" type="text/css">
   <link rel="stylesheet" href="assets/css/theme.css" type="text/css">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/datatable/css/dataTables.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/vendor/datatable/dataTables.bootstrap5.min.css">
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/toastr/toastr.min.css" rel="stylesheet">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="-1" />
+  <meta http-equiv="Cache-Control" content="no-cache" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    #popup-overlay {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+    }
 
-  <style type="text/css">
+    #changePasswordModal {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      width: 300px;
+      text-align: center;
+    }
+
+    #operatorChoiceSection {
+      display: block;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    button {
+      margin: 5px;
+      padding: 8px 16px;
+    }
+
     body {
       margin: 0% 10%;
       padding: 0%;
@@ -195,12 +239,13 @@
       }
     }
   </style>
+</head>
 
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="-1">
-  <meta http-equiv="Cache-Control" content="no-cache">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body class="t-PageBody--login t-PageTemplate--login apex-top-nav apex-icons-fontapex apex-theme-vita-standard"
@@ -223,14 +268,7 @@
       <div></div>
     </div>
   </div>
-  <form action="wwv_flow.accept?p_context=imim/login/12668978025516" method="post" name="wwv_flow" id="wwvFlowForm"
-    data-oj-binding-provider="none" novalidate="" autocomplete="off">
-    <input type="hidden" name="p_flow_id" value="117" id="pFlowId"><input type="hidden" name="p_flow_step_id"
-      value="9999" id="pFlowStepId"><input type="hidden" name="p_instance" value="12668978025516" id="pInstance"><input
-      type="hidden" name="p_page_submission_id" value="180832649447281735900073246380465820094"
-      id="pPageSubmissionId"><input type="hidden" name="p_request" value="" id="pRequest"><input type="hidden"
-      name="p_reload_on_submit" value="S" id="pReloadOnSubmit"><input type="hidden" value="imim/login/12668978025516"
-      id="pContext"><input type="hidden" value="180832649447281735900073246380465820094" id="pSalt">
+  <form>
     <div class="t-Login-bg">
       <div class="t-Login-bgImg"></div>
     </div>
@@ -241,7 +279,7 @@
           class="apex-page-success u-hidden"></span><span id="APEX_ERROR_MESSAGE"
           data-template-id="238513976789193517219_E" class="apex-page-error u-hidden"></span>
         <div class="container">
-          <div class="row ">
+          <div class="row" style="padding-top: 150px;">
             <div class="col col-6 apex-col-auto col-start">
               <div class="t-Region t-Region--scrollBody" id="R236248342223979339606" role="region" aria-label="New">
                 <div class="t-Region-header">
@@ -381,198 +419,101 @@
     <input type="hidden" id="pPageItemsRowVersion" value=""><input type="hidden" id="pPageItemsProtected"
       value="UDk5OTlfUkVNRU1CRVI/KlR1DqEqcOXwt2_QSHQENqh_xCoIP0mq_iSUb28WOJS2D0AKU0lmKxTvwIDY0T1apvtjQE8Jf92q-K_qrQvWAg">
   </form>
+  <!-- jQuery -->
+  <script src="assets/js/jquery-3.6.0.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- DataTables -->
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  <script src="assets/js/widget.treeView.min.js"></script>
+  <script type="module" src="assets/js/commonMenu.js"></script>
+  <script src="assets/js/widget.interactiveReport.min.js"></script>
+  <script src="assets/js/widget.iconList.min.js"></script>
+  <script src="assets/js/widget.stickyTableHeader.min.js"></script>
+  <script src="assets/js/widget.stickyWidget.min.js"></script>
+  <script src="assets/js/item.Colorpicker.min.js"></script>
+  <script src="assets/js/jetCommonBundle.min.js"></script>
+  <script src="assets/js/chartBundle.min.js"></script>
+
+  <script src="assets/js/toastUtil.js"></script>
+  <script type="module" src="assets/js/dataTableUtil.js"></script>
+  <script src="assets/js/crypto-js.min.js"></script>
+  <script src="assets/js/theme42.min.js"></script>
+  <script src="assets/js/global.js"></script>
+  <script src="assets/js/encrypt_decrypt.js"></script>
+  <script src="assets/js/singleFileUpload.js"></script>
+  <script src="assets/js/globalHeader.js"></script>
+  <script src="assets/js/validateField.js"></script>
+
+
   <script>
-    var apex_img_dir = "\u002Fi\u002F";
-    var apex = {
-      env: { APP_USER: "nobody", APP_ID: "117", APP_PAGE_ID: "9999", APP_SESSION: "12668978025516", APP_FILES: "r\u002Fdimdev\u002F117\u002Ffiles\u002Fstatic\u002Fv194\u002F", WORKSPACE_FILES: "r\u002Fdimdev\u002Ffiles\u002Fstatic\u002Fv38\u002F", APEX_VERSION: "23.1.0", APEX_BASE_VERSION: "23.1" },
-      libVersions: { ckeditor5: "36.0.0", cropperJs: "1.5.13", domPurify: "2.4.3", fullcalendar: "5.11.3", hammer: "2.0.8", jquery: "3.6.4", jqueryUi: "1.13.2", maplibre: "2.4.0", markedJs: "4.2.5", prismJs: "1.29.0", oraclejet: "14.0.0", tinymce: "6.3.1", turndown: "7.1.1", monacoEditor: "0.32.1", lessJs: "4.1.3" }
-    };
-  </script>
+    document.addEventListener('DOMContentLoaded', () => {
 
-  <script src="../assets/js/jquery-3.6.0.min.js"></script>
-  <script src="../assets/js/desktop_all.min.js"></script>
-  <script src="../assets/js/widget.stickyWidget.min.js"></script>
-  <script src="../assets/js/theme42.min.js"></script>
-  <script src="../assets/js/aos.js"></script>
+      const signInButton = document.getElementById('B9768046738447308');
+      const debugConsole = document.getElementById('debug-console'); // Add this <div>
 
-  <script type="text/javascript">
-    apex.da.initDaEventList = function () {
-      apex.da.gEventList = [
-        { "executionType": "IMMEDIATE", "bindEventType": "ready", "anyActionsFireOnInit": false, actionList: [{ "eventResult": true, "executeOnPageInit": false, "stopExecutionOnError": true, "affectedElementsType": "ITEM", "affectedElements": "P9999_USERNAME,P9999_OTP_NUMBER", javascriptFunction: apex.da.clear, "action": "NATIVE_CLEAR" }] },
-        {
-          "triggeringElementType": "BUTTON", "triggeringButtonId": "B9768046738447308", "bindType": "bind", "executionType": "IMMEDIATE", "bindEventType": "click", "anyActionsFireOnInit": false, actionList: [{
-            "eventResult": true, "executeOnPageInit": false, "stopExecutionOnError": true, javascriptFunction: function () {
-              apex.server.process('Validate Phone Number',
-                {
-                  x01: $v('P9999_USERNAME')
-                },
-                {
-                  datatype: 'json',
-                  async: false,
-                  success: function (resData) {
-
-                    if (resData.valid_user == 'Y') {
-                      sendSms();
-
-                    } else {
-                      apex.message.clearErrors();
-                      apex.message.showErrors({
-                        type: "error",
-                        location: "page",
-                        message: "Invalid user credentials!"
-                      })
-                    }
-                  }
-                })
-            }, "action": "NATIVE_JAVASCRIPT_CODE"
-          }, {
-            "eventResult": true, "executeOnPageInit": false, "stopExecutionOnError": true, javascriptFunction: function () {
-              apex.item("P9999_OTP_FLAG").setValue('Y');
-
-              var lv_mobile_number = apex.item("P9999_USERNAME").getValue();
-              if (lv_mobile_number == '0' || null) {
-                apex.message.showErrors("Please Enter your Mobile Number.")
-              }
-              else {
-                apex.item("P9999_MOBILE_NUMBER").setValue(lv_mobile_number);
-              }
-            }, "action": "NATIVE_JAVASCRIPT_CODE"
-          }]
-        }];
-    }
-  </script>
-
-  <script type="text/javascript">
-    function sendSms() {
-      //console.log('Inside sendSms');
-      var lv_content;
-      var lv_template_id = '1007683387239602324';
-      var lv_entity_id = '1201159707397388965';
-      var lv_api_key = 'Zs0MmjX6';
-      // var lv_api_key = 'bR9e9mK0';
-      var lv_sender_id = 'IMANDH';
-      // var lv_sender_id = 'NX0EJOfT';
-      var lv_url;
-      /* var lv_otp_number='72453'; */
-      var lv_otp_number = apex.item("P9999_PASSWORD").getValue();
-      var lv_mobile_number = '91' + apex.item("P9999_USERNAME").getValue();
-
-
-      if (lv_mobile_number === '0' || lv_mobile_number === null) {
-        apex.message.showErrors("Please Enter your Mobile Number.");
-      } else {
-        lv_content = 'Your OTP for the Indian Medicine and Homeopathy, Medicine Indent app is ' + lv_otp_number + ' Please enter this OTP to complete your login.';
-        lv_url = 'https://tmegov.onex-aura.com/api/sms?key=' + lv_api_key + '&to=' + lv_mobile_number + '&from=' + lv_sender_id + '&body=' + lv_content + '&entityid=' + lv_entity_id + '&templateid=' + lv_template_id;
-
-        $.ajax({
-          type: 'GET',
-          url: lv_url,
-          dataType: "html",
-          success: function (data, textStatus, jqXHR) {
-            //console.log('Success');
-            apex.message.showPageSuccess("OTP has been sent to your Mobile Number.");
-
-            /*    $('#P9999_OTP_NUMBER_CONTAINER').css('display','block');
-               $('#B428246964514156822483').css('display','block');
-*/
-
-          },
-          error: function (jqXHR, textStatus, errorThrown) {
-            // console.log('Error');
-            // console.log('error'+ errorThrown);
-            // console.error('SMS Sending Error:', errorThrown);
-            apex.message.alert('Error sending SMS. Please try again.');
-          }
-        });
-
-        $('#P9999_OTP_NUMBER_CONTAINER').css('display', 'block');
-        // $('#B9768632245447314').css('display','block');
-        $('.login-but').css('display', 'block');
-
-        $('#B9768046738447308').css('display', 'none');
-
-        //  console.log($('#P9999_PASSWORD').val()); 
-
-
+      if (!signInButton) {
+        console.error("Sign-in button not found!");
+        return;
       }
-    }
 
+      signInButton.addEventListener('click', async (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const mobInput = document.getElementById('P9999_USERNAME');
+        // const passInput = document.getElementById('P9999_PASSWORD');
+        const mobnumber = mobInput?.value?.trim();
+        // const password = passInput?.value?.trim();
+        // const userMobNumber = $('#P9999_USERNAME').val();
+        // localStorage.setItem('userMob', userMobNumber)
+        // // Validation
+        if (!mobnumber || mobnumber.length !== 10 || isNaN(mobnumber)) {
+          showErrorToast("Please enter a valid 10-digit mobile number.");
+          return;
+        } else {
+          showSuccessToast("OTP sent to " + mobnumber);
+          // window.location.href = `${folder}/dashboard.html`;
+          window.location.href = `/dim/home.html`;
+        }
+        // if (!password) {
+        //   showErrorToast("Please enter your password.");
+        //   return;
+        // }
 
+        // // UI Feedback
+        // signInButton.disabled = true;
+        // signInButton.innerHTML = '<span class="fa fa-spinner fa-spin"></span> Signing in...';
 
+        // try {
+        //   await initializeUserSession(mobnumber, password);
+        //   const role = localStorage.getItem('userRole');
+        //   console.log("roleeeee", role);
 
-    function validateOtpandAllow() {
-      var generatedOtp = $('#P9999_PASSWORD').val();
-      console.log(generatedOtp);
-      var enteredOtp = $('#P9999_OTP_NUMBER').val();
-      console.log(generatedOtp);
+        //   let folder = '';
 
-      if (generatedOtp && generatedOtp === enteredOtp) {
-        apex.submit('LOGIN_NEW');
-      }
-      else {
-        // console.log('error inside else block');
-        apex.message.clearErrors();
-        apex.message.showErrors(
-          {
-            type: "error",
-            location: "page",
-            message: "Invalid OTP!"
-          });
-      }
-    }
-  </script>
-  <script type="text/javascript">
-    apex.jQuery(function () {
-      apex.page.init(this, function () {
-        try {
-          (function () {
-            var lTimeoutField = document.getElementById("apex_login_throttle_sec"),
-              lTimeout = lTimeoutField ? +lTimeoutField.innerHTML : 0;
-            if (lTimeout) {
-              var lTimer = window.setInterval(
-                function () {
-                  if (lTimeout > 0) {
-                    lTimeoutField.innerHTML = lTimeout;
-                    lTimeout--;
-                  } else {
-                    window.clearInterval(lTimer);
-                    var lDiv = document.getElementById("apex_login_throttle_div");
-                    if (lDiv) {
-                      lDiv.parentNode.removeChild(lDiv);
-                      return true;
-                    }
-                  }
-                },
-                1000);
-            }
-          })();
-        } catch (e) { apex.debug.error(e) };
-        apex.item.waitForDelayLoadItems().done(function () {
-          try {
-            (function () {
-              apex.da.initDaEventList();
-              apex.da.init();
-            })();
-            apex.theme42.initializePage.appLogin();
-            $('#P9999_OTP_NUMBER_CONTAINER').css('display', 'none');
-            $('.login-but').css('display', 'none');
+        //   if (role.toLowerCase().includes('general helpdesk operator')) {
+        //     folder = 'call-center-operator';
+        //   } else if (role.toLowerCase().includes('helpdesk_operator')) {
+        //     folder = 'helpdesk_operator';
+        //   } else if (role.toLowerCase().includes('edistrict manager')) {
+        //     folder = 'edistrict_manager';
+        //   } else if (role.toLowerCase().includes('helpdesk')) {
+        //     folder = 'helpdesk';
+        //   } else {
+        //     throw new Error('Unknown role: ' + role);
+        //   }
 
-            $('#B9768632245447314').attr('type', 'password');
-            apex.item('P9999_USERNAME').setFocus();
-          } finally {
-            apex.event.trigger(apex.gPageContext$, 'apexreadyend');
-          };
-        });
+        //   window.location.href = `${folder}/dashboard.html`;
+        // } catch (error) {
+        //   console.error("Login Error:", error);
+        //   showErrorToast("Login failed. Check console for details.");
+        // } finally {
+        //   signInButton.disabled = false;
+        //   signInButton.innerHTML = 'Sign In';
+        // }
       });
-    }); apex.pwa.init({ serviceWorkerPath: '\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fsw.js?v=23.1.0-216491951\u0026lang=en' });
+    });
   </script>
-  <script>
-    AOS.init();
-  </script>
-  <iframe frameborder="0" scrolling="no" style="background-color: transparent; border: 0px; display: none;"></iframe>
-  <div id="GOOGLE_INPUT_CHEXT_FLAG" style="display: none;" input=""
-    input_stat="{&quot;tlang&quot;:true,&quot;tsbc&quot;:true,&quot;pun&quot;:true,&quot;mk&quot;:true,&quot;ss&quot;:true}">
-  </div>
 </body>
 
 </html>
