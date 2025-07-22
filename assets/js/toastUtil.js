@@ -32,8 +32,30 @@ window.showErrorToast = function (message) {
     }
 };
 
+// window.loadToastLayout = function (callback) {
+//     fetch('/assets/partials/toastLayout.html')
+//         .then(response => response.text())
+//         .then(html => {
+//             const div = document.createElement('div');
+//             div.innerHTML = html;
+//             document.body.appendChild(div);
+//             console.log('Toast layout loaded.');
+//             if (typeof callback === 'function') {
+//                 callback();
+//             }
+//         })
+//         .catch(err => console.error('Toast layout load failed:', err));
+// };
+
+// Ensure layout is loaded before any toast is shown
 window.loadToastLayout = function (callback) {
-    fetch('./assets/partials/toastLayout.html')
+    const currentPath = window.location.pathname;
+    const isInEdmPortal = currentPath.includes("/edm_portal/");
+    const toastPath = isInEdmPortal
+        ? "assets/partials/toastLayout.html"       // Relative path for edm_portal/index.html
+        : "/assets/partials/toastLayout.html";     // Absolute path for other folders
+
+    fetch(toastPath)
         .then(response => response.text())
         .then(html => {
             const div = document.createElement('div');
@@ -47,7 +69,7 @@ window.loadToastLayout = function (callback) {
         .catch(err => console.error('Toast layout load failed:', err));
 };
 
-// Ensure layout is loaded before any toast is shown
+
 document.addEventListener('DOMContentLoaded', () => {
     loadToastLayout(() => {
         // You can test after layout is ready
