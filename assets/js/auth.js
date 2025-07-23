@@ -34,7 +34,7 @@ async function initializeUserSession(mobnumber) {
         console.log("mobile number", mobnumber);
         const payload = {
             action: "function_call",
-            function_name: "im_own_district_fn",
+            function_name: "IM_USER_LOGIN_FN",
             params: {
                 mobnumber: parseInt(mobnumber),
             }
@@ -67,10 +67,10 @@ async function initializeUserSession(mobnumber) {
                         window.userSession = {
                             // userId: decrypted.user_id,
                             district: decrypted.district,
-                            // role: decrypted.designation || ''
+                            role: decrypted.login_type || ''
                         };
 
-                        // localStorage.setItem('userRole', decrypted.designation || '');
+                        localStorage.setItem('userRole', decrypted.login_type || '');
                         localStorage.setItem('userDistrict', decrypted.district);
                         // localStorage.setItem('userName', decrypted.name);
                         // localStorage.setItem('userId', decrypted.user_id || '');

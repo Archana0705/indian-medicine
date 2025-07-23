@@ -474,26 +474,29 @@
 
 
         try {
+          debugger
           await initializeUserSession(mobnumber);
-          window.location.href = `/amo/home.html`;
-          // const role = localStorage.getItem('userRole');
-          // console.log("roleeeee", role);
+          // window.location.href = `/amo/home.html`;
+          const role = localStorage.getItem('userRole');
+          console.log("roleeeee", role);
 
-          // let folder = '';
+          let folder = '';
 
-          // if (role.toLowerCase().includes('general helpdesk operator')) {
-          //   folder = 'call-center-operator';
-          // } else if (role.toLowerCase().includes('helpdesk_operator')) {
+          if (role.toLowerCase().includes('amo')) {
+            folder = 'amo';
+          }
+          // else if (role.toLowerCase().includes('helpdesk_operator')) {
           //   folder = 'helpdesk_operator';
           // } else if (role.toLowerCase().includes('edistrict manager')) {
           //   folder = 'edistrict_manager';
           // } else if (role.toLowerCase().includes('helpdesk')) {
           //   folder = 'helpdesk';
-          // } else {
-          //   throw new Error('Unknown role: ' + role);
-          // }
+          // } 
+          else {
+            throw new Error('Unknown role: ' + role);
+          }
 
-          // window.location.href = `${folder}/dashboard.html`;
+          window.location.href = `${folder}/home.html`;
         } catch (error) {
           console.error("Login Error:", error);
           showErrorToast("Login failed. Check console for details.");
