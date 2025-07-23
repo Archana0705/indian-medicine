@@ -444,6 +444,7 @@
   <script src="assets/js/singleFileUpload.js"></script>
   <script src="assets/js/globalHeader.js"></script>
   <script src="assets/js/validateField.js"></script>
+  <script src="assets/js/auth.js"></script>
 
 
   <script>
@@ -461,56 +462,45 @@
         e.preventDefault();
         e.stopPropagation();
         const mobInput = document.getElementById('P9999_USERNAME');
-        // const passInput = document.getElementById('P9999_PASSWORD');
         const mobnumber = mobInput?.value?.trim();
-        // const password = passInput?.value?.trim();
-        // const userMobNumber = $('#P9999_USERNAME').val();
-        // localStorage.setItem('userMob', userMobNumber)
-        // // Validation
         if (!mobnumber || mobnumber.length !== 10 || isNaN(mobnumber)) {
           showErrorToast("Please enter a valid 10-digit mobile number.");
           return;
-        } else {
-          showSuccessToast("OTP sent to " + mobnumber);
-          // window.location.href = `${folder}/dashboard.html`;
-          window.location.href = `/amo/home.html`;
         }
-        // if (!password) {
-        //   showErrorToast("Please enter your password.");
-        //   return;
+        // else {
+        //   showSuccessToast("OTP sent to " + mobnumber);
+        //   window.location.href = `/amo/home.html`;
         // }
 
-        // // UI Feedback
-        // signInButton.disabled = true;
-        // signInButton.innerHTML = '<span class="fa fa-spinner fa-spin"></span> Signing in...';
 
-        // try {
-        //   await initializeUserSession(mobnumber, password);
-        //   const role = localStorage.getItem('userRole');
-        //   console.log("roleeeee", role);
+        try {
+          await initializeUserSession(mobnumber);
+          window.location.href = `/amo/home.html`;
+          // const role = localStorage.getItem('userRole');
+          // console.log("roleeeee", role);
 
-        //   let folder = '';
+          // let folder = '';
 
-        //   if (role.toLowerCase().includes('general helpdesk operator')) {
-        //     folder = 'call-center-operator';
-        //   } else if (role.toLowerCase().includes('helpdesk_operator')) {
-        //     folder = 'helpdesk_operator';
-        //   } else if (role.toLowerCase().includes('edistrict manager')) {
-        //     folder = 'edistrict_manager';
-        //   } else if (role.toLowerCase().includes('helpdesk')) {
-        //     folder = 'helpdesk';
-        //   } else {
-        //     throw new Error('Unknown role: ' + role);
-        //   }
+          // if (role.toLowerCase().includes('general helpdesk operator')) {
+          //   folder = 'call-center-operator';
+          // } else if (role.toLowerCase().includes('helpdesk_operator')) {
+          //   folder = 'helpdesk_operator';
+          // } else if (role.toLowerCase().includes('edistrict manager')) {
+          //   folder = 'edistrict_manager';
+          // } else if (role.toLowerCase().includes('helpdesk')) {
+          //   folder = 'helpdesk';
+          // } else {
+          //   throw new Error('Unknown role: ' + role);
+          // }
 
-        //   window.location.href = `${folder}/dashboard.html`;
-        // } catch (error) {
-        //   console.error("Login Error:", error);
-        //   showErrorToast("Login failed. Check console for details.");
-        // } finally {
-        //   signInButton.disabled = false;
-        //   signInButton.innerHTML = 'Sign In';
-        // }
+          // window.location.href = `${folder}/dashboard.html`;
+        } catch (error) {
+          console.error("Login Error:", error);
+          showErrorToast("Login failed. Check console for details.");
+        } finally {
+          signInButton.disabled = false;
+          signInButton.innerHTML = 'Sign In';
+        }
       });
     });
   </script>

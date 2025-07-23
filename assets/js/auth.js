@@ -27,21 +27,20 @@
 // // window.initializeUserSession = initializeUserSession;
 // export { initializeUserSession };
 
-import { encryptData, decryptData } from './encrypt_decrypt.js';
 
-export async function initializeUserSession(mobnumber, password) {
+async function initializeUserSession(mobnumber) {
+    debugger
     return new Promise((resolve, reject) => {
         console.log("mobile number", mobnumber);
         const payload = {
             action: "function_call",
-            function_name: "get_user_authentication_fun",
+            function_name: "im_own_district_fn",
             params: {
                 mobnumber: parseInt(mobnumber),
-                password: password
             }
         };
 
-        const apiUrl = "https://tngis.tnega.org/lcap_api/edm/v1/commonfunction";
+        const apiUrl = 'https://tngis.tnega.org/medical_indent_api/v1/commonfunction';
 
         $.ajax({
             url: apiUrl,
@@ -66,18 +65,18 @@ export async function initializeUserSession(mobnumber, password) {
 
                         const decrypted = decryptedResponse[0];
                         window.userSession = {
-                            userId: decrypted.user_id,
-                            name: decrypted.name,
-                            role: decrypted.designation || ''
+                            // userId: decrypted.user_id,
+                            district: decrypted.district,
+                            // role: decrypted.designation || ''
                         };
 
-                        localStorage.setItem('userRole', decrypted.designation || '');
+                        // localStorage.setItem('userRole', decrypted.designation || '');
                         localStorage.setItem('userDistrict', decrypted.district);
-                        localStorage.setItem('userName', decrypted.name);
-                        localStorage.setItem('userId', decrypted.user_id || '');
+                        // localStorage.setItem('userName', decrypted.name);
+                        // localStorage.setItem('userId', decrypted.user_id || '');
 
-                        const userNameElement = document.querySelector('.t-Button-label');
-                        if (userNameElement) userNameElement.textContent = decrypted.name;
+                        // const userNameElement = document.querySelector('.t-Button-label');
+                        // if (userNameElement) userNameElement.textContent = decrypted.name;
 
                         resolve();
                     } else {
@@ -102,3 +101,4 @@ export async function initializeUserSession(mobnumber, password) {
     });
 }
 
+window.initializeUserSession = initializeUserSession;

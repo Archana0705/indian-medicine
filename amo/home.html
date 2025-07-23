@@ -326,7 +326,7 @@
                         <!-- Bootstrap Modal -->
                         <div class="modal fade" id="patientLogModal" tabindex="-1"
                           aria-labelledby="patientLogModalLabel" aria-hidden="true">
-                          <div class="modal-dialog modal-xl modal-dialog-scrollable">
+                          <div class="modal-dialog modal-lg modal-dialog-scrollable">
                             <div class="modal-content">
                               <div class="modal-header">
                                 <h5 class="modal-title" id="patientLogModalLabel">PATIENT LOG - DETAILS</h5>
@@ -343,7 +343,7 @@
                                         <label for="P2_DISTRICT" class="form-label">District <span
                                             class="text-danger">*</span></label>
                                         <select id="P2_DISTRICT" name="P2_DISTRICT" class="form-select" required>
-                                          <option value="Chennai HO">Chennai HO</option>
+                                          <!-- <option value="Chennai HO">Chennai HO</option> -->
                                         </select>
                                       </div>
                                       <div class="col-md-6">
@@ -429,8 +429,9 @@
                               </div>
 
                               <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                <button type="submit" form="patientForm" class="btn btn-primary">Submit</button>
+                                <button type="button" class="t-Button btn-bgclr" data-bs-dismiss="modal">Cancel</button>
+                                <button type="submit" form="patientForm" id="submitBtn"
+                                  class="t-button btn-bgclr">Submit</button>
                               </div>
                             </div>
                           </div>
@@ -512,7 +513,7 @@
     $(document).ready(function () {
       let uploadFile = null;
       let uploadPayload = null;
-      const apiUrl = 'https://tngis.tnega.org/lcap_api/edm/v1/commonfunction';
+      const apiUrl = 'https://tngis.tnega.org/medical_indent_api/v1/commonfunction';
       // const userId = localStorage.getItem('userId');
       // const secretKey = 'V7gN4dY8pT2xB3kRz';
       // const district = localStorage.getItem('userDistrict');
@@ -522,45 +523,222 @@
       // $('#P7_REQUESTED_BY_DISPLAY').text(username);
       $('#openPatientLogBtn').on('click', function () {
         // Call API
+        function fetchAndPopulateDropdown({ payload, dropdownId, placeholder, modalId = null }) {
+          $.ajax({
+            url: apiUrl,
+            method: 'POST',
+            headers: {
+              'X-APP-Key': 'edm',
+              'X-APP-Name': 'edm'
+            },
+            data: {
+              data: encryptData(payload)
+            },
+            dataType: 'json',
+            success(response) {
+              const decrypted = decryptData(response.data);
+              console.log(`Decrypted Data for ${payload.function_name}:`, decrypted);
+
+              const $dropdown = $(`#${dropdownId}`);
+              $dropdown.empty().append(`<option value="" class="placeholder">${placeholder}</option>`);
+
+              decrypted.forEach(item => {
+                const value = item.district || item.im_institution_name_fn || item.disease || item.gender;
+                $dropdown.append(`<option value="${value}">${value}</option>`);
+              });
+
+              if (modalId) {
+                const myModal = new bootstrap.Modal(document.getElementById(modalId));
+                myModal.show();
+              }
+            },
+            error(xhr, status, error) {
+              console.error(`${payload.function_name} API Error:`, error);
+              showErrorToast(`Failed to load data for ${payload.function_name}.`);
+            }
+          });
+        }
+
+        // Call the function for each case
+
+        fetchAndPopulateDropdown({
+          payload: {
+            action: "function_call",
+            function_name: "im_own_district_fn",
+            params: { mobnumber: "9941256207" }
+          },
+          dropdownId: "P2_DISTRICT",
+          placeholder: "--Select District--",
+          modalId: "patientLogModal"
+        });
+
+        fetchAndPopulateDropdown({
+          payload: {
+            action: "function_call",
+            function_name: "im_institution_name_fn",
+            params: { mobnumber: "9941256207" }
+          },
+          dropdownId: "P2_NAME_OF_THE_INSTITUTION",
+          placeholder: "--Select Institution--",
+          modalId: "patientLogModal"
+        });
+
+        fetchAndPopulateDropdown({
+          payload: {
+            action: "function_call",
+            function_name: "im_patient_disease_fn",
+            params: { mobnumber: "9941256207" }
+          },
+          dropdownId: "P2_PATIENT_DISEASE",
+          placeholder: "--Select Patient Disease--",
+          modalId: "patientLogModal"
+        });
+
+        fetchAndPopulateDropdown({
+          payload: {
+            action: "function_call",
+            function_name: "im_gender_fn",
+            params: {}
+          },
+          dropdownId: "P2_PATIENT_GENDER", // This ID might need to change
+          placeholder: "--Select Gender--",
+          modalId: "patientLogModal"
+        });
+
+        fetchAndPopulateDropdown({
+          payload: {
+            action: "function_call",
+            function_name: "im_medicine_name_fn",
+            params: {}
+          },
+          dropdownId: "P2_MEDICINE_NAME", // This ID might need to change
+          placeholder: "--Select Medicine--",
+          modalId: "patientLogModal"
+        });
+
+      });
+
+      $('#submitBtn').on('click', async function (event) {
+        event.preventDefault();
+        $('.field-error').remove();
+
+        var district = $('#P2_DISTRICT').val()?.trim();
+        var nameOfTheInstitution = $('#P2_NAME_OF_THE_INSTITUTION').val()?.trim();
+        var patientName = $('#P2_PATIENT_NAME').val()?.trim();
+        var diseaseName = $('#P2_PATIENT_DISEASE').val()?.trim();
+        var mobileNumber = $('#P2_MOBILE_NUMBER').val()?.trim();
+        var aadharNumber = $('#P2_AADHAAR_NUMBER').val()?.trim();
+        var patientGender = $('#P2_PATIENT_GENDER').val();
+        var medicineName = $('#P2_MEDICINE_NAME').val()?.trim();
+        var medicineQuantity = $('#P2_MEDICINE_QUANTITY').val()?.trim();
+
+        // Basic validation function
+        function showError(selector, message) {
+          $(selector).after(`<div class="field-error" style="color:red;font-size:12px;">${message}</div>`);
+        }
+
+        let isValid = true;
+
+        if (!district) {
+          showError('#P2_DISTRICT', 'District is required.');
+          showErrorToast("District is required.");
+          isValid = false;
+        }
+        if (!nameOfTheInstitution) {
+          showError('#P2_NAME_OF_THE_INSTITUTION', 'Institution name is required.');
+          showErrorToast("Institution name is required.");
+          isValid = false;
+        }
+        if (!diseaseName) {
+          showError('#P2_PATIENT_DISEASE', 'Institution name is required.');
+          showErrorToast("Institution name is required.");
+          isValid = false;
+        }
+        if (!patientName) {
+          showError('#P2_PATIENT_NAME', 'Patient name is required.');
+          showErrorToast("Patient name is required.");
+          isValid = false;
+        }
+        if (!mobileNumber || !/^\d{10}$/.test(mobileNumber)) {
+          showError('#P2_MOBILE_NUMBER', 'Valid 10-digit mobile number is required.');
+          showErrorToast("Valid 10-digit mobile number is required.");
+          isValid = false;
+        }
+        if (!aadharNumber || !/^\d{12}$/.test(aadharNumber)) {
+          showError('#P2_AADHAAR_NUMBER', 'Valid 12-digit Aadhar number is required.');
+          showErrorToast("Valid 12-digit Aadhar number is required.");
+          isValid = false;
+        }
+        if (!patientGender) {
+          showError('#P2_PATIENT_GENDER', 'Gender is required.');
+          showErrorToast("Gender is required.");
+          isValid = false;
+        }
+        if (!medicineName) {
+          showError('#P2_MEDICINE_NAME', 'Medicine name is required.');
+          showErrorToast("Medicine name is required.");
+          isValid = false;
+        }
+        if (!medicineQuantity || isNaN(medicineQuantity)) {
+          showError('#P2_MEDICINE_QUANTITY', 'Valid quantity is required.');
+          showErrorToast("Valid quantity is required.");
+          isValid = false;
+        }
+
+        if (!isValid) return;
+
+        // Optional: upload file processing logic here if needed
+        const uploadedFiles = await processFile('#P7_UPLOAD_DROPZONE_input');
+        const uploadFile = uploadedFiles ? uploadedFiles[0] : null;
+
+        // Prepare payload with correct params
         const payload = {
           action: "function_call",
-          function_name: "im_own_district_fn",
+          function_name: "ins_patient_fn",
           params: {
-            mobnumber: "9941256207"
+            PATIENT_NAME: patientName,
+            MOBILE_NUMBER: mobileNumber,
+            DISEASE_NAME: diseaseName,
+            GENDER: patientGender,
+            MEDICINE_NAME: medicineName,
+            MEDICINE_QUANTITY: medicineQuantity,
+            INSTITUTION: nameOfTheInstitution,
+            DISTRICT: district,
+            AADHAAR_NUMBER: aadharNumber,
+            PHOTO_ATTACHMENT: uploadFile?.fileBase64 || null,
+            INTERIM_ATTACH_MIMETYPE: uploadFile?.fileType || null,
+            FILE_NAME: uploadFile?.filename || null,
+            created_by: userId
           }
         };
 
+        // API call
         $.ajax({
           url: apiUrl,
-          method: 'POST',
+          method: "POST",
           headers: {
-            'X-APP-Key': 'edm',
-            'X-APP-Name': 'edm'
+            'X-APP-Key': "edm",
+            'X-APP-Name': "edm"
           },
           data: {
             data: encryptData(payload)
           },
           dataType: 'json',
-          success(response) {
-            const decrypted = decryptData(response.data);
-            console.log("Decrypted Taluk Data:", decrypted);
-
-            const $dropdown = $('#P7_LOCATION');
-            $dropdown.empty().append('<option value="" class="placeholder">--Select Taluk--</option>');
-
-            decrypted.forEach(item => {
-              $dropdown.append(`<option value="${item.taluk_name}">${item.taluk_name}</option>`);
-            });
-
-            // Then show the modal
-            const myModal = new bootstrap.Modal(document.getElementById('patientLogModal'));
-            myModal.show();
+          cache: false,
+          success: function (response) {
+            alert("Inserted Successfully");
           },
-          error(xhr, status, error) {
-            console.error("Taluk API Error:", error);
-            alert("Failed to load Taluk data.");
+          error: function (xhr, status, error) {
+            console.error("API call failed:", {
+              status: xhr.status,
+              statusText: xhr.statusText,
+              responseText: xhr.responseText,
+              error: error
+            });
           }
         });
+
+        console.log(payload);
       });
 
       //   $('#P7_LOCATION').on('change', function () {
