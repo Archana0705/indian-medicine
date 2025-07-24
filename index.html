@@ -477,7 +477,7 @@
           debugger
           await initializeUserSession(mobnumber);
           localStorage.setItem('userMobileNumber', mobnumber);
-          window.location.href = `/amo/home.html`;
+          // window.location.href = `/amo/home.html`;
           const role = localStorage.getItem('userRole');
           console.log("roleeeee", role);
 
@@ -486,9 +486,10 @@
           if (role.toLowerCase().includes('amo')) {
             folder = 'amo';
           }
-          // else if (role.toLowerCase().includes('helpdesk_operator')) {
-          //   folder = 'helpdesk_operator';
-          // } else if (role.toLowerCase().includes('edistrict manager')) {
+          else if (role.toLowerCase().includes('dsmo')) {
+            folder = 'dsmo';
+          }
+          // else if (role.toLowerCase().includes('edistrict manager')) {
           //   folder = 'edistrict_manager';
           // } else if (role.toLowerCase().includes('helpdesk')) {
           //   folder = 'helpdesk';
@@ -497,7 +498,7 @@
             throw new Error('Unknown role: ' + role);
           }
 
-          // window.location.href = `${folder}/home.html`;
+          window.location.href = `${folder}/home.html`;
         } catch (error) {
           console.error("Login Error:", error);
           showErrorToast("Login failed. Check console for details.");
