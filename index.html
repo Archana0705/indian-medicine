@@ -476,7 +476,8 @@
         try {
           debugger
           await initializeUserSession(mobnumber);
-          // window.location.href = `/amo/home.html`;
+          localStorage.setItem('userMobileNumber', mobnumber);
+          window.location.href = `/amo/home.html`;
           const role = localStorage.getItem('userRole');
           console.log("roleeeee", role);
 
@@ -496,7 +497,7 @@
             throw new Error('Unknown role: ' + role);
           }
 
-          window.location.href = `${folder}/home.html`;
+          // window.location.href = `${folder}/home.html`;
         } catch (error) {
           console.error("Login Error:", error);
           showErrorToast("Login failed. Check console for details.");

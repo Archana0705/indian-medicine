@@ -525,110 +525,12 @@
       // const secretKey = 'V7gN4dY8pT2xB3kRz';
       // const district = localStorage.getItem('userDistrict');
       // const username = localStorage.getItem('userName');
-      // const mobnumber = localStorage.getItem('userMob');
-      // $('#P7_REQUESTED_DISTRICT_DISPLAY').text(district);
-      // $('#P7_REQUESTED_BY_DISPLAY').text(username);
-      // $('#openPatientLogBtn').on('click', function () {
-      //   // Call API
-      //   event.preventDefault();
-      //   function fetchAndPopulateDropdown({ payload, dropdownId, placeholder, modalId = null }) {
-      //     $.ajax({
-      //       url: apiUrl,
-      //       method: 'POST',
-      //       headers: {
-      //         'X-APP-Key': 'edm',
-      //         'X-APP-Name': 'edm'
-      //       },
-      //       data: {
-      //         data: encryptData(payload)
-      //       },
-      //       dataType: 'json',
-      //       success(response) {
-      //         const decrypted = decryptData(response.data);
-      //         console.log(`Decrypted Data for ${payload.function_name}:`, decrypted);
+      const mobnumber = localStorage.getItem('userMobileNumber') || '9941256207';
 
-      //         const $dropdown = $(`#${dropdownId}`);
-      //         $dropdown.empty().append(`<option value="" class="placeholder">${placeholder}</option>`);
-
-      //         decrypted.forEach(item => {
-      //           const value = item.district || item.im_institution_name_fn || item.disease || item.gender;
-      //           $dropdown.append(`<option value="${value}">${value}</option>`);
-      //         });
-
-      //         if (modalId) {
-      //           const myModal = new bootstrap.Modal(document.getElementById(modalId));
-      //           myModal.show();
-      //         }
-      //       },
-      //       error(xhr, status, error) {
-      //         console.error(`${payload.function_name} API Error:`, error);
-      //         showErrorToast(`Failed to load data for ${payload.function_name}.`);
-      //       }
-      //     });
-      //   }
-
-      //   // Call the function for each case
-
-      //   fetchAndPopulateDropdown({
-      //     payload: {
-      //       action: "function_call",
-      //       function_name: "im_own_district_fn",
-      //       params: { mobnumber: "9941256207" }
-      //     },
-      //     dropdownId: "P2_DISTRICT",
-      //     placeholder: "--Select District--",
-      //     modalId: "patientLogModal"
-      //   });
-
-      //   fetchAndPopulateDropdown({
-      //     payload: {
-      //       action: "function_call",
-      //       function_name: "im_institution_name_fn",
-      //       params: { mobnumber: "9941256207" }
-      //     },
-      //     dropdownId: "P2_NAME_OF_THE_INSTITUTION",
-      //     placeholder: "--Select Institution--",
-      //     modalId: "patientLogModal"
-      //   });
-
-      //   fetchAndPopulateDropdown({
-      //     payload: {
-      //       action: "function_call",
-      //       function_name: "im_patient_disease_fn",
-      //       params: { mobnumber: "9941256207" }
-      //     },
-      //     dropdownId: "P2_PATIENT_DISEASE",
-      //     placeholder: "--Select Patient Disease--",
-      //     modalId: "patientLogModal"
-      //   });
-
-      //   fetchAndPopulateDropdown({
-      //     payload: {
-      //       action: "function_call",
-      //       function_name: "im_gender_fn",
-      //       params: {}
-      //     },
-      //     dropdownId: "P2_PATIENT_GENDER", // This ID might need to change
-      //     placeholder: "--Select Gender--",
-      //     modalId: "patientLogModal"
-      //   });
-
-      //   fetchAndPopulateDropdown({
-      //     payload: {
-      //       action: "function_call",
-      //       function_name: "im_medicine_name_fn",
-      //       params: {}
-      //     },
-      //     dropdownId: "P2_MEDICINE_NAME", // This ID might need to change
-      //     placeholder: "--Select Medicine--",
-      //     modalId: "patientLogModal"
-      //   });
-
-      // });
       $('#openPatientLogBtn').off('click').on('click', function (event) {
         event.preventDefault();
 
-        const totalCalls = 5;
+        const totalCalls = 4;
         let completedCalls = 0;
 
         function fetchAndPopulateDropdown({ payload, dropdownId, placeholder }) {
@@ -651,7 +553,7 @@
               $dropdown.empty().append(`<option value="">${placeholder}</option>`);
 
               decrypted.forEach(item => {
-                const value = item.district || item.im_institution_name_fn || item.disease || item.gender || item.medicine;
+                const value = item.district || item.im_institution_name_fn || item.disease || item.gender || item.p_institude;
                 $dropdown.append(`<option value="${value}">${value}</option>`);
               });
             },
@@ -674,7 +576,7 @@
           payload: {
             action: "function_call",
             function_name: "im_own_district_fn",
-            params: { mobnumber: "9941256207" }
+            params: { mobnumber: mobnumber }
           },
           dropdownId: "P2_DISTRICT",
           placeholder: "--Select District--"
@@ -684,7 +586,7 @@
           payload: {
             action: "function_call",
             function_name: "im_institution_name_fn",
-            params: { mobnumber: "9941256207" }
+            params: { mobnumber: mobnumber }
           },
           dropdownId: "P2_NAME_OF_THE_INSTITUTION",
           placeholder: "--Select Institution--"
@@ -694,7 +596,7 @@
           payload: {
             action: "function_call",
             function_name: "im_patient_disease_fn",
-            params: { mobnumber: "9941256207" }
+            params: { mobnumber: mobnumber }
           },
           dropdownId: "P2_PATIENT_DISEASE",
           placeholder: "--Select Patient Disease--"
@@ -710,15 +612,34 @@
           placeholder: "--Select Gender--"
         });
 
-        fetchAndPopulateDropdown({
-          payload: {
-            action: "function_call",
-            function_name: "im_medicine_name_fn",
-            params: {}
-          },
-          dropdownId: "P2_MEDICINE_NAME",
-          placeholder: "--Select Medicine--"
+        // fetchAndPopulateDropdown({
+        //   payload: {
+        //     action: "function_call",
+        //     function_name: "im_medicine_name_fn",
+        //     params: {}
+        //   },
+        //   dropdownId: "P2_MEDICINE_NAME",
+        //   placeholder: "--Select Medicine--"
+        // });
+        $('#P2_NAME_OF_THE_INSTITUTION').off('change').on('change', function () {
+          const selectedInstitution = $(this).val();
+
+          if (selectedInstitution) {
+            fetchAndPopulateDropdown({
+              payload: {
+                action: "function_call",
+                function_name: "im_medicine_name_fn",
+                params: { institution_name: selectedInstitution }
+              },
+              dropdownId: "P2_MEDICINE_NAME",
+              placeholder: "--Select Medicine--"
+            });
+          } else {
+            // Clear medicine dropdown if no institution selected
+            $('#P2_MEDICINE_NAME').empty().append('<option value="">--Select Medicine--</option>');
+          }
         });
+
       });
 
       $('#submitBtn').on('click', async function (event) {

@@ -67,12 +67,18 @@ async function initializeUserSession(mobnumber) {
                         window.userSession = {
                             // userId: decrypted.user_id,
                             district: decrypted.district,
-                            role: decrypted.login_type || ''
+                            role: decrypted.login_type || '',
+                            institutionName: decrypted.name_of_the_institution || '',
+                            system: decrypted.system || '',
+                            name: decrypted.name || '',
                         };
 
                         localStorage.setItem('userRole', decrypted.login_type || '');
                         localStorage.setItem('userDistrict', decrypted.district);
-                        // localStorage.setItem('userName', decrypted.name);
+                        localStorage.setItem('userName', decrypted.name);
+                        localStorage.setItem('userInstitutionName', decrypted.name_of_the_institution || '');
+                        localStorage.setItem('userSystem', decrypted.system || '');
+
                         // localStorage.setItem('userId', decrypted.user_id || '');
 
                         // const userNameElement = document.querySelector('.t-Button-label');

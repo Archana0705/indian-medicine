@@ -294,14 +294,14 @@ CREATE OR REPLACE PROCEDURE im_medicine_details_ins_sp(
 	 p_quantity numeric,
 	 p_total character varying,
 	 p_type character varying,
-	 p_institution character varying,
+//	 p_institution character varying,
 	 p_quarters character varying,
 	 p_created_by character varying,
 	 p_final_year character varying,
-	 p_district character varying,
-	 p_system character varying,
+//	 p_district character varying,
+	// p_system character varying,
 	 p_scheme character varying,
-	 p_inst_type character varying,
+	// p_inst_type character varying,
 	 p_stock numeric)
 	 LANGUAGE plpgsql
 AS $$
