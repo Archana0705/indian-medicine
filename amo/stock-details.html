@@ -21,9 +21,7 @@
   <link rel="stylesheet" href="../assets/vendor/datatable/dataTables.bootstrap5.min.css">
   <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-
-
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link href="../assets/" <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="-1">
   <meta http-equiv="Cache-Control" content="no-cache">
@@ -89,18 +87,7 @@
         </div>
         <div class="t-Header-navBar">
           <div class="t-Header-navBar--start"></div>
-          <div class="t-Header-navBar--center">
-            <ul class="t-NavigationBar " id="428237243222882931397">
-              <li class="t-NavigationBar-item ">
-                <button class="t-Button t-Button--icon t-Button t-Button--header t-Button--navBar" type="button"
-                  id="L428237300758551931558" data-menu="menu_L428237300758551931558" title="" aria-haspopup="menu">
-                  <span class="t-Icon fa fa-user" aria-hidden="true"></span><span
-                    class="t-Button-label">Siva</span><span class="t-Button-badge"></span><span
-                    class="a-Icon icon-down-arrow" aria-hidden="true"></span>
-                </button>
-              </li>
-            </ul>
-          </div>
+          <div id="globalHeader"></div>
           <div class="t-Header-navBar--end"></div>
         </div>
       </div>
@@ -195,96 +182,140 @@
 
                                   <div class="modal-body">
                                     <form id="patientForm">
-                                      <div class="container-fluid">
-                                        <div class="row mb-3">
-                                          <input type="hidden" name="P2_PATIENT_ID" id="P2_PATIENT_ID">
-                                          <div class="col-md-6">
-                                            <label for="P2_DISTRICT" class="form-label">District <span
-                                                class="text-danger">*</span></label>
-                                            <select id="P2_DISTRICT" name="P2_DISTRICT" class="form-select" required>
-                                              <!-- <option value="Chennai HO">Chennai HO</option> -->
-                                            </select>
+
+
+
+                                      <div class="container">
+                                        <div class="row ">
+                                          <div class="col col-12 apex-col-auto col-start col-end">
+                                            <div
+                                              class="t-Form-fieldContainer t-Form-fieldContainer--floatingLabel apex-item-wrapper apex-item-wrapper--select-list js-show-label is-required"
+                                              id="P10_INSTITUTION_NAME_CONTAINER">
+                                              <div class="t-Form-labelContainer">
+                                                <label for="P10_INSTITUTION_NAME" id="P10_INSTITUTION_NAME_LABEL"
+                                                  class="t-Form-label">Institution Name</label>
+                                              </div>
+                                              <div class="t-Form-inputContainer">
+                                                <div class="t-Form-itemWrapper">
+                                                  <select id="P10_INSTITUTION_NAME" name="P10_INSTITUTION_NAME"
+                                                    required="" class="selectlist apex-item-select"
+                                                    data-native-menu="false" size="1">
+                                                  </select>
+                                                </div>
+                                                <div class="t-Form-itemAssistance">
+                                                  <span id="P10_INSTITUTION_NAME_error_placeholder" class="a-Form-error"
+                                                    data-template-id="428237131750063931341_ET"></span>
+                                                  <div class="t-Form-itemRequired" aria-hidden="true">Required</div>
+                                                </div>
+                                              </div>
+                                            </div><input type="hidden" name="P10_SLNO" id="P10_SLNO" value="">
                                           </div>
-                                          <div class="col-md-6">
-                                            <label for="P2_NAME_OF_THE_INSTITUTION" class="form-label">Name Of The
-                                              Institution <span class="text-danger">*</span></label>
-                                            <select id="P2_NAME_OF_THE_INSTITUTION" name="P2_NAME_OF_THE_INSTITUTION"
-                                              class="form-select" required>
-                                              <option value="">Select</option>
-                                              <option value="Indian Medicine & Homeopathy Department">Indian Medicine
-                                                &amp;
-                                                Homeopathy Department</option>
-                                            </select>
+                                        </div>
+                                        <div class="row ">
+                                          <div class="col col-12 apex-col-auto col-start col-end">
+                                            <div
+                                              class="t-Form-fieldContainer t-Form-fieldContainer--floatingLabel apex-item-wrapper apex-item-wrapper--select-list js-show-label is-required"
+                                              id="P10_MEDICINE_NAME_CONTAINER">
+                                              <div class="t-Form-labelContainer">
+                                                <label for="P10_MEDICINE_NAME" id="P10_MEDICINE_NAME_LABEL"
+                                                  class="t-Form-label">Medicine Name</label>
+                                              </div>
+                                              <div class="t-Form-inputContainer">
+                                                <div class="t-Form-itemWrapper"><select id="P10_MEDICINE_NAME"
+                                                    name="P10_MEDICINE_NAME" required=""
+                                                    class="selectlist apex-item-select" data-native-menu="false"
+                                                    size="1">
+
+                                                  </select></div><span id="P10_MEDICINE_NAME_error_placeholder"
+                                                  class="a-Form-error"
+                                                  data-template-id="428237131010283931341_ET"></span>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="row ">
+                                          <div class="col col-12 apex-col-auto col-start col-end">
+                                            <div
+                                              class="t-Form-fieldContainer t-Form-fieldContainer--floatingLabel apex-item-wrapper apex-item-wrapper--select-list js-show-label is-required"
+                                              id="P10_PACKAGE_SIZE_CONTAINER">
+                                              <div class="t-Form-labelContainer">
+                                                <label for="P10_PACKAGE_SIZE" id="P10_PACKAGE_SIZE_LABEL"
+                                                  class="t-Form-label">Package Size</label>
+                                              </div>
+                                              <div class="t-Form-inputContainer">
+                                                <div class="t-Form-itemWrapper"><select id="P10_PACKAGE_SIZE"
+                                                    name="P10_PACKAGE_SIZE" required=""
+                                                    class="selectlist apex-item-select" data-native-menu="false"
+                                                    size="1">
+                                                    <option value="" selected="selected">Select</option>
+                                                  </select></div><span id="P10_PACKAGE_SIZE_error_placeholder"
+                                                  class="a-Form-error"
+                                                  data-template-id="428237131010283931341_ET"></span>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="row ">
+                                          <div class="col col-12 apex-col-auto col-start col-end">
+                                            <div
+                                              class="t-Form-fieldContainer t-Form-fieldContainer--floatingLabel apex-item-wrapper apex-item-wrapper--text-field is-required"
+                                              id="P10_QUANTITY_CONTAINER">
+                                              <div class="t-Form-labelContainer">
+                                                <label for="P10_QUANTITY" id="P10_QUANTITY_LABEL"
+                                                  class="t-Form-label">Quantity</label>
+                                              </div>
+                                              <div class="t-Form-inputContainer">
+                                                <div class="t-Form-itemWrapper"><input type="text" id="P10_QUANTITY"
+                                                    name="P10_QUANTITY" required="" class="text_field apex-item-text"
+                                                    value="" size="30" maxlength="1000"></div><span
+                                                  id="P10_QUANTITY_error_placeholder" class="a-Form-error"
+                                                  data-template-id="428237131010283931341_ET"></span>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="row ">
+                                          <div class="col col-12 apex-col-auto col-start col-end">
+                                            <div
+                                              class="t-Form-fieldContainer t-Form-fieldContainer--floatingLabel apex-item-wrapper apex-item-wrapper--text-field is-required"
+                                              id="P10_BATCH_NO_CONTAINER">
+                                              <div class="t-Form-labelContainer">
+                                                <label for="P10_BATCH_NO" id="P10_BATCH_NO_LABEL"
+                                                  class="t-Form-label">Batch No</label>
+                                              </div>
+                                              <div class="t-Form-inputContainer">
+                                                <div class="t-Form-itemWrapper"><input type="text" id="P10_BATCH_NO"
+                                                    name="P10_BATCH_NO" required="" class="text_field apex-item-text"
+                                                    value="" size="30" maxlength="1000"></div><span
+                                                  id="P10_BATCH_NO_error_placeholder" class="a-Form-error"
+                                                  data-template-id="428237131010283931341_ET"></span>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="row">
+                                          <div class="col col-12">
+                                            <label for="P10_EXPIRY_DATE" id="P10_EXPIRY_DATE_LABEL"
+                                              class="t-Form-label">Expiry Date</label>
+                                            <div
+                                              class="t-Form-fieldContainer t-Form-fieldContainer--floatingLabel is-required"
+                                              id="P10_EXPIRY_DATE_CONTAINER">
+                                              <div class="t-Form-labelContainer mb-1">
+
+                                              </div>
+                                              <div class="t-Form-inputContainer">
+                                                <div class="t-Form-itemWrapper">
+                                                  <input type="date" class="form-control apex-item-text"
+                                                    id="P10_EXPIRY_DATE" name="P10_EXPIRY_DATE"
+                                                    aria-labelledby="P10_EXPIRY_DATE_LABEL" required />
+                                                </div>
+                                                <span id="P10_EXPIRY_DATE_error_placeholder"
+                                                  class="a-Form-error text-danger small"></span>
+                                              </div>
+                                            </div>
                                           </div>
                                         </div>
 
-                                        <div class="row mb-3">
-                                          <div class="col-md-6">
-                                            <label for="P2_PATIENT_NAME" class="form-label">Patient Name <span
-                                                class="text-danger">*</span></label>
-                                            <input type="text" id="P2_PATIENT_NAME" name="P2_PATIENT_NAME"
-                                              class="form-control" maxlength="50" required>
-                                          </div>
-                                          <div class="col-md-6">
-                                            <label for="P2_MOBILE_NUMBER" class="form-label">Mobile Number</label>
-                                            <input type="text" id="P2_MOBILE_NUMBER" name="P2_MOBILE_NUMBER"
-                                              class="form-control" maxlength="10">
-                                          </div>
-                                        </div>
-
-                                        <div class="row mb-3">
-                                          <div class="col-md-6">
-                                            <label for="P2_AADHAAR_NUMBER" class="form-label">Aadhaar Number</label>
-                                            <input type="text" id="P2_AADHAAR_NUMBER" name="P2_AADHAAR_NUMBER"
-                                              class="form-control">
-                                          </div>
-                                          <div class="col-md-6">
-                                            <label for="P2_PATIENT_DISEASE" class="form-label">Patient Disease <span
-                                                class="text-danger">*</span></label>
-                                            <select id="P2_PATIENT_DISEASE" name="P2_PATIENT_DISEASE"
-                                              class="form-select" required>
-                                              <option value="">Select</option>
-                                            </select>
-                                          </div>
-                                        </div>
-
-                                        <div class="row mb-3">
-                                          <div class="col-md-4">
-                                            <label for="P2_PATIENT_GENDER" class="form-label">Gender <span
-                                                class="text-danger">*</span></label>
-                                            <select id="P2_PATIENT_GENDER" name="P2_PATIENT_GENDER" class="form-select"
-                                              required>
-                                              <option value="">Select</option>
-                                              <option value="Male">Male</option>
-                                              <option value="Female">Female</option>
-                                              <option value="Boy Child">Boy Child</option>
-                                              <option value="Girl Child">Girl Child</option>
-                                              <option value="Transgender">Transgender</option>
-                                            </select>
-                                          </div>
-                                          <div class="col-md-4">
-                                            <label for="P2_MEDICINE_NAME" class="form-label">Medicine Name <span
-                                                class="text-danger">*</span></label>
-                                            <select id="P2_MEDICINE_NAME" name="P2_MEDICINE_NAME" class="form-select"
-                                              required>
-                                              <option value="">Select</option>
-                                            </select>
-                                          </div>
-                                          <div class="col-md-4">
-                                            <label for="P2_MEDICINE_QUANTITY" class="form-label">Medicine Quantity <span
-                                                class="text-danger">*</span></label>
-                                            <input type="text" id="P2_MEDICINE_QUANTITY" name="P2_MEDICINE_QUANTITY"
-                                              class="form-control" required>
-                                          </div>
-                                        </div>
-
-                                        <!-- Hidden Fields -->
-                                        <input type="hidden" name="P2_CREATED_BY" id="P2_CREATED_BY">
-                                        <input type="hidden" name="P2_CREATED_DATE" id="P2_CREATED_DATE">
-                                        <input type="hidden" name="P2_UPDATED_BY" id="P2_UPDATED_BY">
-                                        <input type="hidden" name="P2_UPDATED_DATE" id="P2_UPDATED_DATE">
-                                        <input type="hidden" name="P2_SYSTEM" id="P2_SYSTEM" value="AYUSH">
-                                      </div>
                                     </form>
                                   </div>
 
@@ -363,6 +394,15 @@
   <script src="../assets/js/singleFileUpload.js"></script>
   <script src="../assets/js/globalHeader.js"></script>
   <script src="../assets/js/validateField.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#P10_EXPIRY_DATE_picker').datepicker({
+        format: 'mm/dd/yyyy',
+        todayHighlight: true,
+        autoclose: true
+      });
+    });
+  </script>
 
   <script>
     let dataTableRef;
@@ -377,11 +417,14 @@
       // const username = localStorage.getItem('userName');
       const mobnumber = localStorage.getItem('userMobileNumber') || '9941256207';
 
+      const district = localStorage.getItem('userDistrict');
+      const nameOfTheInstitution = localStorage.getItem('userInstitutionName');
+      const system = localStorage.getItem('userSystem');
       $('#openPatientLogBtn').off('click').on('click', function (event) {
         event.preventDefault();
 
-        const totalCalls = 4;
-        let completedCalls = 0;
+        const modalInstance = bootstrap.Modal.getOrCreateInstance(document.getElementById('patientLogModal'));
+        modalInstance.show();
 
         function fetchAndPopulateDropdown({ payload, dropdownId, placeholder }) {
           $.ajax({
@@ -403,92 +446,53 @@
               $dropdown.empty().append(`<option value="">${placeholder}</option>`);
 
               decrypted.forEach(item => {
-                const value = item.district || item.im_institution_name_fn || item.disease || item.gender || item.p_institude;
+                const value = item.p_institude || item.p_size || item.im_medicine_price_fn || item.gender || item.medicine;
                 $dropdown.append(`<option value="${value}">${value}</option>`);
               });
             },
             error(xhr, status, error) {
               console.error(`${payload.function_name} API Error:`, error);
-            },
-            complete() {
-              completedCalls++;
-              if (completedCalls === totalCalls) {
-                // ✅ Only show modal once after all dropdowns populated
-                const modalInstance = bootstrap.Modal.getOrCreateInstance(document.getElementById('patientLogModal'));
-                modalInstance.show();
-              }
             }
           });
         }
 
-        // 🚀 Make API calls
-        fetchAndPopulateDropdown({
-          payload: {
-            action: "function_call",
-            function_name: "im_own_district_fn",
-            params: { mobnumber: mobnumber }
-          },
-          dropdownId: "P2_DISTRICT",
-          placeholder: "--Select District--"
-        });
+        if (nameOfTheInstitution) {
+          const nameOfTheInstitutionSelect = $('#P10_INSTITUTION_NAME');
+          nameOfTheInstitutionSelect.append(`<option value="${nameOfTheInstitution}" selected>${nameOfTheInstitution}</option>`);
+        } else {
+          console.warn('Institution not found in localStorage');
+        }
 
-        fetchAndPopulateDropdown({
-          payload: {
-            action: "function_call",
-            function_name: "im_institution_name_fn",
-            params: { mobnumber: mobnumber }
-          },
-          dropdownId: "P2_NAME_OF_THE_INSTITUTION",
-          placeholder: "--Select Institution--"
-        });
+        if (nameOfTheInstitution) {
+          fetchAndPopulateDropdown({
+            payload: {
+              action: "function_call",
+              function_name: "im_medicine_name_fn",
+              params: { institution_name: nameOfTheInstitution }
+            },
+            dropdownId: "P10_MEDICINE_NAME",
+            placeholder: "--Select Medicine Name--"
+          });
+        }
+        $('#P10_MEDICINE_NAME').off('change').on('change', function () {
+          const selectedMedicine = $(this).val();
 
-        fetchAndPopulateDropdown({
-          payload: {
-            action: "function_call",
-            function_name: "im_patient_disease_fn",
-            params: { mobnumber: mobnumber }
-          },
-          dropdownId: "P2_PATIENT_DISEASE",
-          placeholder: "--Select Patient Disease--"
-        });
-
-        fetchAndPopulateDropdown({
-          payload: {
-            action: "function_call",
-            function_name: "im_gender_fn",
-            params: {}
-          },
-          dropdownId: "P2_PATIENT_GENDER",
-          placeholder: "--Select Gender--"
-        });
-
-        // fetchAndPopulateDropdown({
-        //   payload: {
-        //     action: "function_call",
-        //     function_name: "im_medicine_name_fn",
-        //     params: {}
-        //   },
-        //   dropdownId: "P2_MEDICINE_NAME",
-        //   placeholder: "--Select Medicine--"
-        // });
-        $('#P2_NAME_OF_THE_INSTITUTION').off('change').on('change', function () {
-          const selectedInstitution = $(this).val();
-
-          if (selectedInstitution) {
+          if (selectedMedicine) {
             fetchAndPopulateDropdown({
               payload: {
                 action: "function_call",
-                function_name: "im_medicine_name_fn",
-                params: { institution_name: selectedInstitution }
+                function_name: "im_pack_size_fn",
+                params: { institution_name: selectedMedicine }
               },
-              dropdownId: "P2_MEDICINE_NAME",
-              placeholder: "--Select Medicine--"
+              dropdownId: "P10_PACKAGE_SIZE",
+              placeholder: "--Select Packing size--"
             });
           } else {
             // Clear medicine dropdown if no institution selected
-            $('#P2_MEDICINE_NAME').empty().append('<option value="">--Select Medicine--</option>');
+            $('#P10_PACKAGE_SIZE').empty().append('<option value="">--Select Packing Size--</option>');
           }
         });
+
 
       });
 
@@ -496,16 +500,12 @@
         event.preventDefault();
         $('.field-error').remove();
 
-        var district = $('#P2_DISTRICT').val()?.trim();
-        var nameOfTheInstitution = $('#P2_NAME_OF_THE_INSTITUTION').val()?.trim();
-        var patientName = $('#P2_PATIENT_NAME').val()?.trim();
-        var diseaseName = $('#P2_PATIENT_DISEASE').val()?.trim();
-        var mobileNumber = $('#P2_MOBILE_NUMBER').val()?.trim();
-        var aadharNumber = $('#P2_AADHAAR_NUMBER').val()?.trim();
-        var patientGender = $('#P2_PATIENT_GENDER').val();
-        var medicineName = $('#P2_MEDICINE_NAME').val()?.trim();
-        var medicineQuantity = $('#P2_MEDICINE_QUANTITY').val()?.trim();
-
+        var nameOfTheInstitution = $('#P10_INSTITUTION_NAME').val()?.trim();
+        var medicineName = $('#P10_MEDICINE_NAME').val()?.trim();
+        var medicineQuantity = $('#P10_QUANTITY').val()?.trim();
+        var medicinePackageSize = $('#P10_PACKAGE_SIZE').val()?.trim();
+        var medicineBatchNo = $('#P10_BATCH_NO').val()?.trim();
+        var medicineExpiryDate = $('#P10_EXPIRY_DATE').val()?.trim();
         // Basic validation function
         function showError(selector, message) {
           $(selector).after(`<div class="field-error" style="color:red;font-size:12px;">${message}</div>`);
@@ -513,76 +513,50 @@
 
         let isValid = true;
 
-        if (!district) {
-          showError('#P2_DISTRICT', 'District is required.');
-          showErrorToast("District is required.");
-          isValid = false;
-        }
         if (!nameOfTheInstitution) {
-          showError('#P2_NAME_OF_THE_INSTITUTION', 'Institution name is required.');
+          showError('#P10_INSTITUTION_NAME', 'Institution name is required.');
           showErrorToast("Institution name is required.");
-          isValid = false;
-        }
-        if (!diseaseName) {
-          showError('#P2_PATIENT_DISEASE', 'Institution name is required.');
-          showErrorToast("Institution name is required.");
-          isValid = false;
-        }
-        if (!patientName) {
-          showError('#P2_PATIENT_NAME', 'Patient name is required.');
-          showErrorToast("Patient name is required.");
-          isValid = false;
-        }
-        if (!mobileNumber || !/^\d{10}$/.test(mobileNumber)) {
-          showError('#P2_MOBILE_NUMBER', 'Valid 10-digit mobile number is required.');
-          showErrorToast("Valid 10-digit mobile number is required.");
-          isValid = false;
-        }
-        if (!aadharNumber || !/^\d{12}$/.test(aadharNumber)) {
-          showError('#P2_AADHAAR_NUMBER', 'Valid 12-digit Aadhar number is required.');
-          showErrorToast("Valid 12-digit Aadhar number is required.");
-          isValid = false;
-        }
-        if (!patientGender) {
-          showError('#P2_PATIENT_GENDER', 'Gender is required.');
-          showErrorToast("Gender is required.");
           isValid = false;
         }
         if (!medicineName) {
-          showError('#P2_MEDICINE_NAME', 'Medicine name is required.');
+          showError('#P10_MEDICINE_NAME', 'Medicine name is required.');
           showErrorToast("Medicine name is required.");
           isValid = false;
         }
         if (!medicineQuantity || isNaN(medicineQuantity)) {
-          showError('#P2_MEDICINE_QUANTITY', 'Valid quantity is required.');
+          showError('#P10_QUANTITY', 'Valid quantity is required.');
           showErrorToast("Valid quantity is required.");
           isValid = false;
         }
+        if (!medicinePackageSize) {
+          showError('#P10_PACKAGE_SIZE', 'Packing size is required.');
+          showErrorToast("Packing size is required.");
+          isValid = false;
+        }
+        if (!medicineBatchNo) {
+          showError('#P10_BATCH_NO', 'Batch number is required.');
+          showErrorToast("Batch number is required.");
+          isValid = false;
+        }
+        if (!medicineExpiryDate) {
+          showError('#P10_EXPIRY_DATE', 'Expiry date is required.');
+          showErrorToast("Expiry date is required.");
+          isValid = false;
+        }
+
 
         if (!isValid) return;
-
-        // Optional: upload file processing logic here if needed
-        const uploadedFiles = await processFile('#P7_UPLOAD_DROPZONE_input');
-        const uploadFile = uploadedFiles ? uploadedFiles[0] : null;
-
-        // Prepare payload with correct params
         const payload = {
-          action: "function_call",
-          function_name: "ins_patient_fn",
+          action: "procedure_call",
+          procedure_name: "im_stock_dtls_ins_sp",
           params: {
-            PATIENT_NAME: patientName,
-            MOBILE_NUMBER: mobileNumber,
-            DISEASE_NAME: diseaseName,
-            GENDER: patientGender,
-            MEDICINE_NAME: medicineName,
-            MEDICINE_QUANTITY: medicineQuantity,
-            INSTITUTION: nameOfTheInstitution,
-            DISTRICT: district,
-            AADHAAR_NUMBER: aadharNumber,
-            PHOTO_ATTACHMENT: uploadFile?.fileBase64 || null,
-            INTERIM_ATTACH_MIMETYPE: uploadFile?.fileType || null,
-            FILE_NAME: uploadFile?.filename || null,
-            created_by: userId
+            p_medicine: medicineName,
+            p_size: medicinePackageSize,
+            p_qty: medicineQuantity,
+            p_batch: medicineBatchNo,
+            expiry_date: medicineExpiryDate,
+            p_user: localStorage.getItem('userMobileNumber') || '9941256207',
+            p_institude: nameOfTheInstitution,
           }
         };
 

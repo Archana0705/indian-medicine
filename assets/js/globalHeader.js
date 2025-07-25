@@ -25,13 +25,13 @@ document.addEventListener('DOMContentLoaded', async function () {
                 console.log('Username set:', username);
             }
 
-            // Set last login
-            const lastLogin = localStorage.getItem('lastLogin');
-            const lastLoginElement = document.getElementById('lastLoggedIn');
-            if (lastLogin && lastLoginElement) {
-                lastLoginElement.textContent = lastLogin;
-                console.log('Last login set:', lastLogin);
-            }
+            // // Set last login
+            // const lastLogin = localStorage.getItem('lastLogin');
+            // const lastLoginElement = document.getElementById('lastLoggedIn');
+            // if (lastLogin && lastLoginElement) {
+            //     lastLoginElement.textContent = lastLogin;
+            //     console.log('Last login set:', lastLogin);
+            // }
 
             // Sign out
             const signOutBtn = document.getElementById('signOutBtn');
@@ -75,64 +75,64 @@ document.addEventListener('click', function (event) {
     }
 });
 
-// Manual Change Password popup click
-document.addEventListener('click', async function (e) {
-    if (e.target && e.target.id === 'changePasswordLink') {
-        e.preventDefault();
-        console.log('🔧 Change Password link clicked');
+// // Manual Change Password popup click
+// document.addEventListener('click', async function (e) {
+//     if (e.target && e.target.id === 'changePasswordLink') {
+//         e.preventDefault();
+//         console.log('🔧 Change Password link clicked');
 
-        if (!document.getElementById('popup-overlay')) {
-            try {
-                const response = await fetch('../assets/ChangePassword/ChangePassword.html');
-                if (!response.ok) throw new Error('Failed to fetch popup HTML');
+//         if (!document.getElementById('popup-overlay')) {
+//             try {
+//                 const response = await fetch('../assets/ChangePassword/ChangePassword.html');
+//                 if (!response.ok) throw new Error('Failed to fetch popup HTML');
 
-                const html = await response.text();
-                document.body.insertAdjacentHTML('beforeend', html);
-                console.log('Manual ChangePassword popup inserted');
+//                 const html = await response.text();
+//                 document.body.insertAdjacentHTML('beforeend', html);
+//                 console.log('Manual ChangePassword popup inserted');
 
-                const script = document.createElement('script');
-                script.src = '../assets/js/changePassword.js';
-                script.onload = () => console.log('changePassword.js loaded (manual)');
-                document.body.appendChild(script);
-            } catch (err) {
-                console.error('Error loading manual Change Password popup:', err);
-            }
-        }
+//                 const script = document.createElement('script');
+//                 script.src = '../assets/js/changePassword.js';
+//                 script.onload = () => console.log('changePassword.js loaded (manual)');
+//                 document.body.appendChild(script);
+//             } catch (err) {
+//                 console.error('Error loading manual Change Password popup:', err);
+//             }
+//         }
 
-        $('#popup-overlay').fadeIn();
-        $('.t-Header').css('z-index', '0');
-    }
+//         $('#popup-overlay').fadeIn();
+//         $('.t-Header').css('z-index', '0');
+//     }
 
-    document.addEventListener('click', async function (e) {
-        if (e.target && e.target.id === 'myProfileLink') {
-            e.preventDefault();
+//     document.addEventListener('click', async function (e) {
+//         if (e.target && e.target.id === 'myProfileLink') {
+//             e.preventDefault();
 
-            if (!document.getElementById('profile-overlay')) {
-                try {
-                    const response = await fetch('../assets/MyProfile/MyProfile.html');
-                    const html = await response.text();
-                    document.body.insertAdjacentHTML('beforeend', html);
+//             if (!document.getElementById('profile-overlay')) {
+//                 try {
+//                     const response = await fetch('../assets/MyProfile/MyProfile.html');
+//                     const html = await response.text();
+//                     document.body.insertAdjacentHTML('beforeend', html);
 
-                    // First load encrypt_decrypt.js
-                    const encryptScript = document.createElement('script');
-                    encryptScript.src = '../assets/js/encrypt_decrypt.js';
+//                     // First load encrypt_decrypt.js
+//                     const encryptScript = document.createElement('script');
+//                     encryptScript.src = '../assets/js/encrypt_decrypt.js';
 
-                    encryptScript.onload = () => {
-                        // After it’s loaded, load myProfile.js
-                        const profileScript = document.createElement('script');
-                        profileScript.src = '../assets/js/myProfile.js';
-                        document.body.appendChild(profileScript);
-                    };
+//                     encryptScript.onload = () => {
+//                         // After it’s loaded, load myProfile.js
+//                         const profileScript = document.createElement('script');
+//                         profileScript.src = '../assets/js/myProfile.js';
+//                         document.body.appendChild(profileScript);
+//                     };
 
-                    document.body.appendChild(encryptScript);
-                } catch (err) {
-                    console.error('Error loading my profile popup:', err);
-                }
-            }
+//                     document.body.appendChild(encryptScript);
+//                 } catch (err) {
+//                     console.error('Error loading my profile popup:', err);
+//                 }
+//             }
 
-            $('#profile-overlay').fadeIn();
-            $('.t-Header').css('z-index', '0');
-        }
-    });
-});
+//             $('#profile-overlay').fadeIn();
+//             $('.t-Header').css('z-index', '0');
+//         }
+//     });
+// });
 

@@ -795,6 +795,10 @@
   box-shadow: none;
 }
 
+button#L8804321173964414 {
+  background-color: white;
+}
+
 .btn-bgclr {
   color: #FFFFFF;
   background-color: #854E9B;
@@ -2166,4 +2170,17 @@ input:checked+.u-radio:after {
   --oj-button-borderless-chrome-bg-color-hover: var(--ut-palette-primary);
   --oj-button-borderless-chrome-text-color-hover: var(--ut-palette-primary-contrast);
   --oj-heading-text-color: var(--ut-component-text-title-color);
+}
+
+a#signOutBtn {
+  list-style: none;
+  text-decoration: none;
+  --a-base-link-text-color: black;
+  color: white;
+  background: #113946;
+  padding: 1 12 1 12;
+}
+
+.headermenu {
+  list-style: none;
 }
