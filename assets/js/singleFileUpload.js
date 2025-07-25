@@ -79,4 +79,6 @@ function renderFileList(files) {
 
 
 
-export { processFile, checkFile, renderFileList }
+window.checkFile = checkFile;
+window.processFile = processFile;
+window.renderFileList = renderFileList;

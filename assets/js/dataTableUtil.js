@@ -1,5 +1,3 @@
-import { decryptData } from './encrypt_decrypt.js';
-
 window.loadDataToTable = function ({
     tableId,
     apiUrl,

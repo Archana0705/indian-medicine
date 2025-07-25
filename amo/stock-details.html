@@ -21,7 +21,6 @@
   <link rel="stylesheet" href="../assets/vendor/datatable/dataTables.bootstrap5.min.css">
   <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="../assets/" <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="-1">
   <meta http-equiv="Cache-Control" content="no-cache">
@@ -101,7 +100,7 @@
         <img id="rightlogo" data-aos="fade-left" data-aos-duration="800" src="../assets/img/head-dept-logo.png"
           class="aos-init aos-animate">
       </div>
-      <div class="t-Header-nav">
+      <!-- <div class="t-Header-nav">
         <div class="t-Header-nav-list js-tabLike js-tabLike a-MenuBar a-MenuBar--overflow a-MenuBar--tabs"
           id="t_MenuNav" role="menubar">
           <ul role="none">
@@ -113,7 +112,17 @@
                 id="t_MenuNav_2i" href="../amo/patient-details.html" tabindex="-1">Patient Details</a></li>
           </ul>
         </div>
+      </div> -->
+      <div class="t-Header-nav">
+        <div class="t-Header-nav-list js-tabLike js-tabLike a-MenuBar a-MenuBar--overflow a-MenuBar--tabs"
+          id="t_MenuNav" role="menubar">
+          <ul id="nav-links">
+            <div id="navbar-container"></div>
+
+          </ul>
+        </div>
       </div>
+
     </header>
     <div class="t-Body">
       <div class="t-Body-main">
@@ -376,7 +385,9 @@
   <!-- DataTables -->
   <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
   <script src="../assets/js/widget.treeView.min.js"></script>
-  <script type="module" src="../assets/js/commonMenu.js"></script>
+  <!-- <script type="module" src="../assets/js/commonMenu.js"></script> -->
+  <script src="../assets/common.js">
+  </script>
   <script src="../assets/js/widget.interactiveReport.min.js"></script>
   <script src="../assets/js/widget.iconList.min.js"></script>
   <script src="../assets/js/widget.stickyTableHeader.min.js"></script>
@@ -393,8 +404,7 @@
   <script src="../assets/js/encrypt_decrypt.js"></script>
   <script src="../assets/js/singleFileUpload.js"></script>
   <script src="../assets/js/globalHeader.js"></script>
-  <script src="../assets/js/validateField.js"></script>
-  <script>
+  <!-- <script>
     $(document).ready(function () {
       $('#P10_EXPIRY_DATE_picker').datepicker({
         format: 'mm/dd/yyyy',
@@ -402,7 +412,7 @@
         autoclose: true
       });
     });
-  </script>
+  </script> -->
 
   <script>
     let dataTableRef;

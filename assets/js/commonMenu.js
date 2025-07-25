@@ -215,7 +215,6 @@
 
 // renderDynamicMenu("commonMenuContainer");
 
-import { initializeUserSession } from "./auth.js";
 
 const menuItems = [
     { label: "Home", file: "dashboard.html", folder: "", icon: "fa fa-tachometer", roles: ["edistrict_manager", "helpdesk", "helpdesk_operator", "call-center-operator", "operator"] },
