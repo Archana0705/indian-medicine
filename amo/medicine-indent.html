@@ -338,10 +338,10 @@
                                   </div>
                                 </div>
                               </div>
-                              <div class="col col-6 apex-col-auto col-end">
+                              <div class="col col-6 apex-col-auto col-end" style="display: none;" id="schemeDetails">
                                 <div
                                   class="t-Form-fieldContainer t-Form-fieldContainer--stacked t-Form-fieldContainer--stretchInputs apex-item-wrapper apex-item-wrapper--select-list"
-                                  id="P8_SCHEME_NAME_CONTAINER" style="display: none;">
+                                  id="P8_SCHEME_NAME_CONTAINER">
                                   <div class="t-Form-labelContainer">
                                     <label for="P8_SCHEME_NAME" id="P8_SCHEME_NAME_LABEL" class="t-Form-label">Scheme
                                       Name</label>
@@ -374,62 +374,22 @@
                                 </div>
                               </div>
                             </div>
-                            <div class="row ">
-                              <div class="col col-6 apex-col-auto col-start">
-                                <div
-                                  class="t-Form-fieldContainer is-required rel-col t-Form-fieldContainer--stretchInputs t-Form-fieldContainer--indicatorAsterisk t-Form-fieldContainer--large apex-item-wrapper apex-item-wrapper--text-field"
-                                  id="P8_ALLOTTED_REGULAR_CONTAINER" style="display: none;">
-                                  <div class="t-Form-labelContainer col col-2">
-                                    <label for="P8_ALLOTTED_REGULAR" id="P8_ALLOTTED_REGULAR_LABEL"
-                                      class="t-Form-label">Allotted Budget </label>
-                                  </div>
-                                  <div class="t-Form-inputContainer col col-4">
-                                    <div class="t-Form-itemWrapper"><input type="text" id="P8_ALLOTTED_REGULAR"
-                                        name="P8_ALLOTTED_REGULAR" class="text_field apex-item-text" value="" size="30">
-                                    </div>
-                                    <div class="t-Form-itemAssistance">
-                                      <span id="P8_ALLOTTED_REGULAR_error_placeholder" class="a-Form-error"
-                                        data-template-id="428237131064519931341_ET"></span>
-                                      <div class="t-Form-itemRequired" aria-hidden="true">Required</div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="col col-6 apex-col-auto col-end">
-                                <div
-                                  class="t-Form-fieldContainer is-required rel-col t-Form-fieldContainer--stretchInputs t-Form-fieldContainer--indicatorAsterisk t-Form-fieldContainer--large apex-item-wrapper apex-item-wrapper--text-field"
-                                  id="P8_AVAILABLE_REGULAR_CONTAINER" style="display: none;">
-                                  <div class="t-Form-labelContainer col col-2">
-                                    <label for="P8_AVAILABLE_REGULAR" id="P8_AVAILABLE_REGULAR_LABEL"
-                                      class="t-Form-label">Available Budget </label>
-                                  </div>
-                                  <div class="t-Form-inputContainer col col-4">
-                                    <div class="t-Form-itemWrapper"><input type="text" id="P8_AVAILABLE_REGULAR"
-                                        name="P8_AVAILABLE_REGULAR" class="text_field apex-item-text" value=""
-                                        size="30">
-                                    </div>
-                                    <div class="t-Form-itemAssistance">
-                                      <span id="P8_AVAILABLE_REGULAR_error_placeholder" class="a-Form-error"
-                                        data-template-id="428237131064519931341_ET"></span>
-                                      <div class="t-Form-itemRequired" aria-hidden="true">Required</div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="row ">
+
+
+                            <div class="row" id="allotedDetails" style="display:none;">
                               <div class="col col-6 apex-col-auto col-start">
                                 <div
                                   class="t-Form-fieldContainer is-required rel-col t-Form-fieldContainer--stretchInputs t-Form-fieldContainer--indicatorAsterisk t-Form-fieldContainer--large apex-item-wrapper apex-item-wrapper--number-field"
-                                  id="P8_ALLOTTED_SCHEME_CONTAINER" style="display: none;">
+                                  id="P8_ALLOTTED_SCHEME_CONTAINER">
                                   <div class="t-Form-labelContainer col col-2">
                                     <label for="P8_ALLOTTED_SCHEME" id="P8_ALLOTTED_SCHEME_LABEL"
                                       class="t-Form-label">Allotted Scheme Budget </label>
                                   </div>
                                   <div class="t-Form-inputContainer col col-4">
-                                    <div class="t-Form-itemWrapper"><input type="text" id="P8_ALLOTTED_SCHEME"
-                                        name="P8_ALLOTTED_SCHEME" class="number_field apex-item-text apex-item-number"
-                                        value="" size="30" inputmode="decimal" style="text-align:start">
+                                    <div class="t-Form-itemWrapper">
+                                      <input type="text" id="P8_ALLOTTED_SCHEME" name="P8_ALLOTTED_SCHEME"
+                                        class="number_field apex-item-text apex-item-number" value="" size="30"
+                                        inputmode="decimal" style="text-align:start" readonly>
                                     </div>
                                     <div class="t-Form-itemAssistance">
                                       <span id="P8_ALLOTTED_SCHEME_error_placeholder" class="a-Form-error"
@@ -442,7 +402,7 @@
                               <div class="col col-6 apex-col-auto col-end">
                                 <div
                                   class="t-Form-fieldContainer is-required rel-col t-Form-fieldContainer--stretchInputs t-Form-fieldContainer--indicatorAsterisk t-Form-fieldContainer--large apex-item-wrapper apex-item-wrapper--number-field"
-                                  id="P8_AVAILABLE_SCHEME_CONTAINER" style="display: none;">
+                                  id="P8_AVAILABLE_SCHEME_CONTAINER">
                                   <div class="t-Form-labelContainer col col-2">
                                     <label for="P8_AVAILABLE_SCHEME" id="P8_AVAILABLE_SCHEME_LABEL"
                                       class="t-Form-label">Available Scheme Budget </label>
@@ -450,7 +410,7 @@
                                   <div class="t-Form-inputContainer col col-4">
                                     <div class="t-Form-itemWrapper"><input type="text" id="P8_AVAILABLE_SCHEME"
                                         name="P8_AVAILABLE_SCHEME" class="number_field apex-item-text apex-item-number"
-                                        value="" size="30" inputmode="decimal" style="text-align:start">
+                                        value="" size="30" inputmode="decimal" style="text-align:start" readonly>
                                     </div>
                                     <div class="t-Form-itemAssistance">
                                       <span id="P8_AVAILABLE_SCHEME_error_placeholder" class="a-Form-error"
@@ -552,8 +512,9 @@
                                     <label for="P8_AMOUNT" id="P8_AMOUNT_LABEL" class="t-Form-label">Amount</label>
                                   </div>
                                   <div class="t-Form-inputContainer">
-                                    <div class="t-Form-itemWrapper"><select id="P8_AMOUNT" name="P8_AMOUNT" required=""
-                                        class="selectlist apex-item-select" data-native-menu="false" size="1"></select>
+                                    <div class="t-Form-itemWrapper"><input type="text" id="P8_AMOUNT" name="P8_AMOUNT"
+                                        required="" class="number_field apex-item-text apex-item-number" value=""
+                                        size="30" maxlength="40" inputmode="decimal" style="text-align:start">
                                     </div>
                                     <span id="P8_AMOUNT_error_placeholder" class="a-Form-error"
                                       data-template-id="428237130876298931341_ET"></span>
@@ -916,20 +877,179 @@
         const selectedPackSize = $(this).val();
 
         if (selectedMedicine) {
-          fetchAndPopulateDropdown({
-            payload: {
-              action: "function_call",
-              function_name: "im_medicine_price_fn",
-              params: { p_medicine_name: selectedMedicine, p_pack_size: selectedPackSize }
+          $.ajax({
+            url: apiUrl,
+            method: 'POST',
+            headers: {
+              'X-APP-Key': 'edm',
+              'X-APP-Name': 'edm'
             },
-            dropdownId: "P8_AMOUNT",
-            placeholder: "--Select Amount--"
+            data: {
+              data: encryptData({
+                action: "function_call",
+                function_name: "im_medicine_price_fn",
+                params: { p_medicine_name: selectedMedicine, p_pack_size: selectedPackSize }
+              })
+            },
+            dataType: 'json',
+            success(response) {
+              const decrypted = decryptData(response.data);
+              console.log("Decrypted Amount Data:", decrypted);
+
+              if (Array.isArray(decrypted) && decrypted.length > 0) {
+                const amount = decrypted[0].im_medicine_price_fn || '';
+                $('#P8_AMOUNT').val(amount); // Set value in input field
+              } else {
+                $('#P8_AMOUNT').val('');
+              }
+            },
+            error(xhr, status, error) {
+              console.error("im_medicine_price_fn API Error:", error);
+              $('#P8_AMOUNT').val('');
+            }
           });
         } else {
-          // Clear medicine dropdown if no institution selected
-          $('#P8_AMOUNT').empty().append('<option value="">--Select Medicine--</option>');
+          $('#P8_AMOUNT').val('');
         }
       });
+      // $('#P8_INDENT_TYPE').on('change', function () {
+      //   const indentTypeValue = $('#P8_INDENT_TYPE').val(); // Gets selected value
+      //   const indentTypeText = $('#P8_INDENT_TYPE option:selected').text().trim().toLowerCase(); // Gets selected text
+
+      //   const allotedDetails = document.getElementById('allotedDetails');
+      //   const schemeDetails = document.getElementById('schemeDetails');
+
+      //   if (indentTypeText === "regular") {
+      //     (schemeDetails).hide();
+      //     allotedDetails.show();
+      //   } else {
+      //     schemeDetails.show();
+      //     allotedDetails.show();
+      //   }
+      // });
+      $('#P8_INDENT_TYPE').on('change', function () {
+        const indentTypeText = $('#P8_INDENT_TYPE option:selected').text().trim();
+        const $allotedDetails = $('#allotedDetails');
+        const $schemeDetails = $('#schemeDetails');
+        const $schemeDropdown = $('#P8_SCHEME_NAME');
+
+        // Reset values
+        $('#P8_ALLOTTED_SCHEME').val('');
+        $('#P8_AVAILABLE_SCHEME').val('');
+        $schemeDropdown.empty().append('<option value="">Select Scheme</option>');
+
+        // Get local storage values
+        const district = localStorage.getItem('userDistrict');
+        const nameOfTheInstitution = localStorage.getItem('userInstitutionName');
+        const system = localStorage.getItem('userSystem');
+
+        if (!district || !nameOfTheInstitution || !system || !indentTypeText) {
+          console.warn("Missing required parameters");
+          return;
+        }
+
+        if (indentTypeText.toLowerCase() === "regular") {
+          // Regular - hide scheme dropdown
+          $schemeDetails.hide();
+          $allotedDetails.show();
+
+          // Call im_regular_scheme_all_avl_fn with null scheme
+          const payload = {
+            action: "function_call",
+            function_name: "im_regular_scheme_all_avl_fn",
+            params: [district, nameOfTheInstitution, system, null, indentTypeText]
+          };
+
+          callIndentDetailsAPI(payload);
+
+        } else if (indentTypeText.toLowerCase() === "scheme") {
+          // Scheme - show dropdown and fetch schemes
+          $schemeDetails.show();
+          $allotedDetails.show();
+
+          const schemePayload = {
+            action: "function_call",
+            function_name: "im_scheme_name_fn",
+            params: {}
+          };
+
+          $.ajax({
+            url: apiUrl,
+            method: 'POST',
+            headers: {
+              'X-APP-Key': 'edm',
+              'X-APP-Name': 'edm'
+            },
+            data: {
+              data: encryptData(schemePayload)
+            },
+            dataType: 'json',
+            success(response) {
+              const decrypted = decryptData(response.data);
+              if (Array.isArray(decrypted)) {
+                decrypted.forEach(item => {
+                  const schemeName = item.scheme || item.scheme; // adjust key name if different
+                  $schemeDropdown.append(`<option value="${schemeName}">${schemeName}</option>`);
+                });
+              }
+            },
+            error(xhr, status, error) {
+              console.error(`Error fetching schemes:`, error);
+            }
+          });
+        }
+      });
+
+      // When scheme name changes (only for 'Scheme' indent type)
+      $('#P8_SCHEME_NAME').on('change', function () {
+        const selectedScheme = $(this).val();
+        const indentTypeText = $('#P8_INDENT_TYPE option:selected').text().trim();
+        const district = localStorage.getItem('userDistrict');
+        const nameOfTheInstitution = localStorage.getItem('userInstitutionName');
+        const system = localStorage.getItem('userSystem');
+
+        if (!selectedScheme || !district || !nameOfTheInstitution || !system) return;
+
+        const payload = {
+          action: "function_call",
+          function_name: "im_regular_scheme_all_avl_fn",
+          params: [district, nameOfTheInstitution, system, selectedScheme, indentTypeText]
+        };
+
+        callIndentDetailsAPI(payload);
+      });
+
+      function callIndentDetailsAPI(payload) {
+        $.ajax({
+          url: apiUrl,
+          method: 'POST',
+          headers: {
+            'X-APP-Key': 'edm',
+            'X-APP-Name': 'edm'
+          },
+          data: {
+            data: encryptData(payload)
+          },
+          dataType: 'json',
+          success(response) {
+            const decrypted = decryptData(response.data);
+            if (Array.isArray(decrypted)) {
+              decrypted.forEach(item => {
+                const lowerName = item.name.toLowerCase();
+                if (lowerName.includes("allotted")) {
+                  $('#P8_ALLOTTED_SCHEME').val(item.available);
+                }
+                if (lowerName.includes("available")) {
+                  $('#P8_AVAILABLE_SCHEME').val(item.available);
+                }
+              });
+            }
+          },
+          error(xhr, status, error) {
+            console.error(`${payload.function_name} API Error:`, error);
+          }
+        });
+      }
 
       $('#submitBtn').on('click', async function (event) {
         event.preventDefault();
@@ -948,7 +1068,7 @@
         var quantity = $('#P8_QUANTITY').val()?.trim();
         var amount = $('#P8_AMOUNT').val()?.trim();
         var totalAmount = $('#P8_TOTAL_AMOUNT').val()?.trim();
-
+        var schemeName = $('#P8_SCHEME_NAME').val()?.trim();
         // Basic validation function
         function showError(selector, message) {
           $(selector).after(`<div class="field-error" style="color:red;font-size:12px;">${message}</div>`);
@@ -988,7 +1108,7 @@
             p_financial_year: financialYear,
             p_district: district,
             p_system: system,
-            scheme: indentType,
+            p_scheme: schemeName,
             p_institution_type: institutionType,
             p_stock: stockAvailable
 
@@ -1012,6 +1132,7 @@
             alert("Inserted Successfully");
           },
           error: function (xhr, status, error) {
+            showErrorToast("Failed to insert data. Please try again.");
             console.error("API call failed:", {
               status: xhr.status,
               statusText: xhr.statusText,
