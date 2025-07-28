@@ -71,6 +71,7 @@ async function initializeUserSession(mobnumber) {
                             institutionName: decrypted.name_of_the_institution || '',
                             system: decrypted.system || '',
                             name: decrypted.name || '',
+                            designation: decrypted.designation || ''
                         };
 
                         localStorage.setItem('userRole', decrypted.login_type || '');
@@ -78,6 +79,7 @@ async function initializeUserSession(mobnumber) {
                         localStorage.setItem('userName', decrypted.name);
                         localStorage.setItem('userInstitutionName', decrypted.name_of_the_institution || '');
                         localStorage.setItem('userSystem', decrypted.system || '');
+                        localStorage.setItem('userDesignation', decrypted.designation || '');
 
                         // localStorage.setItem('userId', decrypted.user_id || '');
 
