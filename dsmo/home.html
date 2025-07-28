@@ -135,7 +135,7 @@
                                       <label for="P1_DESIGNATION_OF_OFFICER" id="P1_DESIGNATION_OF_OFFICER_LABEL" class="t-Form-label">Designation :</label>
                                     </div>
                                     <div class="t-Form-inputContainer col col-4">
-                                      <div class="t-Form-itemWrapper"><input type="hidden" id="P1_DESIGNATION_OF_OFFICER" name="P1_DESIGNATION_OF_OFFICER" value="District Siddha Medical Officer"><input type="hidden" data-for="P1_DESIGNATION_OF_OFFICER" value="aoGgU0zlRJboUAK3yqbH3cEMRK2Ljon2dltUxJaune92qsw1dIa_RIuhdIahUV2oIXqic1pJKtdvb5Q1tmoDxw"><span id="P1_DESIGNATION_OF_OFFICER_DISPLAY" class="display_only apex-item-display-only apex-item-has-icon" data-escape="true">District Siddha Medical Officer</span><span class="apex-item-icon fa fa-stethoscope" aria-hidden="true"></span></div>
+                                      <div class="t-Form-itemWrapper"><input type="hidden" id="P1_DESIGNATION_OF_OFFICER" name="P1_DESIGNATION_OF_OFFICER" value="District Siddha Medical Officer"><input type="hidden" data-for="P1_DESIGNATION_OF_OFFICER" value="aoGgU0zlRJboUAK3yqbH3cEMRK2Ljon2dltUxJaune92qsw1dIa_RIuhdIahUV2oIXqic1pJKtdvb5Q1tmoDxw"><span id="P1_DESIGNATION_OF_OFFICER_DISPLAY" class="display_only apex-item-display-only apex-item-has-icon" data-escape="true"></span><span class="apex-item-icon fa fa-stethoscope" aria-hidden="true"></span></div>
                                       <span id="P1_DESIGNATION_OF_OFFICER_error_placeholder" class="a-Form-error" data-template-id="428237130780249931341_ET"></span>
                                     </div>
                                   </div>
@@ -231,6 +231,7 @@
     // Get values from localStorage
     var userName = localStorage.getItem("userName");
     var userDistrict = localStorage.getItem("userDistrict");
+    var userDesignation = localStorage.getItem("userDesignation")
 
     // Check and bind values if they exist
     if (userName) {
@@ -240,6 +241,11 @@
     if (userDistrict) {
       $('#P1_DISTRICT_DISPLAY').text(userDistrict);
     }
+
+    if (userDesignation) {
+      $('#P1_DESIGNATION_OF_OFFICER_DISPLAY').text(userDesignation);
+    } 
+
   });
 </script>
 
