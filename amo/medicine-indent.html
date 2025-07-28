@@ -89,18 +89,7 @@
         </div>
         <div class="t-Header-navBar">
           <div class="t-Header-navBar--start"></div>
-          <div class="t-Header-navBar--center">
-            <ul class="t-NavigationBar " id="428237243222882931397">
-              <li class="t-NavigationBar-item ">
-                <button class="t-Button t-Button--icon t-Button t-Button--header t-Button--navBar" type="button"
-                  id="L428237300758551931558" data-menu="menu_L428237300758551931558" title="" aria-haspopup="menu">
-                  <span class="t-Icon fa fa-user" aria-hidden="true"></span><span
-                    class="t-Button-label">Siva</span><span class="t-Button-badge"></span><span
-                    class="a-Icon icon-down-arrow" aria-hidden="true"></span>
-                </button>
-              </li>
-            </ul>
-          </div>
+          <div id="globalHeader"></div>
           <div class="t-Header-navBar--end"></div>
         </div>
       </div>
@@ -117,13 +106,8 @@
       <div class="t-Header-nav">
         <div class="t-Header-nav-list js-tabLike js-tabLike a-MenuBar a-MenuBar--overflow a-MenuBar--tabs"
           id="t_MenuNav" role="menubar">
-          <ul role="none">
-            <li role="none" id="t_MenuNav_0" class="a-MenuBar-item a-Menu--current"><a role="menuitem"
-                class="a-MenuBar-label" aria-current="true" id="t_MenuNav_0i" href="../amo/home.html">Home</a></li>
-            <li role="none" id="t_MenuNav_1" class="a-MenuBar-item"><a role="menuitem" class="a-MenuBar-label"
-                id="t_MenuNav_1i" href="../amo/received-medicine.html" tabindex="-1">Received Medicine Report </a></li>
-            <li role="none" id="t_MenuNav_2" class="a-MenuBar-item"><a role="menuitem" class="a-MenuBar-label"
-                id="t_MenuNav_2i" href="../amo/patient-details.html" tabindex="-1">Patient Details</a></li>
+          <ul id="nav-links">
+            <div id="navbar-container"></div>
           </ul>
         </div>
       </div>
@@ -474,7 +458,8 @@
                                   </div>
                                   <div class="t-Form-inputContainer">
                                     <div class="t-Form-itemWrapper"><input type="text" id="P8_STOCK_AVAILBLE"
-                                        name="P8_STOCK_AVAILBLE" class="text_field apex-item-text" value="" size="30">
+                                        name="P8_STOCK_AVAILBLE" class="text_field apex-item-text" value="" size="30"
+                                        readonly>
                                     </div>
                                     <div class="t-Form-itemAssistance">
                                       <span id="P8_STOCK_AVAILBLE_error_placeholder" class="a-Form-error"
@@ -746,7 +731,7 @@
   <!-- DataTables -->
   <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
   <script src="../assets/js/widget.treeView.min.js"></script>
-  <script type="module" src="../assets/js/commonMenu.js"></script>
+  <script src="../assets/common.js"></script>
   <script src="../assets/js/widget.interactiveReport.min.js"></script>
   <script src="../assets/js/widget.iconList.min.js"></script>
   <script src="../assets/js/widget.stickyTableHeader.min.js"></script>
@@ -853,6 +838,8 @@
       }
 
       $('#P8_MEDICINE_NAME').off('change').on('change', function () {
+        $('#P8_AMOUNT').val('');
+        $('#P8_STOCK_AVAILBLE').val('');
         const selectedMedicine = $(this).val();
 
         if (selectedMedicine) {
@@ -873,7 +860,11 @@
 
 
       $('#P8_PACKING_SIZE').off('change').on('change', function () {
+        $('#P8_AMOUNT').val('');
+        $('#P8_STOCK_AVAILBLE').val('');
+
         const selectedMedicine = $('#P8_MEDICINE_NAME').val();
+        const selectedInstitution = $('#P8_NAME_OF_THE_INSTITUTION').val();
         const selectedPackSize = $(this).val();
 
         if (selectedMedicine) {
@@ -911,6 +902,43 @@
         } else {
           $('#P8_AMOUNT').val('');
         }
+        if (selectedPackSize) {
+          $.ajax({
+            url: apiUrl,
+            method: 'POST',
+            headers: {
+              'X-APP-Key': 'edm',
+              'X-APP-Name': 'edm'
+            },
+            data: {
+              data: encryptData({
+                action: "function_call",
+                function_name: "im_avl_stock_fn",
+                params: { p_medicine_name: selectedMedicine, p_institution: selectedInstitution, p_pack_size: selectedPackSize }
+              })
+            },
+            dataType: 'json',
+            success(response) {
+              const decrypted = decryptData(response.data);
+              console.log("Decrypted Amount Data:", decrypted);
+
+              if (Array.isArray(decrypted) && decrypted.length > 0) {
+                const amount = decrypted[0].im_avl_stock_fn || '';
+                $('#P8_STOCK_AVAILBLE').val(amount); // Set value in input field
+              } else {
+                $('#P8_STOCK_AVAILBLE').val('');
+              }
+            },
+            error(xhr, status, error) {
+              console.error("im_avl_stock_fn API Error:", error);
+              $('#P8_STOCK_AVAILBLE').val('');
+            }
+          });
+        } else {
+          $('#P8_STOCK_AVAILBLE').val('');
+        }
+
+
       });
       // $('#P8_INDENT_TYPE').on('change', function () {
       //   const indentTypeValue = $('#P8_INDENT_TYPE').val(); // Gets selected value
@@ -1145,266 +1173,7 @@
         console.log(payload);
       });
 
-      //   $('#P7_LOCATION').on('change', function () {
-      //     const selectedTaluk = $(this).val();
-      //     console.log("Selected Taluk:", selectedTaluk);
 
-      //     const operatorPayload = {
-      //       action: "function_call",
-      //       function_name: "operator_id_fn", // ✅ Confirm this matches your backend
-      //       params: {
-      //         taluk: selectedTaluk || ''
-      //       }
-      //     };
-
-      //     $.ajax({
-      //       url: apiUrl,
-      //       method: 'POST',
-      //       headers: {
-      //         'X-APP-Key': 'edm',
-      //         'X-APP-Name': 'edm'
-      //       },
-      //       data: {
-      //         data: encryptData(operatorPayload)
-      //       },
-      //       dataType: 'json',
-      //       success(response) {
-      //         const decrypted = decryptData(response.data);
-      //         console.log("Decrypted Operator Data:", decrypted);
-
-      //         const $dropdown = $('#P7_OPERATOR');
-      //         $dropdown.empty().append('<option value="" class="placeholder">--Select Operator--</option>');
-
-      //         decrypted.forEach(item => {
-      //           $dropdown.append(`<option value="${item.esevai_id}">${item.esevai_id_name}</option>`);
-      //         });
-      //       },
-      //       error(xhr, status, error) {
-      //         console.error("Operator API Error:", error);
-      //         alert("Failed to load operator data.");
-      //       }
-      //     });
-      //   });
-
-      //   $('#P7_OPERATOR').on('change', function () {
-      //     const selectedOperator = $(this).val();
-      //     console.log("Selected Operator:", selectedOperator);
-
-      //     const issueTypePayload = {
-      //       action: "function_call",
-      //       function_name: "issue_type_fn",
-      //       params: {
-
-      //       }
-      //     };
-
-      //     $.ajax({
-      //       url: apiUrl,
-      //       method: 'POST',
-      //       headers: {
-      //         'X-APP-Key': 'edm',
-      //         'X-APP-Name': 'edm'
-      //       },
-      //       data: {
-      //         data: encryptData(issueTypePayload)
-      //       },
-      //       dataType: 'json',
-      //       success(response) {
-      //         const decrypted = decryptData(response.data);
-      //         console.log("Decrypted Issue Type Data:", decrypted);
-
-      //         const $dropdown = $('#P7_ISSUE_TYPE');
-      //         $dropdown.empty().append('<option value="" class="placeholder">--Select Issue Type--</option>');
-
-      //         decrypted.forEach(item => {
-      //           $dropdown.append(`<option value="${item.issue_type_desc}">${item.issue_type_desc}</option>`);
-      //         });
-      //       },
-      //       error(xhr, status, error) {
-      //         console.error("Issue Type API Error:", error);
-      //         alert("Failed to load issue types.");
-      //       }
-      //     });
-      //   });
-
-      //   $('#P7_ISSUE_TYPE').on('change', function () {
-      //     const issueType = $(this).val();
-      //     console.log("Selected Operator:", issueType);
-
-      //     const subCategoryPayload = {
-      //       action: "function_call",
-      //       function_name: "issue_subtype_desc_fn",
-      //       params: {
-      //         issueType: issueType
-      //       }
-      //     };
-
-      //     $.ajax({
-      //       url: apiUrl,
-      //       method: 'POST',
-      //       headers: {
-      //         'X-APP-Key': 'edm',
-      //         'X-APP-Name': 'edm'
-      //       },
-      //       data: {
-      //         data: encryptData(subCategoryPayload)
-      //       },
-      //       dataType: 'json',
-      //       success(response) {
-      //         const decrypted = decryptData(response.data);
-      //         console.log("Decrypted Issue Type Data:", decrypted);
-
-      //         const $dropdown = $('#P7_SHORT_DESCRIPTION');
-      //         $dropdown.empty().append('<option value="" class="placeholder">--Select Issue Type--</option>');
-
-      //         decrypted.forEach(item => {
-      //           $dropdown.append(`<option value="${item.issue_subtype}">${item.issue_subtype}</option>`);
-      //         });
-      //       },
-      //       error(xhr, status, error) {
-      //         console.error("Issue Type API Error:", error);
-      //         alert("Failed to load issue types.");
-      //       }
-      //     });
-      //   });
-
-      //   $('#P7_SHORT_DESCRIPTION').on('change', function () {
-      //     const subCategory = $(this).val();
-      //     console.log("subCategory:", subCategory);
-
-      //     const subCategoryPayload = {
-      //       action: "function_call",
-      //       function_name: "impacted_apk_fn",
-      //       params: {
-
-      //       }
-      //     };
-
-      //     $.ajax({
-      //       url: apiUrl,
-      //       method: 'POST',
-      //       headers: {
-      //         'X-APP-Key': 'edm',
-      //         'X-APP-Name': 'edm'
-      //       },
-      //       data: {
-      //         data: encryptData(subCategoryPayload)
-      //       },
-      //       dataType: 'json',
-      //       success(response) {
-      //         const decrypted = decryptData(response.data);
-      //         console.log("Decrypted Issue Type Data:", decrypted);
-
-      //         const $dropdown = $('#P7_IMPACTED_APPLICATION');
-      //         $dropdown.empty().append('<option value="" class="placeholder">--Select Issue Type--</option>');
-
-      //         decrypted.forEach(item => {
-      //           $dropdown.append(`<option value="${item.service_name}">${item.service_name}</option>`);
-      //         });
-      //       },
-      //       error(xhr, status, error) {
-      //         console.error("Issue Type API Error:", error);
-      //         alert("Failed to load issue types.");
-      //       }
-      //     });
-      //   });
-
-
-
-      //   $('#submitBtn').on('click', async function (event) {
-      //     debugger
-      //     event.preventDefault();
-
-
-      //     if (checkFile('#P7_UPLOAD_DROPZONE_input')) {
-      //       const uploadedFiles = await processFile('#P7_UPLOAD_DROPZONE_input');
-      //       renderFileList(uploadedFiles);
-
-      //       uploadPayload = uploadedFiles.map(file => ({
-      //         p_upload: file.fileBase64,
-      //         p_attach_filename: file.filename,
-      //         p_attach_mimetype: file.mimetype,
-      //       }));
-      //     }
-      //     function getFormattedDateTime() {
-      //       return new Date().toISOString(); // Format: YYYY-MM-DDTHH:mm:ss.sssZ
-      //     }
-
-      //     var taluk = $('#P7_LOCATION').val();
-      //     var operator = $('#P7_OPERATOR').val();
-      //     var issue_type = $('#P7_ISSUE_TYPE').val();
-      //     var sub_category = $('#P7_SHORT_DESCRIPTION').val();
-      //     var impacted_applications = $('#P7_IMPACTED_APPLICATION').val();
-      //     var short_des = $('#P7_SHORT').val();
-      //     var full_des = $('#P7_FULL_DESCRIPTION').val();
-      //     var contact_type = $('#P7_CONTACT_TYPE').val();
-      //     var requestedgroup = $('#P7_REQUESTED_GROUP').val();
-      //     const timestamp = getFormattedDateTime();
-      //     const payload = {
-      //       action: "function_call",
-      //       function_name: "insert_edm_service_request_fn",
-      //       params: {
-      //         p_operator: operator,
-      //         p_location: taluk,
-      //         p_issue_type: issue_type,
-      //         p_impacted_application: impacted_applications,
-      //         p_priority: "priority",
-      //         p_short_description: sub_category,
-      //         p_full_description: full_des,
-      //         p_additional_information: short_des,
-      //         p_helpdesk_notes: '',
-      //         p_history: '',
-      //         p_upload: uploadPayload[0].p_upload,
-      //         p_attach_mimetype: uploadPayload[0].p_attach_mimetype,
-      //         p_attach_filename: uploadPayload[0].p_attach_filename,
-      //         p_request_created: timestamp,
-      //         p_requested_by: username,
-      //         p_requested_district: district,
-      //         p_requested_group: requestedgroup,
-      //         p_contact_type: contact_type,
-      //         p_assignment_group: '',
-      //         p_product_rating: '',
-      //         p_short: short_des,
-      //         p_created_by: userId,
-
-      //       }
-      //     }
-
-      //     console.log(payload);
-      //     $.ajax({
-      //       url: apiUrl,
-      //       method: 'POST',
-      //       headers: {
-      //         'X-APP-Key': 'edm',
-      //         'X-APP-Name': 'edm'
-      //       },
-      //       data: {
-      //         data: encryptData(payload)
-      //       },
-      //       dataType: 'json',
-      //       success: function (response) {
-      //         showSuccessToast("Submitted successfully.");
-      //         setTimeout(() => {
-      //           location.reload();
-      //         }, 1000);
-      //         // location.reload();
-
-      //       },
-      //       error(xhr, status, error) {
-      //         console.error("Issue Type API Error:", error);
-      //         alert("Failed to load issue types.");
-      //       }
-      //     });
-
-      //   });
-
-      //   $('#exitBtn').on('click', function (event) {
-      //     event.preventDefault();
-      //     event.stopPropagation();
-      //     console.log("Exit button clicked");
-      //     window.location.href = 'allrequest.html';
-      //   });
-      // });
     });
   </script>
 </body>

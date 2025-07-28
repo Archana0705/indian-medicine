@@ -89,13 +89,8 @@
       <div class="t-Header-nav">
         <div class="t-Header-nav-list js-tabLike js-tabLike a-MenuBar a-MenuBar--overflow a-MenuBar--tabs"
           id="t_MenuNav" role="menubar">
-          <ul role="none">
-            <li role="none" id="t_MenuNav_0" class="a-MenuBar-item a-Menu--current"><a role="menuitem"
-                class="a-MenuBar-label" aria-current="true" id="t_MenuNav_0i" href="../amo/home.html">Home</a></li>
-            <li role="none" id="t_MenuNav_1" class="a-MenuBar-item"><a role="menuitem" class="a-MenuBar-label"
-                id="t_MenuNav_1i" href="../amo/received-medicine.html" tabindex="-1">Received Medicine Report </a></li>
-            <li role="none" id="t_MenuNav_2" class="a-MenuBar-item"><a role="menuitem" class="a-MenuBar-label"
-                id="t_MenuNav_2i" href="../amo/patient-details.html" tabindex="-1">Patient Details</a></li>
+          <ul id="nav-links">
+            <div id="navbar-container"></div>
           </ul>
         </div>
       </div>
@@ -484,7 +479,7 @@
   <!-- DataTables -->
   <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
   <script src="../assets/js/widget.treeView.min.js"></script>
-  <script type="module" src="../assets/js/commonMenu.js"></script>
+  <script src="../assets/common.js"></script>
   <script src="../assets/js/widget.interactiveReport.min.js"></script>
   <script src="../assets/js/widget.iconList.min.js"></script>
   <script src="../assets/js/widget.stickyTableHeader.min.js"></script>
@@ -699,10 +694,6 @@
         }
 
         if (!isValid) return;
-
-        // Optional: upload file processing logic here if needed
-        const uploadedFiles = await processFile('#P7_UPLOAD_DROPZONE_input');
-        const uploadFile = uploadedFiles ? uploadedFiles[0] : null;
 
         // Prepare payload with correct params
         const payload = {
