@@ -283,25 +283,24 @@
                                       style="width:100%">
                                       <thead>
                                         <tr>
-                                          <th>SI No</th>
-                                          <th>Medicine Name</th>
-                                          <th>Packing Size</th>
-                                          <th>Amount</th>
-                                          <th>Indented Quantity</th>
-                                          <th>Godown Stock Availablity</th>
-                                          <th>Supply Quantity</th>
-                                          <th>supply Price</th>
-                                          <th>Percentage of Despatch Quantity</th>
-                                          <th>Balance Quantity to be Supplied</th>
-                                          <th>Remarks</th>
-                                          <th>Received Quantity</th>
-                                          <th>Price</th>
-                                          <th>Name of the institution</th>
-                                          <th>Quarters</th>
-                                          <th>Financial Year</th>
-                                          <th>Name of the district</th>
-                                          <th>System</th>
-                                          <th>Institution type</th>
+                                        <th></th>
+                                        <th><input type="checkbox" id="selectAllCheckbox" /></th>
+                                          <th>sno</th>
+                                          <th>medicine_name</th>
+                                          <th>packing_size</th>
+                                          <th>amount</th>
+                                          <th>quantity</th>
+                                          <th>total_amount</th>
+                                          <th>system</th>
+                                          <th>indent_type</th>
+                                          <th>scheme_name</th>
+                                          <th>name_of_the_institution</th>
+                                          <th>quarters</th>
+                                          <th>created_date</th>
+                                          <th>financial_year</th>
+                                          <th>name_of_the_district</th>
+                                          <th>institution_type</th>
+                                          <th>status</th> 
                                         </tr>
                                       </thead>
                                       <tbody></tbody>
@@ -352,6 +351,26 @@
       <div class="t-Body-inlineDialogs" id="t_Body_inlineDialogs"></div>
 
     </form>
+
+
+    <!-- show grid click modal -->
+    <!-- Bootstrap 5.2 Modal -->
+<div class="modal fade" id="indentDetailsModal" tabindex="-1" aria-labelledby="indentDetailsModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="indentDetailsModalLabel">View Indent Details - DSMO</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="indentDetailsBody">
+        <!-- Indent details will be injected here -->
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+    <!-- show grid click modal -->
 
      <!-- jQuery -->
   <script src="../assets/js/jquery-3.6.0.min.js"></script>
@@ -422,7 +441,7 @@
   }
 
     // District
-    fetchAndPopulateDropdown({
+    fetchAndPopulateDropdown({ 
       payload: {
         action: "function_call",
         function_name: "im_get_district_list_fn",   
@@ -459,7 +478,7 @@
           function_name: "im_get_institution_list_fn",
           params: {
             mobnumber: mobile 
-            // district: selectedDistrict  
+            
           }
         },
         dropdownId: "P4_NAME_OF_THE_INSTITUTION",
@@ -584,14 +603,29 @@
     loadDataToTable({  
       tableId: 'medicineDetailsWrap',
       apiUrl,
-      httpMethod: 'POST',
+      httpMethod: 'POST', 
       payload: encryptData(payload),
       rowBuilder: (item) => {
         return `
-          <tr>
+          <tr> 
+           <td class="u-tL"><i class="bi bi-pencil-square edit-indent" data-sno="${item.sno}"></i></td> 
+           <td class="u-tC"><input type="checkbox" class="rowCheckbox" data-id="${item.sno}" /></td>
+            <td class="u-tC">${item.sno || 'N/A'}</td>
             <td class="u-tC">${item.medicine_name || 'N/A'}</td>
             <td class="u-tC">${item.packing_size || 'N/A'}</td>
             <td class="u-tC">${item.amount || 'N/A'}</td>
+            <td class="u-tC">${item.quantity || 'N/A'}</td>
+            <td class="u-tC">${item.total_amount || 'N/A'}</td>
+            <td class="u-tC">${item.system || 'N/A'}</td>
+            <td class="u-tC">${item.indent_type || 'N/A'}</td>
+            <td class="u-tC">${item.scheme_name || 'N/A'}</td>
+            <td class="u-tC">${item.name_of_the_institution || 'N/A'}</td>
+            <td class="u-tC">${item.quarters || 'N/A'}</td>
+            <td class="u-tC">${item.created_date || 'N/A'}</td>
+            <td class="u-tC">${item.financial_year || 'N/A'}</td>
+            <td class="u-tC">${item.name_of_the_district || 'N/A'}</td>
+            <td class="u-tC">${item.institution_type || 'N/A'}</td>
+            <td class="u-tC">${item.status || 'N/A'}</td>   
           </tr>
         `;
       },
@@ -609,12 +643,12 @@
       params: { 
         p_mobile: mobile, 
         p_district: district,
-        p_institute: institute, 
-        p_year: year,
-        p_quarter: quarter,
-        p_indent: indent,
-        p_scheme: scheme,     
-        p_system: system
+        p_institute: institute || null, 
+        p_year: year || null,
+        p_quarter: quarter || null,
+        p_indent: indent || null,
+        p_scheme: scheme || null,     
+        p_system: system || null
         
          
       }
@@ -624,7 +658,269 @@
 
 <!-- search on click -->
 
+<!-- row data fetch -->
+<script>
+// Handle pencil icon click
+$(document).on('click', '.edit-indent', function () {
+  const sno = $(this).data('sno'); // from <i data-sno="..." />
+  if (!sno) {
+    alert('Invalid SNO');
+    return;
+  }
 
+  const payload = {
+    action: "function_call",
+    function_name: "im_fetch_indent_medicine_by_sno_fn",
+    params: { p_sno: sno }
+  };
+
+  fetchIndentDetails(payload);
+});
+
+
+</script>
+<!-- row data fetch -->
+
+<!-- modal content data -->
+<script>
+
+function fetchIndentDetails(payload) {
+  $.ajax({
+    url: apiUrl,
+    method: 'POST',
+    headers: {
+      'X-APP-Key': 'edm',
+      'X-APP-Name': 'edm'
+    },
+    data: {
+      data: encryptData(payload)
+    },
+    dataType: 'json',
+    success(response) {
+      const decrypted = decryptData(response.data);
+      console.log("Fetched Indent Details:", decrypted);
+
+      // You can customize the display based on your design
+      const html = buildIndentDetailsHTML(decrypted[0]); // assuming first object
+      $('#indentDetailsBody').html(html);
+
+      // Show modal
+      const modal = new bootstrap.Modal(document.getElementById('indentDetailsModal'));
+      modal.show();
+    },
+    error(xhr, status, error) {
+      console.error("Fetch Indent Error:", error);
+      alert("Failed to load indent details.");
+    }
+  });
+}
+
+
+</script>
+<!-- modal content data -->
+
+<script>
+function buildIndentDetailsHTML(data) {
+  return `
+    <div class="container">
+      <div class="row mb-3">
+        <div class="col-md-6"><strong>Medicine Name:</strong> ${data.medicine_name || 'N/A'}</div>
+        <div class="col-md-6"><strong>Packing Size:</strong> ${data.packing_size || 'N/A'}</div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-6"><strong>Amount:</strong> ${data.amount || 'N/A'}</div>
+        <div class="col-md-6"><strong>Quantity:</strong> <input type="number" class="form-control" id="quantityInput" value="${data.quantity || ''}" /></div> 
+        <input type="hidden" id="snoHidden" value="${data.sno}" />   
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-6"><strong>Total Amount:</strong> ${data.total_amount || 'N/A'}</div>
+        <div class="col-md-6"><strong>System:</strong> ${data.system || 'N/A'}</div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-6"><strong>Indent Type:</strong> ${data.indent_type || 'N/A'}</div>
+        <div class="col-md-6"><strong>Scheme Name:</strong> ${data.scheme_name || 'N/A'}</div>
+      </div>
+    <div class="row mb-3">
+        <div class="col-md-6"><strong>Name Of The Institution:</strong> ${data.name_of_the_institution || 'N/A'}</div>
+        <div class="col-md-6"><strong>Quarters:</strong> ${data.quarters || 'N/A'}</div>
+      </div>
+    <div class="row mb-3">
+        <div class="col-md-6"><strong>Created Date:</strong> ${data.created_date || 'N/A'}</div>
+        <div class="col-md-6"><strong>Financial Year:</strong> ${data.financial_year || 'N/A'}</div>
+      </div>
+    <div class="row mb-3">
+        <div class="col-md-6"><strong>Name Of The District:</strong> ${data.name_of_the_district || 'N/A'}</div>
+        <div class="col-md-6"><strong>Institution Type:</strong> ${data.institution_type || 'N/A'}</div>
+      </div>
+    <div class="row mb-3">
+        <div class="col-md-6"><strong>Status:</strong> ${data.status || 'N/A'}</div>
+      </div>
+
+    <div class="t-Region-buttons t-Region-buttons--bottom">
+      <div class="t-Region-buttons-left">
+        <button class="t-Button js-ignoreChange" type="button"><span class="t-Button-label">Cancel</span>
+        </button>
+        </div>
+        <div class="t-Region-buttons-right">
+        <button class="t-Button " type="button"><span class="t-Button-label" id="delete_medicine">Delete</span></button> 
+        <button class="t-Button t-Button--hot " type="button" id="apply_changes"><span class="t-Button-label">Apply Changes</span>
+        </button>
+      </div>
+    </div>
+
+
+
+      <!-- Add more rows as needed -->
+    </div>
+  `;
+}
+
+</script>
+
+
+<!-- apply quantity -->
+<script> 
+
+  $(document).on('click', '#apply_changes', function () { 
+
+    console.log('Button clicked'); // for testing
+
+    const sno = $('#snoHidden').val();
+    const quantity = $('#quantityInput').val(); 
+    const user = localStorage.getItem("userMobileNumber");
+
+     console.log('SNO:', sno, 'Quantity:', quantity, 'User:', user); 
+
+    if (!quantity || isNaN(quantity)) {
+      alert("Please enter a valid quantity."); 
+      return;
+    }
+
+    const payload = {
+      action: "function_call",
+      function_name: "im_update_indent_medicine_quantity_fn",
+      params: {
+        p_sno: sno,
+        p_quantity: parseFloat(quantity), 
+        p_user: user
+      }
+    };
+
+    $.ajax({
+      url: apiUrl,
+      method: "POST",
+      headers: {
+        "X-APP-Key": "edm",
+        "X-APP-Name": "edm"
+      },
+      data: {
+        data: encryptData(payload)
+      },
+      success: function (response) {
+        const decrypted = decryptData(response.data);
+        console.log("Update Success:", decrypted);
+        alert("Quantity updated successfully!");
+        // Optionally, refresh the indent view or close modal here
+
+        // ✅ Close the modal
+      $('#indentDetailsModal').modal('hide'); 
+
+      // ✅ Re-fetch and reload table with previous filters
+      const mobile = localStorage.getItem("userMobileNumber");
+      const district = $('#P4_NAME_OF_THE_DISTRICT').val();
+      const institute = $('#P4_NAME_OF_THE_INSTITUTION').val();
+      const year = $('#P4_YEAR').val();
+      const quarter = $('#P4_QUARTER').val();
+      const indent = $('#P4_NAME_OF_THE_INDENT').val();
+      const scheme = $('#P4_NAME_OF_THE_SCHEME').val();
+      const system = $('#P4_SYSTEM').val(); // ✅ now correct selector
+
+      // call your fetchTableData with consistent filter IDs
+      fetchTableData(
+        mobile,
+        district,
+        institute,
+        year,
+        quarter,
+        indent,
+        scheme,
+        system
+      );
+
+
+      },
+      error: function (xhr, status, error) {
+        console.error("API Error:", error);
+        alert("Failed to update quantity.");
+      }
+    });
+  });
+</script>
+
+<!-- apply quantity -->
+
+
+<!-- delete quantity --> 
+<script>
+$(document).on('click', '#delete_medicine', function () {
+  const sno = $('#snoHidden').val(); // Replace with correct ID or source of SNO
+  const user = localStorage.getItem("userMobileNumber") || "unknown";
+
+  if (!sno) {
+    alert("SNO is missing!");
+    return;
+  }
+
+  if (!confirm("Are you sure you want to delete this medicine entry?")) return;
+
+  const payload = {
+    action: "function_call",
+    function_name: "im_delete_indent_medicine_by_sno_fn",
+    params: {
+      p_sno: sno
+    }
+  };
+
+  $.ajax({
+    url: apiUrl, 
+    method: 'POST',
+    headers: {
+      'X-APP-Key': 'edm',
+      'X-APP-Name': 'edm'
+    },
+    data: {
+      data: encryptData(payload)
+    },
+    success: function (response) {
+      const result = decryptData(response.data);
+      console.log("Delete success:", result);
+      alert("Deleted successfully!");
+
+      // ✅ Close modal
+      $('#indentDetailsModal').modal('hide');
+
+      // ✅ Reload table
+      const mobile = localStorage.getItem("userMobileNumber");
+      const district = $('#P4_NAME_OF_THE_DISTRICT').val();
+      const institute = $('#P4_NAME_OF_THE_INSTITUTION').val();
+      const year = $('#P4_YEAR').val();
+      const quarter = $('#P4_QUARTER').val();
+      const indent = $('#P4_NAME_OF_THE_INDENT').val();
+      const scheme = $('#P4_NAME_OF_THE_SCHEME').val();
+      const system = $('#P4_SYSTEM').val();
+
+      fetchTableData(mobile, district, institute, year, quarter, indent, scheme, system);
+    },
+    error: function (xhr, status, error) {
+      console.error("Delete failed:", error);
+      alert("Failed to delete medicine.");
+    }
+  });
+});
+
+</script>
+<!-- delete quantity -->
 
   </body>
 </html>
