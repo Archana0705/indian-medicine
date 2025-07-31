@@ -319,7 +319,9 @@
                   </div>
                   <div class="row ">
                     <div class="col col-5  col-start"><span class="apex-grid-nbsp">&nbsp;</span></div>
-                    <div class="col col-3  "><button class="t-Button t-Button--hot js-ignoreChange t-Button--large t-Button--warning" type="button" id="B330804325601681029243"><span class="t-Button-label">Back</span></button><button onclick="apex.submit({request:'Forward',validate:true});" class="t-Button t-Button--hot u-color-12  t-Button--large t-Button--success" type="button" id="B17765024117820620"><span class="t-Button-label">Approved</span></button></div>
+                    <div class="col col-3  "><button class="t-Button t-Button--hot js-ignoreChange t-Button--large t-Button--warning" type="button" id="B330804325601681029243"><span class="t-Button-label">Back</span></button>
+                      <button class="t-Button t-Button--hot u-color-12  t-Button--large t-Button--success" type="button" id="indent_approve"><span class="t-Button-label">Approved</span></button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -921,6 +923,72 @@ $(document).on('click', '#delete_medicine', function () {
 
 </script>
 <!-- delete quantity -->
+
+<!-- approve -->
+<script>
+$(document).on('click', '#indent_approve', function () {
+  // Get all selected checkbox sno values
+  const selectedSnos = [];
+  $('.rowCheckbox:checked').each(function () {
+    selectedSnos.push($(this).data('id'));
+  });
+
+  if (selectedSnos.length === 0) {
+    alert("Please select at least one entry to approve.");
+    return;
+  }
+
+  if (!confirm("Are you sure you want to approve the selected entries?")) return;
+
+  // Loop over each SNO and send API request
+  selectedSnos.forEach(function (sno) {
+    const payload = {
+      action: "function_call",
+      function_name: "im_approve_indent_requests_fn",
+      params: {  
+        p_sno: sno
+      }
+    };
+
+    $.ajax({
+      url: apiUrl,
+      method: 'POST',
+      headers: {
+        'X-APP-Key': 'edm',
+        'X-APP-Name': 'edm'
+      },
+      data: {
+        data: encryptData(payload)
+      },
+      success: function (response) {
+        const result = decryptData(response.data);
+        console.log("Approved:", result);
+        // Optionally show per-record success or collect all and show once
+      },
+      error: function (xhr, status, error) {
+        console.error("Approval failed for SNO:", sno, error);
+      }
+    });
+  });
+
+  // ✅ After all requests, refresh the table after a slight delay
+  setTimeout(() => {
+    const mobile = localStorage.getItem("userMobileNumber");
+    const district = $('#P4_NAME_OF_THE_DISTRICT').val();
+    const institute = $('#P4_NAME_OF_THE_INSTITUTION').val();
+    const year = $('#P4_YEAR').val();
+    const quarter = $('#P4_QUARTER').val();
+    const indent = $('#P4_NAME_OF_THE_INDENT').val();
+    const scheme = $('#P4_NAME_OF_THE_SCHEME').val();
+    const system = $('#P4_SYSTEM').val();
+
+    fetchTableData(mobile, district, institute, year, quarter, indent, scheme, system);
+    alert("Approval process completed.");
+  }, 1000);
+});
+    
+</script>
+<!-- approve -->
 
   </body>
 </html>
