@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     console.log('DOMContentLoaded triggered');
 
     try {
-        const response = await fetch('../assets/partials/globalHeader.html');
+        const response = await fetch('/assets/partials/globalHeader.html');
         console.log('Fetching globalHeader.html – Status:', response.status);
 
         if (!response.ok) throw new Error('Header file not found');

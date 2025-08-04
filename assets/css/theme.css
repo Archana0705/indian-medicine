@@ -2194,3 +2194,29 @@ a#signOutBtn {
 .headermenu {
   list-style: none;
 }
+
+.a-Menu-subMenu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  z-index: 1000;
+  padding-left: 0;
+  list-style: none;
+  margin: 0;
+  border: 1px solid #ccc;
+  min-width: 180px;
+}
+
+.a-MenuBar-item {
+  position: relative;
+}
+
+.a-MenuBar-item:hover>.a-Menu-subMenu {
+  display: block;
+}
+
+.a-Menu-subMenu .a-MenuBar-item a {
+  padding: 8px 12px;
+  display: block;
+  white-space: nowrap;
+}

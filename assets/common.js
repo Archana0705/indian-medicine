@@ -20,9 +20,22 @@ document.addEventListener("DOMContentLoaded", function () {
                     { name: 'Patient Details', href: '../amo/patient-details.html' }
                 ],
                 admin: [
-                    { name: 'Home', href: '../admin/home.html' },
-                    { name: 'Medicine Details', href: '../admin/medicine-details.html' },
-                    { name: 'User Details', href: '../admin/user-details.html' }
+                    {
+                        name: 'Home',
+                        href: '../admin/home.html'
+                    },
+                    {
+                        name: 'Medicine Details',
+                        href: '#',
+                        submenu: [
+                            { name: 'Add Medicine', href: '../admin/add-medicine.html' },
+                            { name: 'Edit Medicine', href: '../admin/edit-medicine.html' }
+                        ]
+                    },
+                    {
+                        name: 'User Details',
+                        href: '../admin/user-details.html'
+                    }
                 ],
                 commissioner: [
                     { name: 'Dashboard', href: '../commissioner/overall-dashboard.html' },
@@ -41,7 +54,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 ],
                 factory: [
                     { name: 'Home', href: '../factory/home.html' },
-                    { name: 'Report Scheme', href: '../factory/report-scheme.html' },
+                    {
+                        name: 'Medicine Details', href: '#',
+                        submenu: [
+                            { name: 'Add Medicine', href: '../admin/add-medicine.html' },
+                            { name: 'Edit Medicine', href: '../admin/edit-medicine.html' }
+                        ]
+                    },
                     { name: 'View Indent', href: '../factory/view-indent.html' }
                 ],
                 nodal: [
@@ -62,13 +81,43 @@ document.addEventListener("DOMContentLoaded", function () {
                     li.classList.add("a-MenuBar-item");
 
                     // Add active class if current page matches
-                    if (link.href.includes(currentPage)) {
-                        li.classList.add("a-Menu--current"); // Oracle Apex active class
+                    const isActive = link.href?.includes(currentPage);
+                    if (isActive) {
+                        li.classList.add("a-Menu--current");
                     }
 
-                    li.innerHTML = `
-            <a role="menuitem" class="a-MenuBar-label" href="${link.href}">${link.name}</a>
-          `;
+                    // Create main link
+                    const mainLink = document.createElement("a");
+                    mainLink.classList.add("a-MenuBar-label");
+                    mainLink.setAttribute("role", "menuitem");
+                    mainLink.href = link.href || "#";
+                    mainLink.textContent = link.name;
+                    li.appendChild(mainLink);
+
+                    // Check for submenu
+                    if (link.submenu && Array.isArray(link.submenu)) {
+                        const subUl = document.createElement("ul");
+                        subUl.classList.add("a-Menu-subMenu");
+                        subUl.setAttribute("role", "menu");
+
+                        link.submenu.forEach(sub => {
+                            const subLi = document.createElement("li");
+                            subLi.setAttribute("role", "none");
+                            subLi.classList.add("a-MenuBar-item");
+
+                            if (sub.href.includes(currentPage)) {
+                                subLi.classList.add("a-Menu--current");
+                            }
+
+                            subLi.innerHTML = `
+                                <a role="menuitem" class="a-MenuBar-label" href="${sub.href}">${sub.name}</a>
+                            `;
+                            subUl.appendChild(subLi);
+                        });
+
+                        li.appendChild(subUl);
+                    }
+
                     ul.appendChild(li);
                 });
             }
