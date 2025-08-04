@@ -42,6 +42,42 @@
     .t-fht-tbody {
       overflow: auto;
     }
+  .dataTables_paginate {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 5px;
+  }
+
+  .paginate_button {
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    padding: 6px 12px;
+    margin: 0 2px;
+    border-radius: 4px;
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+  }
+
+  .paginate_button:hover:not(.disabled),
+  .paginate_button:focus {
+    background-color: #007bff;
+    color: white;
+  }
+
+  .paginate_button.current {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+  }
+
+  .paginate_button.disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
   </style>
 </head>
 
@@ -382,19 +418,6 @@
                                     </thead>
                                     <tbody></tbody>
                                   </table>
-                                </div>
-                                <div role="region" aria-label="Pagination of Download despatched medicine"
-                                  class="a-IRR-paginationWrap a-IRR-paginationWrap--bottom">
-                                  <ul class="a-IRR-pagination">
-                                    <li aria-hidden="true" class="a-IRR-pagination-item is-disabled"></li>
-                                    <li class="a-IRR-pagination-item"><span class="a-IRR-pagination-label"> 1 -
-                                        50</span></li>
-                                    <li class="a-IRR-pagination-item"><button type="button"
-                                        class="a-Button a-IRR-button a-IRR-button--pagination"
-                                        aria-controls="R242628023561228056223" title="Next" aria-label="Next"
-                                        data-pagination="pgR_min_row=51max_rows=50rows_fetched=50"><span
-                                          class="a-Icon icon-right-chevron" aria-hidden="true"></span></button></li>
-                                  </ul>
                                 </div>
                               </div>
                             </div>
