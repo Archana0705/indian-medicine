@@ -24,41 +24,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     .dataTables_paginate {
-    display: flex;
-    justify-content: center;
-    margin-top: 1rem;
-    gap: 5px;
-  }
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+      gap: 5px;
+    }
 
-  .paginate_button {
-    background-color: #f2f2f2;
-    border: 1px solid #ccc;
-    padding: 6px 12px;
-    margin: 0 2px;
-    border-radius: 4px;
-    color: #333;
-    text-decoration: none;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.2s ease;
-  }
+    .paginate_button {
+      background-color: #f2f2f2;
+      border: 1px solid #ccc;
+      padding: 6px 12px;
+      margin: 0 2px;
+      border-radius: 4px;
+      color: #333;
+      text-decoration: none;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.2s ease;
+    }
 
-  .paginate_button:hover:not(.disabled),
-  .paginate_button:focus {
-    background-color: #007bff;
-    color: white;
-  }
+    .paginate_button:hover:not(.disabled),
+    .paginate_button:focus {
+      background-color: #007bff;
+      color: white;
+    }
 
-  .paginate_button.current {
-    background-color: #007bff;
-    color: white;
-    font-weight: bold;
-  }
+    .paginate_button.current {
+      background-color: #007bff;
+      color: white;
+      font-weight: bold;
+    }
 
-  .paginate_button.disabled {
-    cursor: not-allowed;
-    opacity: 0.5;
-  }
+    .paginate_button.disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
   </style>
 </head>
 
@@ -494,7 +494,7 @@
         httpMethod: 'POST',
         payload: encryptData(payload),
         rowBuilder: (item) => {
-          console.log(item);
+          // console.log(item);
           return `
                   <tr>
                     <td class="u-tC">${item.medicine_name || 'N/A'}</td>
@@ -517,69 +517,72 @@
       $('#P39_FINANCIAL_YEAR').val("");
     });
     let originalThead = "";
-    let originalTbody = "";
+let originalTbody = "";
 
-    document.getElementById("pivotBtn").addEventListener("click", function () {
-      const table = document.getElementById("viewIndentDistrictTable");
-      const rows = Array.from(table.querySelectorAll("tbody tr"));
+document.getElementById("pivotBtn").addEventListener("click", function () {
+  const table = document.getElementById("viewIndentDistrictTable");
+  const dt = $('#viewIndentDistrictTable').DataTable(); // DataTable instance
+  const rows = dt.rows().data().toArray(); // All data across all pages
 
-      // ✅ Save original header & body only first time
-      if (!originalThead && !originalTbody) {
-        originalThead = table.querySelector("thead").innerHTML;
-        originalTbody = table.querySelector("tbody").innerHTML;
-      }
+  // Save original only once
+  if (!originalThead && !originalTbody) {
+    originalThead = table.querySelector("thead").innerHTML;
+    originalTbody = table.querySelector("tbody").innerHTML;
+  }
 
-      const pivotMap = new Map();
-      const totalMap = new Map();
-      const institutionSet = new Set();
+  const pivotMap = new Map();
+  const totalMap = new Map();
+  const institutionSet = new Set();
 
-      rows.forEach(row => {
-        const cells = row.querySelectorAll("td");
-        const med = cells[0].textContent.trim();
-        const pack = cells[1].textContent.trim();
-        const institution = cells[2].textContent.trim();
-        const qty = parseInt(cells[3].textContent.trim()) || 0;
+  rows.forEach(cells => {
+    const med = cells[0].trim();
+    const pack = cells[1].trim();
+    const institution = cells[2].trim();
+    const qty = parseInt(cells[3]) || 0;
 
-        const key = `${med}|${pack}`;
-        if (!pivotMap.has(key)) {
-          pivotMap.set(key, {});
-          totalMap.set(key, 0);
-        }
+    const key = `${med}|${pack}`;
+    if (!pivotMap.has(key)) {
+      pivotMap.set(key, {});
+      totalMap.set(key, 0);
+    }
 
-        pivotMap.get(key)[institution] = (pivotMap.get(key)[institution] || 0) + qty;
-        totalMap.set(key, totalMap.get(key) + qty);
+    pivotMap.get(key)[institution] = (pivotMap.get(key)[institution] || 0) + qty;
+    totalMap.set(key, totalMap.get(key) + qty);
 
-        institutionSet.add(institution);
-      });
+    institutionSet.add(institution);
+  });
 
-      const institutions = Array.from(institutionSet).sort();
+  const institutions = Array.from(institutionSet).sort();
 
-      // 🧠 Build pivot headers
-      let theadHTML = "<tr><th></th><th></th><th></th>";
-      institutions.forEach(inst => {
-        theadHTML += `<th>${inst}</th>`;
-      });
-      theadHTML += "</tr><tr>";
-      theadHTML += "<th>Medicine Name</th><th>Packing Size</th><th>Total Quantity</th>";
-      institutions.forEach(() => {
-        theadHTML += `<th>Sum Qty</th>`;
-      });
-      theadHTML += "</tr>";
+  let theadHTML = "<tr><th></th><th></th><th></th>";
+  institutions.forEach(inst => {
+    theadHTML += `<th>${inst}</th>`;
+  });
+  theadHTML += "</tr><tr>";
+  theadHTML += "<th>Medicine Name</th><th>Packing Size</th><th>Total Quantity</th>";
+  institutions.forEach(() => {
+    theadHTML += `<th>Sum Qty</th>`;
+  });
+  theadHTML += "</tr>";
 
-      let tbodyHTML = "";
-      pivotMap.forEach((instData, key) => {
-        const [med, pack] = key.split("|");
-        const totalQty = totalMap.get(key);
-        tbodyHTML += `<tr><td>${med}</td><td>${pack}</td><td>${totalQty}</td>`;
-        institutions.forEach(inst => {
-          tbodyHTML += `<td>${instData[inst] || ""}</td>`;
-        });
-        tbodyHTML += "</tr>";
-      });
-
-      table.querySelector("thead").innerHTML = theadHTML;
-      table.querySelector("tbody").innerHTML = tbodyHTML;
+  let tbodyHTML = "";
+  pivotMap.forEach((instData, key) => {
+    const [med, pack] = key.split("|");
+    const totalQty = totalMap.get(key);
+    tbodyHTML += `<tr><td>${med}</td><td>${pack}</td><td>${totalQty}</td>`;
+    institutions.forEach(inst => {
+      tbodyHTML += `<td>${instData[inst] || ""}</td>`;
     });
+    tbodyHTML += "</tr>";
+  });
+
+  // Destroy and recreate DataTable to reflect pivoted content
+  dt.destroy();
+  table.querySelector("thead").innerHTML = theadHTML;
+  table.querySelector("tbody").innerHTML = tbodyHTML;
+  $('#viewIndentDistrictTable').DataTable(); // Reinitialize
+});
+
 
     document.getElementById("removePivotBtn").addEventListener("click", function () {
       const table = document.getElementById("viewIndentDistrictTable");
@@ -589,9 +592,6 @@
         table.querySelector("tbody").innerHTML = originalTbody;
       }
     });
-
-
-
 
   </script>
   <div id="pushModal" style="width: 100%; display:none; height: 100%;" class="u-DisplayNone u-Overlay--glass"></div>

@@ -47,10 +47,10 @@
           <div class="t-Header-navBar">
             <div class="t-Header-navBar--start"></div>
             <div class="t-Header-navBar--center">
-              <ul class="t-NavigationBar " id="428237243222882931397">
+              <ul class="t-NavigationBar " id="userName">
                 <li class="t-NavigationBar-item ">
                   <button class="t-Button t-Button--icon t-Button t-Button--header t-Button--navBar" type="button" id="L428237300758551931558" data-menu="menu_L428237300758551931558" title="" aria-haspopup="menu">
-                  <span class="t-Icon fa fa-user" aria-hidden="true"></span><span class="t-Button-label">Siva</span><span class="t-Button-badge"></span><span class="a-Icon icon-down-arrow" aria-hidden="true"></span>
+                  <span class="t-Icon fa fa-user" aria-hidden="true"></span><span class="t-Button-label"></span><span class="t-Button-badge"></span><span class="a-Icon icon-down-arrow" aria-hidden="true"></span>
                   </button>
                 </li>
               </ul>
@@ -90,8 +90,12 @@
                             <span class="t-Region-headerIcon"><span class="t-Icon " aria-hidden="true"></span></span>
                             <h2 class="t-Region-title" id="R428179730515462286735_heading" data-apex-heading="">Doctor Profile</h2>
                           </div>
-                          <div class="t-Region-headerItems t-Region-headerItems--buttons"><span class="js-maximizeButtonContainer"><button class="t-Button t-Button--noLabel t-Button--icon t-Button--iconOnly t-Button--noUI" aria-expanded="false" aria-controls="R428179730515462286735" type="button" title="Maximize" aria-label="Maximize">
-                            <span class="t-Icon a-Icon icon-maximize" aria-hidden="true"></span>
+                          <div class="t-Region-headerItems t-Region-headerItems--buttons">
+                            <span class="js-maximizeButtonContainer">
+                              <button class="t-Button t-Button--noLabel t-Button--icon t-Button--iconOnly t-Button--noUI" aria-expanded="false" aria-controls="R428179730515462286735" type="button" title="Maximize" aria-label="Maximize">
+                            <!-- <span class="t-Icon a-Icon icon-maximize" aria-hidden="true">
+                            
+                            </span> -->
                             </button></span>
                           </div>
                         </div>
@@ -111,7 +115,7 @@
                                       <label for="P1_NAME_OF_THE_INDENTING_OFFICER" id="P1_NAME_OF_THE_INDENTING_OFFICER_LABEL" class="t-Form-label">Officer Name :</label>
                                     </div>
                                     <div class="t-Form-inputContainer col col-4">
-                                      <div class="t-Form-itemWrapper"><input type="hidden" id="P1_NAME_OF_THE_INDENTING_OFFICER" name="P1_NAME_OF_THE_INDENTING_OFFICER" value="Siva"><input type="hidden" data-for="P1_NAME_OF_THE_INDENTING_OFFICER" value="8_V_9sUWx_bYPF2mC2Z8Yjgc-JWG83K2qghaOmt-yXiVtmnXJA_D9YA4xmjy6IJaFCXUXf_mwhX0x-3XKhMKqQ"><span id="P1_NAME_OF_THE_INDENTING_OFFICER_DISPLAY" class="display_only apex-item-display-only apex-item-has-icon" data-escape="true">Siva</span><span class="apex-item-icon fa fa-user-md" aria-hidden="true"></span></div>
+                                      <div class="t-Form-itemWrapper"><input type="hidden" id="P1_NAME_OF_THE_INDENTING_OFFICER" name="P1_NAME_OF_THE_INDENTING_OFFICER" value=""><input type="hidden" data-for="P1_NAME_OF_THE_INDENTING_OFFICER" value="8_V_9sUWx_bYPF2mC2Z8Yjgc-JWG83K2qghaOmt-yXiVtmnXJA_D9YA4xmjy6IJaFCXUXf_mwhX0x-3XKhMKqQ"><span id="P1_NAME_OF_THE_INDENTING_OFFICER_DISPLAY" class="display_only apex-item-display-only apex-item-has-icon" data-escape="true"></span><span class="apex-item-icon fa fa-user-md" aria-hidden="true"></span></div>
                                       <span id="P1_NAME_OF_THE_INDENTING_OFFICER_error_placeholder" class="a-Form-error" data-template-id="428237130780249931341_ET"></span>
                                     </div>
                                   </div>
@@ -122,7 +126,7 @@
                                       <label for="P1_DESIGNATION_OF_OFFICER" id="P1_DESIGNATION_OF_OFFICER_LABEL" class="t-Form-label">Designation :</label>
                                     </div>
                                     <div class="t-Form-inputContainer col col-4">
-                                      <div class="t-Form-itemWrapper"><input type="hidden" id="P1_DESIGNATION_OF_OFFICER" name="P1_DESIGNATION_OF_OFFICER" value="Indian Medicine &amp; Homeopathy Department"><input type="hidden" data-for="P1_DESIGNATION_OF_OFFICER" value="h3nzNmHZ7-wYGZCQLkT-wNPU2gnsddkt-lrG36DHJVm_jLnUyjtUC_EF6xXlMWQtVgccOI6X6kotARI93exl0w"><span id="P1_DESIGNATION_OF_OFFICER_DISPLAY" class="display_only apex-item-display-only apex-item-has-icon" data-escape="true">Indian Medicine &amp; Homeopathy Department</span><span class="apex-item-icon fa fa-stethoscope" aria-hidden="true"></span></div>
+                                      <div class="t-Form-itemWrapper"><input type="hidden" id="P1_DESIGNATION_OF_OFFICER" name="P1_DESIGNATION_OF_OFFICER" value=""><input type="hidden" data-for="P1_DESIGNATION_OF_OFFICER" value="h3nzNmHZ7-wYGZCQLkT-wNPU2gnsddkt-lrG36DHJVm_jLnUyjtUC_EF6xXlMWQtVgccOI6X6kotARI93exl0w"><span id="P1_DESIGNATION_OF_OFFICER_DISPLAY" class="display_only apex-item-display-only apex-item-has-icon" data-escape="true"></span><span class="apex-item-icon fa fa-stethoscope" aria-hidden="true"></span></div>
                                       <span id="P1_DESIGNATION_OF_OFFICER_error_placeholder" class="a-Form-error" data-template-id="428237130780249931341_ET"></span>
                                     </div>
                                   </div>
@@ -204,38 +208,50 @@
     <script src="../assets/js/aos.js"></script>
 
     <script type="text/javascript">
-      apex.session.initTimeouts(900,{"idle_time_ms":1185000,"life_time_ms":28676000,"max_idle_time_ms":1200000},'\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fhome','\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fhome');
-      apex.jQuery( function() {
-      apex.page.init( this, function() {
-      try {
-      (function(){var e = apex.jQuery("#t_MenuNav", apex.gPageContext$);
-      if (e.hasClass("js-addActions")) {
-        apex.actions.addFromMarkup( e );
-      }
-      e.menu({
-        behaveLikeTabs: e.hasClass("js-tabLike"),
-        menubarShowSubMenuIcon: e.hasClass("js-showSubMenuIcons") || null,
-        menubar: true,
-        menubarOverflow: true,
-        callout: e.hasClass("js-menu-callout")
-      });
-      })();
-      } catch(e) {apex.debug.error(e)};
-      apex.item.waitForDelayLoadItems().done(function() {
-      try {
-      apex.theme42.initializePage.noSideCol();
+      // apex.session.initTimeouts(900,{"idle_time_ms":1185000,"life_time_ms":28676000,"max_idle_time_ms":1200000},'\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fhome','\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fhome');
+      // apex.jQuery( function() {
+      // apex.page.init( this, function() {
+      // try {
+      // (function(){var e = apex.jQuery("#t_MenuNav", apex.gPageContext$);
+      // if (e.hasClass("js-addActions")) {
+      //   apex.actions.addFromMarkup( e );
+      // }
+      // e.menu({
+      //   behaveLikeTabs: e.hasClass("js-tabLike"),
+      //   menubarShowSubMenuIcon: e.hasClass("js-showSubMenuIcons") || null,
+      //   menubar: true,
+      //   menubarOverflow: true,
+      //   callout: e.hasClass("js-menu-callout")
+      // });
+      // })();
+      // } catch(e) {apex.debug.error(e)};
+      // apex.item.waitForDelayLoadItems().done(function() {
+      // try {
+      // apex.theme42.initializePage.noSideCol();
       
-      apex.page.warnOnUnsavedChanges();
-      } finally {
-      apex.event.trigger(apex.gPageContext$,'apexreadyend');
-      };
-      });
-      });
-      });apex.pwa.init( { serviceWorkerPath:'\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fsw.js?v=23.1.0-249998717\u0026lang=en' } );
+      // apex.page.warnOnUnsavedChanges();
+      // } finally {
+      // apex.event.trigger(apex.gPageContext$,'apexreadyend');
+      // };
+      // });
+      // });
+      // });apex.pwa.init( { serviceWorkerPath:'\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fsw.js?v=23.1.0-249998717\u0026lang=en' } );
+      $(document).ready(function () {
+    var userName = localStorage.getItem("userName") || "Guest";
+    var userDesignation  = localStorage.getItem("userDesignation") || "N/A";
+    var userDistrict = localStorage.getItem("userDistrict") || "N/A";
+    $('#username .t-Button-label').text(userName);
+    $('#P1_NAME_OF_THE_INDENTING_OFFICER_DISPLAY').text(userName);
+    $('#P1_NAME_OF_THE_INDENTING_OFFICER').val(userName);
+    $('#P1_DESIGNATION_OF_OFFICER').val(userDesignation );
+    $('#P1_DESIGNATION_OF_OFFICER_DISPLAY').text(userDesignation );  
+    $('#P1_DISTRICT').val(userDistrict);
+    $('#P1_DISTRICT_DISPLAY').text(userDistrict);
+  });
     </script>
-    <script>
+    <!-- <script>
       AOS.init();
-    </script>
+    </script> -->
     <div id="pushModal" style="width: 100%; display:none; height: 100%;" class="u-DisplayNone u-Overlay--glass"></div>
     <div class="t-NavigationBar-menu a-Menu" style="display: none" id="menu_L428237300758551931558" role="menu">
       <ul>

@@ -1,28 +1,53 @@
-<html class="page-49 app-IMIM" lang="en" style="--js-sticky-top: 204.375px;">
+<html class="page-49 app-IMIM" lang="en" style="--js-sticky-top: 204.375px">
   <head>
-    <meta http-equiv="x-ua-compatible" content="IE=edge">
-    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge" />
+    <meta charset="utf-8" />
     <title>Disease details report</title>
 
-    <link rel="apple-touch-icon" href="../assets/img/app-icon-192.png">
-    <link rel="icon" href="../assets/img/app-icon-32.png">
+    <link rel="apple-touch-icon" href="../assets/img/app-icon-192.png" />
+    <link rel="icon" href="../assets/img/app-icon-32.png" />
 
-    <link rel="stylesheet" href="../assets/css/Core.min.css" type="text/css">
-    <link rel="stylesheet" href="../assets/css/Theme-Standard.min.css" type="text/css">
-    <link rel="stylesheet" href="../assets/css/font-apex.min.css" type="text/css">
-    <link rel="stylesheet" href="../assets/css/Core_theme.min.css" type="text/css">
-    <link rel="stylesheet" href="../assets/css/custom.min.css" type="text/css">
-    <link rel="stylesheet" href="../assets/css/aos.min.css" type="text/css"> 
-    <link rel="stylesheet" href="../assets/css/theme.css" type="text/css">
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/Core.min.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="../assets/css/Theme-Standard.min.css"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="../assets/css/font-apex.min.css"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="../assets/css/Core_theme.min.css"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="../assets/css/custom.min.css"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="../assets/css/aos.min.css" type="text/css" />
+    <link rel="stylesheet" href="../assets/css/theme.css" type="text/css" />
+    <link
+    rel="stylesheet"
+    href="../assets/css/jquery.dataTables.min.css"
+    type="text/css"
+  />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
     <style type="text/css">
       .modal-body {
-      overflow-x: hidden !important;
-      } 
+        overflow-x: hidden !important;
+      }
       input#screenReaderSwitch {
         display: none;
-      } 
+      }
     </style>
 
     <!-- <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ojtranslations/nls/en/localeElements" src="/i/libraries/./oraclejet/14.0.0/js/libs/oj/14.0.0/resources/nls/en/localeElements.js"></script>
@@ -38,42 +63,192 @@
     <link rel="apple-touch-icon" href="r/dimdev/117/files/static/v194/icons/app-icon-192.png">
     <link rel="icon" href="r/dimdev/117/files/static/v194/icons/app-icon-32.png"> -->
 
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="-1">
-    <meta http-equiv="Cache-Control" content="no-cache">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style type="text/css">.t-fht-cell { height: 1px; overflow: hidden; } .t-fht-wrapper { width: 100%; overflow: hidden; position: relative; } .t-fht-thead { overflow: hidden; position: relative; } .t-fht-tbody { overflow: auto; } </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="-1" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style type="text/css">
+      .t-fht-cell {
+        height: 1px;
+        overflow: hidden;
+      }
+      .t-fht-wrapper {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+      }
+      .t-fht-thead {
+        overflow: hidden;
+        position: relative;
+      }
+      .t-fht-tbody {
+        overflow: auto;
+      }
+    </style>
   </head>
-  <body class="t-PageBody t-PageBody--hideLeft t-PageBody--hideActions t-PageTemplate--standard apex-top-nav apex-icons-fontapex apex-theme-vita-standard js-HeaderExpanded t-PageBody--topNav" id="t_PageBody" data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
+  <body
+    class="t-PageBody t-PageBody--hideLeft t-PageBody--hideActions t-PageTemplate--standard apex-top-nav apex-icons-fontapex apex-theme-vita-standard js-HeaderExpanded t-PageBody--topNav"
+    id="t_PageBody"
+    data-aos-easing="ease"
+    data-aos-duration="400"
+    data-aos-delay="0"
+  >
     <a href="#main" id="t_Body_skipToContent">Skip to Main Content</a>
-    <form action="wwv_flow.accept?p_context=imim/disease-details-report/9577400874335" method="post" name="wwv_flow" id="wwvFlowForm" data-oj-binding-provider="none" novalidate="" autocomplete="off">
-      <input type="hidden" name="p_flow_id" value="117" id="pFlowId"><input type="hidden" name="p_flow_step_id" value="49" id="pFlowStepId"><input type="hidden" name="p_instance" value="9577400874335" id="pInstance"><input type="hidden" name="p_page_submission_id" value="65620110189648779327531505293668829506" id="pPageSubmissionId"><input type="hidden" name="p_request" value="" id="pRequest"><input type="hidden" name="p_reload_on_submit" value="S" id="pReloadOnSubmit"><input type="hidden" value="imim/disease-details-report/9577400874335" id="pContext"><input type="hidden" value="65620110189648779327531505293668829506" id="pSalt">
+    <form
+      action="wwv_flow.accept?p_context=imim/disease-details-report/9577400874335"
+      method="post"
+      name="wwv_flow"
+      id="wwvFlowForm"
+      data-oj-binding-provider="none"
+      novalidate=""
+      autocomplete="off"
+    >
+      <input type="hidden" name="p_flow_id" value="117" id="pFlowId" /><input
+        type="hidden"
+        name="p_flow_step_id"
+        value="49"
+        id="pFlowStepId"
+      /><input
+        type="hidden"
+        name="p_instance"
+        value="9577400874335"
+        id="pInstance"
+      /><input
+        type="hidden"
+        name="p_page_submission_id"
+        value="65620110189648779327531505293668829506"
+        id="pPageSubmissionId"
+      /><input type="hidden" name="p_request" value="" id="pRequest" /><input
+        type="hidden"
+        name="p_reload_on_submit"
+        value="S"
+        id="pReloadOnSubmit"
+      /><input
+        type="hidden"
+        value="imim/disease-details-report/9577400874335"
+        id="pContext"
+      /><input
+        type="hidden"
+        value="65620110189648779327531505293668829506"
+        id="pSalt"
+      />
       <header class="t-Header" id="t_Header" role="banner">
         <div class="t-Header-branding">
           <div class="t-Header-controls">
-            <button class="t-Button t-Button--icon t-Button--header t-Button--headerTree" aria-label="Main Navigation" title="Main Navigation" id="t_Button_navControl" type="button"><span class="t-Header-controlsIcon" aria-hidden="true"></span></button>
+            <button
+              class="t-Button t-Button--icon t-Button--header t-Button--headerTree"
+              aria-label="Main Navigation"
+              title="Main Navigation"
+              id="t_Button_navControl"
+              type="button"
+            >
+              <span class="t-Header-controlsIcon" aria-hidden="true"></span>
+            </button>
           </div>
           <div class="t-Header-logo">
             <!-- <a href="&#x2F;ords&#x2F;r&#x2F;dimdev&#x2F;imim&#x2F;home?session=9577400874335" class="t-Header-logo-link"><img src="r&#x2F;dimdev&#x2F;117&#x2F;files&#x2F;static&#x2F;v194&#x2F;app-251298-logo.jpeg" alt="" class="apex-logo-img" /><span class="apex-logo-text">DIRECTORATE OF INDIAN MEDICINE  - INDENT MANAGEMENT</span></a> -->
             <div class="gigw">
-              <li><a data-aos="fade-up" data-aos-delay="200" class="linkedin btn-decrease aos-init aos-animate"><span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="font size Decrease"><i></i> A -</span></a></li>
-              <li><a data-aos="fade-up" data-aos-delay="300" class="linkedin btn-orig aos-init aos-animate"><span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Reset font"><i></i> A <sup></sup></span></a></li>
-              <li><a data-aos="fade-up" data-aos-delay="400" class="instagram btn-increase aos-init aos-animate"><span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="font size Increase"><i></i> A +</span></a></li>
-              <li><a data-aos="fade-up" data-aos-delay="500" class="aos-init aos-animate"><span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Dark Mode"><i class="t-Icon fa fa-moon-o" id="darkmode"></i></span></a></li>
-              <li><a data-aos="fade-up" data-aos-delay="600" class="form-check form-switch aos-init aos-animate"><label class="form-check-label" for="screenReaderSwitch">
-                <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Screen Reader">
-                <i id="sound" class="t-Icon fa fa-volume-up"></i></span></label><input class="form-check-input" type="checkbox" role="switch" id="screenReaderSwitch" onclick="readText(document.getElementsByTagName('body')[0])"></a>
+              <li>
+                <a
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                  class="linkedin btn-decrease aos-init aos-animate"
+                  ><span
+                    class="d-inline-block"
+                    tabindex="0"
+                    data-toggle="tooltip"
+                    title="font size Decrease"
+                    ><i></i> A -</span
+                  ></a
+                >
+              </li>
+              <li>
+                <a
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                  class="linkedin btn-orig aos-init aos-animate"
+                  ><span
+                    class="d-inline-block"
+                    tabindex="0"
+                    data-toggle="tooltip"
+                    title="Reset font"
+                    ><i></i> A <sup></sup></span
+                ></a>
+              </li>
+              <li>
+                <a
+                  data-aos="fade-up"
+                  data-aos-delay="400"
+                  class="instagram btn-increase aos-init aos-animate"
+                  ><span
+                    class="d-inline-block"
+                    tabindex="0"
+                    data-toggle="tooltip"
+                    title="font size Increase"
+                    ><i></i> A +</span
+                  ></a
+                >
+              </li>
+              <li>
+                <a
+                  data-aos="fade-up"
+                  data-aos-delay="500"
+                  class="aos-init aos-animate"
+                  ><span
+                    class="d-inline-block"
+                    tabindex="0"
+                    data-toggle="tooltip"
+                    title="Dark Mode"
+                    ><i class="t-Icon fa fa-moon-o" id="darkmode"></i></span
+                ></a>
+              </li>
+              <li>
+                <a
+                  data-aos="fade-up"
+                  data-aos-delay="600"
+                  class="form-check form-switch aos-init aos-animate"
+                  ><label class="form-check-label" for="screenReaderSwitch">
+                    <span
+                      class="d-inline-block"
+                      tabindex="0"
+                      data-toggle="tooltip"
+                      title="Screen Reader"
+                    >
+                      <i
+                        id="sound"
+                        class="t-Icon fa fa-volume-up"
+                      ></i></span></label
+                  ><input
+                    class="form-check-input"
+                    type="checkbox"
+                    role="switch"
+                    id="screenReaderSwitch"
+                    onclick="readText(document.getElementsByTagName('body')[0])"
+                /></a>
               </li>
             </div>
           </div>
           <div class="t-Header-navBar">
             <div class="t-Header-navBar--start"></div>
             <div class="t-Header-navBar--center">
-              <ul class="t-NavigationBar " id="428237243222882931397">
-                <li class="t-NavigationBar-item ">
-                  <button class="t-Button t-Button--icon t-Button t-Button--header t-Button--navBar" type="button" id="L428237300758551931558" data-menu="menu_L428237300758551931558" title="" aria-haspopup="menu">
-                  <span class="t-Icon fa fa-user" aria-hidden="true"></span><span class="t-Button-label">Siva</span><span class="t-Button-badge"></span><span class="a-Icon icon-down-arrow" aria-hidden="true"></span>
+              <ul class="t-NavigationBar" id="userName">
+                <li class="t-NavigationBar-item">
+                  <button
+                    class="t-Button t-Button--icon t-Button t-Button--header t-Button--navBar"
+                    type="button"
+                    id="L428237300758551931558"
+                    data-menu="menu_L428237300758551931558"
+                    title=""
+                    aria-haspopup="menu"
+                  >
+                    <span class="t-Icon fa fa-user" aria-hidden="true"></span
+                    ><span class="t-Button-label"></span
+                    ><span class="t-Button-badge"></span
+                    ><span
+                      class="a-Icon icon-down-arrow"
+                      aria-hidden="true"
+                    ></span>
                   </button>
                 </li>
               </ul>
@@ -82,15 +257,51 @@
           </div>
         </div>
         <div class="top">
-          <img id="leftlogo" data-aos="fade-right" data-aos-duration="800" src="../assets/img/head-tnlogo.png" class="aos-init aos-animate">
-          <h1 data-aos="zoom-in" data-aos-duration="800" class="dept-name text-middle aos-init aos-animate">Medicine Indent</h1>
-          <h3 data-aos="zoom-in" data-aos-duration="800" class="dept-name2 text-middle aos-init aos-animate">Department of Indian Medicine and Homoeopathy</h3>
-          <img id="rightlogo" data-aos="fade-left" data-aos-duration="800" src="../assets/img/head-dept-logo.png" class="aos-init aos-animate">
+          <img
+            id="leftlogo"
+            data-aos="fade-right"
+            data-aos-duration="800"
+            src="../assets/img/head-tnlogo.png"
+            class="aos-init aos-animate"
+          />
+          <h1
+            data-aos="zoom-in"
+            data-aos-duration="800"
+            class="dept-name text-middle aos-init aos-animate"
+          >
+            Medicine Indent
+          </h1>
+          <h3
+            data-aos="zoom-in"
+            data-aos-duration="800"
+            class="dept-name2 text-middle aos-init aos-animate"
+          >
+            Department of Indian Medicine and Homoeopathy
+          </h3>
+          <img
+            id="rightlogo"
+            data-aos="fade-left"
+            data-aos-duration="800"
+            src="../assets/img/head-dept-logo.png"
+            class="aos-init aos-animate"
+          />
         </div>
         <div class="t-Header-nav">
-          <div class="t-Header-nav-list js-tabLike js-tabLike a-MenuBar a-MenuBar--overflow a-MenuBar--tabs" id="t_MenuNav" role="menubar">
+          <div
+            class="t-Header-nav-list js-tabLike js-tabLike a-MenuBar a-MenuBar--overflow a-MenuBar--tabs"
+            id="t_MenuNav"
+            role="menubar"
+          >
             <ul role="none">
-              <li role="none" id="t_MenuNav_0" class="a-MenuBar-item"><a role="menuitem" class="a-MenuBar-label" id="t_MenuNav_0i" href="../admin/home.html">Home</a></li>
+              <li role="none" id="t_MenuNav_0" class="a-MenuBar-item">
+                <a
+                  role="menuitem"
+                  class="a-MenuBar-label"
+                  id="t_MenuNav_0i"
+                  href="../admin/home.html"
+                  >Home</a
+                >
+              </li>
             </ul>
           </div>
         </div>
@@ -101,340 +312,253 @@
           <div class="t-Body-content" id="t_Body_content">
             <div id="t_Body_content_offset"></div>
             <main id="main" class="t-Body-mainContent">
-              <span id="APEX_SUCCESS_MESSAGE" data-template-id="238562751400702882270_S" class="apex-page-success u-hidden"></span><span id="APEX_ERROR_MESSAGE" data-template-id="238562751400702882270_E" class="apex-page-error u-hidden"></span>
+              <span
+                id="APEX_SUCCESS_MESSAGE"
+                data-template-id="238562751400702882270_S"
+                class="apex-page-success u-hidden"
+              ></span
+              ><span
+                id="APEX_ERROR_MESSAGE"
+                data-template-id="238562751400702882270_E"
+                class="apex-page-error u-hidden"
+              ></span>
               <div class="t-Body-fullContent"></div>
               <div class="t-Body-contentInner">
                 <div class="container">
-                  <div class="row ">
+                  <div class="row">
                     <div class="col col-12 apex-col-auto col-start col-end">
-                      <div id="R81444957007286965145" role="region" aria-label="Disease details report" class="t-IRR-region js-apex-region">
+                      <div
+                        id="R81444957007286965145"
+                        role="region"
+                        aria-label="Disease details report"
+                        class="t-IRR-region js-apex-region"
+                      >
                         <div class="t-Region-orderBy"></div>
-                        <div id="R81444957007286965145_ir" class="a-IRR-container">
-                          <div id="R81444957007286965145_worksheet_region" class="a-IRR" aria-live="polite">
-                            <div id="R81444957007286965145_single_row_view" class="a-IRR-singleRowView"></div>
-                            <div id="R81444957007286965145_full_view" class="a-IRR-fullView">
-                              <div id="R81444957007286965145_toolbar" class="a-IRR-toolbar">
-                                <div role="search" aria-label="Search bar of Disease details report" id="R81444957007286965145_toolbar_controls" class="a-IRR-controls">
-                                  <div class="a-IRR-controlGroup a-IRR-controlGroup--search a-IRR-controlGroup--hidden">
-                                    <div class="a-IRR-search"><input type="hidden" id="R81444957007286965145_column_search_current_column"><input type="hidden" id="R81444957007286965145_search_field" value=""></div>
-                                  </div>
-                                  <div class="a-IRR-controlGroup a-IRR-controlGroup--views"></div>
-                                  <div class="a-IRR-controlGroup a-IRR-controlGroup--options">
-                                    <input type="hidden" id="R81444957007286965145_row_select" value="50">
-                                    <div class="a-IRR-actions"><button id="R81444957007286965145_actions_button" class="a-Button a-IRR-button a-IRR-button--actions" type="button" data-menu="R81444957007286965145_actions_menu" aria-haspopup="menu">Actions<span aria-hidden="true" class="a-Icon icon-menu-drop-down"></span></button></div>
-                                  </div>
-                                </div>
-                                <div role="region" aria-label="Buttons next to search bar of Disease details report" class="a-IRR-buttons"><button class="t-Button t-Button--hot js-ignoreChange" type="button" data-bs-toggle="modal" data-bs-target=".create_Modal"><span class="t-Button-label">Create</span></button></div>
-                              </div>
-                              <div id="R81444957007286965145_content" class="a-IRR-content ">
-                                <div id="R81444957007286965145_dialog_js" class="a-IRR-dialogBody" style="display:none"></div>
-                                <input type="hidden" id="R81444957007286965145_worksheet_id" value="81444957184209965145">
-                                <input type="hidden" id="R81444957007286965145_app_user" value="9994793279">
-                                <input type="hidden" id="R81444957007286965145_report_id" value="81445539289161733043">
-                                <input type="hidden" id="R81444957007286965145_view_mode" value="REPORT">
-                                <style id="R81444957007286965145_worksheet_css" type="text/css"></style>
-                                <div role="region" aria-label="Chart view of Disease details report" id="R81444957007286965145_chart" class="a-IRR-chartView"></div>
-                                <div role="region" aria-label="Group by view of Disease details report" id="R81444957007286965145_group_by" class="a-IRR-groupByView"></div>
-                                <div role="region" aria-label="Pivot view of Disease details report" id="R81444957007286965145_pivot" class="a-IRR-pivotView"></div>
-                                <div role="region" aria-label="Data view of Disease details report" id="R81444957007286965145_data_panel" class="a-IRR-reportView">
-                                  <div class="a-IRR-tableContainer">
-                                    <div class="t-fht-wrapper">
-                                      <div class="t-fht-thead js-stickyTableHeader js-stickyWidget-toggle" id="stickyTableHeader_1" style="z-index: 300; width: 1061.85px; position: absolute; top: auto;">
-                                        <table aria-label="Disease details report, Report = Primary Default, View = Report" class="a-IRR-table" id="81444957184209965145" aria-hidden="true">
-                                          <tr>
-                                            <th class="a-IRR-header a-IRR-header--linkCol" id="R81444957007286965145_LINK">
-                                              <span class="u-vh">Link</span>
-                                              <div class="t-fht-cell" style="width: 166.163px;"></div>
-                                            </th>
-                                            <th class="a-IRR-header u-tL" id="C81444957921522965146">
-                                              <a class="a-IRR-headerLink" data-column="81444957921522965146" data-fht-column-idx="0">System</a>
-                                              <div class="t-fht-cell" style="width: 251.163px;"></div>
-                                            </th>
-                                            <th class="a-IRR-header u-tL" id="C81444958400031965146">
-                                              <a class="a-IRR-headerLink" data-column="81444958400031965146" data-fht-column-idx="1">Name of The Disease</a>
-                                              <div class="t-fht-cell" style="width: 642.925px;"></div>
-                                            </th>
-                                          </tr>
-                                        </table>
-                                      </div>
-                                      <div class="js-stickyWidget-placeholder" style="width: 1061.85px; height: 40px;"></div>
-                                      <div class="t-fht-tbody" style="width: auto;">
-                                        <table aria-label="Disease details report, Report = Primary Default, View = Report" class="a-IRR-table" id="81444957184209965145_orig" style="margin-top: -40.4px;">
-                                          <tbody>
-                                            <tr>
-                                              <th class="a-IRR-header a-IRR-header--linkCol" id="R81444957007286965145_LINK">
-                                                <span class="u-vh">Link</span>
-                                                <div class="t-fht-cell"></div>
-                                              </th>
-                                              <th class="a-IRR-header u-tL" id="C81444957921522965146">
-                                                <a aria-haspopup="dialog" class="a-IRR-headerLink" data-column="81444957921522965146" href="#" data-fht-column-idx="0">System</a>
-                                                <div class="t-fht-cell"></div>
-                                              </th>
-                                              <th class="a-IRR-header u-tL" id="C81444958400031965146">
-                                                <a aria-haspopup="dialog" class="a-IRR-headerLink" data-column="81444958400031965146" href="#" data-fht-column-idx="1">Name of The Disease</a>
-                                                <div class="t-fht-cell"></div>
-                                              </th>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a data-bs-toggle="modal"  data-bs-target=".update_Modal"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Fever</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=2\u0026clear=RP\u0026session=9577400874335\u0026cs=3y85a_5YhupU8KaGurTD05tbzp9QgGdDY2E8HwpdTHdbk9AuTAEtRJ-9wbbzMGzFXGdPqQML9KLiNyO-4hjbnFQ\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Sinusitis</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=3\u0026clear=RP\u0026session=9577400874335\u0026cs=3z7VN3P_CxphCfAD3vhne0zZTjnMdBwszLAcm1T0BASUvtkqK1xAPkdpR3U1uskXQj66UKBrLORA9MQSQOfBPtQ\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Hypertension</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=4\u0026clear=RP\u0026session=9577400874335\u0026cs=3ZeH1G9fFr7JkehNlYJ9KbRRjX5pNpeRzJUTVx_p6-FqzFqx7ny_FZEJWcXUhfRDGLXcn9c3oeIBGCrmyH-2HDA\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Bronchitis</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=5\u0026clear=RP\u0026session=9577400874335\u0026cs=3s6y6qlybB94-bYd6s20QWh941Qg2nbzxzX3nQO9gk0FEjz5sct7sPMT4qbdogytmZ5dJ5xNs-9arKryqxzlQVg\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Bronchial Asthma</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=6\u0026clear=RP\u0026session=9577400874335\u0026cs=3tKY51Ps5edSLSqVszEqqTc5EX8sSyFMZKKp15fIE1CeTVLVdKMPIMPww2nfb7BlCnSPF7veRk9sUklvy-pImpQ\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Pulmonary TB</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=7\u0026clear=RP\u0026session=9577400874335\u0026cs=3ljF1h_6XS43YI56Ovx97C2nNpKzuCQAucGwdC5dplDaomMAisgmQgjj7Kw9Cn3KRd35tVSWFxQ6ppxRrWN1iWA\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Cardiac disease</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=8\u0026clear=RP\u0026session=9577400874335\u0026cs=38hVhb_3bq_ylbkeTxMEcYSye11WEw1ROKV4t1Bd0cXYN4G-4jF13YZElZB9e_6Xt9YA3N0KDb4T9KLM2IsTI-Q\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Neuritis</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=9\u0026clear=RP\u0026session=9577400874335\u0026cs=3U4U_jF68sbVjIhxcPPhtxLFd_1pSIoGZvzqhvRGQJa4qthGzxAvSQutlxQDSmH7Z50yVDONVOAawxdDIpUG61Q\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Anaemia</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=10\u0026clear=RP\u0026session=9577400874335\u0026cs=3V3p5iTHriu2r75odiSvqjOo-2xc6J_z31wVLI6ujzLwA1A6wfdqRTSLasQlIWZoO8OoNcvy2-9u5ekUjDc9cVw\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Acid peptic  ulcer</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=11\u0026clear=RP\u0026session=9577400874335\u0026cs=31ONT29r0whec0g6YNDHHs6LJoZAP2v_9p8Q6C9x6eUBuj3yL_kCyEUpthfD1WzGB2bNC6veV2o6-4rikSRkr4w\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Dropsy</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=12\u0026clear=RP\u0026session=9577400874335\u0026cs=3DQEjcIEFqhGN0LHMty7bFHs4n-6eESL4_4Kqt-xSjmDOWUvv0ry4CZKj8QYdkExCl7oaNL5CzUAJf9kYmpL10Q\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Jaundice </td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=13\u0026clear=RP\u0026session=9577400874335\u0026cs=3zV_hP1eMmFd5PcPaM9FR5Uf1rmO1IG8tp7ft1yljbwAC0DvHhX_T9Vov3JTyBzBryJJ640HQHQxel_QM5fKO_A\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Asitis</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=14\u0026clear=RP\u0026session=9577400874335\u0026cs=3AowKAo9LOWDuRY291yVM5uZ7xEszRR62FGtOqcfSkPV8ZNjJIExij6zzqq30uPoF6I9Z8K0i51NB2_aEzbOafQ\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Diarrhoea</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=15\u0026clear=RP\u0026session=9577400874335\u0026cs=3J95QlhNv1qGIdPIDDADsi4mgMB78c1jM66PadjeyMoM3S3Ua9Li33k2zdNewiinelamiQ4_gkoGBx-aQnJvpXg\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Haemoroids</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=16\u0026clear=RP\u0026session=9577400874335\u0026cs=3v8BS41ZKzQFQOXHUHMvYOGeOHDWOBmVtU-Q8w50JdaEXzsN6GFVeS992QH1EgiiDtw2YPXFxYF-zH-Hw2hftnA\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Renal stones</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=17\u0026clear=RP\u0026session=9577400874335\u0026cs=3edW0AAbYTKCWI1GmTKnPgz6O8uudAvgDG_TcOcLVHL0BUGi3wj-8t_4WlNYhVAGsfEbquZ4znpjhDYzPMm_a7g\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Dosuria anuria</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=18\u0026clear=RP\u0026session=9577400874335\u0026cs=3Etou0Vttfa_Do7P6gEpW4dzWz7kZ8IyodZd5ygjwvIKonTyXu2P1EkXpwyyX9CMHE4ROOy_vKC9cgO0cOsKhUA\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Gonorrhea</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=19\u0026clear=RP\u0026session=9577400874335\u0026cs=3OkNIToiUkINEh6PMMjPdCB3VRTdgcCPAE1OzgKnEZvZJX4a1v-SeYcPJH44WLjihu6RbPkKgQqS2h22o48KsGQ\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Diabetes</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=20\u0026clear=RP\u0026session=9577400874335\u0026cs=3ifDp2Uj0XEWaeAan7vcfCjduB1RMJIak3yL8_f67lpKrNK_SEGjDNgEEeo5rck9UYpeiaK0PlE6_5efdj3eb5g\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Psycho somatac disorder</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=21\u0026clear=RP\u0026session=9577400874335\u0026cs=35h-Y2brAb8vsiuh8JpMxvPE8QG0HWBWob1fr4jCnqTyTu6Gw84jM_8JUBFwq_oouXA262hVRN8x-f2Quy7OqpQ\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Fits (Epilepsy)</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=22\u0026clear=RP\u0026session=9577400874335\u0026cs=3Jnou-VsLA7QEJw3wxFIzt1n5smakESTSmXzP_zx4I45lHLwztbohOoqekM-WWKZBCSXFkZ-MIUkcGtbf_NebMQ\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Hemiplegia</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=23\u0026clear=RP\u0026session=9577400874335\u0026cs=3YN1gzoJhrhMS1IBfx9Gz0LMLfVjN7A85QBHPiubYVdvaatMPwzD5HknecEOb6AXUfzoOFfLbpiijVKGJyTdz3A\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Arthritis</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=24\u0026clear=RP\u0026session=9577400874335\u0026cs=328g3RCuUXNjEsMuRyVpaNqVj6mSWv7h4nJYZxuNMvgGnyluuMiWwUe7tI_xD-CDXVevv3CYVOnM_L_sym0K9Iw\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Leprosy</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=25\u0026clear=RP\u0026session=9577400874335\u0026cs=3x9dUVhZAH4N5Jt7Z8ipeG8nFDEGqSrv5sa_dYOQqBT0QO2b9osbM7xrZT9DvZXJH6BqXSc6m3J4pfPaQKPIOEA\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Ear Diseases</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=26\u0026clear=RP\u0026session=9577400874335\u0026cs=3SIr-5qKwkrT-HAg-D_JXSm5YXH3EtndSREDKb9xFPd5FCYgUZb0qclofldHuAy75Vs3Z8LlW4szyVWy2WyVAxw\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Dental Diseases</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=27\u0026clear=RP\u0026session=9577400874335\u0026cs=3UpuQsKTlfEhpMk89diFeLZ24EdrRRvFXGiknEbfcBGiZNyqTPb6alKrBbtJpQRJNC07H03v40FaVNsWnUtemBA\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Fistula </td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=28\u0026clear=RP\u0026session=9577400874335\u0026cs=3Bt-TouTKdWhqDp58J-1aLbUbPc8SanYwtpyReoeZ64KdRA3sY5uDLvVjNw2XKjj8kU9xsWQETQcnBxyBdL-LHQ\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Ulcer</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=29\u0026clear=RP\u0026session=9577400874335\u0026cs=3fKFt677EnZTGIWTRtf7zawrqcZcGco620oA-TWHXGxvvhL_jZLaPJ7Tskqz--lDg-x_IKRWITWG8lxJ1yoDj9A\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Inflamation</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=30\u0026clear=RP\u0026session=9577400874335\u0026cs=3UOWjH19t0lAC6dXElTkA5CjryS1GfljWiUPYWJJ2xAB4lrKP_j2-T88ui9COLoRnAZBpmVysWYF13EbYM2IhoA\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Leucoderma</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=31\u0026clear=RP\u0026session=9577400874335\u0026cs=3xn3DRYkKSMu8Xtlq_aOSmLENsGq3cVP4T434SspiQLHQa0SMYvC6IunI5eGKNgcX2IitCsJ7-7L57pzVQ0x_ng\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Skin diseases</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=32\u0026clear=RP\u0026session=9577400874335\u0026cs=3TZnMnNtrAt5tBAw6YbZr6ODAsg_v6vKQQ1l2iSo-NIoCFmWWnAiHzfPnQ_U2AotDK7411D3Brztt5tY9PP2w8Q\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Psoriasis</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=33\u0026clear=RP\u0026session=9577400874335\u0026cs=3Pboc4A_RaH-eXY6Qfzi8OK-ZF9HpPPa0l39sfo8cVEyGHivt8YeDLLvHMTPShx-oV6bNNrioXHYlK6690gIP6Q\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Amennorrhaea</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=34\u0026clear=RP\u0026session=9577400874335\u0026cs=3za9XG3IAgM-wUc4ogZXo-4J6Hq7v5qxbxWmFxwtF8Zi7PLFgW19jP-Q4DUgMgS_BTibsESR2OBSAGxFysTKDng\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Mencragia, DUB</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=35\u0026clear=RP\u0026session=9577400874335\u0026cs=3qV8B211AmllnYBhl3ALjmOd7PubdRuoRZXVOu1pVOzI-9BZ3QPEX4OmeH_9NahiogD2Fk2UBhdOuvFA4I-cFbQ\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Dysmennorhoea</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=36\u0026clear=RP\u0026session=9577400874335\u0026cs=33Wnoes-tloI2uQOND77HpjXr0HipW0hmzAjbsY-Q3vVl6AZ_RLjwT30xlrhOpN9L1gcshnavQBFhRYnQTwoNJA\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Infertility</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=37\u0026clear=RP\u0026session=9577400874335\u0026cs=3pwFT9k7lKhNX994kqdZDSmsSOdQQb2lMmvb2YCD1MMxw7H0sDVnJrh43FDui8_ggF_9fsjMTHKcj_x_CNE4mcA\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Leucorrhea</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=38\u0026clear=RP\u0026session=9577400874335\u0026cs=3MI1RNkGPMvxZQVC9jn3-CF5p45MeBlmKqtioXb5W1_ENjMSj21F-8ufTjuYBcrMjVrcJip-CIXDZ6OkeOmqtlQ\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Fibroid Uterus</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=39\u0026clear=RP\u0026session=9577400874335\u0026cs=3RCi4jZGfeKpyKef7DSlYvLSmDOySP_mMp4TJh5enXOhDVFR57fkZ6wt1xTnv9ECHMUCT_s4tJIKWw7sNFmftrg\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Cancer</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=40\u0026clear=RP\u0026session=9577400874335\u0026cs=3LoH0PDB5CSRNu-ZWdd1EBk0Gkm52rJhdtJKPMU_HSxDKE9ErSqw3DX65d3m2T05m0IrmBNPgkuV5MBKvl5vXLg\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Tumors of Uterus</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=41\u0026clear=RP\u0026session=9577400874335\u0026cs=3YzaFMwIAY_hsiYbCcDYJaMTpoLpw8JTVPu8iLr3c-d5meIXNmlQyUudTwZtc_WtgTMsI2beB2I4NXn3DtSQWGg\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Cancer of Uterus</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=42\u0026clear=RP\u0026session=9577400874335\u0026cs=3M20QYY0BDcMOsZN2KRIb5aeKoLu3SKWQt5DMX07LSudXjsO2ElVnG0ap93AUI3D_DmV0bonWVF56twPCCv4fBw\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Opthalmic diseases</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=43\u0026clear=RP\u0026session=9577400874335\u0026cs=3yqwuCVY1u_vse5z8eaDCxdF4prOxezn8kfNTpp4pAeajSWvTUq8m2EfwmqvTFyGmXZ0oclTPDemkfNXylAtwQw\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Ear Diseases</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=44\u0026clear=RP\u0026session=9577400874335\u0026cs=3UNeWOKXHPOGSdd8OugJt74Ftp2fNou2Az1tajTjz71ZU-OSELFHe4oaxi4mo8-7f47y5cb7DWr_gVSJFJZb6Xw\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">AIDS</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=45\u0026clear=RP\u0026session=9577400874335\u0026cs=3xP5seam_KULfTjh42sv8PtkMjDlQLSeXkMYaftHYMpxDuad-GtbQMFqguBZ0xIS0TfV6EPB8u2Azf9rY49OETQ\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Chik-kun-Gunya</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=46\u0026clear=RP\u0026session=9577400874335\u0026cs=3ZiAuHj5XxiwhGnLU5P3nckybEE0cjfM7pJMMrDbElsC0EZ_1TCIZ9nqTyB6Y8ktN3wOzH-0jU68BWIKOipBFxw\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Poison bite</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=47\u0026clear=RP\u0026session=9577400874335\u0026cs=3yjef-SyaayXeMBho56eoPjzbu_nQRp_qdWkui5QL56U-9VUBXV-x7Qy3GxvUNt1f6si9_CbHP-braqrdNDiKBg\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Unknown bite</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=48\u0026clear=RP\u0026session=9577400874335\u0026cs=3AzPku1XIfJXTvrWbtex1QpOBZQFwM_PeTC3hpu-xxa2wR045OMxd9ogWHaLpncYgpWPTjzI3cNsfeH1AJJrlUw\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Allergy</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=49\u0026clear=RP\u0026session=9577400874335\u0026cs=3iOyFTp9xtyUAu1tGQHfoqbM4EJAhDD2-dypKvL82a2v_qAXtdqesxmG6EIV4ZdeZQE7_uEPQ-DxfXRPEVxvBRw\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Food Poison</td>
-                                            </tr>
-                                            <tr>
-                                              <td class="a-IRR-linkCol u-tC" headers="R81444957007286965145_LINK"><a href="javascript:apex.theme42.dialog('\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fdisease-details-form?p50_id=50\u0026clear=RP\u0026session=9577400874335\u0026cs=3ohiOzzxL6h7Q7kXn3YDc-xTH60KLrW8e3IxnNXQJZy68MA-YkL_CTPtHWaUqKoxnTxwATkWLIkqvzfXwIbxZDw\u0026dialogCs=FfhqA-9slEZvF1L9Khrb8juVnv6LVVpYzljuxXYtH0YzERgmiyeUT-GTYCmsOxigt_5uNtdcwBOf6yxMIk3TcQ',{title:'Disease details form',h:'auto',w:'720',mxw:'960',modal:true,dialog:null,dlgCls:'t-Dialog-page--standard '+''},'','#R81444957007286965145')"><span role="img" aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span></a></td>
-                                              <td class=" u-tL" headers="C81444957921522965146">Siddha</td>
-                                              <td class=" u-tL" headers="C81444958400031965146">Skin diseases</td>
-                                            </tr>
-                                          </tbody>
-                                        </table>
-                                      </div>
+                        <div
+                          id="R81444957007286965145_ir"
+                          class="a-IRR-container"
+                        >
+                          <div
+                            id="R81444957007286965145_worksheet_region"
+                            class="a-IRR"
+                            aria-live="polite"
+                          >
+                            <div
+                              id="R81444957007286965145_single_row_view"
+                              class="a-IRR-singleRowView"
+                            ></div>
+                            <div
+                              id="R81444957007286965145_full_view"
+                              class="a-IRR-fullView"
+                            >
+                              <div
+                                id="R81444957007286965145_toolbar"
+                                class="a-IRR-toolbar"
+                              >
+                                <div
+                                  role="search"
+                                  aria-label="Search bar of Disease details report"
+                                  id="R81444957007286965145_toolbar_controls"
+                                  class="a-IRR-controls"
+                                >
+                                  <div
+                                    class="a-IRR-controlGroup a-IRR-controlGroup--search a-IRR-controlGroup--hidden"
+                                  >
+                                    <div class="a-IRR-search">
+                                      <input
+                                        type="hidden"
+                                        id="R81444957007286965145_column_search_current_column"
+                                      /><input
+                                        type="hidden"
+                                        id="R81444957007286965145_search_field"
+                                        value=""
+                                      />
                                     </div>
                                   </div>
-                                  <div role="region" aria-label="Pagination of Disease details report" class="a-IRR-paginationWrap a-IRR-paginationWrap--bottom">
+                                  <div
+                                    class="a-IRR-controlGroup a-IRR-controlGroup--views"
+                                  ></div>
+                                  <div
+                                    class="a-IRR-controlGroup a-IRR-controlGroup--options"
+                                  >
+                                    <input
+                                      type="hidden"
+                                      id="R81444957007286965145_row_select"
+                                      value="50"
+                                    />
+                                    <div class="a-IRR-actions">
+                                      <button
+                                        id="R81444957007286965145_actions_button"
+                                        class="a-Button a-IRR-button a-IRR-button--actions"
+                                        type="button"
+                                        data-menu="R81444957007286965145_actions_menu"
+                                        aria-haspopup="menu"
+                                      >
+                                        Actions<span
+                                          aria-hidden="true"
+                                          class="a-Icon icon-menu-drop-down"
+                                        ></span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  role="region"
+                                  aria-label="Buttons next to search bar of Disease details report"
+                                  class="a-IRR-buttons"
+                                >
+                                  <button
+                                    class="t-Button t-Button--hot js-ignoreChange"
+                                    type="button"
+                                    data-bs-toggle="modal"
+                                    data-bs-target=".create_Modal"
+                                  >
+                                    <span class="t-Button-label">Create</span>
+                                  </button>
+                                </div>
+                              </div>
+                              <div
+                                id="R81444957007286965145_content"
+                                class="a-IRR-content"
+                              >
+                                <div
+                                  id="R81444957007286965145_dialog_js"
+                                  class="a-IRR-dialogBody"
+                                  style="display: none"
+                                ></div>
+                                <input
+                                  type="hidden"
+                                  id="R81444957007286965145_worksheet_id"
+                                  value="81444957184209965145"
+                                />
+                                <input
+                                  type="hidden"
+                                  id="R81444957007286965145_app_user"
+                                  value="9994793279"
+                                />
+                                <input
+                                  type="hidden"
+                                  id="R81444957007286965145_report_id"
+                                  value="81445539289161733043"
+                                />
+                                <input
+                                  type="hidden"
+                                  id="R81444957007286965145_view_mode"
+                                  value="REPORT"
+                                />
+                                <style
+                                  id="R81444957007286965145_worksheet_css"
+                                  type="text/css"
+                                ></style>
+                                <div
+                                  role="region"
+                                  aria-label="Chart view of Disease details report"
+                                  id="R81444957007286965145_chart"
+                                  class="a-IRR-chartView"
+                                ></div>
+                                <div
+                                  role="region"
+                                  aria-label="Group by view of Disease details report"
+                                  id="R81444957007286965145_group_by"
+                                  class="a-IRR-groupByView"
+                                ></div>
+                                <div
+                                  role="region"
+                                  aria-label="Pivot view of Disease details report"
+                                  id="R81444957007286965145_pivot"
+                                  class="a-IRR-pivotView"
+                                ></div>
+                                <div
+                                  role="region"
+                                  aria-label="Data view of Disease details report"
+                                  id="R81444957007286965145_data_panel"
+                                  class="a-IRR-reportView"
+                                >
+                                  <div class="a-IRR-tableContainer">
+                                    <div
+                                      class="t-fht-tbody"
+                                      style="width: auto"
+                                    >
+                                      <table
+                                        aria-label="USER DETAILS, Report = Primary Default, View = Report"
+                                        class="a-IRR-table"
+                                        id="viewdiseasedataTable"
+                                        style="margin-top: -56.4px"
+                                      >
+                                        <thead>
+                                          <tr>
+                                            <th
+                                              class="a-IRR-header a-IRR-header--linkCol"
+                                              id="R161192321633005013086_LINK"
+                                            >
+                                              <span class="u-vh">Link</span>
+                                              <div class="t-fht-cell"></div>
+                                            </th>
+                                            <th
+                                              class="a-IRR-header u-tL"
+                                              id="C161192322501341013088"
+                                            >
+                                              <a
+                                                aria-haspopup="dialog"
+                                                class="a-IRR-headerLink"
+                                                data-column="161192322501341013088"
+                                                href="#"
+                                                data-fht-column-idx="0"
+                                                >System</a
+                                              >
+                                              <div class="t-fht-cell"></div>
+                                            </th>
+                                            <th
+                                              class="a-IRR-header u-tL"
+                                              id="C161192323366697013088"
+                                            >
+                                              <a
+                                                aria-haspopup="dialog"
+                                                class="a-IRR-headerLink"
+                                                data-column="161192323366697013088"
+                                                href="#"
+                                                data-fht-column-idx="1"
+                                                >Name of The Disease</a
+                                              >
+                                              <div class="t-fht-cell"></div>
+                                            </th>
+                                          </tr>
+                                        </thead>
+
+                                        <tbody></tbody>
+                                      </table>
+                                    </div>
+                                  </div>
+                                  <div
+                                    role="region"
+                                    aria-label="Pagination of Disease details report"
+                                    class="a-IRR-paginationWrap a-IRR-paginationWrap--bottom"
+                                  >
                                     <ul class="a-IRR-pagination">
-                                      <li aria-hidden="true" class="a-IRR-pagination-item is-disabled"></li>
-                                      <li class="a-IRR-pagination-item"><span class="a-IRR-pagination-label">                   1 -                   50</span></li>
-                                      <li class="a-IRR-pagination-item"><button type="button" class="a-Button a-IRR-button a-IRR-button--pagination" aria-controls="R81444957007286965145" title="Next" aria-label="Next" data-pagination="pgR_min_row=51max_rows=50rows_fetched=50"><span class="a-Icon icon-right-chevron" aria-hidden="true"></span></button></li>
+                                      <li
+                                        aria-hidden="true"
+                                        class="a-IRR-pagination-item is-disabled"
+                                      ></li>
+                                      <li class="a-IRR-pagination-item">
+                                        <span class="a-IRR-pagination-label">
+                                          1 - 50</span
+                                        >
+                                      </li>
+                                      <li class="a-IRR-pagination-item">
+                                        <button
+                                          type="button"
+                                          class="a-Button a-IRR-button a-IRR-button--pagination"
+                                          aria-controls="R81444957007286965145"
+                                          title="Next"
+                                          aria-label="Next"
+                                          data-pagination="pgR_min_row=51max_rows=50rows_fetched=50"
+                                        >
+                                          <span
+                                            class="a-Icon icon-right-chevron"
+                                            aria-hidden="true"
+                                          ></span>
+                                        </button>
+                                      </li>
                                     </ul>
                                   </div>
                                 </div>
@@ -456,238 +580,813 @@
                     <div class="t-Footer-customize"></div>
                      -->
                   <div class="row">
-                    <div class="col-6">     
-                      <p class="text-middle"><img class="footer-logo" src="../assets/img/head-dept-logo.png"><br>Content owned by Department of Indian Medicine and Homoeopathy ©</p>
+                    <div class="col-6">
+                      <p class="text-middle">
+                        <img
+                          class="footer-logo"
+                          src="../assets/img/head-dept-logo.png"
+                        /><br />Content owned by Department of Indian Medicine
+                        and Homoeopathy ©
+                      </p>
                     </div>
                     <div class="col-6">
-                      <p class="text-middle"><img class="footer-logo" src="../assets/img/tnegalogo.png"><br>Designed and Developed by Tamil Nadu e-Governance Agency</p>
+                      <p class="text-middle">
+                        <img
+                          class="footer-logo"
+                          src="../assets/img/tnegalogo.png"
+                        /><br />Designed and Developed by Tamil Nadu
+                        e-Governance Agency
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="t-Footer-top">
-                <a href="#top" class="t-Footer-topButton" id="t_Footer_topButton" title="Start of page" aria-label="Start of page"><span class="a-Icon icon-up-chevron" aria-hidden="true"></span></a>
+                <a
+                  href="#top"
+                  class="t-Footer-topButton"
+                  id="t_Footer_topButton"
+                  title="Start of page"
+                  aria-label="Start of page"
+                  ><span
+                    class="a-Icon icon-up-chevron"
+                    aria-hidden="true"
+                  ></span
+                ></a>
               </div>
             </footer>
           </div>
         </div>
       </div>
       <div class="t-Body-inlineDialogs" id="t_Body_inlineDialogs"></div>
-      <input type="hidden" id="pPageFormRegionChecksums" value="[]">
-      <input type="hidden" id="pPageItemsRowVersion" value=""><input type="hidden" id="pPageItemsProtected" value="/EWwaZGDGEnxoEI8-_xCxwiUbk-KGpXexDkdzq4ozKgFgDu1YA-0SxtKZorJG8uWxrFsvDs9KDbsLwwWqxSL3cg">
+      <input type="hidden" id="pPageFormRegionChecksums" value="[]" />
+      <input type="hidden" id="pPageItemsRowVersion" value="" /><input
+        type="hidden"
+        id="pPageItemsProtected"
+        value="/EWwaZGDGEnxoEI8-_xCxwiUbk-KGpXexDkdzq4ozKgFgDu1YA-0SxtKZorJG8uWxrFsvDs9KDbsLwwWqxSL3cg"
+      />
     </form>
 
-
     <!-- create -->
-    <div class="modal fade create_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+    <div
+      class="modal fade create_Modal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+      
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg"
+      >
         <div class="modal-content">
           <div class="modal-header py-2">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Create Disease Details form</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              Create Disease Details form
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
           </div>
           <div class="modal-body py-2">
             <div class="container6">
-  <div class="row ">
-    <div class="col col-12 apex-col-auto col-start col-end">
-      <div class="t-Form-fieldContainer is-required rel-col t-Form-fieldContainer--stretchInputs t-Form-fieldContainer--indicatorAsterisk t-Form-fieldContainer--large apex-item-wrapper apex-item-wrapper--text-field" id="P50_SYSTEM_CONTAINER">
-        <div class="t-Form-labelContainer col col-2">
-          <label for="P50_SYSTEM" id="P50_SYSTEM_LABEL" class="t-Form-label">System  </label>
-        </div>
-        <div class="t-Form-inputContainer col col-10">
-          <div class="t-Form-itemWrapper"><input type="text" id="P50_SYSTEM" name="P50_SYSTEM" class="text_field apex-item-text" value="" size="32" maxlength="50" data-trim-spaces="NONE">
-          </div>
-          <div class="t-Form-itemAssistance">
-            <span id="P50_SYSTEM_error_placeholder" class="a-Form-error" data-template-id="428237131064519931341_ET"></span>
-            <div class="t-Form-itemRequired" aria-hidden="true">Required</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row ">
-    <div class="col col-12 apex-col-auto col-start col-end">
-      <div class="t-Form-fieldContainer is-required rel-col t-Form-fieldContainer--stretchInputs t-Form-fieldContainer--indicatorAsterisk t-Form-fieldContainer--large apex-item-wrapper apex-item-wrapper--text-field" id="P50_NAME_OF_THE_DISEASE_CONTAINER">
-        <div class="t-Form-labelContainer col col-2">
-          <label for="P50_NAME_OF_THE_DISEASE" id="P50_NAME_OF_THE_DISEASE_LABEL" class="t-Form-label">Name Of The Disease  </label>
-        </div>
-        <div class="t-Form-inputContainer col col-10">
-          <div class="t-Form-itemWrapper"><input type="text" id="P50_NAME_OF_THE_DISEASE" name="P50_NAME_OF_THE_DISEASE" class="text_field apex-item-text" value="" size="32" maxlength="255" data-trim-spaces="NONE">
-          </div>
-          <div class="t-Form-itemAssistance">
-            <span id="P50_NAME_OF_THE_DISEASE_error_placeholder" class="a-Form-error" data-template-id="428237131064519931341_ET"></span>
-            <div class="t-Form-itemRequired" aria-hidden="true">Required</div>
-          </div>
-        </div>
-      </div>
-      <input type="hidden" name="P50_CREATED_BY" id="P50_CREATED_BY" value=""><input type="hidden" name="P50_CREATED_DATE" id="P50_CREATED_DATE" value=""><input type="hidden" name="P50_UPDATED_BY" id="P50_UPDATED_BY" value=""><input type="hidden" name="P50_UPDATED_DATE" id="P50_UPDATED_DATE" value="">
-    </div>
-  </div>
-</div>
+              <div class="row">
+                <div class="col col-12 apex-col-auto col-start col-end">
+                  <div
+                    class="t-Form-fieldContainer is-required rel-col t-Form-fieldContainer--stretchInputs t-Form-fieldContainer--indicatorAsterisk t-Form-fieldContainer--large apex-item-wrapper apex-item-wrapper--text-field"
+                    id="P50_SYSTEM_CONTAINER"
+                  >
+                    <div class="t-Form-labelContainer col col-2">
+                      <label
+                        for="P50_SYSTEM"
+                        id="P50_SYSTEM_LABEL"
+                        class="t-Form-label"
+                        >System
+                      </label>
+                    </div>
+                    <div class="t-Form-inputContainer col col-10">
+                      <div class="t-Form-itemWrapper">
+                        <input
+                          type="text"
+                          id="P50_SYSTEM"
+                          name="P50_SYSTEM"
+                          class="text_field apex-item-text"
+                          value=""
+                          size="32"
+                          maxlength="50"
+                          data-trim-spaces="NONE"
+                        />
+                      </div>
+                      <div class="t-Form-itemAssistance">
+                        <span
+                          id="P50_SYSTEM_error_placeholder"
+                          class="a-Form-error"
+                          data-template-id="428237131064519931341_ET"
+                        ></span>
+                        <div class="t-Form-itemRequired" aria-hidden="true">
+                          Required
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col col-12 apex-col-auto col-start col-end">
+                  <div
+                    class="t-Form-fieldContainer is-required rel-col t-Form-fieldContainer--stretchInputs t-Form-fieldContainer--indicatorAsterisk t-Form-fieldContainer--large apex-item-wrapper apex-item-wrapper--text-field"
+                    id="P50_NAME_OF_THE_DISEASE_CONTAINER"
+                  >
+                    <div class="t-Form-labelContainer col col-2">
+                      <label
+                        for="P50_NAME_OF_THE_DISEASE"
+                        id="P50_NAME_OF_THE_DISEASE_LABEL"
+                        class="t-Form-label"
+                        >Name Of The Disease
+                      </label>
+                    </div>
+                    <div class="t-Form-inputContainer col col-10">
+                      <div class="t-Form-itemWrapper">
+                        <input
+                          type="text"
+                          id="P50_NAME_OF_THE_DISEASE"
+                          name="P50_NAME_OF_THE_DISEASE"
+                          class="text_field apex-item-text"
+                          value=""
+                          size="32"
+                          maxlength="255"
+                          data-trim-spaces="NONE"
+                        />
+                      </div>
+                      <div class="t-Form-itemAssistance">
+                        <span
+                          id="P50_NAME_OF_THE_DISEASE_error_placeholder"
+                          class="a-Form-error"
+                          data-template-id="428237131064519931341_ET"
+                        ></span>
+                        <div class="t-Form-itemRequired" aria-hidden="true">
+                          Required
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <input
+                    type="hidden"
+                    name="P50_CREATED_BY"
+                    id="P50_CREATED_BY"
+                    value=""
+                  /><input
+                    type="hidden"
+                    name="P50_CREATED_DATE"
+                    id="P50_CREATED_DATE"
+                    value=""
+                  /><input
+                    type="hidden"
+                    name="P50_UPDATED_BY"
+                    id="P50_UPDATED_BY"
+                    value=""
+                  /><input
+                    type="hidden"
+                    name="P50_UPDATED_DATE"
+                    id="P50_UPDATED_DATE"
+                    value=""
+                  />
+                </div>
+              </div>
+            </div>
           </div>
           <div class="modal-footer py-2">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-primary">Create</button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancel
+            </button>
+            <button type="button" class="btn btn-primary" id="btnCreatedisease">Create</button>
           </div>
         </div>
       </div>
     </div>
     <!-- create -->
 
-
     <!-- update -->
-    <div class="modal fade update_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+    <div
+      class="modal fade update_Modal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg"
+      >
         <div class="modal-content">
           <div class="modal-header py-2">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Update Disease Details form</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              Update Disease Details form
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
           </div>
           <div class="modal-body py-2">
             <div class="container6">
-  <div class="row ">
-    <div class="col col-12 apex-col-auto col-start col-end">
-      <div class="t-Form-fieldContainer is-required rel-col t-Form-fieldContainer--stretchInputs t-Form-fieldContainer--indicatorAsterisk t-Form-fieldContainer--large apex-item-wrapper apex-item-wrapper--has-initial-value apex-item-wrapper--text-field" id="P50_SYSTEM_CONTAINER">
-        <div class="t-Form-labelContainer col col-2">
-          <label for="P50_SYSTEM" id="P50_SYSTEM_LABEL" class="t-Form-label">System  </label>
-        </div>
-        <div class="t-Form-inputContainer col col-10">
-          <div class="t-Form-itemWrapper"><input type="text" id="P50_SYSTEM" name="P50_SYSTEM" class="text_field apex-item-text" value="Siddha" size="32" maxlength="50" data-trim-spaces="NONE">
-          </div>
-          <div class="t-Form-itemAssistance">
-            <span id="P50_SYSTEM_error_placeholder" class="a-Form-error" data-template-id="428237131064519931341_ET"></span>
-            <div class="t-Form-itemRequired" aria-hidden="true">Required</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row ">
-    <div class="col col-12 apex-col-auto col-start col-end">
-      <div class="t-Form-fieldContainer is-required rel-col t-Form-fieldContainer--stretchInputs t-Form-fieldContainer--indicatorAsterisk t-Form-fieldContainer--large apex-item-wrapper apex-item-wrapper--has-initial-value apex-item-wrapper--text-field" id="P50_NAME_OF_THE_DISEASE_CONTAINER">
-        <div class="t-Form-labelContainer col col-2">
-          <label for="P50_NAME_OF_THE_DISEASE" id="P50_NAME_OF_THE_DISEASE_LABEL" class="t-Form-label">Name Of The Disease  </label>
-        </div>
-        <div class="t-Form-inputContainer col col-10">
-          <div class="t-Form-itemWrapper"><input type="text" id="P50_NAME_OF_THE_DISEASE" name="P50_NAME_OF_THE_DISEASE" class="text_field apex-item-text" value="Fever" size="32" maxlength="255" data-trim-spaces="NONE">
-          </div>
-          <div class="t-Form-itemAssistance">
-            <span id="P50_NAME_OF_THE_DISEASE_error_placeholder" class="a-Form-error" data-template-id="428237131064519931341_ET"></span>
-            <div class="t-Form-itemRequired" aria-hidden="true">Required</div>
-          </div>
-        </div>
-      </div>
-      <input type="hidden" name="P50_CREATED_BY" id="P50_CREATED_BY" value="DIMDEVUSER"><input type="hidden" name="P50_CREATED_DATE" id="P50_CREATED_DATE" value="12/26/2023"><input type="hidden" name="P50_UPDATED_BY" id="P50_UPDATED_BY" value="DIMDEVUSER"><input type="hidden" name="P50_UPDATED_DATE" id="P50_UPDATED_DATE" value="12/26/2023">
-    </div>
-  </div>
-</div>
+              <div class="row">
+                <div class="col col-12 apex-col-auto col-start col-end">
+                  <div
+                    class="t-Form-fieldContainer is-required rel-col t-Form-fieldContainer--stretchInputs t-Form-fieldContainer--indicatorAsterisk t-Form-fieldContainer--large apex-item-wrapper apex-item-wrapper--has-initial-value apex-item-wrapper--text-field"
+                    id="P50_SYSTEM_CONTAINER"
+                  >
+                    <div class="t-Form-labelContainer col col-2">
+                      <label
+                        for="P50_SYSTEM"
+                        id="P50_SYSTEM_LABEL"
+                        class="t-Form-label"
+                        >System
+                      </label>
+                    </div>
+                    <div class="t-Form-inputContainer col col-10">
+                      <div class="t-Form-itemWrapper">
+                        <input type="hidden" id="P50_ID_Edit" />
+                        <input
+                          type="text"
+                          id="P50_SYSTEM_Edit"
+                          name="P50_SYSTEM"
+                          class="text_field apex-item-text"
+                          value=""
+                          size="32"
+                          maxlength="50"
+                          data-trim-spaces="NONE"
+                        />
+                      </div>
+                      <div class="t-Form-itemAssistance">
+                        <span
+                          id="P50_SYSTEM_error_placeholder"
+                          class="a-Form-error"
+                          data-template-id="428237131064519931341_ET"
+                        >
+                        </span>
+                        <div class="t-Form-itemRequired" aria-hidden="true">
+                          Required
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col col-12 apex-col-auto col-start col-end">
+                  <div
+                    class="t-Form-fieldContainer is-required rel-col t-Form-fieldContainer--stretchInputs t-Form-fieldContainer--indicatorAsterisk t-Form-fieldContainer--large apex-item-wrapper apex-item-wrapper--has-initial-value apex-item-wrapper--text-field"
+                    id="P50_NAME_OF_THE_DISEASE_CONTAINER"
+                  >
+                    <div class="t-Form-labelContainer col col-2">
+                      <label
+                        for="P50_NAME_OF_THE_DISEASE"
+                        id="P50_NAME_OF_THE_DISEASE_LABEL"
+                        class="t-Form-label"
+                        >Name Of The Disease
+                      </label>
+                    </div>
+                    <div class="t-Form-inputContainer col col-10">
+                      <div class="t-Form-itemWrapper">
+                        <input
+                          type="text"
+                          id="P50_NAME_OF_THE_DISEASE_Edit"
+                          name="P50_NAME_OF_THE_DISEASE"
+                          class="text_field apex-item-text"
+                          value=""
+                          size="32"
+                          maxlength="255"
+                          data-trim-spaces="NONE"
+                        />
+                      </div>
+                      <div class="t-Form-itemAssistance">
+                        <span
+                          id="P50_NAME_OF_THE_DISEASE_error_placeholder"
+                          class="a-Form-error"
+                          data-template-id="428237131064519931341_ET"
+                        ></span>
+                        <div class="t-Form-itemRequired" aria-hidden="true">
+                          Required
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <input
+                    type="hidden"
+                    name="P50_CREATED_BY"
+                    id="P50_CREATED_BY"
+                    value=""
+                  />
+                  <input
+                    type="hidden"
+                    name="P50_CREATED_DATE"
+                    id="P50_CREATED_DATE"
+                    value=""
+                  />
+                  <input
+                    type="hidden"
+                    name="P50_UPDATED_BY"
+                    id="P50_UPDATED_BY"
+                    value=""
+                  />
+                  <input
+                    type="hidden"
+                    name="P50_UPDATED_DATE"
+                    id="P50_UPDATED_DATE"
+                    value=""
+                  />
+                </div>
+              </div>
+            </div>
           </div>
           <div class="modal-footer py-2">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-primary">Apply Changes</button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancel
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="updateDisease()"
+            >
+              Apply Changes
+            </button>
           </div>
         </div>
       </div>
     </div>
     <!-- update -->
-
-
-    <script>
-      var apex_img_dir = "\u002Fi\u002F";
-      var apex = {env: {APP_USER: "9994793279",APP_ID: "117",APP_PAGE_ID: "49",APP_SESSION: "9577400874335",APP_FILES: "r\u002Fdimdev\u002F117\u002Ffiles\u002Fstatic\u002Fv194\u002F",WORKSPACE_FILES: "r\u002Fdimdev\u002Ffiles\u002Fstatic\u002Fv38\u002F",APEX_VERSION: "23.1.0",APEX_BASE_VERSION: "23.1"},
-      libVersions:{ckeditor5:"36.0.0",cropperJs:"1.5.13",domPurify:"2.4.3",fullcalendar:"5.11.3",hammer:"2.0.8",jquery:"3.6.4",jqueryUi:"1.13.2",maplibre:"2.4.0",markedJs:"4.2.5",prismJs:"1.29.0",oraclejet:"14.0.0",tinymce:"6.3.1",turndown:"7.1.1",monacoEditor:"0.32.1",lessJs:"4.1.3"}};
-    </script>
-    <script src="/i/libraries/apex/minified/desktop_all.min.js?v=23.1.0"></script>
-    <script src="wwv_flow.js_messages?p_app_id=117&amp;p_lang=en&amp;p_version=23.1.0-249998717"></script>
-    <script type="text/javascript">
-      apex.da.initDaEventList = function(){
-      apex.da.gEventList = [
-      {"triggeringElementType":"REGION","triggeringRegionId":"R81444957007286965145","bindType":"bind","executionType":"IMMEDIATE","bindEventType":"apexafterclosedialog","anyActionsFireOnInit":false,actionList:[{"eventResult":true,"executeOnPageInit":false,"stopExecutionOnError":true,"affectedElementsType":"REGION","affectedRegionId":"R81444957007286965145",javascriptFunction:apex.da.refresh,"action":"NATIVE_REFRESH"}]}];
-      }
-    </script>
 
     <script src="../assets/js/jquery-3.6.0.min.js"></script>
-    <script src="../assets/js/desktop_all.min.js"></script>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- DataTables -->
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="../assets/js/widget.treeView.min.js"></script>
+    <script src="../assets/common.js"></script>
+    <script src="../assets/js/widget.interactiveReport.min.js"></script>
+    <script src="../assets/js/widget.iconList.min.js"></script>
+    <script src="../assets/js/widget.stickyTableHeader.min.js"></script>
     <script src="../assets/js/widget.stickyWidget.min.js"></script>
+    <script src="../assets/js/item.Colorpicker.min.js"></script>
+    <script src="../assets/js/jetCommonBundle.min.js"></script>
+    <script src="../assets/js/chartBundle.min.js"></script>
+
+    <script src="../assets/js/toastUtil.js"></script>
+    <script src="../assets/js/validation.js"></script>
+    <script src="../assets/js/dataTableUtil.js"></script>
+    <script src="../assets/js/crypto-js.min.js"></script>
     <script src="../assets/js/theme42.min.js"></script>
-    <script src="../assets/js/aos.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
+    <script src="../assets/js/global.js"></script>
+    <script src="../assets/js/encrypt_decrypt.js"></script>
+    <script src="../assets/js/singleFileUpload.js"></script>
+    <script src="../assets/js/globalHeader.js"></script>
+    <script src="../assets/js/validation.js"></script>
     <!-- <script src="/i/themes/theme_42/23.1/js/theme42.min.js?v=23.1.0"></script>
-    <script src="r/dimdev/117/files/static/v194/aos.min.js"></script>
-    <script src="r/dimdev/117/files/static/v194/add.min.js"></script>
-    <script src="/i/libraries/apex/minified/widget.interactiveReport.min.js?v=23.1.0"></script>
-    <script src="/i/libraries/apex/minified/widget.iconList.min.js?v=23.1.0"></script>
-    <script src="/i/libraries/apex/minified/widget.stickyTableHeader.min.js?v=23.1.0"></script>
-    <script src="/i/libraries/apex/minified/widget.stickyWidget.min.js?v=23.1.0"></script>
-    <script src="/i/libraries/apex/minified/item.Colorpicker.min.js?v=23.1.0"></script>
-    <script src="/i/libraries/oraclejet/14.0.0/js/libs/require/require.js?v=23.1.0"></script>
-    <script src="/i/libraries/apex/minified/requirejs.jetConfig.min.js?v=23.1.0"></script>
-    <script src="/i/libraries/apex/minified/jetCommonBundle.min.js?v=23.1.0"></script>
-    <script src="/i/libraries/apex/minified/chartBundle.min.js?v=23.1.0"></script> -->
+      <script src="r/dimdev/117/files/static/v194/aos.min.js"></script>
+      <script src="r/dimdev/117/files/static/v194/add.min.js"></script>
+      <script src="/i/libraries/apex/minified/widget.interactiveReport.min.js?v=23.1.0"></script>
+      <script src="/i/libraries/apex/minified/widget.iconList.min.js?v=23.1.0"></script>
+      <script src="/i/libraries/apex/minified/widget.stickyTableHeader.min.js?v=23.1.0"></script>
+      <script src="/i/libraries/apex/minified/widget.stickyWidget.min.js?v=23.1.0"></script>
+      <script src="/i/libraries/apex/minified/item.Colorpicker.min.js?v=23.1.0"></script>
+      <script src="/i/libraries/oraclejet/14.0.0/js/libs/require/require.js?v=23.1.0"></script>
+      <script src="/i/libraries/apex/minified/requirejs.jetConfig.min.js?v=23.1.0"></script>
+      <script src="/i/libraries/apex/minified/jetCommonBundle.min.js?v=23.1.0"></script>
+      <script src="/i/libraries/apex/minified/chartBundle.min.js?v=23.1.0"></script> -->
 
-
-    <script type="text/javascript">
-      apex.session.initTimeouts(900,{"idle_time_ms":1195000,"life_time_ms":28272000,"max_idle_time_ms":1200000},'\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fhome','\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fhome');
-      apex.jQuery( function() {
-      apex.page.init( this, function() {
-      try {
-      (function(){var e = apex.jQuery("#t_MenuNav", apex.gPageContext$);
-      if (e.hasClass("js-addActions")) {
-        apex.actions.addFromMarkup( e );
-      }
-      e.menu({
-        behaveLikeTabs: e.hasClass("js-tabLike"),
-        menubarShowSubMenuIcon: e.hasClass("js-showSubMenuIcons") || null,
-        menubar: true,
-        menubarOverflow: true,
-        callout: e.hasClass("js-menu-callout")
-      });
-      })();
-      (function(){apex.jQuery('#R81444957007286965145_ir').interactiveReport({"regionId":"R81444957007286965145","searchField":false,"reportsSelect":false,"selectColumns":false,"filter":false,"rowsPerPage":false,"sort":false,"controlBreak":false,"highlight":false,"compute":false,"aggregate":false,"chart":false,"groupBy":false,"pivot":false,"flashback":false,"saveReport":false,"reset":false,"help":false,"subscription":false,"lazyLoading":false,"ajaxIdentifier":"UkVHSU9OIFRZUEV-fjgxNDQ0OTU3MDA3Mjg2OTY1MTQ1\u002FELXiIgL6T1cBx8VO6AC4jPfpe31owbAMPmabILAvt0Vllv8IN4BJzfy5WlTV11QFsTBoWlr5w_i-yrx-azQ-Rw"});})();
-      } catch(e) {apex.debug.error(e)};
-      apex.item.waitForDelayLoadItems().done(function() {
-      try {
-      (function(){apex.da.initDaEventList();
-      apex.da.init();})();
-      apex.theme42.initializePage.noSideCol();
-      
-      apex.page.warnOnUnsavedChanges();
-      } finally {
-      apex.event.trigger(apex.gPageContext$,'apexreadyend');
-      };
-      });
-      });
-      });apex.pwa.init( { serviceWorkerPath:'\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fsw.js?v=23.1.0-249998717\u0026lang=en' } );
-    </script>
     <script>
-      AOS.init();
+      $(document).ready(function () {
+        var userName = localStorage.getItem("userName") || "Guest";
+        var userDesignation = localStorage.getItem("userDesignation") || "N/A";
+        var userDistrict = localStorage.getItem("userDistrict") || "N/A";
+        var userNo = localStorage.getItem("userMobileNumber") || "0";
+
+        $("#username .t-Button-label").text(userName);
+        $("#P1_NAME_OF_THE_INDENTING_OFFICER_DISPLAY").text(userName);
+        $("#P1_NAME_OF_THE_INDENTING_OFFICER").val(userName);
+        $("#P1_DESIGNATION_OF_OFFICER").val(userDesignation);
+        $("#P1_DESIGNATION_OF_OFFICER_DISPLAY").text(userDesignation);
+        $("#P1_DISTRICT").val(userDistrict);
+        $("#P1_DISTRICT_DISPLAY").text(userDistrict);
+      });
+      const apiUrl =
+        "https://tngis.tnega.org/medical_indent_api/v1/commonfunction";
+
+      function getPayload() {
+        return {
+          action: "function_call",
+          function_name: "im_get_disease_details_fn",
+          params: {},
+        };
+      }
+      function initColumnFilter(tableId) {
+  // Destroy if already initialized
+        if ($.fn.DataTable.isDataTable(`#${tableId}`)) {
+          $(`#${tableId}`).DataTable().destroy();
+        }
+
+        // Initialize again
+        const table = $(`#${tableId}`).DataTable({
+          initComplete: function () {
+            this.api().columns().every(function () {
+              const column = this;
+              $('input', this.header()).on('keyup change clear', function () {
+                if (column.search() !== this.value) {
+                  column.search(this.value).draw();
+                }
+              });
+            });
+          },
+          orderCellsTop: true,
+          fixedHeader: true,
+          pageLength: 10
+        });
+      }
+
+      function fetchTableData() {
+        const payload = getPayload();
+        loadDataToTable({
+          tableId: "viewdiseasedataTable",
+          apiUrl,
+          httpMethod: "POST",
+          payload: encryptData(payload),
+          rowBuilder: (item) => {
+            console.log(item);
+            if (!item || Object.keys(item).length === 0) {
+              $("#viewdiseasedataTable tbody").html(`
+                          <tr><td colspan="14" class="u-tC">No Data Found</td></tr>
+                        `);
+              return;
+            }
+
+            return `
+                        <tr>
+                          <td class="a-IRR-linkCol u-tC" 
+                              data-bs-toggle="modal" 
+                              data-bs-target=".update_Modal"
+                              onclick='openUpdateDiseaseModal(${JSON.stringify(
+                                item
+                              )})'>
+                            <a><span role="img" aria-label="Edit" class="fa fa-edit" title="Edit"></span></a>
+                          </td>
+                          <td class="u-tL">${item.system}</td>
+                          <td class="u-tL">${item.name_of_the_disease}</td> 
+                        </tr>
+                      `;
+          },
+          onTableInit: function (dtRef) {
+            dataTableRef = dtRef;
+            initColumnFilter("viewdiseasedataTable"); // call filter setup here
+          },
+        });
+      }
+      fetchTableData();
+
+      function getPayloadCreate() {
+        return {
+          action: "function_call",
+          function_name: "im_insert_disease_fn",
+          params: {
+            p_system: $("#P50_SYSTEM").val() || null,
+            p_name_of_the_disease: $("#P50_NAME_OF_THE_DISEASE").val() || null,
+            p_created_by: localStorage.getItem("userMobileNumber") || null,
+          },
+        };
+      }
+      $("#btnCreatedisease").on("click", function () {
+        // Clear previous error messages
+        $(".a-Form-error").text("");
+
+        let isValid = true;
+
+        const system = $("#P50_SYSTEM").val().trim();
+        const diseaseName = $("#P50_NAME_OF_THE_DISEASE").val().trim();
+
+        // Validate System
+        if (!system) {
+          $("#P50_SYSTEM_error_placeholder").text("System is required.");
+          isValid = false;
+        }
+
+        // Validate Disease Name
+        if (!diseaseName) {
+          $("#P50_NAME_OF_THE_DISEASE_error_placeholder").text("Disease name is required.");
+          isValid = false;
+        }
+
+        if (!isValid) {
+          return; // Stop here if validation fails
+        }
+
+        const payload = {
+          action: "function_call",
+          function_name: "im_insert_disease_fn",
+          params: {
+            p_system: system,
+            p_name_of_the_disease: diseaseName,
+            p_created_by: localStorage.getItem("userMobileNumber") || null,
+            p_created_date: new Date().toISOString()
+          }
+        };
+
+        $.ajax({
+          url: apiUrl,
+          method: "POST",
+          data: {
+            data: encryptData(payload),
+          },
+          dataType: "json",
+          success: function (response) {
+            showSuccessToast("Successfully submitted.");
+            $(".create_Modal").modal("hide");
+            fetchTableData();
+          },
+          error: function (xhr, status, error) {
+            console.error("API call failed:", {
+              status: xhr.status,
+              statusText: xhr.statusText,
+              responseText: xhr.responseText,
+              error: error,
+            });
+          },
+        });
+      });
+      function openUpdateDiseaseModal(data) {
+      
+        document.getElementById("P50_ID_Edit").value = data.id;
+        document.getElementById("P50_SYSTEM_Edit").value = data.system;
+        document.getElementById("P50_NAME_OF_THE_DISEASE_Edit").value =
+          data.name_of_the_disease;
+
+        // Set updated date to now
+        const now = new Date().toISOString().slice(0, 19).replace("T", " ");
+        document.getElementById("P50_UPDATED_DATE").value = now;
+      }
+      function updateDisease() {
+      const payload = {
+        action: "function_call",
+        function_name: "im_update_disease_fn",
+        params: {
+          p_id : document.getElementById("P50_ID_Edit").value ,
+          p_system: document.getElementById("P50_SYSTEM_Edit").value,
+            p_name_of_the_disease: document.getElementById(
+              "P50_NAME_OF_THE_DISEASE_Edit"
+            ).value, 
+          p_updated_by: localStorage.getItem("userMobileNumber") || null,
+          p_updated_date: new Date().toISOString().slice(0, 19).replace("T", " ") 
+        }
+      }
+      $.ajax({
+            url: apiUrl,
+            method: 'POST',
+          data:{
+            data: encryptData(payload),
+          },
+            dataType: 'json',
+            success: function (response) {
+              
+              showSuccessToast("Record updated successfully");
+              $(".update_Modal").modal("hide");
+              fetchTableData(); 
+            },
+            error: function (xhr, status, error) {
+              console.error("API call failed:", {
+                status: xhr.status,
+                statusText: xhr.statusText,
+                responseText: xhr.responseText,
+                error: error
+              });
+            }
+          })
+      }
+      // function updateDisease() {
+      //   const data = {
+      //     // p_id: document.getElementById("P50_ID").value,
+      //     p_system: document.getElementById("P50_SYSTEM_Edit").value,
+      //     p_name_of_the_disease: document.getElementById(
+      //       "P50_NAME_OF_THE_DISEASE_Edit"
+      //     ).value,
+      //   };
+
+      //   // Optional: Validate fields
+      //   if (!data.p_system || !data.p_name_of_the_disease) {
+      //     alert("Please fill required fields");
+      //     return;
+      //   }
+        
+      //   // AJAX call to server
+      //   fetch("https://tngis.tnega.org/medical_indent_api/v1/commonfunction", {
+      //     method: "POST",
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //     },
+      //     body: JSON.stringify(data),
+      //   })
+      //     .then((res) => res.json())
+      //     .then((res) => {
+      //       if (res.success) {
+      //         alert("Disease updated successfully");
+      //         $(".update_Modal").modal("hide");
+      //         // refresh table if needed
+      //       } else {
+      //         alert("Update failed: " + res.message);
+      //       }
+      //     })
+      //     .catch((err) => {
+      //       console.error(err);
+      //       alert("An error occurred");
+      //     });
+      // }
     </script>
-    <div id="pushModal" style="width: 100%; display:none; height: 100%;" class="u-DisplayNone u-Overlay--glass"></div>
-    <div id="R81444957007286965145_actions_menu" role="menu" class="a-Menu" style="display: none;"></div>
-    <div role="dialog" aria-label="Column Actions" aria-modal="true" class="a-IRR-sortWidget" id="R81444957007286965145_sort_widget" style="display:none;">
-      <h1 class="u-vh" aria-roledescription="Visually hidden dialog title">Column Actions</h1>
-      <ul role="toolbar" class="a-IRR-sortWidget-actions" id="R81444957007286965145_sort_widget_actions">
-        <li role="none" class="a-IRR-sortWidget-actions-item" id="R81444957007286965145_sort_widget_action_up"><button class="a-Button a-IRR-button a-IRR-sortWidget-button" type="button" title="Sort Ascending" aria-label="Sort Ascending" data-option="up"><span aria-hidden="true" class="a-Icon icon-irr-sort-asc"></span></button></li>
-        <li role="none" class="a-IRR-sortWidget-actions-item" id="R81444957007286965145_sort_widget_action_down"><button class="a-Button a-IRR-button a-IRR-sortWidget-button" type="button" title="Sort Descending" aria-label="Sort Descending" data-option="down"><span aria-hidden="true" class="a-Icon icon-irr-sort-desc"></span></button></li>
-        <li role="none" class="a-IRR-sortWidget-actions-item" id="R81444957007286965145_sort_widget_action_hide"><button class="a-Button a-IRR-button a-IRR-sortWidget-button" type="button" title="Hide Column" aria-label="Hide Column" data-option="hide"><span aria-hidden="true" class="a-Icon icon-irr-remove-col"></span></button></li>
-        <li role="none" class="a-IRR-sortWidget-actions-item" id="R81444957007286965145_sort_widget_action_break"><button class="a-Button a-IRR-button a-IRR-sortWidget-button" type="button" title="Control Break" aria-label="Control Break" data-option="break"><span aria-hidden="true" class="a-Icon icon-irr-control-break"></span></button></li>
-        <li role="none" class="a-IRR-sortWidget-actions-item" id="R81444957007286965145_sort_widget_action_help"><button class="a-Button a-IRR-button a-IRR-sortWidget-button" type="button" title="Help" aria-label="Help" data-option="help" aria-pressed="false"><span aria-hidden="true" class="a-Icon icon-irr-help"></span></button></li>
-        <li role="none" class="a-IRR-sortWidget-actions-item" id="R81444957007286965145_sort_widget_action_computation"><button class="a-Button a-IRR-button a-IRR-sortWidget-button" type="button" title="Compute" aria-label="Compute" data-option="computation"><span aria-hidden="true" class="a-Icon icon-irr-calculator"></span></button></li>
+    <div
+      id="pushModal"
+      style="width: 100%; display: none; height: 100%"
+      class="u-DisplayNone u-Overlay--glass"
+    ></div>
+    <div
+      id="R81444957007286965145_actions_menu"
+      role="menu"
+      class="a-Menu"
+      style="display: none"
+    ></div>
+    <div
+      role="dialog"
+      aria-label="Column Actions"
+      aria-modal="true"
+      class="a-IRR-sortWidget"
+      id="R81444957007286965145_sort_widget"
+      style="display: none"
+    >
+      <h1 class="u-vh" aria-roledescription="Visually hidden dialog title">
+        Column Actions
+      </h1>
+      <ul
+        role="toolbar"
+        class="a-IRR-sortWidget-actions"
+        id="R81444957007286965145_sort_widget_actions"
+      >
+        <li
+          role="none"
+          class="a-IRR-sortWidget-actions-item"
+          id="R81444957007286965145_sort_widget_action_up"
+        >
+          <button
+            class="a-Button a-IRR-button a-IRR-sortWidget-button"
+            type="button"
+            title="Sort Ascending"
+            aria-label="Sort Ascending"
+            data-option="up"
+          >
+            <span aria-hidden="true" class="a-Icon icon-irr-sort-asc"></span>
+          </button>
+        </li>
+        <li
+          role="none"
+          class="a-IRR-sortWidget-actions-item"
+          id="R81444957007286965145_sort_widget_action_down"
+        >
+          <button
+            class="a-Button a-IRR-button a-IRR-sortWidget-button"
+            type="button"
+            title="Sort Descending"
+            aria-label="Sort Descending"
+            data-option="down"
+          >
+            <span aria-hidden="true" class="a-Icon icon-irr-sort-desc"></span>
+          </button>
+        </li>
+        <li
+          role="none"
+          class="a-IRR-sortWidget-actions-item"
+          id="R81444957007286965145_sort_widget_action_hide"
+        >
+          <button
+            class="a-Button a-IRR-button a-IRR-sortWidget-button"
+            type="button"
+            title="Hide Column"
+            aria-label="Hide Column"
+            data-option="hide"
+          >
+            <span aria-hidden="true" class="a-Icon icon-irr-remove-col"></span>
+          </button>
+        </li>
+        <li
+          role="none"
+          class="a-IRR-sortWidget-actions-item"
+          id="R81444957007286965145_sort_widget_action_break"
+        >
+          <button
+            class="a-Button a-IRR-button a-IRR-sortWidget-button"
+            type="button"
+            title="Control Break"
+            aria-label="Control Break"
+            data-option="break"
+          >
+            <span
+              aria-hidden="true"
+              class="a-Icon icon-irr-control-break"
+            ></span>
+          </button>
+        </li>
+        <li
+          role="none"
+          class="a-IRR-sortWidget-actions-item"
+          id="R81444957007286965145_sort_widget_action_help"
+        >
+          <button
+            class="a-Button a-IRR-button a-IRR-sortWidget-button"
+            type="button"
+            title="Help"
+            aria-label="Help"
+            data-option="help"
+            aria-pressed="false"
+          >
+            <span aria-hidden="true" class="a-Icon icon-irr-help"></span>
+          </button>
+        </li>
+        <li
+          role="none"
+          class="a-IRR-sortWidget-actions-item"
+          id="R81444957007286965145_sort_widget_action_computation"
+        >
+          <button
+            class="a-Button a-IRR-button a-IRR-sortWidget-button"
+            type="button"
+            title="Compute"
+            aria-label="Compute"
+            data-option="computation"
+          >
+            <span aria-hidden="true" class="a-Icon icon-irr-calculator"></span>
+          </button>
+        </li>
       </ul>
-      <div role="region" aria-label="Help" class="a-IRR-sortWidget-help" id="R81444957007286965145_sort_widget_help"></div>
-      <div role="search" class="a-IRR-sortWidget-search" id="R81444957007286965145_sort_widget_search">
-        <label for="R81444957007286965145_sort_widget_search_field" class="a-IRR-sortWidget-searchLabel"><span class="u-vh">Search</span></label><input id="R81444957007286965145_sort_widget_search_field" class="a-IRR-sortWidget-searchField" type="text" placeholder="Filter...">
-        <div role="group" aria-label="Filter suggestions" class="a-IRR-sortWidget-rows" id="R81444957007286965145_sort_widget_rows"></div>
+      <div
+        role="region"
+        aria-label="Help"
+        class="a-IRR-sortWidget-help"
+        id="R81444957007286965145_sort_widget_help"
+      ></div>
+      <div
+        role="search"
+        class="a-IRR-sortWidget-search"
+        id="R81444957007286965145_sort_widget_search"
+      >
+        <label
+          for="R81444957007286965145_sort_widget_search_field"
+          class="a-IRR-sortWidget-searchLabel"
+          ><span class="u-vh">Search</span></label
+        ><input
+          id="R81444957007286965145_sort_widget_search_field"
+          class="a-IRR-sortWidget-searchField"
+          type="text"
+          placeholder="Filter..."
+        />
+        <div
+          role="group"
+          aria-label="Filter suggestions"
+          class="a-IRR-sortWidget-rows"
+          id="R81444957007286965145_sort_widget_rows"
+        ></div>
       </div>
     </div>
-    <div class="t-NavigationBar-menu a-Menu" style="display: none" id="menu_L428237300758551931558" role="menu">
+    <div
+      class="t-NavigationBar-menu a-Menu"
+      style="display: none"
+      id="menu_L428237300758551931558"
+      role="menu"
+    >
       <ul>
-        <li class="" data-current="false" data-icon="fa fa-sign-out"><a href="apex_authentication.logout?p_app_id=117&amp;p_session_id=9577400874335" title="" target="">Sign Out</a></li>
+        <li class="" data-current="false" data-icon="fa fa-sign-out">
+          <a
+            href="apex_authentication.logout?p_app_id=117&amp;p_session_id=9577400874335"
+            title=""
+            target=""
+            >Sign Out</a
+          >
+        </li>
       </ul>
     </div>
-    <iframe frameborder="0" scrolling="no" style="background-color: transparent; border: 0px; display: none;"></iframe>
-    <div id="GOOGLE_INPUT_CHEXT_FLAG" style="display: none;" input="" input_stat="{&quot;tlang&quot;:true,&quot;tsbc&quot;:true,&quot;pun&quot;:true,&quot;mk&quot;:true,&quot;ss&quot;:true}"></div>
+    <iframe
+      frameborder="0"
+      scrolling="no"
+      style="background-color: transparent; border: 0px; display: none"
+    ></iframe>
+    <div
+      id="GOOGLE_INPUT_CHEXT_FLAG"
+      style="display: none"
+      input=""
+      input_stat='{"tlang":true,"tsbc":true,"pun":true,"mk":true,"ss":true}'
+    ></div>
   </body>
 </html>
