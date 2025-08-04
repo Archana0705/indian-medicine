@@ -70,13 +70,12 @@
         <div class="t-Header-navBar">
           <div class="t-Header-navBar--start"></div>
           <div class="t-Header-navBar--center">
-            <ul class="t-NavigationBar " id="428237243222882931397">
+            <ul class="t-NavigationBar " id="username">
               <li class="t-NavigationBar-item ">
                 <button class="t-Button t-Button--icon t-Button t-Button--header t-Button--navBar" type="button"
                   id="L428237300758551931558" data-menu="menu_L428237300758551931558" title="" aria-haspopup="menu">
-                  <span class="t-Icon fa fa-user" aria-hidden="true"></span><span
-                    class="t-Button-label">Siva</span><span class="t-Button-badge"></span><span
-                    class="a-Icon icon-down-arrow" aria-hidden="true"></span>
+                  <span class="t-Icon fa fa-user" aria-hidden="true"></span><span class="t-Button-label"></span><span
+                    class="t-Button-badge"></span><span class="a-Icon icon-down-arrow" aria-hidden="true"></span>
                 </button>
               </li>
             </ul>
@@ -165,12 +164,13 @@
                                   </div>
                                   <div class="t-Form-inputContainer col col-4">
                                     <div class="t-Form-itemWrapper"><input type="hidden"
-                                        id="P1_NAME_OF_THE_INDENTING_OFFICER" name="P1_NAME_OF_THE_INDENTING_OFFICER"
-                                        value="Siva"><input type="hidden" data-for="P1_NAME_OF_THE_INDENTING_OFFICER"
+                                        id="P1_NAME_OF_THE_INDENTING_OFFICER"
+                                        name="P1_NAME_OF_THE_INDENTING_OFFICER"><input type="hidden"
+                                        data-for="P1_NAME_OF_THE_INDENTING_OFFICER"
                                         value="EP7eJ6TTia3RqAVSOQgww6Q49GpD-xiC7PeMlxWoBiGDfQTpQ2rz_Woh2BuP8cP5V6qLuOMU2ZvsJbiKtKs3Kg"><span
                                         id="P1_NAME_OF_THE_INDENTING_OFFICER_DISPLAY"
                                         class="display_only apex-item-display-only apex-item-has-icon"
-                                        data-escape="true">Siva</span><span class="apex-item-icon fa fa-user-md"
+                                        data-escape="true"></span><span class="apex-item-icon fa fa-user-md"
                                         aria-hidden="true"></span></div>
                                     <span id="P1_NAME_OF_THE_INDENTING_OFFICER_error_placeholder" class="a-Form-error"
                                       data-template-id="428237130780249931341_ET"></span>
@@ -187,14 +187,13 @@
                                   </div>
                                   <div class="t-Form-inputContainer col col-4">
                                     <div class="t-Form-itemWrapper"><input type="hidden" id="P1_DESIGNATION_OF_OFFICER"
-                                        name="P1_DESIGNATION_OF_OFFICER"
-                                        value="Indian Medicine &amp; Homeopathy Department"><input type="hidden"
+                                        name="P1_DESIGNATION_OF_OFFICER"><input type="hidden"
                                         data-for="P1_DESIGNATION_OF_OFFICER"
                                         value="IgXjoprz2ryFMkW_z8XhbSIS28FoKXFFhg7oHRlxJ6zUCHFhc31XZaR2-TGzUfFZbiTgVLe806710uEiz02YjA"><span
                                         id="P1_DESIGNATION_OF_OFFICER_DISPLAY"
                                         class="display_only apex-item-display-only apex-item-has-icon"
-                                        data-escape="true">Indian Medicine &amp; Homeopathy Department</span><span
-                                        class="apex-item-icon fa fa-stethoscope" aria-hidden="true"></span></div>
+                                        data-escape="true"></span><span class="apex-item-icon fa fa-stethoscope"
+                                        aria-hidden="true"></span></div>
                                     <span id="P1_DESIGNATION_OF_OFFICER_error_placeholder" class="a-Form-error"
                                       data-template-id="428237130780249931341_ET"></span>
                                   </div>
@@ -212,13 +211,12 @@
                                   </div>
                                   <div class="t-Form-inputContainer col col-4">
                                     <div class="t-Form-itemWrapper"><input type="hidden" id="P1_DISTRICT"
-                                        name="P1_DISTRICT" value="Chennai HO"><input type="hidden"
-                                        data-for="P1_DISTRICT"
+                                        name="P1_DISTRICT"><input type="hidden" data-for="P1_DISTRICT"
                                         value="Cr43LhDtxj8Ap3vX8xH4NdttaU-woq6RybsJagZ6L-dQ4-VjK8ktC2v3ZBfeJDRcatyXrTEyuBem8GIrRQBEYw"><span
                                         id="P1_DISTRICT_DISPLAY"
                                         class="display_only apex-item-display-only apex-item-has-icon"
-                                        data-escape="true">Chennai HO</span><span
-                                        class="apex-item-icon fa fa-location-circle" aria-hidden="true"></span></div>
+                                        data-escape="true"></span><span class="apex-item-icon fa fa-location-circle"
+                                        aria-hidden="true"></span></div>
                                     <span id="P1_DISTRICT_error_placeholder" class="a-Form-error"
                                       data-template-id="428237130780249931341_ET"></span>
                                   </div>
@@ -311,5 +309,19 @@
 <script src="../assets/js/global.js"></script>
 <script src="../assets/js/encrypt_decrypt.js"></script>
 <script src="../assets/js/globalHeader.js"></script>
+<script>
+  $(document).ready(function () {
+    var userName = localStorage.getItem("userName") || "Guest";
+    var userDesignation = localStorage.getItem("userDesignation") || "N/A";
+    var userDistrict = localStorage.getItem("userDistrict") || "N/A";
+    $('#username .t-Button-label').text(userName);
+    $('#P1_NAME_OF_THE_INDENTING_OFFICER_DISPLAY').text(userName);
+    $('#P1_NAME_OF_THE_INDENTING_OFFICER').val(userName);
+    $('#P1_DESIGNATION_OF_OFFICER').val(userDesignation);
+    $('#P1_DESIGNATION_OF_OFFICER_DISPLAY').text(userDesignation);
+    $('#P1_DISTRICT').val(userDistrict);
+    $('#P1_DISTRICT_DISPLAY').text(userDistrict);
+  });
+</script>
 
 </html>

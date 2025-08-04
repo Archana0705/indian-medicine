@@ -1,1406 +1,614 @@
 <html class="page-36 app-IMIM" lang="en" style="--js-sticky-top: 204.375px; --js-sticky-scrollpad-block-end: 32.8px;">
-  <head>
-    <meta http-equiv="x-ua-compatible" content="IE=edge">
-    <meta charset="utf-8">
-    <title>District wise Consolidated Report - Download</title>
-    
-     <link rel="apple-touch-icon" href="../assets/img/app-icon-192.png">
-    <link rel="icon" href="../assets/img/app-icon-32.png">
 
-    <link rel="stylesheet" href="../assets/css/Core.min.css" type="text/css">
-    <link rel="stylesheet" href="../assets/css/Theme-Standard.min.css" type="text/css">
-    <link rel="stylesheet" href="../assets/css/font-apex.min.css" type="text/css">
-    <link rel="stylesheet" href="../assets/css/Core_theme.min.css" type="text/css">
-    <link rel="stylesheet" href="../assets/css/custom.min.css" type="text/css">
-    <link rel="stylesheet" href="../assets/css/aos.min.css" type="text/css"> 
-    <link rel="stylesheet" href="../assets/css/theme.css" type="text/css">
-    
+<head>
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <title>District wise Consolidated Report - Download</title>
 
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="-1">
-    <meta http-equiv="Cache-Control" content="no-cache">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
-  <body class="t-PageBody t-PageBody--hideLeft t-PageBody--hideActions t-PageTemplate--standard apex-top-nav apex-icons-fontapex apex-theme-vita-standard js-HeaderExpanded t-PageBody--topNav" id="t_PageBody" data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
-    <a href="#main" id="t_Body_skipToContent">Skip to Main Content</a>
-    <form action="wwv_flow.accept?p_context=imim/district-wise-consolidated-report-download/2368821413423" method="post" name="wwv_flow" id="wwvFlowForm" data-oj-binding-provider="none" novalidate="" autocomplete="off">
-      <input type="hidden" name="p_flow_id" value="117" id="pFlowId"><input type="hidden" name="p_flow_step_id" value="36" id="pFlowStepId"><input type="hidden" name="p_instance" value="2368821413423" id="pInstance"><input type="hidden" name="p_page_submission_id" value="331572193213706970118363372758786582617" id="pPageSubmissionId"><input type="hidden" name="p_request" value="" id="pRequest"><input type="hidden" name="p_reload_on_submit" value="S" id="pReloadOnSubmit"><input type="hidden" value="imim/district-wise-consolidated-report-download/2368821413423" id="pContext"><input type="hidden" value="331572193213706970118363372758786582617" id="pSalt">
-      <header class="t-Header" id="t_Header" role="banner">
-        <div class="t-Header-branding">
-          <div class="t-Header-controls">
-            <button class="t-Button t-Button--icon t-Button--header t-Button--headerTree" aria-label="Main Navigation" title="Main Navigation" id="t_Button_navControl" type="button"><span class="t-Header-controlsIcon" aria-hidden="true"></span></button>
+  <link rel="apple-touch-icon" href="../assets/img/app-icon-192.png">
+  <link rel="icon" href="../assets/img/app-icon-32.png">
+
+  <link rel="stylesheet" href="../assets/css/Core.min.css" type="text/css">
+  <link rel="stylesheet" href="../assets/css/Theme-Standard.min.css" type="text/css">
+  <link rel="stylesheet" href="../assets/css/font-apex.min.css" type="text/css">
+  <link rel="stylesheet" href="../assets/css/Core_theme.min.css" type="text/css">
+  <link rel="stylesheet" href="../assets/css/custom.min.css" type="text/css">
+  <link rel="stylesheet" href="../assets/css/aos.min.css" type="text/css">
+  <link rel="stylesheet" href="../assets/css/theme.css" type="text/css">
+
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="-1">
+  <meta http-equiv="Cache-Control" content="no-cache">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .dataTables_paginate {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 5px;
+  }
+
+  .paginate_button {
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    padding: 6px 12px;
+    margin: 0 2px;
+    border-radius: 4px;
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+  }
+
+  .paginate_button:hover:not(.disabled),
+  .paginate_button:focus {
+    background-color: #007bff;
+    color: white;
+  }
+
+  .paginate_button.current {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+  }
+
+  .paginate_button.disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+  </style>
+</head>
+
+<body
+  class="t-PageBody t-PageBody--hideLeft t-PageBody--hideActions t-PageTemplate--standard apex-top-nav apex-icons-fontapex apex-theme-vita-standard js-HeaderExpanded t-PageBody--topNav"
+  id="t_PageBody" data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
+  <a href="#main" id="t_Body_skipToContent">Skip to Main Content</a>
+  <form method="post" name="wwv_flow" id="wwvFlowForm" data-oj-binding-provider="none" novalidate="" autocomplete="off">
+    <input type="hidden" name="p_flow_id" value="117" id="pFlowId"><input type="hidden" name="p_flow_step_id" value="36"
+      id="pFlowStepId"><input type="hidden" name="p_instance" value="2368821413423" id="pInstance"><input type="hidden"
+      name="p_page_submission_id" value="331572193213706970118363372758786582617" id="pPageSubmissionId"><input
+      type="hidden" name="p_request" value="" id="pRequest"><input type="hidden" name="p_reload_on_submit" value="S"
+      id="pReloadOnSubmit"><input type="hidden" value="imim/district-wise-consolidated-report-download/2368821413423"
+      id="pContext"><input type="hidden" value="331572193213706970118363372758786582617" id="pSalt">
+    <header class="t-Header" id="t_Header" role="banner">
+      <div class="t-Header-branding">
+        <div class="t-Header-controls">
+          <button class="t-Button t-Button--icon t-Button--header t-Button--headerTree" aria-label="Main Navigation"
+            title="Main Navigation" id="t_Button_navControl" type="button"><span class="t-Header-controlsIcon"
+              aria-hidden="true"></span></button>
+        </div>
+        <div class="t-Header-logo">
+          <!-- <a href="&#x2F;ords&#x2F;r&#x2F;dimdev&#x2F;imim&#x2F;home?session=2368821413423" class="t-Header-logo-link"><img src="r&#x2F;dimdev&#x2F;117&#x2F;files&#x2F;static&#x2F;v194&#x2F;app-251298-logo.jpeg" alt="" class="apex-logo-img" /><span class="apex-logo-text">DIRECTORATE OF INDIAN MEDICINE  - INDENT MANAGEMENT</span></a> -->
+          <div class="gigw">
+            <li><a data-aos="fade-up" data-aos-delay="200" class="linkedin btn-decrease aos-init aos-animate"><span
+                  class="d-inline-block" tabindex="0" data-toggle="tooltip" title="font size Decrease"><i></i> A
+                  -</span></a></li>
+            <li><a data-aos="fade-up" data-aos-delay="300" class="linkedin btn-orig aos-init aos-animate"><span
+                  class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Reset font"><i></i> A
+                  <sup></sup></span></a></li>
+            <li><a data-aos="fade-up" data-aos-delay="400" class="instagram btn-increase aos-init aos-animate"><span
+                  class="d-inline-block" tabindex="0" data-toggle="tooltip" title="font size Increase"><i></i> A
+                  +</span></a></li>
+            <li><a data-aos="fade-up" data-aos-delay="500" class="aos-init aos-animate"><span class="d-inline-block"
+                  tabindex="0" data-toggle="tooltip" title="Dark Mode"><i class="t-Icon fa fa-moon-o"
+                    id="darkmode"></i></span></a></li>
+            <li><a data-aos="fade-up" data-aos-delay="600" class="form-check form-switch aos-init aos-animate"><label
+                  class="form-check-label" for="screenReaderSwitch">
+                  <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Screen Reader">
+                    <i id="sound" class="t-Icon fa fa-volume-up"></i></span></label><input class="form-check-input"
+                  type="checkbox" role="switch" id="screenReaderSwitch"
+                  onclick="readText(document.getElementsByTagName('body')[0])"></a>
+            </li>
           </div>
-          <div class="t-Header-logo">
-            <!-- <a href="&#x2F;ords&#x2F;r&#x2F;dimdev&#x2F;imim&#x2F;home?session=2368821413423" class="t-Header-logo-link"><img src="r&#x2F;dimdev&#x2F;117&#x2F;files&#x2F;static&#x2F;v194&#x2F;app-251298-logo.jpeg" alt="" class="apex-logo-img" /><span class="apex-logo-text">DIRECTORATE OF INDIAN MEDICINE  - INDENT MANAGEMENT</span></a> -->
-            <div class="gigw">
-              <li><a data-aos="fade-up" data-aos-delay="200" class="linkedin btn-decrease aos-init aos-animate"><span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="font size Decrease"><i></i> A -</span></a></li>
-              <li><a data-aos="fade-up" data-aos-delay="300" class="linkedin btn-orig aos-init aos-animate"><span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Reset font"><i></i> A <sup></sup></span></a></li>
-              <li><a data-aos="fade-up" data-aos-delay="400" class="instagram btn-increase aos-init aos-animate"><span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="font size Increase"><i></i> A +</span></a></li>
-              <li><a data-aos="fade-up" data-aos-delay="500" class="aos-init aos-animate"><span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Dark Mode"><i class="t-Icon fa fa-moon-o" id="darkmode"></i></span></a></li>
-              <li><a data-aos="fade-up" data-aos-delay="600" class="form-check form-switch aos-init aos-animate"><label class="form-check-label" for="screenReaderSwitch">
-                <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Screen Reader">
-                <i id="sound" class="t-Icon fa fa-volume-up"></i></span></label><input class="form-check-input" type="checkbox" role="switch" id="screenReaderSwitch" onclick="readText(document.getElementsByTagName('body')[0])"></a>
+        </div>
+        <div class="t-Header-navBar">
+          <div class="t-Header-navBar--start"></div>
+          <div class="t-Header-navBar--center">
+            <ul class="t-NavigationBar " id="username">
+              <li class="t-NavigationBar-item ">
+                <button class="t-Button t-Button--icon t-Button t-Button--header t-Button--navBar" type="button"
+                  id="L428237300758551931558" data-menu="menu_L428237300758551931558" title="" aria-haspopup="menu">
+                  <span class="t-Icon fa fa-user" aria-hidden="true"></span><span class="t-Button-label"></span><span
+                    class="t-Button-badge"></span><span class="a-Icon icon-down-arrow" aria-hidden="true"></span>
+                </button>
               </li>
-            </div>
-          </div>
-          <div class="t-Header-navBar">
-            <div class="t-Header-navBar--start"></div>
-            <div class="t-Header-navBar--center">
-              <ul class="t-NavigationBar " id="428237243222882931397">
-                <li class="t-NavigationBar-item ">
-                  <button class="t-Button t-Button--icon t-Button t-Button--header t-Button--navBar" type="button" id="L428237300758551931558" data-menu="menu_L428237300758551931558" title="" aria-haspopup="menu">
-                  <span class="t-Icon fa fa-user" aria-hidden="true"></span><span class="t-Button-label">Siva</span><span class="t-Button-badge"></span><span class="a-Icon icon-down-arrow" aria-hidden="true"></span>
-                  </button>
-                </li>
-              </ul>
-            </div>
-            <div class="t-Header-navBar--end"></div>
-          </div>
-        </div>
-        <div class="top">
-          <img id="leftlogo" data-aos="fade-right" data-aos-duration="800" src="../assets/img/head-tnlogo.png" class="aos-init aos-animate">
-          <h1 data-aos="zoom-in" data-aos-duration="800" class="dept-name text-middle aos-init aos-animate">Medicine Indent</h1>
-          <h3 data-aos="zoom-in" data-aos-duration="800" class="dept-name2 text-middle aos-init aos-animate">Department of Indian Medicine and Homoeopathy</h3>
-          <img id="rightlogo" data-aos="fade-left" data-aos-duration="800" src="../assets/img/head-dept-logo.png" class="aos-init aos-animate">
-        </div>
-        <div class="t-Header-nav">
-          <div class="t-Header-nav-list js-tabLike js-tabLike a-MenuBar a-MenuBar--overflow a-MenuBar--tabs" id="t_MenuNav" role="menubar">
-            <ul role="none">
-             <li role="none" id="t_MenuNav_0" class="a-MenuBar-item a-Menu--current"><a role="menuitem" class="a-MenuBar-label" aria-current="true" id="t_MenuNav_0i" href="../dim/home.html">Home</a></li>
-              <li role="none" id="t_MenuNav_1" class="a-MenuBar-item"><a role="menuitem" class="a-MenuBar-label" id="t_MenuNav_1i" href="../dim/received-medicine.html" tabindex="-1">Received Medicine Report</a></li>
-              <li role="none" id="t_MenuNav_2" class="a-MenuBar-item"><a role="menuitem" class="a-MenuBar-label" id="t_MenuNav_2i" href="../dim/medicine-details.html" tabindex="-1">Medicine Details</a></li>
-              <li role="none" id="t_MenuNav_3" class="a-MenuBar-item"><a role="menuitem" class="a-MenuBar-label" id="t_MenuNav_3i" href="download.html" tabindex="-1">Download Despatched Medicine</a></li>
             </ul>
           </div>
-        </div>
-      </header>
-      <div class="t-Body">
-        <div class="t-Body-main">
-          <div class="t-Body-title" id="t_Body_title" style=""></div>
-          <div class="t-Body-content" id="t_Body_content">
-            <div id="t_Body_content_offset"></div>
-            <main id="main" class="t-Body-mainContent">
-              <span id="APEX_SUCCESS_MESSAGE" data-template-id="238562751400702882270_S" class="apex-page-success u-hidden"></span><span id="APEX_ERROR_MESSAGE" data-template-id="238562751400702882270_E" class="apex-page-error u-hidden"></span>
-              <div class="t-Body-fullContent"></div>
-              <div class="t-Body-contentInner">
-                <div class="container">
-                  <div class="row ">
-                    <div class="col col-4 apex-col-auto col-start">
-                      <div class="t-Form-fieldContainer is-required rel-col t-Form-fieldContainer--stretchInputs t-Form-fieldContainer--indicatorAsterisk t-Form-fieldContainer--large apex-item-wrapper apex-item-wrapper--select-list" id="P36_FINANCIAL_YEAR_CONTAINER">
-                        <div class="t-Form-labelContainer col col-2">
-                          <label for="P36_FINANCIAL_YEAR" id="P36_FINANCIAL_YEAR_LABEL" class="t-Form-label">Financial Year  </label>
-                        </div>
-                        <div class="t-Form-inputContainer col col-2">
-                          <div class="t-Form-itemWrapper">
-                            <select id="P36_FINANCIAL_YEAR" name="P36_FINANCIAL_YEAR" required="" class="selectlist apex-item-select" data-native-menu="false" size="1">
-                              <option value="" selected="selected">Select</option>
-                              <option value="2023 - 2024">2023 - 2024</option>
-                              <option value="2024 - 2025">2024 - 2025</option>
-                              <option value="2025 - 2026">2025 - 2026</option>
-                              <option value="2022 - 2023">2022 - 2023</option>
-                            </select>
-                          </div>
-                          <div class="t-Form-itemAssistance">
-                            <span id="P36_FINANCIAL_YEAR_error_placeholder" class="a-Form-error" data-template-id="428237131064519931341_ET"></span>
-                            <div class="t-Form-itemRequired" aria-hidden="true">Required</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col col-4 apex-col-auto ">
-                      <div class="t-Form-fieldContainer is-required rel-col t-Form-fieldContainer--stretchInputs t-Form-fieldContainer--indicatorAsterisk t-Form-fieldContainer--large apex-item-wrapper apex-item-wrapper--select-list" id="P36_QUARTERS_CONTAINER">
-                        <div class="t-Form-labelContainer col col-2">
-                          <label for="P36_QUARTERS" id="P36_QUARTERS_LABEL" class="t-Form-label">Quarters  </label>
-                        </div>
-                        <div class="t-Form-inputContainer col col-2">
-                          <div class="t-Form-itemWrapper">
-                            <select id="P36_QUARTERS" name="P36_QUARTERS" required="" class="selectlist apex-item-select" data-native-menu="false" size="1">
-                              <option value="" selected="selected">Select</option>
-                              <option value="1st Quarter">1st Quarter</option>
-                              <option value="2nd Quarter">2nd Quarter</option>
-                              <option value="3rd Quarter">3rd Quarter</option>
-                              <option value="4th Quarter">4th Quarter</option>
-                              <option value="Annual Indent">Annual Indent</option>
-                            </select>
-                          </div>
-                          <div class="t-Form-itemAssistance">
-                            <span id="P36_QUARTERS_error_placeholder" class="a-Form-error" data-template-id="428237131064519931341_ET"></span>
-                            <div class="t-Form-itemRequired" aria-hidden="true">Required</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col col-4 apex-col-auto col-end"><button onclick="apex.submit({request:'Search',validate:true});" class="t-Button t-Button--hot u-color-12  t-Button--large t-Button--success" type="button" id="B19343568420146100"><span class="t-Button-label">Search</span></button></div>
-                  </div>
-                  <div class="row ">
-                    <div class="col col-4 apex-col-auto col-start">
-                      <div class="t-Form-fieldContainer rel-col t-Form-fieldContainer--stretchInputs t-Form-fieldContainer--large apex-item-wrapper apex-item-wrapper--select-list" id="P36_INDENT_TYPE_CONTAINER">
-                        <div class="t-Form-labelContainer col col-2">
-                          <label for="P36_INDENT_TYPE" id="P36_INDENT_TYPE_LABEL" class="t-Form-label">Indent Type</label>
-                        </div>
-                        <div class="t-Form-inputContainer col col-2">
-                          <div class="t-Form-itemWrapper">
-                            <select id="P36_INDENT_TYPE" name="P36_INDENT_TYPE" class="selectlist apex-item-select" data-native-menu="false" size="1">
-                              <option value="" selected="selected">Select</option>
-                              <option value="Regular">Regular</option>
-                              <option value="Scheme">Scheme</option>
-                            </select>
-                          </div>
-                          <span id="P36_INDENT_TYPE_error_placeholder" class="a-Form-error" data-template-id="428237130780249931341_ET"></span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col col-4 apex-col-auto ">
-                      <div class="t-Form-fieldContainer rel-col t-Form-fieldContainer--stretchInputs t-Form-fieldContainer--large apex-item-wrapper apex-item-wrapper--select-list" id="P36_SCHEME_NAME_CONTAINER">
-                        <div class="t-Form-labelContainer col col-2">
-                          <label for="P36_SCHEME_NAME" id="P36_SCHEME_NAME_LABEL" class="t-Form-label">Scheme Name</label>
-                        </div>
-                        <div class="t-Form-inputContainer col col-2">
-                          <div class="t-Form-itemWrapper">
-                            <select id="P36_SCHEME_NAME" name="P36_SCHEME_NAME" class="selectlist apex-item-select" data-native-menu="false" size="1">
-                              <option value="" selected="selected">Select</option>
-                              <option value="50 Beded Places">50 Beded Places</option>
-                              <option value="Ayush Health &amp; Wellness Center">Ayush Health &amp; Wellness Center</option>
-                              <option value="Ayush Wellness">Ayush Wellness</option>
-                              <option value="Co-Location ISM Wings_Upgradation">Co-Location ISM Wings_Upgradation</option>
-                              <option value="Co-Location ISM Wings_x000D_
-                                ">Co-Location ISM Wings_x000D_</option>
-                              <option value="MSD">MSD</option>
-                              <option value="MSK Kit">MSK Kit</option>
-                              <option value="NRHM">NRHM</option>
-                              <option value="Nilavembu Kudineer">Nilavembu Kudineer</option>
-                              <option value="Public Health Out Reach">Public Health Out Reach</option>
-                              <option value="Public Health Out Reach Activities">Public Health Out Reach Activities</option>
-                              <option value="School Health Programme">School Health Programme</option>
-                              <option value="Tribal Units">Tribal Units</option>
-                              <option value="" selected="selected"></option>
-                            </select>
-                          </div>
-                          <span id="P36_SCHEME_NAME_error_placeholder" class="a-Form-error" data-template-id="428237130780249931341_ET"></span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col col-4 apex-col-auto col-end"><button class="t-Button t-Button--hot js-ignoreChange t-Button--large t-Button--warning" type="button" id="B19343921011146099"><span class="t-Button-label">Clear</span></button></div>
-                  </div>
-                  <div class="row ">
-                    <div class="col col-12 apex-col-auto col-start col-end">
-                      <div id="R311550531762325085781" role="region" aria-label="Medicine Details" class="t-IRR-region js-apex-region">
-                        <div class="t-Region-orderBy"></div>
-                        <div id="R311550531762325085781_ig" class="a-IG">
-                          <div style="direction: ltr; position: absolute; inset: 0px; overflow: hidden; z-index: -1; visibility: hidden;">
-                            <div style="position: absolute; top: 0px; left: 0px; transition: all; width: 200%; height: 200%;"></div>
-                          </div>
-                          <div class="js-resize-sensor" style="direction: ltr; position: absolute; inset: 0px; overflow: hidden; z-index: -1; visibility: hidden;">
-                            <div style="position: absolute; top: 0px; left: 0px; transition: all; width: 1063px; height: 4.45705e+06px;"></div>
-                          </div>
-                          <div class="a-IG-header js-stickyWidget-toggle" style="z-index: 300; position: absolute; width: 1061.85px;">
-                            <div id="R311550531762325085781_ig_toolbar" class="a-Toolbar" role="toolbar" aria-label="Toolbar">
-                              <div class="a-Toolbar-groupContainer a-Toolbar-groupContainer--start">
-                                <div class="a-Toolbar-group a-Toolbar-group--search a-Toolbar-group--together"><button type="button" class="a-Button a-Toolbar-item a-Button--withIcon a-Button--noLabel" id="R311550531762325085781_ig_toolbar_column_filter_button" title="Select columns to search" aria-label="Select columns to search" data-menu="R311550531762325085781_ig_toolbar_column_filter_button_menu" aria-haspopup="true" style=""><span aria-hidden="true" class="a-Icon icon-search"></span><span aria-hidden="true" class="a-Icon a-Icon icon-menu-drop-down"></span></button><input id="R311550531762325085781_ig_toolbar_search_field" class="a-Toolbar-input a-Toolbar-inputText a-Toolbar-item" title="Search: All Text Columns" type="text" size="30" maxlength="4000" value="" data-enter-action="search" placeholder="Search: All Text Columns" style=""><button type="button" class="a-Button a-Toolbar-item" data-action="search"><span class="a-Button-label">Go</span></button></div>
-                                <div class="a-Toolbar-group" style="display: none;"><select class="a-Toolbar-selectList a-Toolbar-item" size="1" title="Saved Reports" aria-label="Saved Reports" data-action="change-report" style="display: none;"></select></div>
-                                <div class="a-Toolbar-group" style="display: none;">
-                                  <div role="group" aria-label="Change View" class="a-Toolbar-radioGroup js-actionRadioGroup a-Toolbar-item" data-action="change-view" data-item="a-Button" data-item-wrap="a-Toolbar-button-item" style="display: none;"></div>
-                                </div>
-                                <div class="a-Toolbar-group"><button type="button" class="a-Button a-Toolbar-item" id="R311550531762325085781_ig_toolbar_actions_button" data-menu="R311550531762325085781_ig_toolbar_actions_button_menu" aria-haspopup="true" style=""><span class="a-Button-label">Actions</span><span aria-hidden="true" class="a-Icon a-Icon icon-menu-drop-down"></span></button></div>
-                                <div class="a-Toolbar-group" style="display: none;">
-                                  <div class="a-Toolbar-toggleButton js-actionToggle a-Toolbar-item" data-action="edit" style="display: none;"><span id="R311550531762325085781_ig_toolbar_m1_ON_STATE_ARIA_DESC" class="u-vh" aria-hidden="true">Grid in edit mode, un-press to switch to view mode</span><span id="R311550531762325085781_ig_toolbar_m1_OFF_STATE_ARIA_DESC" class="u-vh" aria-hidden="true">Grid in view mode, press to edit</span><button type="button" class="a-Button a-Toolbar-button a-Toolbar-toggleButton" name="edit" id="R311550531762325085781_ig_toolbar_m1" aria-pressed="false" aria-describedby="R311550531762325085781_ig_toolbar_m1_OFF_STATE_ARIA_DESC" aria-controls="R311550531762325085781_ig_content_container" aria-label="Edit"><span class="a-Button-label">Edit</span></button></div>
-                                  <button type="button" class="a-Button a-Toolbar-item a-Button--hot" data-action="save" style="display: none;"><span class="a-Button-label">Save</span></button>
-                                </div>
-                                <div class="a-Toolbar-group" style="display: none;"><button type="button" class="a-Button a-Toolbar-item" data-action="selection-add-row" style="display: none;"><span class="a-Button-label">Add Row</span></button></div>
-                              </div>
-                              <div class="a-Toolbar-groupContainer a-Toolbar-groupContainer--end">
-                                <div class="a-Toolbar-group"><button type="button" class="a-Button a-Toolbar-item a-Button--withIcon" disabled="" data-action="reset-report" data-no-update="true"><span aria-hidden="true" class="a-Icon icon-ig-reset"></span><span class="a-Button-label">Reset</span></button></div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="js-stickyWidget-placeholder" style="width: 1061.85px; height: 48.4px;"></div>
-                          <div class="a-IG-body">
-                            <div class="a-MediaBlock a-IG-controlsContainer" role="region" aria-label="Grid Settings" id="R311550531762325085781_ig_report_settings" style="display:none;">
-                              <div class="a-MediaBlock-graphic" role="heading" aria-level="3">
-                                <h3 aria-hidden="true" class="u-VisuallyHidden">Grid Settings</h3>
-                                <button type="button" class="a-Button a-Button a-IG-button a-IG-button--controls"></button>
-                              </div>
-                              <div class="a-MediaBlock-content">
-                                <ul class="a-IG-controls"></ul>
-                              </div>
-                              <div class="a-IG-reportSummaryContainer" style="display:none;" id="R311550531762325085781_ig_report_settings_summary">
-                                <ul class="a-IG-reportSummary"></ul>
-                              </div>
-                            </div>
-                            <div class="a-IG-contentContainer" id="R311550531762325085781_ig_content_container" role="region" aria-label="Grid View" style="width: 1061.85px;">
-                              <div id="R311550531762325085781_ig_grid_vc" class="a-IG-gridView a-GV" aria-label="Medicine Details" style="width: 1061.85px; --a-gv-scroll-pad-start: 0px;" role="grid" aria-readonly="true">
-                                <div class="u-vh" id="R311550531762325085781_ig_grid_vc_ctx" aria-hidden="true">Row 1, Column 1. </div>
-                                <div class="a-GV-hdr a-GV-hdr--fixed js-stickyWidget-toggle" style="z-index: 301; position: absolute; width: 1061.85px;">
-                                  <div class="a-GV-w-hdr" style="width: 1061.85px;">
-                                    <table role="presentation" class="a-GV-table" style="width: 1061px;">
-                                      <colgroup>
-                                        <col data-idx="0" width="211.512">
-                                        <col data-idx="1" width="211.512">
-                                        <col data-idx="2" width="211.512">
-                                        <col data-idx="3" width="211.512">
-                                        <col data-idx="4" width="214.95200000000003">
-                                      </colgroup>
-                                      <thead role="rowgroup">
-                                        <tr class="a-GV-row" role="row">
-                                          <th role="columnheader" class="a-GV-header u-tS is-required is-readonly" data-idx="0" tabindex="-1"><span class="a-GV-headerLabel" id="C17423215616225427_HDR" role="link" aria-haspopup="dialog">Medicine Name</span></th>
-                                          <th role="columnheader" class="a-GV-header u-tS is-required is-readonly" data-idx="1" tabindex="-1"><span class="a-GV-headerLabel" id="C17423358604225428_HDR" role="link" aria-haspopup="dialog">Packing Size</span></th>
-                                          <th role="columnheader" class="a-GV-header u-tS is-required is-readonly" data-idx="2" tabindex="-1">
-                                            <span class="a-GV-headerLabel" id="C17423476890225429_HDR" role="link" aria-haspopup="dialog">Name Of The District</span>
-                                            <div class="a-GV-columnControls" style="display: none;"><button class="a-Button js-asc" type="button" aria-label="Sort Ascending" title="Sort Ascending" tabindex="-1"><span aria-hidden="true" class="a-Icon icon-up-chevron"></span></button><button class="a-Button js-desc" type="button" aria-label="Sort Descending" title="Sort Descending" tabindex="-1"><span aria-hidden="true" class="a-Icon icon-down-chevron"></span></button></div>
-                                            <div class="a-GV-columnHandle ui-draggable ui-draggable-handle" style="display: none;"></div>
-                                          </th>
-                                          <th role="columnheader" class="a-GV-header u-tE is-required is-readonly" data-idx="3" tabindex="-1"><span class="a-GV-headerLabel" id="C17423541163225430_HDR" role="link" aria-haspopup="dialog">Quantity</span></th>
-                                          <th role="columnheader" class="a-GV-header u-tE is-readonly" data-idx="4" tabindex="-1"><span class="a-GV-headerLabel" id="C17423639007225431_HDR" role="link" aria-haspopup="dialog">Total Quantity</span></th>
-                                        </tr>
-                                      </thead>
-                                    </table>
-                                  </div>
-                                  <div class="a-GV-colMoveMarker" style="display:none"><span class="a-GV-colMoveMarker-x"></span></div>
-                                  <div class="a-GV-columnWidthHandle ui-draggable ui-draggable-handle" style="top: 0px; height: 40px; left: 629.5px;"></div>
-                                </div>
-                                <div class="js-stickyWidget-placeholder" style="width: 1061.85px; height: 40.8px;"></div>
-                                <div class="a-GV-bdy">
-                                  <div class="a-GV-noDataMsg a-GV-altMessage" style="display:none;" role="region" aria-label="No data found">
-                                    <div class="a-GV-altMessage-icon" role="img" aria-label="No data found"><span class="a-Icon icon-irr-no-results"></span></div>
-                                    <div role="status"><span class="a-GV-altMessage-text" id="R311550531762325085781_ig_grid_vc_no_msg">No data found</span></div>
-                                  </div>
-                                  <div class="a-GV-moreDataMsg a-GV-altMessage" style="display:none;">
-                                    <div class="a-GV-altMessage-icon" aria-hidden="true"><span class="a-Icon icon-warning"></span></div>
-                                    <div role="status"><span class="a-GV-altMessage-text" id="R311550531762325085781_ig_grid_vc_more_msg"></span></div>
-                                  </div>
-                                  <div class="a-GV-w-scroll" tabindex="-1" style="width: 1061.85px;">
-                                    <table role="presentation" class="a-GV-table" style="margin-top: -40px; width: 1061px;">
-                                      <colgroup>
-                                        <col data-idx="0" width="211.512">
-                                        <col data-idx="1" width="211.512">
-                                        <col data-idx="2" width="211.512">
-                                        <col data-idx="3" width="211.512">
-                                        <col data-idx="4" width="214.95200000000003">
-                                      </colgroup>
-                                      <thead role="rowgroup" style="visibility:hidden">
-                                        <tr class="a-GV-row" role="row" style="visibility:hidden;">
-                                          <th role="columnheader" class="a-GV-header u-tS is-required is-readonly" data-idx="0" style="visibility:hidden;" tabindex="-1"><span class="a-GV-headerLabel" role="link" aria-haspopup="dialog">Medicine Name</span></th>
-                                          <th role="columnheader" class="a-GV-header u-tS is-required is-readonly" data-idx="1" style="visibility:hidden;" tabindex="-1"><span class="a-GV-headerLabel" role="link" aria-haspopup="dialog">Packing Size</span></th>
-                                          <th role="columnheader" class="a-GV-header u-tS is-required is-readonly" data-idx="2" style="visibility:hidden;" tabindex="-1"><span class="a-GV-headerLabel" role="link" aria-haspopup="dialog">Name Of The District</span></th>
-                                          <th role="columnheader" class="a-GV-header u-tE is-required is-readonly" data-idx="3" style="visibility:hidden;" tabindex="-1"><span class="a-GV-headerLabel" role="link" aria-haspopup="dialog">Quantity</span></th>
-                                          <th role="columnheader" class="a-GV-header u-tE is-readonly" data-idx="4" style="visibility:hidden;" tabindex="-1"><span class="a-GV-headerLabel" role="link" aria-haspopup="dialog">Total Quantity</span></th>
-                                        </tr>
-                                      </thead>
-                                      <tbody>
-                                        <tr role="row" data-id="0" data-rownum="1" class="a-GV-row is-readonly">
-                                          <td tabindex="0" role="gridcell" class="a-GV-cell u-tS is-readonly" aria-labelledby="R311550531762325085781_ig_grid_vc_ctx R311550531762325085781_ig_grid_vc_cur" id="R311550531762325085781_ig_grid_vc_cur">Aadividayam (Nattu) (RD)</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">0</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Coimbatore</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">3</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">3</td>
-                                        </tr>
-                                        <tr role="row" data-id="1" data-rownum="2" class="a-GV-row is-readonly">
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Aadividayam (Nattu) (RD)</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">0</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Thiruvannamalai</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">0</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">0</td>
-                                        </tr>
-                                        <tr role="row" data-id="2" data-rownum="3" class="a-GV-row is-readonly">
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Aalividhai (RD)</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">0</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Coimbatore</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">3</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">3</td>
-                                        </tr>
-                                        <tr role="row" data-id="3" data-rownum="4" class="a-GV-row is-readonly">
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Aavarai Kudineer Choom /10 nos.</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">10 gms</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Ariyalur</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">30</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">180</td>
-                                        </tr>
-                                        <tr role="row" data-id="4" data-rownum="5" class="a-GV-row is-readonly">
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Aavarai Kudineer Choom /10 nos.</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">10 gms</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Ariyalur</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">30</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">180</td>
-                                        </tr>
-                                        <tr role="row" data-id="5" data-rownum="6" class="a-GV-row is-readonly">
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Aavarai Kudineer Choom /10 nos.</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">10 gms</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Ariyalur</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">120</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">180</td>
-                                        </tr>
-                                        <tr role="row" data-id="6" data-rownum="7" class="a-GV-row is-readonly">
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Aavarai Kudineer Choom /10 nos.</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">10 gms</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Chengalpet</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">50</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">930</td>
-                                        </tr>
-                                        <tr role="row" data-id="7" data-rownum="8" class="a-GV-row is-readonly">
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Aavarai Kudineer Choom /10 nos.</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">10 gms</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Chengalpet</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">50</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">930</td>
-                                        </tr>
-                                        <tr role="row" data-id="8" data-rownum="9" class="a-GV-row is-readonly">
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Aavarai Kudineer Choom /10 nos.</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">10 gms</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Chengalpet</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">50</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">930</td>
-                                        </tr>
-                                        <tr role="row" data-id="9" data-rownum="10" class="a-GV-row is-readonly">
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Aavarai Kudineer Choom /10 nos.</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">10 gms</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Chengalpet</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">10</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">930</td>
-                                        </tr>
-                                        <tr role="row" data-id="10" data-rownum="11" class="a-GV-row is-readonly">
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Aavarai Kudineer Choom /10 nos.</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">10 gms</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Chengalpet</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">100</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">930</td>
-                                        </tr>
-                                        <tr role="row" data-id="11" data-rownum="12" class="a-GV-row is-readonly">
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Aavarai Kudineer Choom /10 nos.</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">10 gms</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Chengalpet</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">100</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">930</td>
-                                        </tr>
-                                        <tr role="row" data-id="12" data-rownum="13" class="a-GV-row is-readonly">
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Aavarai Kudineer Choom /10 nos.</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">10 gms</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Chengalpet</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">50</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">930</td>
-                                        </tr>
-                                        <tr role="row" data-id="13" data-rownum="14" class="a-GV-row is-readonly">
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Aavarai Kudineer Choom /10 nos.</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">10 gms</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Chengalpet</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">100</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">930</td>
-                                        </tr>
-                                        <tr role="row" data-id="14" data-rownum="15" class="a-GV-row is-readonly">
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Aavarai Kudineer Choom /10 nos.</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">10 gms</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Chengalpet</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">100</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">930</td>
-                                        </tr>
-                                        <tr role="row" data-id="15" data-rownum="16" class="a-GV-row is-readonly">
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Aavarai Kudineer Choom /10 nos.</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">10 gms</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Chengalpet</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">100</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">930</td>
-                                        </tr>
-                                        <tr role="row" data-id="16" data-rownum="17" class="a-GV-row is-readonly">
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Aavarai Kudineer Choom /10 nos.</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">10 gms</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Chengalpet</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">100</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">930</td>
-                                        </tr>
-                                        <tr role="row" data-id="17" data-rownum="18" class="a-GV-row is-readonly">
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Aavarai Kudineer Choom /10 nos.</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">10 gms</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Chengalpet</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">100</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">930</td>
-                                        </tr>
-                                        <tr role="row" data-id="18" data-rownum="19" class="a-GV-row is-readonly">
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Aavarai Kudineer Choom /10 nos.</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">10 gms</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Chengalpet</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">20</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">930</td>
-                                        </tr>
-                                        <tr role="row" data-id="19" data-rownum="20" class="a-GV-row is-readonly">
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Aavarai Kudineer Choom /10 nos.</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">10 gms</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Coimbatore</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">5</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">555</td>
-                                        </tr>
-                                        <tr role="row" data-id="20" data-rownum="21" class="a-GV-row is-readonly">
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Aavarai Kudineer Choom /10 nos.</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">10 gms</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Coimbatore</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">100</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">555</td>
-                                        </tr>
-                                        <tr role="row" data-id="21" data-rownum="22" class="a-GV-row is-readonly">
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Aavarai Kudineer Choom /10 nos.</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">10 gms</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Coimbatore</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">50</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">555</td>
-                                        </tr>
-                                        <tr role="row" data-id="22" data-rownum="23" class="a-GV-row is-readonly">
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Aavarai Kudineer Choom /10 nos.</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">10 gms</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Coimbatore</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">400</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">555</td>
-                                        </tr>
-                                        <tr role="row" data-id="23" data-rownum="24" class="a-GV-row is-readonly">
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Aavarai Kudineer Choom /10 nos.</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">10 gms</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Cuddalore</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">50</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">1465</td>
-                                        </tr>
-                                        <tr role="row" data-id="24" data-rownum="25" class="a-GV-row is-readonly">
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Aavarai Kudineer Choom /10 nos.</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">10 gms</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Cuddalore</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">25</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">1465</td>
-                                        </tr>
-                                        <tr role="row" data-id="25" data-rownum="26" class="a-GV-row is-readonly">
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Aavarai Kudineer Choom /10 nos.</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">10 gms</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Cuddalore</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">20</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">1465</td>
-                                        </tr>
-                                        <tr role="row" data-id="26" data-rownum="27" class="a-GV-row is-readonly">
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Aavarai Kudineer Choom /10 nos.</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">10 gms</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Cuddalore</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">30</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">1465</td>
-                                        </tr>
-                                        <tr role="row" data-id="27" data-rownum="28" class="a-GV-row is-readonly">
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Aavarai Kudineer Choom /10 nos.</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">10 gms</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Cuddalore</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">25</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">1465</td>
-                                        </tr>
-                                        <tr role="row" data-id="28" data-rownum="29" class="a-GV-row is-readonly">
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Aavarai Kudineer Choom /10 nos.</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">10 gms</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Cuddalore</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">20</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">1465</td>
-                                        </tr>
-                                        <tr role="row" data-id="29" data-rownum="30" class="a-GV-row is-readonly">
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Aavarai Kudineer Choom /10 nos.</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">10 gms</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Cuddalore</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">20</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">1465</td>
-                                        </tr>
-                                        <tr role="row" data-id="30" data-rownum="31" class="a-GV-row is-readonly">
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Aavarai Kudineer Choom /10 nos.</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">10 gms</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Cuddalore</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">20</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">1465</td>
-                                        </tr>
-                                        <tr role="row" data-id="31" data-rownum="32" class="a-GV-row is-readonly">
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Aavarai Kudineer Choom /10 nos.</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">10 gms</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Cuddalore</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">20</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">1465</td>
-                                        </tr>
-                                        <tr role="row" data-id="32" data-rownum="33" class="a-GV-row is-readonly">
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Aavarai Kudineer Choom /10 nos.</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">10 gms</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Cuddalore</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">50</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">1465</td>
-                                        </tr>
-                                        <tr role="row" data-id="33" data-rownum="34" class="a-GV-row is-readonly">
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Aavarai Kudineer Choom /10 nos.</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">10 gms</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Cuddalore</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">30</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">1465</td>
-                                        </tr>
-                                        <tr role="row" data-id="34" data-rownum="35" class="a-GV-row is-readonly">
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Aavarai Kudineer Choom /10 nos.</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">10 gms</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Cuddalore</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">1000</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">1465</td>
-                                        </tr>
-                                        <tr role="row" data-id="35" data-rownum="36" class="a-GV-row is-readonly">
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Aavarai Kudineer Choom /10 nos.</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">10 gms</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Cuddalore</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">50</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">1465</td>
-                                        </tr>
-                                        <tr role="row" data-id="36" data-rownum="37" class="a-GV-row is-readonly">
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Aavarai Kudineer Choom /10 nos.</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">10 gms</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Cuddalore</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">10</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">1465</td>
-                                        </tr>
-                                        <tr role="row" data-id="37" data-rownum="38" class="a-GV-row is-readonly">
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Aavarai Kudineer Choom /10 nos.</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">10 gms</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Cuddalore</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">20</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">1465</td>
-                                        </tr>
-                                        <tr role="row" data-id="38" data-rownum="39" class="a-GV-row is-readonly">
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Aavarai Kudineer Choom /10 nos.</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">10 gms</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Cuddalore</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">25</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">1465</td>
-                                        </tr>
-                                        <tr role="row" data-id="39" data-rownum="40" class="a-GV-row is-readonly">
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Aavarai Kudineer Choom /10 nos.</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">10 gms</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Cuddalore</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">50</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">1465</td>
-                                        </tr>
-                                        <tr role="row" data-id="40" data-rownum="41" class="a-GV-row is-readonly">
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Aavarai Kudineer Choom /10 nos.</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">10 gms</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Dharmapuri</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">60</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">640</td>
-                                        </tr>
-                                        <tr role="row" data-id="41" data-rownum="42" class="a-GV-row is-readonly">
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Aavarai Kudineer Choom /10 nos.</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">10 gms</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Dharmapuri</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">50</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">640</td>
-                                        </tr>
-                                        <tr role="row" data-id="42" data-rownum="43" class="a-GV-row is-readonly">
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Aavarai Kudineer Choom /10 nos.</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">10 gms</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Dharmapuri</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">100</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">640</td>
-                                        </tr>
-                                        <tr role="row" data-id="43" data-rownum="44" class="a-GV-row is-readonly">
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Aavarai Kudineer Choom /10 nos.</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">10 gms</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Dharmapuri</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">50</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">640</td>
-                                        </tr>
-                                        <tr role="row" data-id="44" data-rownum="45" class="a-GV-row is-readonly">
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Aavarai Kudineer Choom /10 nos.</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">10 gms</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Dharmapuri</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">10</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">640</td>
-                                        </tr>
-                                        <tr role="row" data-id="45" data-rownum="46" class="a-GV-row is-readonly">
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Aavarai Kudineer Choom /10 nos.</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">10 gms</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tS is-readonly">Dharmapuri</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">50</td>
-                                          <td tabindex="-1" role="gridcell" class="a-GV-cell u-tE is-readonly">640</td>
-                                        </tr>  
-                                      </tbody>
-                                    </table>
-                                  </div>
-                                </div>
-                                <div class="a-GV-footer js-stickyWidget-toggle is-stuck" role="region" aria-label="Grid Footer" style="z-index: 302; position: fixed; bottom: 0px; width: 1061.85px;">
-                                  <div class="a-GV-stateIcons" role="region" aria-label="State Icons"></div>
-                                  <div role="region" aria-label="Grid Status">
-                                    <div id="R311550531762325085781_ig_grid_vc_status" class="a-GV-status" role="status"></div>
-                                  </div>
-                                  <div class="a-GV-pagination" role="region" aria-label="Pagination"><span class="js-rangeDisplay" id="R311550531762325085781_ig_grid_vc_pageRange" title="Page rows"><span class="a-GV-pageRange ">Total 139279</span></span></div>
-                                </div>
-                                <div class="js-stickyWidget-placeholder" style="width: 1061.85px; height: 32.8px;"></div>
-                              </div>
-                              <div id="R311550531762325085781_ig_singleRow_vc" class="a-IG-recordView a-RV" style="width: 1061.85px; display: none;">
-                                <div class="a-RV-toolbar a-Toolbar a-Toolbar--small" role="toolbar" aria-label="Toolbar">
-                                  <div class="a-Toolbar-groupContainer a-Toolbar-groupContainer--start">
-                                    <div class="a-Toolbar-group"><button type="button" class="a-Button a-Toolbar-item" data-action="close-single-row-view"><span class="a-Button-label">Report View</span></button><button type="button" class="a-Button a-Toolbar-item a-Button--withIcon a-Button--noLabel" title="Change Menu" aria-label="Change Menu" data-menu="R311550531762325085781_ig_srv_actions_menu" aria-haspopup="true"><span aria-hidden="true" class="a-Icon icon-ig-actions"></span><span aria-hidden="true" class="a-Icon a-Icon icon-menu-drop-down"></span></button><button type="button" class="a-Button a-Toolbar-item a-Button--withIcon a-Button--noLabel" id="R311550531762325085781_ig_singleRow_vc_tb_m2" title="Settings Menu" aria-label="Settings Menu" data-menu="R311550531762325085781_ig_singleRow_vc_tb_m2_menu" aria-haspopup="true"><span aria-hidden="true" class="a-Icon icon-gear"></span><span aria-hidden="true" class="a-Icon a-Icon icon-menu-drop-down"></span></button></div>
-                                  </div>
-                                  <div class="a-Toolbar-groupContainer a-Toolbar-groupContainer--end">
-                                    <div class="a-Toolbar-group"><span id="R311550531762325085781_ig_singleRow_vc_tb_status" class="a-Toolbar-static a-Toolbar-item"></span><button type="button" class="a-Button a-Toolbar-item a-Button--withIcon a-Button--noLabel" title="Previous, Alt+Page Up" aria-label="Previous" data-action="previous-record" aria-keyshortcuts="Alt+PageUp" disabled=""><span aria-hidden="true" class="a-Icon icon-prev"></span></button><span id="R311550531762325085781_ig_singleRow_vc_tb_recordNumber" class="a-Toolbar-static a-Toolbar-item">Row 1 of 139279</span><button type="button" class="a-Button a-Toolbar-item a-Button--withIcon a-Button--noLabel" title="Next, Alt+Page Down" aria-label="Next" data-action="next-record" aria-keyshortcuts="Alt+PageDown"><span aria-hidden="true" class="a-Icon icon-next"></span></button></div>
-                                  </div>
-                                </div>
-                                <div class="a-GV-noDataMsg a-GV-altMessage" style="display:none;" role="region" aria-label="No data found">
-                                  <div class="a-GV-altMessage-icon" role="img" aria-label="No data found"><span class="a-Icon icon-irr-no-results"></span></div>
-                                  <div role="status"><span class="a-GV-altMessage-text">No data found</span></div>
-                                </div>
-                                <div class="a-GV-moreDataMsg a-GV-altMessage" style="display:none;">
-                                  <div class="a-GV-altMessage-icon" aria-hidden="true"><span class="a-Icon icon-warning"></span></div>
-                                  <div role="status"><span class="a-GV-altMessage-text"></span></div>
-                                </div>
-                                <div class="a-RV-w-scroll">
-                                  <div class="a-RV-body is-readonly">
-                                    <div class="u-Form">
-                                      <div id="C17423215616225427_CONTAINER" data-idx="0" class="u-Form-fieldContainer is-required is-readonly">
-                                        <div id="R311550531762325085781_ig_singleRow_vc_0" class="u-Form-labelContainer  u-tE"><label id="C17423215616225427_LABEL" for="C17423215616225427_RO" class="u-Form-label">Medicine Name</label></div>
-                                        <div class="u-Form-inputContainer">
-                                          <div class="a-RV-fieldValue"><textarea class="a-RV-readonly" cols="50" rows="1" readonly="" id="C17423215616225427_RO" style="height: 23.6px;">Aadividayam (Nattu) (RD)</textarea></div>
-                                        </div>
-                                      </div>
-                                      <div id="C17423358604225428_CONTAINER" data-idx="1" class="u-Form-fieldContainer is-required is-readonly">
-                                        <div id="R311550531762325085781_ig_singleRow_vc_1" class="u-Form-labelContainer  u-tE"><label id="C17423358604225428_LABEL" for="C17423358604225428_RO" class="u-Form-label">Packing Size</label></div>
-                                        <div class="u-Form-inputContainer">
-                                          <div class="a-RV-fieldValue"><textarea class="a-RV-readonly" cols="50" rows="1" readonly="" id="C17423358604225428_RO" style="height: 23.6px;">0</textarea></div>
-                                        </div>
-                                      </div>
-                                      <div id="C17423476890225429_CONTAINER" data-idx="2" class="u-Form-fieldContainer is-required is-readonly">
-                                        <div id="R311550531762325085781_ig_singleRow_vc_2" class="u-Form-labelContainer  u-tE"><label id="C17423476890225429_LABEL" for="C17423476890225429_RO" class="u-Form-label">Name Of The District</label></div>
-                                        <div class="u-Form-inputContainer">
-                                          <div class="a-RV-fieldValue"><textarea class="a-RV-readonly" cols="50" rows="1" readonly="" id="C17423476890225429_RO" style="height: 23.6px;">Coimbatore</textarea></div>
-                                        </div>
-                                      </div>
-                                      <div id="C17423541163225430_CONTAINER" data-idx="3" class="u-Form-fieldContainer is-required is-readonly">
-                                        <div id="R311550531762325085781_ig_singleRow_vc_3" class="u-Form-labelContainer  u-tE"><label id="C17423541163225430_LABEL" for="C17423541163225430_RO" class="u-Form-label">Quantity</label></div>
-                                        <div class="u-Form-inputContainer">
-                                          <div class="a-RV-fieldValue"><textarea class="a-RV-readonly" cols="50" rows="1" readonly="" id="C17423541163225430_RO" style="height: 23.6px;">3</textarea></div>
-                                        </div>
-                                      </div>
-                                      <div id="C17423639007225431_CONTAINER" data-idx="4" class="u-Form-fieldContainer is-readonly">
-                                        <div id="R311550531762325085781_ig_singleRow_vc_4" class="u-Form-labelContainer  u-tE"><label id="C17423639007225431_LABEL" for="C17423639007225431_RO" class="u-Form-label">Total Quantity</label></div>
-                                        <div class="u-Form-inputContainer">
-                                          <div class="a-RV-fieldValue"><textarea class="a-RV-readonly" cols="50" rows="1" readonly="" id="C17423639007225431_RO" style="height: 23.6px;">3</textarea></div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div id="R311550531762325085781_ig_chart_vc" class="a-IG-chartView" style="display: none; width: 1061.85px;"></div>
-                            </div>
-                          </div>
-                          <div class="a-GV-columnItemContainer u-vh" aria-hidden="true">
-                            <div class="a-GV-columnItem"><input type="hidden" id="C17423215616225427"></div>
-                            <div class="a-GV-columnItem"><input type="hidden" id="C17423358604225428"></div>
-                            <div class="a-GV-columnItem"><input type="hidden" id="C17423476890225429"></div>
-                            <div class="a-GV-columnItem"><input type="hidden" id="C17423541163225430"></div>
-                            <div class="a-GV-columnItem"><input type="hidden" id="C17423639007225431"></div>
-                          </div>
-                        </div>
-                        <script type="text/javascript">
-                          var gIg311550531762325085781data = {
-                          "values":[
-                          [
-                          "Aadividayam (Nattu) (RD)"
-                          ,"0"
-                          ,"Coimbatore"
-                          ,"3"
-                          ,"3"
-                          ,{
-                          "salt":"4H1iTF0SzhJbB2r98PyiXw"
-                          ,"protected":"\/23O6HN896HR0CA8lkwWnNRVe94sEgZN1T9QVeJjzuGvsO1tKt6jZJ6Zt0Fmq-kGA1e6o01TQrPtvRryWoyc1VQ"
-                          ,"rowVersion":"0K79THQYYbp12mbS-M5kveaHqJoquIPGXA6LmTYwro6gF3Qbfz0YvwCUqK-ms5dykI_0N_3WYb1rVot7E7Tp-Q"
-                          }
-                          ]
-                          ,[
-                          "Aadividayam (Nattu) (RD)"
-                          ,"0"
-                          ,"Thiruvannamalai"
-                          ,"0"
-                          ,"0"
-                          ,{
-                          "salt":"jyr8m8AggMRJrOm_D0PheQ"
-                          ,"protected":"\/oEz2ONB-9OZsVQ1Ty7-QZKi4E91MggW0bEkOm7ZytweQNp34_S538tlYrTeoDjSeMuJRZS9zJbJS1Kzcid29Rw"
-                          ,"rowVersion":"Y0CLNRQb1sPJE5oPpotymtMu1WWdwwNWcUI5dH_BPl3XuuG5qfxaS5vkkXgyvluZ2Qu6A_QXxC_uqEhtEIATCA"
-                          }
-                          ]
-                          ,[
-                          "Aalividhai (RD)"
-                          ,"0"
-                          ,"Coimbatore"
-                          ,"3"
-                          ,"3"
-                          ,{
-                          "salt":"busWC1fb8vworu9CnFqhrQ"
-                          ,"protected":"\/dz7cV-ro_gLFUrUU04VRGJvDCuKVAE_LqEYP73i1j_33lR5oITskCBp9EasiflqpTnvW9lrX1A54Ssb9KC_mBg"
-                          ,"rowVersion":"xD4o6xWgjtdoVtkRnk_jYfycp7BGZ5x_ChDk6Ik91vJ16Qwl1zMXRU3cnOkjeSruxoQC-c5Rm2hoBy1jofYnxw"
-                          }
-                          ]
-                          ,[
-                          "Aavarai Kudineer Choom \/10 nos."
-                          ,"10 gms"
-                          ,"Ariyalur"
-                          ,"30"
-                          ,"180"
-                          ,{
-                          "salt":"9s04cMV3acZ-QpRbNjmDIQ"
-                          ,"protected":"\/hC-i4vAkhfJdjVGCwTZh8EGtyUS73iFHh6jeYHXsGv4mvQv6uUkfuEFMp44e9JIMw6vTB0iuzjDdi3-h9dWJbA"
-                          ,"rowVersion":"P6SH-rizUL8FsLvATLfHtp8GZzYXZ1FAyoxSLOHQcKj6_J1wKg-Bwbab_1Z8_Clb0xZUl37MCsEBavVuqfG8jA"
-                          }
-                          ]
-                          ,[
-                          "Aavarai Kudineer Choom \/10 nos."
-                          ,"10 gms"
-                          ,"Ariyalur"
-                          ,"30"
-                          ,"180"
-                          ,{
-                          "salt":"3OTtR63CP0BEuIynEpu_nw"
-                          ,"protected":"\/6uAk9uVHnIjNBx3mxJvQD17s7AULFzBcQ4s7OMS2HiuIDRBtfO_Eu1flDP3NVpAo4OunpAEAiWLGreJnugRB5w"
-                          ,"rowVersion":"P6SH-rizUL8FsLvATLfHtp8GZzYXZ1FAyoxSLOHQcKj6_J1wKg-Bwbab_1Z8_Clb0xZUl37MCsEBavVuqfG8jA"
-                          }
-                          ]
-                          ,[
-                          "Aavarai Kudineer Choom \/10 nos."
-                          ,"10 gms"
-                          ,"Ariyalur"
-                          ,"120"
-                          ,"180"
-                          ,{
-                          "salt":"3dyagppnH0TkQXnu5Bib5A"
-                          ,"protected":"\/XC3YTXajac61mdIlIdaWtJFaBpLxJmnjaU7KCAWxvWh7sXM5kQ-V_0rwCUgGgxJp9Y3HLbnD6ZsWVBS0WP5q3g"
-                          ,"rowVersion":"5p5R81yNKgttJYhbu3wypQmjl3FHcclI219nLBY_AFMhdX-PW25oaxgb8bZGPhkJhfzAxr0YLyrWjIWJk0mFZg"
-                          }
-                          ]
-                          ,[
-                          "Aavarai Kudineer Choom \/10 nos."
-                          ,"10 gms"
-                          ,"Chengalpet"
-                          ,"50"
-                          ,"930"
-                          ,{
-                          "salt":"A8sqXbkmx2SiWrW8uQM4ug"
-                          ,"protected":"\/LhPace7onN7gWo7qBVmrrdVxsY4lZw4BJoMP9_0Pb3H5bZ3JfnhjcCbIpkur3orA2fcuoqtcvja8UEtkv0Xfmw"
-                          ,"rowVersion":"JPJFz9uMbK5b8JUcwBfhQvrDgwVWDGhzZmwk0n4dpvg26CB8I486yC37jGYchxrec6OscyIcXQQR-Jrq0CZ8gw"
-                          }
-                          ]
-                          ,[
-                          "Aavarai Kudineer Choom \/10 nos."
-                          ,"10 gms"
-                          ,"Chengalpet"
-                          ,"50"
-                          ,"930"
-                          ,{
-                          "salt":"TroZZEEcd2TWDG6eVH4-hA"
-                          ,"protected":"\/vU5uaoxThKnZRyluzRNariJ8bvefYrmjTpuHjTbNwCzVEWmPo8-BdTRkFwgk94gor1oAAv85XSMHOKsMq53nRw"
-                          ,"rowVersion":"JPJFz9uMbK5b8JUcwBfhQvrDgwVWDGhzZmwk0n4dpvg26CB8I486yC37jGYchxrec6OscyIcXQQR-Jrq0CZ8gw"
-                          }
-                          ]
-                          ,[
-                          "Aavarai Kudineer Choom \/10 nos."
-                          ,"10 gms"
-                          ,"Chengalpet"
-                          ,"50"
-                          ,"930"
-                          ,{
-                          "salt":"iINkU6SKHEljiEl6oAbmEA"
-                          ,"protected":"\/xByztJtW3dNq9yd3wERvvabyWiwII6BvFH5EEkRaMi2ztWbM_UTQ3DT7OnsXa_S96PfSrZ0EzJ8sGP570H0p6A"
-                          ,"rowVersion":"JPJFz9uMbK5b8JUcwBfhQvrDgwVWDGhzZmwk0n4dpvg26CB8I486yC37jGYchxrec6OscyIcXQQR-Jrq0CZ8gw"
-                          }
-                          ]
-                          ,[
-                          "Aavarai Kudineer Choom \/10 nos."
-                          ,"10 gms"
-                          ,"Chengalpet"
-                          ,"10"
-                          ,"930"
-                          ,{
-                          "salt":"RtiSR1MOwWfUBuVn9CL2UA"
-                          ,"protected":"\/m_JgCGANwVOz9kUnEtoCFVDXhkr8mCI_y1wPjVkpp8nkjUhpVvtEMZQizjRWUtni-c48hXbJOEywAOEi-1o2jg"
-                          ,"rowVersion":"0vqC0UTO_x5EZ3tpBphb0wx_nRbqUVspMYCHl7IGxmAGFrTqKh1oiyg2dAXkP212YR9OcBGWTZZbA9ItncHW0Q"
-                          }
-                          ]
-                          ,[
-                          "Aavarai Kudineer Choom \/10 nos."
-                          ,"10 gms"
-                          ,"Chengalpet"
-                          ,"100"
-                          ,"930"
-                          ,{
-                          "salt":"dTIKqALcvpRfAYRVOOckfA"
-                          ,"protected":"\/qR3ypznGMGhFQ8sGE2wxWH2rsOkn7xDg2vSFKPakIM09dMFXDj60T_WPwdCmUQosGtGcgleVruQRZuKlVmh21g"
-                          ,"rowVersion":"ENfnMSsM2ftNDmivjLxkYNvHODmY8F_maFntTf5h2MdAFZX8MbPfYuP_rCY0g3A7S6-C-x3OfE9NK6pF-VA4Xw"
-                          }
-                          ]
-                          ,[
-                          "Aavarai Kudineer Choom \/10 nos."
-                          ,"10 gms"
-                          ,"Chengalpet"
-                          ,"100"
-                          ,"930"
-                          ,{
-                          "salt":"Ui2QnCYXDU8z6EGOAnzl2A"
-                          ,"protected":"\/NqolighazaQQuByHx-1Tugqdr9Dn2HL_C7dhRGCu3ZwCNUBG5dx5oddL7cVHvXgg42DtKpsyamsMNBHe-3SOOw"
-                          ,"rowVersion":"ENfnMSsM2ftNDmivjLxkYNvHODmY8F_maFntTf5h2MdAFZX8MbPfYuP_rCY0g3A7S6-C-x3OfE9NK6pF-VA4Xw"
-                          }
-                          ]
-                          ,[
-                          "Aavarai Kudineer Choom \/10 nos."
-                          ,"10 gms"
-                          ,"Chengalpet"
-                          ,"50"
-                          ,"930"
-                          ,{
-                          "salt":"1mbon6g62MH3mVKCaJyJaQ"
-                          ,"protected":"\/aN39ebKOESlLAF1UpJ64i_8HqNCDuPBUyDMmusjmhJP-U-uJ7FPgQIijxlD62LBwwvblmhyTnjdBwo_w_aWwSg"
-                          ,"rowVersion":"JPJFz9uMbK5b8JUcwBfhQvrDgwVWDGhzZmwk0n4dpvg26CB8I486yC37jGYchxrec6OscyIcXQQR-Jrq0CZ8gw"
-                          }
-                          ]
-                          ,[
-                          "Aavarai Kudineer Choom \/10 nos."
-                          ,"10 gms"
-                          ,"Chengalpet"
-                          ,"100"
-                          ,"930"
-                          ,{
-                          "salt":"Dy0ZD77YYMVdeBh4NFWRYw"
-                          ,"protected":"\/26v2-pt514-SVHjVqSmzF3oSLre3eEUXMUFkGpCrnECofpIRRU_VKyoV9iDqI83sNopABhnbhEgN_TaWDIbyOw"
-                          ,"rowVersion":"ENfnMSsM2ftNDmivjLxkYNvHODmY8F_maFntTf5h2MdAFZX8MbPfYuP_rCY0g3A7S6-C-x3OfE9NK6pF-VA4Xw"
-                          }
-                          ]
-                          ,[
-                          "Aavarai Kudineer Choom \/10 nos."
-                          ,"10 gms"
-                          ,"Chengalpet"
-                          ,"100"
-                          ,"930"
-                          ,{
-                          "salt":"3r6R6-YN0FPL_UJz8NYa9g"
-                          ,"protected":"\/M_qNxy5p6KcCobvdgNUSAcIOn_WliD1mVb1L74LJs4t8y_LCaMaLioPS8htdmiHECf7yWpDH0jjWnmGv1Xr8wQ"
-                          ,"rowVersion":"ENfnMSsM2ftNDmivjLxkYNvHODmY8F_maFntTf5h2MdAFZX8MbPfYuP_rCY0g3A7S6-C-x3OfE9NK6pF-VA4Xw"
-                          }
-                          ]
-                          ,[
-                          "Aavarai Kudineer Choom \/10 nos."
-                          ,"10 gms"
-                          ,"Chengalpet"
-                          ,"100"
-                          ,"930"
-                          ,{
-                          "salt":"gkA-7I9mYkbd40ic59R9YA"
-                          ,"protected":"\/nWvvQL9eCiNEN0gheQGlsV1Hfr7e24VG-cuuuHiz5bzXAj2UI1MIA-YLXEbDttdVCg9Fuie40o06ISXFOPYJaQ"
-                          ,"rowVersion":"ENfnMSsM2ftNDmivjLxkYNvHODmY8F_maFntTf5h2MdAFZX8MbPfYuP_rCY0g3A7S6-C-x3OfE9NK6pF-VA4Xw"
-                          }
-                          ]
-                          ,[
-                          "Aavarai Kudineer Choom \/10 nos."
-                          ,"10 gms"
-                          ,"Chengalpet"
-                          ,"100"
-                          ,"930"
-                          ,{
-                          "salt":"MxIfnWl5Fslmf1yINWQu0A"
-                          ,"protected":"\/PWQ6INh8ZiO6oRzzhyq1ALIKvKeG1HRPCqa8_S5YOnBnYJAUYNRu6TQgXXGOiYOyKdKJwa2Ny3hHMgzgEtw8IQ"
-                          ,"rowVersion":"ENfnMSsM2ftNDmivjLxkYNvHODmY8F_maFntTf5h2MdAFZX8MbPfYuP_rCY0g3A7S6-C-x3OfE9NK6pF-VA4Xw"
-                          }
-                          ]
-                          ,[
-                          "Aavarai Kudineer Choom \/10 nos."
-                          ,"10 gms"
-                          ,"Chengalpet"
-                          ,"100"
-                          ,"930"
-                          ,{
-                          "salt":"P0YI3WxRkPXDdsR2RCxocw"
-                          ,"protected":"\/KEb44CPVjKiIpsm_46xjddT9IIAKTkX-lrwvgf9O_APKjDm7BSpdY5mF4Bzj3pYtQKcH2WjB6IcNbbsDB4qt1g"
-                          ,"rowVersion":"ENfnMSsM2ftNDmivjLxkYNvHODmY8F_maFntTf5h2MdAFZX8MbPfYuP_rCY0g3A7S6-C-x3OfE9NK6pF-VA4Xw"
-                          }
-                          ]
-                          ,[
-                          "Aavarai Kudineer Choom \/10 nos."
-                          ,"10 gms"
-                          ,"Chengalpet"
-                          ,"20"
-                          ,"930"
-                          ,{
-                          "salt":"KYqT6JWVZEl03PUkamuiww"
-                          ,"protected":"\/dkfCoxCB0FnUyPRM6AqR-GiD50ibO9xdEJc1jY_quojJk02F4kVKRIv9f9A5YdBQSBrjq5FHlbzecWUygPhwDg"
-                          ,"rowVersion":"xbC1y4FBmcyBUk3q_P8XRAIK-InOjTL_MKGrU2NHZWiK7c7ZBXkKvzvy4lCygDqbMn_py7YvEgy1BiGHw29amQ"
-                          }
-                          ]
-                          ,[
-                          "Aavarai Kudineer Choom \/10 nos."
-                          ,"10 gms"
-                          ,"Coimbatore"
-                          ,"5"
-                          ,"555"
-                          ,{
-                          "salt":"LYdH_8OIr6z2KaXtVBMWDg"
-                          ,"protected":"\/ZxWUkq76dHba5iCrI7wvTWn4nDkdKcGpTLLti2DSluwSxYV6mvyMU9SP_NaD_417N2byYKp6OeH2Xi9i7FQ9Mw"
-                          ,"rowVersion":"UN7L5xnsjjte5uFrucWY-QhoZlpDgitS0424tWSPOOuQxIFZMM9AyGl1fvRmF2lulmEo_YUSFVoLMPmhnlRLEA"
-                          }
-                          ]
-                          ,[
-                          "Aavarai Kudineer Choom \/10 nos."
-                          ,"10 gms"
-                          ,"Coimbatore"
-                          ,"100"
-                          ,"555"
-                          ,{
-                          "salt":"Aazk8dhcLeCp_wOvdafIaA"
-                          ,"protected":"\/7v2XCtpiEFFGVjCUQ_iIgxhBfHCflpXDMNmlEBpZlslIU_d9rpoaf83H8Cb1DvSboIgnx89hOY-RlMTR7augqw"
-                          ,"rowVersion":"63gU_tDzR5f4c-B6UyVsitKPRryo4Y7EjGCzaQLeb0UAVXL0zGRgeFL9Uu39J9rhbBYfZ_TayYxHDQLs8ic_WQ"
-                          }
-                          ]
-                          ,[
-                          "Aavarai Kudineer Choom \/10 nos."
-                          ,"10 gms"
-                          ,"Coimbatore"
-                          ,"50"
-                          ,"555"
-                          ,{
-                          "salt":"ncjKWl2KVlezUka51s3X2A"
-                          ,"protected":"\/IugUhwZ4trwMUSFILjQKrwOd02PWrbo0C2oMWityAgePrIHm9KfE1DTZqIG21Ckgv_YS20cZcDMlFxU9FCkEgQ"
-                          ,"rowVersion":"_dAi8oKHGkA428PwLkFPl_4y63dFgdLuL8Ov3NaobzW3kueyj6V3Yktkgy-Xit6jYOu85w_cqO5XNReuxM0TLQ"
-                          }
-                          ]
-                          ,[
-                          "Aavarai Kudineer Choom \/10 nos."
-                          ,"10 gms"
-                          ,"Coimbatore"
-                          ,"400"
-                          ,"555"
-                          ,{
-                          "salt":"4NI52kjYE1Emv04Qqonxdw"
-                          ,"protected":"\/1svdfShJDZcYyVPgN4YPhPYgdgF0i95xTs-QBwiqeCFPExoLKKG8AgVfCUvQOG101xPZp3npy1PQz59uuEnkUA"
-                          ,"rowVersion":"IL3Xv3sGTtKgAxMlQAR_nav05l1Hr_HT5bA9CInUX-BpO1y0q9Xxf5ve1PkBZSmh7oF9beewK4j8EZdQz-tmmg"
-                          }
-                          ]
-                          ,[
-                          "Aavarai Kudineer Choom \/10 nos."
-                          ,"10 gms"
-                          ,"Cuddalore"
-                          ,"50"
-                          ,"1465"
-                          ,{
-                          "salt":"R9U1Xuu5lYB_SHTYWF_uPg"
-                          ,"protected":"\/fS5cAmhFh3kk94Cc99Zx4k5vC1fv4eaYwadgLGJHcWlGa07Fu8Ug6iJCCGe9elRBnztGhTo78HU2kK2Wmr0irw"
-                          ,"rowVersion":"KRCVpBdpKEJPoyFwbAclEhEoNDpigzvFQmP-9dZx59kEzpVDwnCb-eXU1nHvtYY6sy1AMNruWvTV081DZvuyxg"
-                          }
-                          ]
-                          ,[
-                          "Aavarai Kudineer Choom \/10 nos."
-                          ,"10 gms"
-                          ,"Cuddalore"
-                          ,"25"
-                          ,"1465"
-                          ,{
-                          "salt":"xiJc8jTYnGqIL75jD8jMEA"
-                          ,"protected":"\/EpTFjBypIKUfboMkbALE6LJfIctP3SDTTc3gE9PSgbyKB01s7B5eZEUE-jUrvUPvC4XlHRp2FnL4ysZWqurvcw"
-                          ,"rowVersion":"cIs3ViWNtllHKihSgMBaE14XulrR6CMnHU-DOZ-MC9rq6LtLSjCDrMfGVGZFqmXCUUKwvqbLr8T9hoCU137xWQ"
-                          }
-                          ]
-                          ,[
-                          "Aavarai Kudineer Choom \/10 nos."
-                          ,"10 gms"
-                          ,"Cuddalore"
-                          ,"20"
-                          ,"1465"
-                          ,{
-                          "salt":"aZxO7KBDxZHmYx5rmwhRVA"
-                          ,"protected":"\/0BAR-q-fAU3MRg-DDLroLaPAxm3flWLbJv3dWXe0fBpP3mEM2Ly9IcleO0K5KUhb_HlF3BqRY_dUJU9BmfqrMg"
-                          ,"rowVersion":"v5Jn_b3spb3nX8uwdNaOrAfPb5ipgzz2Mbi6uRgdsrATdgSZdURmFoc1DnHhT1k6O-81AwVrT1UCvFVGNgwX-A"
-                          }
-                          ]
-                          ,[
-                          "Aavarai Kudineer Choom \/10 nos."
-                          ,"10 gms"
-                          ,"Cuddalore"
-                          ,"30"
-                          ,"1465"
-                          ,{
-                          "salt":"ay_xnbHSIU-pYKuIiVN4jA"
-                          ,"protected":"\/aBoYiJYA-bVxtARwhZSsOuagRPvx9Si-vHRCkAejYPJRJScgd46Bhs5xONUm6hfsCLNbtyiktyxrMAQu5WZKgw"
-                          ,"rowVersion":"VloHEaeXP43rcDd9eAVJKKSpsp8r2Nge2O0z96lyKpmUu974NFuPavte93yFT4ke2UyFhkj1lfYgc_XB_NOFqg"
-                          }
-                          ]
-                          ,[
-                          "Aavarai Kudineer Choom \/10 nos."
-                          ,"10 gms"
-                          ,"Cuddalore"
-                          ,"25"
-                          ,"1465"
-                          ,{
-                          "salt":"WqhYiYLmHfkxKHKXO85cnw"
-                          ,"protected":"\/uoLFMFTTPjx-ETR3UVVZxBHBGyV3tu1_wUYnXf9iZfJnD2ZmN9HF75msh0eBgGuQxZKdFWTiSC6sjGrwaDySQg"
-                          ,"rowVersion":"cIs3ViWNtllHKihSgMBaE14XulrR6CMnHU-DOZ-MC9rq6LtLSjCDrMfGVGZFqmXCUUKwvqbLr8T9hoCU137xWQ"
-                          }
-                          ]
-                          ,[
-                          "Aavarai Kudineer Choom \/10 nos."
-                          ,"10 gms"
-                          ,"Cuddalore"
-                          ,"20"
-                          ,"1465"
-                          ,{
-                          "salt":"uVhto0vFTVxv3HFo5_IeAA"
-                          ,"protected":"\/IDBdphZA9GA9hYRVEJCr3R7Y9ddQSYwahu0dG_l0wPLcYrjYGkzZsjHSNj8fGVjGUFGBX5NOK5JQndKexoGG7w"
-                          ,"rowVersion":"v5Jn_b3spb3nX8uwdNaOrAfPb5ipgzz2Mbi6uRgdsrATdgSZdURmFoc1DnHhT1k6O-81AwVrT1UCvFVGNgwX-A"
-                          }
-                          ]
-                          ,[
-                          "Aavarai Kudineer Choom \/10 nos."
-                          ,"10 gms"
-                          ,"Cuddalore"
-                          ,"20"
-                          ,"1465"
-                          ,{
-                          "salt":"OLeO7pIVKZTl2d9BpOPT4g"
-                          ,"protected":"\/WEo0SzbcR4KUBpthtf3KAGnhuczFcs-zuCjTG_x2aqhZW7qD77IcbairI_c7W0BbhC5nrqJynW5beiOvrzroAw"
-                          ,"rowVersion":"v5Jn_b3spb3nX8uwdNaOrAfPb5ipgzz2Mbi6uRgdsrATdgSZdURmFoc1DnHhT1k6O-81AwVrT1UCvFVGNgwX-A"
-                          }
-                          ]
-                          ,[
-                          "Aavarai Kudineer Choom \/10 nos."
-                          ,"10 gms"
-                          ,"Cuddalore"
-                          ,"20"
-                          ,"1465"
-                          ,{
-                          "salt":"9LLEehVodR3jxIkUoYc_iw"
-                          ,"protected":"\/csFgWND30O0A6eF7OVyaLHQA1YnYAA6sbrB4fcYfP89R6BugNRmN9knp8hGu5IcVplS1JS6CUKhdI7j05BWizg"
-                          ,"rowVersion":"v5Jn_b3spb3nX8uwdNaOrAfPb5ipgzz2Mbi6uRgdsrATdgSZdURmFoc1DnHhT1k6O-81AwVrT1UCvFVGNgwX-A"
-                          }
-                          ]
-                          ,[
-                          "Aavarai Kudineer Choom \/10 nos."
-                          ,"10 gms"
-                          ,"Cuddalore"
-                          ,"20"
-                          ,"1465"
-                          ,{
-                          "salt":"zobOteKhPEQKUvatNyHZTw"
-                          ,"protected":"\/t2TmLAV4oubn6ovlMkB85uz6qL2BXq11n1BQAhxrd2xLjaketWFUlfLcs2lxqNiRaZR8_NSmsm5ffE9_v6D8cQ"
-                          ,"rowVersion":"v5Jn_b3spb3nX8uwdNaOrAfPb5ipgzz2Mbi6uRgdsrATdgSZdURmFoc1DnHhT1k6O-81AwVrT1UCvFVGNgwX-A"
-                          }
-                          ]
-                          ,[
-                          "Aavarai Kudineer Choom \/10 nos."
-                          ,"10 gms"
-                          ,"Cuddalore"
-                          ,"50"
-                          ,"1465"
-                          ,{
-                          "salt":"_2HuU1qCuuGmlcSKvqYR8A"
-                          ,"protected":"\/Y-XQ5FlFkJMw86xWvHDl-saEBbEvkdSN-pYGjVsGejjbWoRZydTGBEtKRau01ocwqEnLXMECYRcfZS3Dmo-AWQ"
-                          ,"rowVersion":"KRCVpBdpKEJPoyFwbAclEhEoNDpigzvFQmP-9dZx59kEzpVDwnCb-eXU1nHvtYY6sy1AMNruWvTV081DZvuyxg"
-                          }
-                          ]
-                          ,[
-                          "Aavarai Kudineer Choom \/10 nos."
-                          ,"10 gms"
-                          ,"Cuddalore"
-                          ,"30"
-                          ,"1465"
-                          ,{
-                          "salt":"x7aJpmd88Vju_GWe8N_fdA"
-                          ,"protected":"\/ssyRE9Y93CH7YEcSm7qDudZD3SXeknEWM-SgXEgx3cFCL7-OZ8rUud6WYVknBIx5eYn48GuQc1YUQQdjwvJACA"
-                          ,"rowVersion":"VloHEaeXP43rcDd9eAVJKKSpsp8r2Nge2O0z96lyKpmUu974NFuPavte93yFT4ke2UyFhkj1lfYgc_XB_NOFqg"
-                          }
-                          ]
-                          ,[
-                          "Aavarai Kudineer Choom \/10 nos."
-                          ,"10 gms"
-                          ,"Cuddalore"
-                          ,"1000"
-                          ,"1465"
-                          ,{
-                          "salt":"DyE7xlwxBBclXJ0VJuUqRw"
-                          ,"protected":"\/spGeHG1X-9DXSc1tWB3nVjJz77OKQJU6NgjZZ2lXA-USW4dCt2Egj88IHv6uYoMNDi-5ZqPFQz8blQaRZfn8UA"
-                          ,"rowVersion":"77nj1JF7DwUurDyrUIwvaU5aCZ2kiuLjEZeH2jWVVExlImw_9O5-Onc3hi26ciPCBNFDOUjkw25w1RUypPgwgw"
-                          }
-                          ]
-                          ,[
-                          "Aavarai Kudineer Choom \/10 nos."
-                          ,"10 gms"
-                          ,"Cuddalore"
-                          ,"50"
-                          ,"1465"
-                          ,{
-                          "salt":"D4XLyEnYpX-FkwdOOm-QUA"
-                          ,"protected":"\/Q5cS46t7VeD0L9hqgyMhaVWa3ZdR3J84moVmKJOXAXXjuNeepmGEJ7YNLCZju8uD84DSFKpuslEs8yrNxMlcCQ"
-                          ,"rowVersion":"KRCVpBdpKEJPoyFwbAclEhEoNDpigzvFQmP-9dZx59kEzpVDwnCb-eXU1nHvtYY6sy1AMNruWvTV081DZvuyxg"
-                          }
-                          ]
-                          ,[
-                          "Aavarai Kudineer Choom \/10 nos."
-                          ,"10 gms"
-                          ,"Cuddalore"
-                          ,"10"
-                          ,"1465"
-                          ,{
-                          "salt":"MF-8XwSW-m62x7bn38zdow"
-                          ,"protected":"\/8WLcWbKz4AHcCjjBW7-pJFOZOaaCbPa3WcW0qcKCMv4nv87oUg6FQa5_kmuB_2tM8T6loPHtm7EAYgzKsdsvRg"
-                          ,"rowVersion":"L8uHI1xlKVVPW5uSvhqzWqXieVhK8eEBh7qPSe5V9dwHDeBaamhb32ll6IXipAofcDyfsXikKJErLBgO7JNhOg"
-                          }
-                          ]
-                          ,[
-                          "Aavarai Kudineer Choom \/10 nos."
-                          ,"10 gms"
-                          ,"Cuddalore"
-                          ,"20"
-                          ,"1465"
-                          ,{
-                          "salt":"07DKDieNExdPi5sNY-93gQ"
-                          ,"protected":"\/VTiyDX8E2U0EVB4CxRYFlErWjpXoLTZuzcODYPdnUKa1aXi4hWzRG8nI4TquKMPJOnlcn_8N0nwo-WI7BbXS7A"
-                          ,"rowVersion":"v5Jn_b3spb3nX8uwdNaOrAfPb5ipgzz2Mbi6uRgdsrATdgSZdURmFoc1DnHhT1k6O-81AwVrT1UCvFVGNgwX-A"
-                          }
-                          ]
-                          ,[
-                          "Aavarai Kudineer Choom \/10 nos."
-                          ,"10 gms"
-                          ,"Cuddalore"
-                          ,"25"
-                          ,"1465"
-                          ,{
-                          "salt":"yZjOFn4sNwP0dCEEWIkvBA"
-                          ,"protected":"\/DCak9oTtyBz6lnGgEUvDJVLFYd-ZWAAe0XBYaFcoh5bqlEYs2N3-HCgRvAGdDQyHLMgT5Y2s7pdfVvLOSW5pbw"
-                          ,"rowVersion":"cIs3ViWNtllHKihSgMBaE14XulrR6CMnHU-DOZ-MC9rq6LtLSjCDrMfGVGZFqmXCUUKwvqbLr8T9hoCU137xWQ"
-                          }
-                          ]
-                          ,[
-                          "Aavarai Kudineer Choom \/10 nos."
-                          ,"10 gms"
-                          ,"Cuddalore"
-                          ,"50"
-                          ,"1465"
-                          ,{
-                          "salt":"9r27BG1CMuPPJ468_Pl0UA"
-                          ,"protected":"\/NgNPjkfqrKaeLXmtT3NcS1-Xx5K6g-GoQFbED8t9ssnmQ9G6YTP9u4jRM1Wve1kTDdxYJfcGuIEJAN-4YPaulQ"
-                          ,"rowVersion":"KRCVpBdpKEJPoyFwbAclEhEoNDpigzvFQmP-9dZx59kEzpVDwnCb-eXU1nHvtYY6sy1AMNruWvTV081DZvuyxg"
-                          }
-                          ]
-                          ,[
-                          "Aavarai Kudineer Choom \/10 nos."
-                          ,"10 gms"
-                          ,"Dharmapuri"
-                          ,"60"
-                          ,"640"
-                          ,{
-                          "salt":"QmxRU8dyfsDIskLK_n04cA"
-                          ,"protected":"\/UXh1_0FssJvBIhhHlQlVjcFH_9IJ2JZgy8892CfgV9nnihNSHyo9lnTCWi_LN1uQo-PmYWtqAhitgTMBh-nSNQ"
-                          ,"rowVersion":"Kjaulxcg46aAwtHIb_YUHGg-AkYR7c6QpZNJBQyOtHqnzBjyjCKX1J2CD7i8xbob5IJR7yEc9yffKmHEXh4H4A"
-                          }
-                          ]
-                          ,[
-                          "Aavarai Kudineer Choom \/10 nos."
-                          ,"10 gms"
-                          ,"Dharmapuri"
-                          ,"50"
-                          ,"640"
-                          ,{
-                          "salt":"BB_ziYrLgPItJArJOc7eug"
-                          ,"protected":"\/pk7tDiQTHKgPt9FpeafD_93HXaTkXaWSEDy3wBjzm3dqnO8quaPrtlx0YT-OG8NixOREBA0RWQ8QS75L3rBNoQ"
-                          ,"rowVersion":"4iEPUUtcQGjsUOZrUrhiqtlLqJ_Mz6UbBvFy6edho40oLA35bcY6IAfXNod5el0YSlA_0zHTu0b-T2SdRnwVaQ"
-                          }
-                          ]
-                          ,[
-                          "Aavarai Kudineer Choom \/10 nos."
-                          ,"10 gms"
-                          ,"Dharmapuri"
-                          ,"100"
-                          ,"640"
-                          ,{
-                          "salt":"GwO-RqW6AAS8VBst7-5Zcg"
-                          ,"protected":"\/FIT0DlEjJNvkUz8EZ2NMV2xtpQ7D3f9MC-A550hf2SRQjo_CyCHN9quNhalwozi5ppC1lst79HOVm98BhUtqsA"
-                          ,"rowVersion":"By0bN5hxy7E0jeXNXiWuzNFKdgcPgWsfDjRioHSfefaUKCiUTXx59mMwfuLf4H5ADNwIUYXWKMytFM4KYU6_YA"
-                          }
-                          ]
-                          ,[
-                          "Aavarai Kudineer Choom \/10 nos."
-                          ,"10 gms"
-                          ,"Dharmapuri"
-                          ,"50"
-                          ,"640"
-                          ,{
-                          "salt":"PDvVmSz6AQtNyvsQy3tJ6g"
-                          ,"protected":"\/QYfKIWMOzDF8FVzgoz1vKUtMcxwSA8YiZ_I2FG-Hqgyh2h-OPssWF9ArC0wxP5SNRLak8Yy3iBPu3E1UTmRM0Q"
-                          ,"rowVersion":"4iEPUUtcQGjsUOZrUrhiqtlLqJ_Mz6UbBvFy6edho40oLA35bcY6IAfXNod5el0YSlA_0zHTu0b-T2SdRnwVaQ"
-                          }
-                          ]
-                          ,[
-                          "Aavarai Kudineer Choom \/10 nos."
-                          ,"10 gms"
-                          ,"Dharmapuri"
-                          ,"10"
-                          ,"640"
-                          ,{
-                          "salt":"u-9F-RATfWxvKrSMmh3tCQ"
-                          ,"protected":"\/IV5DKNcG0zPC8xSIBtQqX2_8gc1wrI29uca_AUE1B5WXxNyIxGeO514AbY3RN7HlwFLs7XimCQC9HlhtqbFFjA"
-                          ,"rowVersion":"49jpDRu3QrRKxERnDRerKwciIa43RL61FSPM4V6bsrTMyaXPl9N5GmSP-5PHVLftVYnaoesHmkcVWMNPkj5Lyg"
-                          }
-                          ]
-                          ,[
-                          "Aavarai Kudineer Choom \/10 nos."
-                          ,"10 gms"
-                          ,"Dharmapuri"
-                          ,"50"
-                          ,"640"
-                          ,{
-                          "salt":"jC5dJ-7q2V9hXnTxzIxIVA"
-                          ,"protected":"\/kFlpjgQTIQa27YpxGPWHkSdf8_oQO51yd8t83CAsS0ogY09wckGHkc45i_OOVcAbCG18QLGQa5tO5Z154CoInQ"
-                          ,"rowVersion":"4iEPUUtcQGjsUOZrUrhiqtlLqJ_Mz6UbBvFy6edho40oLA35bcY6IAfXNod5el0YSlA_0zHTu0b-T2SdRnwVaQ"
-                          }
-                          ]
-                          ,[
-                          "Aavarai Kudineer Choom \/10 nos."
-                          ,"10 gms"
-                          ,"Dharmapuri"
-                          ,"300"
-                          ,"640"
-                          ,{
-                          "salt":"5UZONkbStjzrp9PY5WRVDg"
-                          ,"protected":"\/qhlq7_XSigUh90ilQmDfKyPypnL_FuDIjLHfMy_aUZDLA2IZ7mhteVNme2bK3-_0VyvDUMTBoTtDiweVjanIRQ"
-                          ,"rowVersion":"8o34aVYdadBBlZaoXPmwHtqAS4PLWAEXv_qJx58dNxRWUReEljE5qfzVQbiweDDfzCs5bfDpx0_Ye9tX7KnMhQ"
-                          }
-                          ]
-                          ,[
-                          "Aavarai Kudineer Choom \/10 nos."
-                          ,"10 gms"
-                          ,"Dharmapuri"
-                          ,"20"
-                          ,"640"
-                          ,{
-                          "salt":"zX81o5wQG9vXurQFdGuO6w"
-                          ,"protected":"\/XWela_uEr1W8AWbAIyKD5ij8UTQD-vu-Jv_yMYfVffvtqu1AEj8H9KV4UvQG7EyA678xUf6QTI-LXMvokoQ_sQ"
-                          ,"rowVersion":"Rv4eoKQlxFPEfbX45E69sLfNmaCIZbyy5tQGJDmXq0GFgZ6bbnu8ypFOmxiZeqRaSw6V7_seBIljQ2-EWSkfiQ"
-                          }
-                          ]
-                          ,[
-                          "Aavarai Kudineer Choom \/10 nos."
-                          ,"10 gms"
-                          ,"Erode"
-                          ,"30"
-                          ,"490"
-                          ,{
-                          "salt":"gcsPsXcw0Dnc4Q2OV9Tg1w"
-                          ,"protected":"\/UGDCfK5MGtVy7WmI8hlEyE00Tgj8RXXM_VCv-XPmQ3UsvROZ3R8H1vWXnI2BoNbmifdWQ-mwCV1rXdpCq2DvXA"
-                          ,"rowVersion":"9Ovc7xrbla-0VXa1WldZ48dw9nmoBf5LLuqZd2AwbAbFd91iLxvZdYCxxc_irZYOXQ99ojXX3VZA-oyx9huhiA"
-                          }
-                          ]
-                          ,[
-                          "Aavarai Kudineer Choom \/10 nos."
-                          ,"10 gms"
-                          ,"Erode"
-                          ,"48"
-                          ,"490"
-                          ,{
-                          "salt":"KbIlUM4w1dWfwZbqyghp8g"
-                          ,"protected":"\/mLaiQzoH2-BIOrygMpvxB56DIN3a4kmus9YEjDBnGs8tkHOeRXTWaHsRnfVoR1gdQ3_UoLtmFbrXYOuRMFhaBg"
-                          ,"rowVersion":"C9zFTr27dyCwQCsqH_ncfskjmEvB243VrZ6sTWX4mUqOqZkjPckhAl7m1uFa2Wc-OATCFXkx2TCKLRwi-eIDMA"
-                          }
-                          ]
-                          ]
-                          ,"firstRow":1
-                          ,"moreData":true
-                          ,"totalRows":139279
-                          }
-                          ;
-                        </script>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </main>
-            <footer class="t-Footer" id="t_Footer" role="contentinfo">
-              <div class="t-Footer-body">
-                <div class="t-Footer-content"></div>
-                <div class="t-Footer-apex">
-                  <!-- <div class="t-Footer-version">    </div>
-                    <div class="t-Footer-customize"></div>
-                     -->
-                  <div class="row">      
-                    <div class="col-6">
-                      <p class="text-middle"><img class="footer-logo" src="../assets/img/head-dept-logo.png"><br>Content owned by Department of Indian Medicine and Homoeopathy ©</p>
-                    </div>
-                    <div class="col-6">
-                      <p class="text-middle"><img class="footer-logo" src="../assets/img/tnegalogo.png"><br>Designed and Developed by Tamil Nadu e-Governance Agency</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="t-Footer-top">
-                <a href="#top" class="t-Footer-topButton" id="t_Footer_topButton" title="Start of page" aria-label="Start of page"><span class="a-Icon icon-up-chevron" aria-hidden="true"></span></a>
-              </div>
-            </footer>
-          </div>
+          <div class="t-Header-navBar--end"></div>
         </div>
       </div>
-      <div class="t-Body-inlineDialogs" id="t_Body_inlineDialogs"></div>
-      <input type="hidden" id="pPageFormRegionChecksums" value="[]">
-      <input type="hidden" id="pPageItemsRowVersion" value=""><input type="hidden" id="pPageItemsProtected" value="/fDqUd4Pw73DaTdJ3Hsbc2u2aHRBrEVOuA-eurzzbwR3MrVm0iPqROyitpZopB3ZQjYVN4tiaOfi9JQHjEuc9Hw">
-    </form>
-    <script>
-      var apex_img_dir = "\u002Fi\u002F";
-      var apex = {env: {APP_USER: "9994793279",APP_ID: "117",APP_PAGE_ID: "36",APP_SESSION: "2368821413423",APP_FILES: "r\u002Fdimdev\u002F117\u002Ffiles\u002Fstatic\u002Fv194\u002F",WORKSPACE_FILES: "r\u002Fdimdev\u002Ffiles\u002Fstatic\u002Fv38\u002F",APEX_VERSION: "23.1.0",APEX_BASE_VERSION: "23.1"},
-      libVersions:{ckeditor5:"36.0.0",cropperJs:"1.5.13",domPurify:"2.4.3",fullcalendar:"5.11.3",hammer:"2.0.8",jquery:"3.6.4",jqueryUi:"1.13.2",maplibre:"2.4.0",markedJs:"4.2.5",prismJs:"1.29.0",oraclejet:"14.0.0",tinymce:"6.3.1",turndown:"7.1.1",monacoEditor:"0.32.1",lessJs:"4.1.3"}};
-    </script>
+      <div class="top">
+        <img id="leftlogo" data-aos="fade-right" data-aos-duration="800" src="../assets/img/head-tnlogo.png"
+          class="aos-init aos-animate">
+        <h1 data-aos="zoom-in" data-aos-duration="800" class="dept-name text-middle aos-init aos-animate">Medicine
+          Indent</h1>
+        <h3 data-aos="zoom-in" data-aos-duration="800" class="dept-name2 text-middle aos-init aos-animate">Department of
+          Indian Medicine and Homoeopathy</h3>
+        <img id="rightlogo" data-aos="fade-left" data-aos-duration="800" src="../assets/img/head-dept-logo.png"
+          class="aos-init aos-animate">
+      </div>
+      <div class="t-Header-nav">
+        <div class="t-Header-nav-list js-tabLike js-tabLike a-MenuBar a-MenuBar--overflow a-MenuBar--tabs"
+          id="t_MenuNav" role="menubar">
+          <ul role="none">
+            <li role="none" id="t_MenuNav_0" class="a-MenuBar-item a-Menu--current"><a role="menuitem"
+                class="a-MenuBar-label" aria-current="true" id="t_MenuNav_0i" href="../dim/home.html">Home</a></li>
+            <li role="none" id="t_MenuNav_1" class="a-MenuBar-item"><a role="menuitem" class="a-MenuBar-label"
+                id="t_MenuNav_1i" href="../dim/received-medicine.html" tabindex="-1">Received Medicine Report</a></li>
+            <li role="none" id="t_MenuNav_2" class="a-MenuBar-item"><a role="menuitem" class="a-MenuBar-label"
+                id="t_MenuNav_2i" href="../dim/medicine-details.html" tabindex="-1">Medicine Details</a></li>
+            <li role="none" id="t_MenuNav_3" class="a-MenuBar-item"><a role="menuitem" class="a-MenuBar-label"
+                id="t_MenuNav_3i" href="download.html" tabindex="-1">Download Despatched Medicine</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="t-Body">
+      <div class="t-Body-main">
+        <div class="t-Body-title" id="t_Body_title" style=""></div>
+        <div class="t-Body-content" id="t_Body_content">
+          <div id="t_Body_content_offset"></div>
+          <main id="main" class="t-Body-mainContent">
+            <span id="APEX_SUCCESS_MESSAGE" data-template-id="238562751400702882270_S"
+              class="apex-page-success u-hidden"></span><span id="APEX_ERROR_MESSAGE"
+              data-template-id="238562751400702882270_E" class="apex-page-error u-hidden"></span>
+            <div class="t-Body-fullContent"></div>
+            <div class="t-Body-contentInner">
+              <div class="container">
+                <div class="row ">
+                  <div class="col col-4 apex-col-auto col-start">
+                    <div
+                      class="t-Form-fieldContainer is-required rel-col t-Form-fieldContainer--stretchInputs t-Form-fieldContainer--indicatorAsterisk t-Form-fieldContainer--large apex-item-wrapper apex-item-wrapper--select-list"
+                      id="P36_FINANCIAL_YEAR_CONTAINER">
+                      <div class="t-Form-labelContainer col col-2">
+                        <label for="P36_FINANCIAL_YEAR" id="P36_FINANCIAL_YEAR_LABEL" class="t-Form-label">Financial
+                          Year </label>
+                      </div>
+                      <div class="t-Form-inputContainer col col-2">
+                        <div class="t-Form-itemWrapper">
+                          <select id="P36_FINANCIAL_YEAR" name="P36_FINANCIAL_YEAR" required=""
+                            class="selectlist apex-item-select" data-native-menu="false" size="1">
 
-    <script src="../assets/js/jquery-3.6.0.min.js"></script>
-    <script src="../assets/js/desktop_all.min.js"></script>
-    <script src="../assets/js/widget.stickyWidget.min.js"></script>
-    <script src="../assets/js/theme42.min.js"></script>
-    <script src="../assets/js/aos.js"></script>
+                          </select>
+                        </div>
+                        <div class="t-Form-itemAssistance">
+                          <span id="P36_FINANCIAL_YEAR_error_placeholder" class="a-Form-error"
+                            data-template-id="428237131064519931341_ET"></span>
+                          <div class="t-Form-itemRequired" aria-hidden="true">Required</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col col-4 apex-col-auto ">
+                    <div
+                      class="t-Form-fieldContainer is-required rel-col t-Form-fieldContainer--stretchInputs t-Form-fieldContainer--indicatorAsterisk t-Form-fieldContainer--large apex-item-wrapper apex-item-wrapper--select-list"
+                      id="P36_QUARTERS_CONTAINER">
+                      <div class="t-Form-labelContainer col col-2">
+                        <label for="P36_QUARTERS" id="P36_QUARTERS_LABEL" class="t-Form-label">Quarters </label>
+                      </div>
+                      <div class="t-Form-inputContainer col col-2">
+                        <div class="t-Form-itemWrapper">
+                          <select id="P36_QUARTERS" name="P36_QUARTERS" required="" class="selectlist apex-item-select"
+                            data-native-menu="false" size="1">
 
+                          </select>
+                        </div>
+                        <div class="t-Form-itemAssistance">
+                          <span id="P36_QUARTERS_error_placeholder" class="a-Form-error"
+                            data-template-id="428237131064519931341_ET"></span>
+                          <div class="t-Form-itemRequired" aria-hidden="true">Required</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col col-4 apex-col-auto col-end"><button
+                      class="t-Button t-Button--hot u-color-12  t-Button--large t-Button--success" type="button"
+                      id="searchbtn"><span class="t-Button-label">Search</span></button></div>
+                </div>
+                <div class="row ">
+                  <div class="col col-4 apex-col-auto col-start">
+                    <div
+                      class="t-Form-fieldContainer rel-col t-Form-fieldContainer--stretchInputs t-Form-fieldContainer--large apex-item-wrapper apex-item-wrapper--select-list"
+                      id="P36_INDENT_TYPE_CONTAINER">
+                      <div class="t-Form-labelContainer col col-2">
+                        <label for="P36_INDENT_TYPE" id="P36_INDENT_TYPE_LABEL" class="t-Form-label">Indent Type</label>
+                      </div>
+                      <div class="t-Form-inputContainer col col-2">
+                        <div class="t-Form-itemWrapper">
+                          <select id="P36_INDENT_TYPE" name="P36_INDENT_TYPE" class="selectlist apex-item-select"
+                            data-native-menu="false" size="1">
 
-    <script type="text/javascript">
-      apex.session.initTimeouts(900,{"idle_time_ms":1196000,"life_time_ms":28414000,"max_idle_time_ms":1200000},'\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fhome','\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fhome');
-      apex.jQuery( function() {
-      apex.page.init( this, function() {
-      try {
-      (function(){var e = apex.jQuery("#t_MenuNav", apex.gPageContext$);
-      if (e.hasClass("js-addActions")) {
-        apex.actions.addFromMarkup( e );
-      }
-      e.menu({
-        behaveLikeTabs: e.hasClass("js-tabLike"),
-        menubarShowSubMenuIcon: e.hasClass("js-showSubMenuIcons") || null,
-        menubar: true,
-        menubarOverflow: true,
-        callout: e.hasClass("js-menu-callout")
-      });
-      })();
-      (function(){apex.widget.selectList("#P36_FINANCIAL_YEAR",{"nullValue":"","ajaxIdentifier":"SVRFTSBUWVBFfjUxMjB-MTYwNDQ2OTY0MTI4MTMwNjU1Nzg4\u002FN_eVsaGPrIzzSWXh06t8bPsGTBpvaB-phYg0697l6Zg29rVUveANxOb0pFgbNi5WJaAdS462tHIZ3BPNXqHJZw"});})();
-      (function(){apex.widget.selectList("#P36_QUARTERS",{"nullValue":"","ajaxIdentifier":"SVRFTSBUWVBFfjUxMjB-MzU0NDgwNjQ3NDQ4NzYwMDE\u002FvRyXevieE24VHGm3CQXQhzdX61SPY21ChxUU3i87889Hz78sre8AaYFVGOvAlM3XFsdKQZe2PBN_YOPyKBCSwA"});})();
-      (function(){apex.widget.selectList("#P36_INDENT_TYPE",{"nullValue":"","ajaxIdentifier":"SVRFTSBUWVBFfjUxMjB-MzY1Njc5MDExNDczMTU5OTk\u002FIb-hrYhiNv2H2R-XjQ72MUrxi9ACPTf9BOMYcC_b9hjQ6bgBkOaQ6EcWkZiYP7qtzu66I3e7pgUVtulbOIZdQA"});})();
-      (function(){apex.widget.selectList("#P36_SCHEME_NAME",{"nullValue":"","ajaxIdentifier":"SVRFTSBUWVBFfjUxMjB-MzY1NjgwMzIzNTgzMTYwMDA\u002FKqVvbmHPg-vmfqQUDoUhs18dv_1GrvM87J2lBNfvFPt_BFNeqEXqHOGnV7tdqvANUlIyRmF5RrDHGu9qjE0xuQ"});})();
-      (function(){var ig$=apex.jQuery('#R311550531762325085781_ig');ig$.interactiveGrid({"config":{"columns":[{"id":"17423215616225427","name":"MEDICINE_NAME","staticId":"C17423215616225427","heading":{"heading":"Medicine Name","alignment":"start"},"validation":{"isRequired":true}},{"id":"17423358604225428","name":"PACKING_SIZE","staticId":"C17423358604225428","heading":{"heading":"Packing Size","alignment":"start"},"validation":{"isRequired":true}},{"id":"17423476890225429","name":"NAME_OF_THE_DISTRICT","staticId":"C17423476890225429","heading":{"heading":"Name Of The District","alignment":"start"},"validation":{"isRequired":true}},{"id":"17423541163225430","name":"QUANTITY","staticId":"C17423541163225430","dataType":"NUMBER","heading":{"heading":"Quantity","alignment":"end"},"layout":{"columnAlignment":"end"},"appearance":{"formatExample":"2.54"},"validation":{"isRequired":true},"filter":{"dataType":"NUMBER","hasLov":false}},{"id":"17423639007225431","name":"TOTAL_QUANTITY","staticId":"C17423639007225431","dataType":"NUMBER","heading":{"heading":"Total Quantity","alignment":"end"},"layout":{"columnAlignment":"end"},"appearance":{"formatExample":"2.54"},"filter":{"dataType":"NUMBER","hasLov":false}}],"ajaxColumns":"MTc0MjMyMTU2MTYyMjU0Mjc6MTc0MjMzNTg2MDQyMjU0Mjg6MTc0MjM0NzY4OTAy.,MjU0Mjk6MTc0MjM1NDExNjMyMjU0MzA6MTc0MjM2MzkwMDcyMjU0MzE\u002FUbv4USeJDC7Vo0yY_C1PrNae6h09RPv7G8G_RkRkyVrGK8n_U2w0NTp1zY6jG1Mqo9x2Zze-6FT_Jfh_qN2Pqw","regionId":"311550531762325085781","regionAccTitle":"Medicine Details","regionStaticId":"R311550531762325085781","ajaxIdentifier":"UkVHSU9OIFRZUEV-fjMxMTU1MDUzMTc2MjMyNTA4NTc4MQ\u002FujvCE6-xX3b90xzUbtNI-Ax5_4FXnv9VTnOQoRLm9gRtI5qMK4OgSDccCtAT1SIQeLCcOXNa4tsg-GTDK60CEA","itemsToSubmit":"#P36_FINANCIAL_YEAR,#P36_QUARTERS","pagination":{"showTotalRowCount":true},"features":{"download":{"downloadCs":"dHJ1ZQ\u002F8VdhP8dzTiHpQ3wK4QU0-Pa7NON2qTch7tKp6VVPmVFGfcbhkpqIv3MQ8yQmlkpq3B-kbI00r-3aDCIgYbW2rA","formats":"CSV:HTML:XLSX:PDF".split(":"),"print":{"orientation":"HORIZONTAL"}}},"views":{"grid":{"features":{"rowSelector":false}}}},"savedReports":[{"id":"19346523958144535","isCurrent":true,"reportSettingsArea":"expanded","versionNumber":8,"views":{"grid":{"columns":[{"id":"19347281909144528","seq":1,"columnId":"17423215616225427"},{"id":"19348144905144495","seq":2,"columnId":"17423358604225428"},{"id":"19349001462144486","seq":3,"columnId":"17423476890225429"},{"id":"19349935161144481","seq":4,"columnId":"17423541163225430"},{"id":"19350858145144476","seq":5,"columnId":"17423639007225431"}]}}}],"data":gIg311550531762325085781data});})();
-      } catch(e) {apex.debug.error(e)};
-      apex.item.waitForDelayLoadItems().done(function() {
-      try {
-      apex.theme42.initializePage.noSideCol();
-      
-      apex.page.warnOnUnsavedChanges();
-      } finally {
-      apex.event.trigger(apex.gPageContext$,'apexreadyend');
-      };
-      });
-      });
-      });apex.pwa.init( { serviceWorkerPath:'\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fsw.js?v=23.1.0-249998717\u0026lang=en' } );
-    </script>
-    <script>
-      AOS.init();
-    </script>
-    <div id="pushModal" style="width: 100%; display:none; height: 100%;" class="u-DisplayNone u-Overlay--glass"></div>
-    <div id="R311550531762325085781_ig_toolbar_column_filter_button_menu" class="a-Toolbar-menu a-Menu" style="display:none;" role="menu"></div>
-    <div id="R311550531762325085781_ig_toolbar_actions_button_menu" class="a-Toolbar-menu a-Menu" style="display:none;" role="menu"></div>
-    <div id="R311550531762325085781_ig_row_actions_menu" role="menu" class="a-Menu" style="display: none;"></div>
-    <div id="R311550531762325085781_ig_srv_actions_menu" role="menu" class="a-Menu" style="display: none;"></div>
-    <div id="R311550531762325085781_ig_selection_actions_menu" role="menu" class="a-Menu" style="display: none;"></div>
-    <div class="a-IRR-sortWidget" style="display:none;" id="R311550531762325085781_ig_column_header_menu" role="dialog" aria-label="Column Actions" aria-modal="true"></div>
-    <input id="apexCBMDummySelection" style="display:none;" value="x">
-    <div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div>
-    <div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div>
-    <div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div>
-    <div id="R311550531762325085781_ig_singleRow_vc_tb_m2_menu" class="a-Toolbar-menu a-Menu" style="display:none;" role="menu"></div>
-    <div class="t-NavigationBar-menu a-Menu" style="display: none" id="menu_L428237300758551931558" role="menu">
-      <ul>
-        <li class="" data-current="false" data-icon="fa fa-sign-out"><a href="apex_authentication.logout?p_app_id=117&amp;p_session_id=2368821413423" title="" target="">Sign Out</a></li>
-      </ul>
+                          </select>
+                        </div>
+                        <span id="P36_INDENT_TYPE_error_placeholder" class="a-Form-error"
+                          data-template-id="428237130780249931341_ET"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col col-4 apex-col-auto ">
+                    <div
+                      class="t-Form-fieldContainer rel-col t-Form-fieldContainer--stretchInputs t-Form-fieldContainer--large apex-item-wrapper apex-item-wrapper--select-list"
+                      id="P36_SCHEME_NAME_CONTAINER">
+                      <div class="t-Form-labelContainer col col-2">
+                        <label for="P36_SCHEME_NAME" id="P36_SCHEME_NAME_LABEL" class="t-Form-label">Scheme Name</label>
+                      </div>
+                      <div class="t-Form-inputContainer col col-2">
+                        <div class="t-Form-itemWrapper">
+                          <select id="P36_SCHEME_NAME" name="P36_SCHEME_NAME" class="selectlist apex-item-select"
+                            data-native-menu="false" size="1">
+
+                          </select>
+                        </div>
+                        <span id="P36_SCHEME_NAME_error_placeholder" class="a-Form-error"
+                          data-template-id="428237130780249931341_ET"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col col-4 apex-col-auto col-end"><button
+                      class="t-Button t-Button--hot js-ignoreChange t-Button--large t-Button--warning" type="button"
+                      id="clearBtn"><span class="t-Button-label">Clear</span></button></div>
+                </div>
+                <div class="row ">
+                  <div class="col col-12 apex-col-auto col-start col-end">
+                    <div id="R311550531762325085781" role="region" aria-label="Medicine Details"
+                      class="t-IRR-region js-apex-region">
+                      <div class="t-Region-orderBy"></div>
+                      <div id="R311550531762325085781_ig" class="a-IG">
+                        <div
+                          style="direction: ltr; position: absolute; inset: 0px; overflow: hidden; z-index: -1; visibility: hidden;">
+                          <div
+                            style="position: absolute; top: 0px; left: 0px; transition: all; width: 200%; height: 200%;">
+                          </div>
+                        </div>
+                        <div class="js-resize-sensor"
+                          style="direction: ltr; position: absolute; inset: 0px; overflow: hidden; z-index: -1; visibility: hidden;">
+                          <div
+                            style="position: absolute; top: 0px; left: 0px; transition: all; width: 1063px; height: 4.45705e+06px;">
+                          </div>
+                        </div>
+                        <div class="a-IG-header js-stickyWidget-toggle"
+                          style="z-index: 300; position: absolute; width: 1061.85px;">
+                          <div id="R311550531762325085781_ig_toolbar" class="a-Toolbar" role="toolbar"
+                            aria-label="Toolbar">
+                            <div class="a-Toolbar-groupContainer a-Toolbar-groupContainer--start">
+                              <div class="a-Toolbar-group a-Toolbar-group--search a-Toolbar-group--together"><button
+                                  type="button" class="a-Button a-Toolbar-item a-Button--withIcon a-Button--noLabel"
+                                  id="R311550531762325085781_ig_toolbar_column_filter_button"
+                                  title="Select columns to search" aria-label="Select columns to search"
+                                  data-menu="R311550531762325085781_ig_toolbar_column_filter_button_menu"
+                                  aria-haspopup="true" style=""><span aria-hidden="true"
+                                    class="a-Icon icon-search"></span><span aria-hidden="true"
+                                    class="a-Icon a-Icon icon-menu-drop-down"></span></button><input
+                                  id="R311550531762325085781_ig_toolbar_search_field"
+                                  class="a-Toolbar-input a-Toolbar-inputText a-Toolbar-item"
+                                  title="Search: All Text Columns" type="text" size="30" maxlength="4000" value=""
+                                  data-enter-action="search" placeholder="Search: All Text Columns" style=""><button
+                                  type="button" class="a-Button a-Toolbar-item" data-action="search"><span
+                                    class="a-Button-label">Go</span></button></div>
+                              <div class="a-Toolbar-group" style="display: none;"><select
+                                  class="a-Toolbar-selectList a-Toolbar-item" size="1" title="Saved Reports"
+                                  aria-label="Saved Reports" data-action="change-report"
+                                  style="display: none;"></select></div>
+                              <div class="a-Toolbar-group" style="display: none;">
+                                <div role="group" aria-label="Change View"
+                                  class="a-Toolbar-radioGroup js-actionRadioGroup a-Toolbar-item"
+                                  data-action="change-view" data-item="a-Button" data-item-wrap="a-Toolbar-button-item"
+                                  style="display: none;"></div>
+                              </div>
+                              <div class="a-Toolbar-group"><button type="button" class="a-Button a-Toolbar-item"
+                                  id="R311550531762325085781_ig_toolbar_actions_button"
+                                  data-menu="R311550531762325085781_ig_toolbar_actions_button_menu" aria-haspopup="true"
+                                  style=""><span class="a-Button-label">Actions</span><span aria-hidden="true"
+                                    class="a-Icon a-Icon icon-menu-drop-down"></span></button></div>
+                              <div class="a-Toolbar-group" style="display: none;">
+                                <div class="a-Toolbar-toggleButton js-actionToggle a-Toolbar-item" data-action="edit"
+                                  style="display: none;"><span
+                                    id="R311550531762325085781_ig_toolbar_m1_ON_STATE_ARIA_DESC" class="u-vh"
+                                    aria-hidden="true">Grid in edit mode, un-press to switch to view mode</span><span
+                                    id="R311550531762325085781_ig_toolbar_m1_OFF_STATE_ARIA_DESC" class="u-vh"
+                                    aria-hidden="true">Grid in view mode, press to edit</span><button type="button"
+                                    class="a-Button a-Toolbar-button a-Toolbar-toggleButton" name="edit"
+                                    id="R311550531762325085781_ig_toolbar_m1" aria-pressed="false"
+                                    aria-describedby="R311550531762325085781_ig_toolbar_m1_OFF_STATE_ARIA_DESC"
+                                    aria-controls="R311550531762325085781_ig_content_container" aria-label="Edit"><span
+                                      class="a-Button-label">Edit</span></button></div>
+                                <button type="button" class="a-Button a-Toolbar-item a-Button--hot" data-action="save"
+                                  style="display: none;"><span class="a-Button-label">Save</span></button>
+                              </div>
+                              <div class="a-Toolbar-group" style="display: none;"><button type="button"
+                                  class="a-Button a-Toolbar-item" data-action="selection-add-row"
+                                  style="display: none;"><span class="a-Button-label">Add Row</span></button></div>
+                            </div>
+                            <div class="a-Toolbar-groupContainer a-Toolbar-groupContainer--end">
+                              <div class="a-Toolbar-group"><button type="button"
+                                  class="a-Button a-Toolbar-item a-Button--withIcon" disabled=""
+                                  data-action="reset-report" data-no-update="true"><span aria-hidden="true"
+                                    class="a-Icon icon-ig-reset"></span><span
+                                    class="a-Button-label">Reset</span></button></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="js-stickyWidget-placeholder" style="width: 1061.85px; height: 48.4px;"></div>
+                        <div class="a-IG-body">
+                          <div class="a-MediaBlock a-IG-controlsContainer" role="region" aria-label="Grid Settings"
+                            id="R311550531762325085781_ig_report_settings" style="display:none;">
+                            <div class="a-MediaBlock-graphic" role="heading" aria-level="3">
+                              <h3 aria-hidden="true" class="u-VisuallyHidden">Grid Settings</h3>
+                              <button type="button"
+                                class="a-Button a-Button a-IG-button a-IG-button--controls"></button>
+                            </div>
+                            <div class="a-MediaBlock-content">
+                              <ul class="a-IG-controls"></ul>
+                            </div>
+                            <div class="a-IG-reportSummaryContainer" style="display:none;"
+                              id="R311550531762325085781_ig_report_settings_summary">
+                              <ul class="a-IG-reportSummary"></ul>
+                            </div>
+                          </div>
+                          <div class="a-IG-contentContainer" id="R311550531762325085781_ig_content_container"
+                            role="region" aria-label="Grid View" style="width: 1061.85px;">
+                            <table id="viewIndentDistrictTable" class="a-IRR-table" style="width:100%">
+                              <thead>
+                                <tr>
+                                  <th class="a-IRR-header u-tC">
+                                    <span class="a-IRR-headerLabel">Medicine Name</span>
+                                    <div class="t-fht-cell"></div>
+                                  </th>
+                                  <th class="a-IRR-header u-tC">
+                                    <span class="a-IRR-headerLabel">Packing Size</span>
+                                    <div class="t-fht-cell"></div>
+                                  </th>
+                                  <th class="a-IRR-header u-tC">
+                                    <span class="a-IRR-headerLabel">Name Of The District</span>
+                                    <div class="t-fht-cell"></div>
+                                  </th>
+                                  <th class="a-IRR-header u-tC">
+                                    <span class="a-IRR-headerLabel">Quantity</span>
+                                    <div class="t-fht-cell"></div>
+                                  </th>
+                                  <th class="a-IRR-header u-tC">
+                                    <span class="a-IRR-headerLabel">Total Quantity</span>
+                                    <div class="t-fht-cell"></div>
+                                  </th>
+                                </tr>
+
+                              </thead>
+                              <tbody></tbody>
+                            </table>
+                          </div>
+                        </div>
+                        <div class="a-GV-columnItemContainer u-vh" aria-hidden="true">
+                          <div class="a-GV-columnItem"><input type="hidden" id="C17423215616225427"></div>
+                          <div class="a-GV-columnItem"><input type="hidden" id="C17423358604225428"></div>
+                          <div class="a-GV-columnItem"><input type="hidden" id="C17423476890225429"></div>
+                          <div class="a-GV-columnItem"><input type="hidden" id="C17423541163225430"></div>
+                          <div class="a-GV-columnItem"><input type="hidden" id="C17423639007225431"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+          <footer class="t-Footer" id="t_Footer" role="contentinfo">
+            <div class="t-Footer-body">
+              <div class="t-Footer-content"></div>
+              <div class="t-Footer-apex">
+                <!-- <div class="t-Footer-version">    </div>
+                    <div class="t-Footer-customize"></div>
+                     -->
+                <div class="row">
+                  <div class="col-6">
+                    <p class="text-middle"><img class="footer-logo" src="../assets/img/head-dept-logo.png"><br>Content
+                      owned by Department of Indian Medicine and Homoeopathy ©</p>
+                  </div>
+                  <div class="col-6">
+                    <p class="text-middle"><img class="footer-logo" src="../assets/img/tnegalogo.png"><br>Designed and
+                      Developed by Tamil Nadu e-Governance Agency</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="t-Footer-top">
+              <a href="#top" class="t-Footer-topButton" id="t_Footer_topButton" title="Start of page"
+                aria-label="Start of page"><span class="a-Icon icon-up-chevron" aria-hidden="true"></span></a>
+            </div>
+          </footer>
+        </div>
+      </div>
     </div>
-    <iframe frameborder="0" scrolling="no" style="background-color: transparent; border: 0px; display: none;"></iframe>
-    <div id="GOOGLE_INPUT_CHEXT_FLAG" style="display: none;" input="" input_stat="{&quot;tlang&quot;:true,&quot;tsbc&quot;:true,&quot;pun&quot;:true,&quot;mk&quot;:true,&quot;ss&quot;:true}"></div>
-  </body>
+    <div class="t-Body-inlineDialogs" id="t_Body_inlineDialogs"></div>
+    <input type="hidden" id="pPageFormRegionChecksums" value="[]">
+    <input type="hidden" id="pPageItemsRowVersion" value=""><input type="hidden" id="pPageItemsProtected"
+      value="/fDqUd4Pw73DaTdJ3Hsbc2u2aHRBrEVOuA-eurzzbwR3MrVm0iPqROyitpZopB3ZQjYVN4tiaOfi9JQHjEuc9Hw">
+  </form>
+
+
+
+  <script src="../assets/js/desktop_all.min.js"></script>
+  <script src="../assets/js/aos.js"></script>
+  <!-- jQuery -->
+  <script src="../assets/js/jquery-3.6.0.min.js"></script>
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- DataTables -->
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  <script src="../assets/js/widget.treeView.min.js"></script>
+  <script src="../assets/common.js"></script>
+  <script src="../assets/js/widget.interactiveReport.min.js"></script>
+  <script src="../assets/js/widget.iconList.min.js"></script>
+  <script src="../assets/js/widget.stickyTableHeader.min.js"></script>
+  <script src="../assets/js/widget.stickyWidget.min.js"></script>
+  <script src="../assets/js/item.Colorpicker.min.js"></script>
+  <script src="../assets/js/jetCommonBundle.min.js"></script>
+  <script src="../assets/js/chartBundle.min.js"></script>
+
+  <script src="../assets/js/toastUtil.js"></script>
+  <script src="../assets/js/validation.js"></script>
+  <script src="../assets/js/dataTableUtil.js"></script>
+  <script src="../assets/js/crypto-js.min.js"></script>
+  <script src="../assets/js/theme42.min.js"></script>
+  <script src="../assets/js/global.js"></script>
+  <script src="../assets/js/encrypt_decrypt.js"></script>
+  <script src="../assets/js/singleFileUpload.js"></script>
+  <script src="../assets/js/globalHeader.js"></script>
+  <script src="../assets/js/validation.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      var userName = localStorage.getItem("userName") || "Guest";
+      $('#username .t-Button-label').text(userName);
+    });
+  </script>
+  <script>
+
+    const apiUrl = 'https://tngis.tnega.org/medical_indent_api/v1/commonfunction';
+    const mobnumber = localStorage.getItem('userMobileNumber') || "";
+
+    function fetchAndPopulateDropdown({ payload, dropdownId, placeholder }) {
+      $.ajax({
+        url: apiUrl,
+        method: 'POST',
+        headers: {
+          'X-APP-Key': 'edm',
+          'X-APP-Name': 'edm'
+        },
+        data: {
+          data: encryptData(payload)
+        },
+        dataType: 'json',
+        success(response) {
+          const decrypted = decryptData(response.data);
+          console.log(`Decrypted Data for ${payload.function_name}:`, decrypted);
+
+          const $dropdown = $(`#${dropdownId}`);
+          $dropdown.empty().append(`<option value="">${placeholder}</option>`);
+
+          decrypted.forEach(item => {
+            const value = item.district || item.year || item.system || item.scheme || item.type || item.quarter;
+            $dropdown.append(`<option value="${value}">${value}</option>`);
+          });
+        },
+        error(xhr, status, error) {
+          console.error(`${payload.function_name} API Error:`, error);
+        }
+      });
+    }
+    // 🚀 Make API calls
+    fetchAndPopulateDropdown({
+      payload: {
+        action: "function_call",
+        function_name: "im_year_fn",
+        params: {}
+      },
+      dropdownId: "P36_FINANCIAL_YEAR",
+      placeholder: "--Select Financial Year--"
+    });
+    fetchAndPopulateDropdown({
+      payload: {
+        action: "function_call",
+        function_name: "im_scheme_names_fn",
+        params: {}
+      },
+      dropdownId: "P36_SCHEME_NAME",
+      placeholder: "--Select Scheme--"
+    });
+    fetchAndPopulateDropdown({
+      payload: {
+        action: "function_call",
+        function_name: "im_quarter_fn",
+        params: {}
+      },
+      dropdownId: "P36_QUARTERS",
+      placeholder: "--Select Quarters--"
+    });
+    fetchAndPopulateDropdown({
+      payload: {
+        action: "function_call",
+        function_name: "im_Indent_typ_fn",
+        params: {}
+      },
+      dropdownId: "P36_INDENT_TYPE",
+      placeholder: "--Select Indent--"
+    });
+    function getPayload() {
+      return {
+        action: "function_call",
+        function_name: "im_consolidated_quantity_by_district_fn",
+        params: {
+          p_financial_year: $('#P36_FINANCIAL_YEAR').val() || null,
+          p_quarters: $('#P36_QUARTERS').val() || null,
+          p_indent_type: $('#P36_INDENT_TYPE').val() || null,
+          p_scheme_name: $('#P36_SCHEME_NAME').val() || null
+        }
+      };
+    }
+
+    function fetchTableData() {
+      const payload = getPayload();
+      loadDataToTable({
+        tableId: 'viewIndentDistrictTable',
+        apiUrl,
+        httpMethod: 'POST',
+        payload: encryptData(payload),
+        rowBuilder: (item) => {
+          console.log(item);
+          return `
+                  <tr>
+                    <td class="u-tC">${item.medicine_name || 'N/A'}</td>
+                    <td class="u-tC">${item.packing_size || 'N/A'}</td>
+                    <td class="u-tC">${item.name_of_the_district || 'N/A'}</td>
+                    <td class="u-tC">${item.quantity || 'N/A'}</td>
+                    <td class="u-tC">${item.total_quantity || 'N/A'}</td>
+                  </tr>
+                `;
+        },
+        onTableInit: function (dtRef) {
+          dataTableRef = dtRef;
+        }
+      });
+    }
+    $('#searchbtn').on('click', function () {
+      fetchTableData();
+    });
+    $('#clearBtn').on('click', function () {
+      $('#P36_FINANCIAL_YEAR').val("");
+      $('#P36_QUARTERS').val("");
+      $('#P36_INDENT_TYPE').val("");
+      $('#P36_SCHEME_NAME').val("");
+    }); 
+  </script>
+  <div id="pushModal" style="width: 100%; display:none; height: 100%;" class="u-DisplayNone u-Overlay--glass"></div>
+  <div id="R311550531762325085781_ig_toolbar_column_filter_button_menu" class="a-Toolbar-menu a-Menu"
+    style="display:none;" role="menu"></div>
+  <div id="R311550531762325085781_ig_toolbar_actions_button_menu" class="a-Toolbar-menu a-Menu" style="display:none;"
+    role="menu"></div>
+  <div id="R311550531762325085781_ig_row_actions_menu" role="menu" class="a-Menu" style="display: none;"></div>
+  <div id="R311550531762325085781_ig_srv_actions_menu" role="menu" class="a-Menu" style="display: none;"></div>
+  <div id="R311550531762325085781_ig_selection_actions_menu" role="menu" class="a-Menu" style="display: none;"></div>
+  <div class="a-IRR-sortWidget" style="display:none;" id="R311550531762325085781_ig_column_header_menu" role="dialog"
+    aria-label="Column Actions" aria-modal="true"></div>
+  <input id="apexCBMDummySelection" style="display:none;" value="x">
+  <div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div>
+  <div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div>
+  <div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div>
+  <div id="R311550531762325085781_ig_singleRow_vc_tb_m2_menu" class="a-Toolbar-menu a-Menu" style="display:none;"
+    role="menu"></div>
+  <div class="t-NavigationBar-menu a-Menu" style="display: none" id="menu_L428237300758551931558" role="menu">
+    <ul>
+      <li class="" data-current="false" data-icon="fa fa-sign-out"><a
+          href="apex_authentication.logout?p_app_id=117&amp;p_session_id=2368821413423" title="" target="">Sign Out</a>
+      </li>
+    </ul>
+  </div>
+  <iframe frameborder="0" scrolling="no" style="background-color: transparent; border: 0px; display: none;"></iframe>
+  <div id="GOOGLE_INPUT_CHEXT_FLAG" style="display: none;" input=""
+    input_stat="{&quot;tlang&quot;:true,&quot;tsbc&quot;:true,&quot;pun&quot;:true,&quot;mk&quot;:true,&quot;ss&quot;:true}">
+  </div>
+</body>
+
 </html>

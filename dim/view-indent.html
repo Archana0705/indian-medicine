@@ -1,1304 +1,446 @@
 <html class="page-7 app-IMIM" lang="en" style="--js-sticky-top: 204.375px;">
-  <head>
-    <meta http-equiv="x-ua-compatible" content="IE=edge">
-    <meta charset="utf-8">
-    <title>District wise Consolidated Report</title>
-    
 
-    <link rel="apple-touch-icon" href="../assets/img/app-icon-192.png">
-    <link rel="icon" href="../assets/img/app-icon-32.png">
+<head>
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <title>District wise Consolidated Report</title>
 
-    <link rel="stylesheet" href="../assets/css/Core.min.css" type="text/css">
-    <link rel="stylesheet" href="../assets/css/Theme-Standard.min.css" type="text/css">
-    <link rel="stylesheet" href="../assets/css/font-apex.min.css" type="text/css">
-    <link rel="stylesheet" href="../assets/css/Core_theme.min.css" type="text/css">
-    <link rel="stylesheet" href="../assets/css/custom.min.css" type="text/css">
-    <link rel="stylesheet" href="../assets/css/aos.min.css" type="text/css"> 
-    <link rel="stylesheet" href="../assets/css/theme.css" type="text/css">
-    
 
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="-1">
-    <meta http-equiv="Cache-Control" content="no-cache">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style type="text/css">.t-fht-cell { height: 1px; overflow: hidden; } .t-fht-wrapper { width: 100%; overflow: hidden; position: relative; } .t-fht-thead { overflow: hidden; position: relative; } .t-fht-tbody { overflow: auto; } </style>
-  </head>
-  <body class="t-PageBody t-PageBody--hideLeft t-PageBody--hideActions t-PageTemplate--standard apex-top-nav apex-icons-fontapex apex-theme-vita-standard js-HeaderExpanded t-PageBody--topNav" id="t_PageBody" data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
-    <a href="#main" id="t_Body_skipToContent">Skip to Main Content</a>
-    <form action="wwv_flow.accept?p_context=imim/district-wise-consolidated-report/2368821413423" method="post" name="wwv_flow" id="wwvFlowForm" data-oj-binding-provider="none" novalidate="" autocomplete="off">
-      <input type="hidden" name="p_flow_id" value="117" id="pFlowId"><input type="hidden" name="p_flow_step_id" value="7" id="pFlowStepId"><input type="hidden" name="p_instance" value="2368821413423" id="pInstance"><input type="hidden" name="p_page_submission_id" value="226316569424173016094629460558541901096" id="pPageSubmissionId"><input type="hidden" name="p_request" value="" id="pRequest"><input type="hidden" name="p_reload_on_submit" value="S" id="pReloadOnSubmit"><input type="hidden" value="imim/district-wise-consolidated-report/2368821413423" id="pContext"><input type="hidden" value="226316569424173016094629460558541901096" id="pSalt">
-      <header class="t-Header" id="t_Header" role="banner">
-        <div class="t-Header-branding">
-          <div class="t-Header-controls">
-            <button class="t-Button t-Button--icon t-Button--header t-Button--headerTree" aria-label="Main Navigation" title="Main Navigation" id="t_Button_navControl" type="button"><span class="t-Header-controlsIcon" aria-hidden="true"></span></button>
+  <link rel="apple-touch-icon" href="../assets/img/app-icon-192.png">
+  <link rel="icon" href="../assets/img/app-icon-32.png">
+
+  <link rel="stylesheet" href="../assets/css/Core.min.css" type="text/css">
+  <link rel="stylesheet" href="../assets/css/Theme-Standard.min.css" type="text/css">
+  <link rel="stylesheet" href="../assets/css/font-apex.min.css" type="text/css">
+  <link rel="stylesheet" href="../assets/css/Core_theme.min.css" type="text/css">
+  <link rel="stylesheet" href="../assets/css/custom.min.css" type="text/css">
+  <link rel="stylesheet" href="../assets/css/aos.min.css" type="text/css">
+  <link rel="stylesheet" href="../assets/css/theme.css" type="text/css">
+
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="-1">
+  <meta http-equiv="Cache-Control" content="no-cache">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style type="text/css">
+    .t-fht-cell {
+      height: 1px;
+      overflow: hidden;
+    }
+
+    .t-fht-wrapper {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .t-fht-thead {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .t-fht-tbody {
+      overflow: auto;
+    }
+    .dataTables_paginate {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 5px;
+  }
+
+  .paginate_button {
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    padding: 6px 12px;
+    margin: 0 2px;
+    border-radius: 4px;
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+  }
+
+  .paginate_button:hover:not(.disabled),
+  .paginate_button:focus {
+    background-color: #007bff;
+    color: white;
+  }
+
+  .paginate_button.current {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+  }
+
+  .paginate_button.disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+  </style>
+</head>
+
+<body
+  class="t-PageBody t-PageBody--hideLeft t-PageBody--hideActions t-PageTemplate--standard apex-top-nav apex-icons-fontapex apex-theme-vita-standard js-HeaderExpanded t-PageBody--topNav"
+  id="t_PageBody" data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
+  <a href="#main" id="t_Body_skipToContent">Skip to Main Content</a>
+  <form method="post" name="wwv_flow" id="wwvFlowForm" data-oj-binding-provider="none" novalidate="" autocomplete="off">
+    <input type="hidden" name="p_flow_id" value="117" id="pFlowId"><input type="hidden" name="p_flow_step_id" value="7"
+      id="pFlowStepId"><input type="hidden" name="p_instance" value="2368821413423" id="pInstance"><input type="hidden"
+      name="p_page_submission_id" value="226316569424173016094629460558541901096" id="pPageSubmissionId"><input
+      type="hidden" name="p_request" value="" id="pRequest"><input type="hidden" name="p_reload_on_submit" value="S"
+      id="pReloadOnSubmit"><input type="hidden" value="imim/district-wise-consolidated-report/2368821413423"
+      id="pContext"><input type="hidden" value="226316569424173016094629460558541901096" id="pSalt">
+    <header class="t-Header" id="t_Header" role="banner">
+      <div class="t-Header-branding">
+        <div class="t-Header-controls">
+          <button class="t-Button t-Button--icon t-Button--header t-Button--headerTree" aria-label="Main Navigation"
+            title="Main Navigation" id="t_Button_navControl" type="button"><span class="t-Header-controlsIcon"
+              aria-hidden="true"></span></button>
+        </div>
+        <div class="t-Header-logo">
+          <!-- <a href="&#x2F;ords&#x2F;r&#x2F;dimdev&#x2F;imim&#x2F;home?session=2368821413423" class="t-Header-logo-link"><img src="r&#x2F;dimdev&#x2F;117&#x2F;files&#x2F;static&#x2F;v194&#x2F;app-251298-logo.jpeg" alt="" class="apex-logo-img" /><span class="apex-logo-text">DIRECTORATE OF INDIAN MEDICINE  - INDENT MANAGEMENT</span></a> -->
+          <div class="gigw">
+            <li><a data-aos="fade-up" data-aos-delay="200" class="linkedin btn-decrease aos-init aos-animate"><span
+                  class="d-inline-block" tabindex="0" data-toggle="tooltip" title="font size Decrease"><i></i> A
+                  -</span></a></li>
+            <li><a data-aos="fade-up" data-aos-delay="300" class="linkedin btn-orig aos-init aos-animate"><span
+                  class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Reset font"><i></i> A
+                  <sup></sup></span></a></li>
+            <li><a data-aos="fade-up" data-aos-delay="400" class="instagram btn-increase aos-init aos-animate"><span
+                  class="d-inline-block" tabindex="0" data-toggle="tooltip" title="font size Increase"><i></i> A
+                  +</span></a></li>
+            <li><a data-aos="fade-up" data-aos-delay="500" class="aos-init aos-animate"><span class="d-inline-block"
+                  tabindex="0" data-toggle="tooltip" title="Dark Mode"><i class="t-Icon fa fa-moon-o"
+                    id="darkmode"></i></span></a></li>
+            <li><a data-aos="fade-up" data-aos-delay="600" class="form-check form-switch aos-init aos-animate"><label
+                  class="form-check-label" for="screenReaderSwitch">
+                  <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Screen Reader">
+                    <i id="sound" class="t-Icon fa fa-volume-up"></i></span></label><input class="form-check-input"
+                  type="checkbox" role="switch" id="screenReaderSwitch"
+                  onclick="readText(document.getElementsByTagName('body')[0])"></a>
+            </li>
           </div>
-          <div class="t-Header-logo">
-            <!-- <a href="&#x2F;ords&#x2F;r&#x2F;dimdev&#x2F;imim&#x2F;home?session=2368821413423" class="t-Header-logo-link"><img src="r&#x2F;dimdev&#x2F;117&#x2F;files&#x2F;static&#x2F;v194&#x2F;app-251298-logo.jpeg" alt="" class="apex-logo-img" /><span class="apex-logo-text">DIRECTORATE OF INDIAN MEDICINE  - INDENT MANAGEMENT</span></a> -->
-            <div class="gigw">
-              <li><a data-aos="fade-up" data-aos-delay="200" class="linkedin btn-decrease aos-init aos-animate"><span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="font size Decrease"><i></i> A -</span></a></li>
-              <li><a data-aos="fade-up" data-aos-delay="300" class="linkedin btn-orig aos-init aos-animate"><span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Reset font"><i></i> A <sup></sup></span></a></li>
-              <li><a data-aos="fade-up" data-aos-delay="400" class="instagram btn-increase aos-init aos-animate"><span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="font size Increase"><i></i> A +</span></a></li>
-              <li><a data-aos="fade-up" data-aos-delay="500" class="aos-init aos-animate"><span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Dark Mode"><i class="t-Icon fa fa-moon-o" id="darkmode"></i></span></a></li>
-              <li><a data-aos="fade-up" data-aos-delay="600" class="form-check form-switch aos-init aos-animate"><label class="form-check-label" for="screenReaderSwitch">
-                <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Screen Reader">
-                <i id="sound" class="t-Icon fa fa-volume-up"></i></span></label><input class="form-check-input" type="checkbox" role="switch" id="screenReaderSwitch" onclick="readText(document.getElementsByTagName('body')[0])"></a>
+        </div>
+        <div class="t-Header-navBar">
+          <div class="t-Header-navBar--start"></div>
+          <div class="t-Header-navBar--center">
+            <ul class="t-NavigationBar " id="username">
+              <li class="t-NavigationBar-item ">
+                <button class="t-Button t-Button--icon t-Button t-Button--header t-Button--navBar" type="button"
+                  id="L428237300758551931558" data-menu="menu_L428237300758551931558" title="" aria-haspopup="menu">
+                  <span class="t-Icon fa fa-user" aria-hidden="true"></span><span
+                    class="t-Button-label">Siva</span><span class="t-Button-badge"></span><span
+                    class="a-Icon icon-down-arrow" aria-hidden="true"></span>
+                </button>
               </li>
-            </div>
-          </div>
-          <div class="t-Header-navBar">
-            <div class="t-Header-navBar--start"></div>
-            <div class="t-Header-navBar--center">
-              <ul class="t-NavigationBar " id="428237243222882931397">
-                <li class="t-NavigationBar-item ">
-                  <button class="t-Button t-Button--icon t-Button t-Button--header t-Button--navBar" type="button" id="L428237300758551931558" data-menu="menu_L428237300758551931558" title="" aria-haspopup="menu">
-                  <span class="t-Icon fa fa-user" aria-hidden="true"></span><span class="t-Button-label">Siva</span><span class="t-Button-badge"></span><span class="a-Icon icon-down-arrow" aria-hidden="true"></span>
-                  </button>
-                </li>
-              </ul>
-            </div>
-            <div class="t-Header-navBar--end"></div>
-          </div>
-        </div>
-        <div class="top">
-          <img id="leftlogo" data-aos="fade-right" data-aos-duration="800" src="../assets/img/head-tnlogo.png" class="aos-init aos-animate">
-          <h1 data-aos="zoom-in" data-aos-duration="800" class="dept-name text-middle aos-init aos-animate">Medicine Indent</h1>
-          <h3 data-aos="zoom-in" data-aos-duration="800" class="dept-name2 text-middle aos-init aos-animate">Department of Indian Medicine and Homoeopathy</h3>
-          <img id="rightlogo" data-aos="fade-left" data-aos-duration="800" src="../assets/img/head-dept-logo.png" class="aos-init aos-animate">
-        </div>
-        <div class="t-Header-nav">
-          <div class="t-Header-nav-list js-tabLike js-tabLike a-MenuBar a-MenuBar--overflow a-MenuBar--tabs" id="t_MenuNav" role="menubar">
-            <ul role="none">
-             <li role="none" id="t_MenuNav_0" class="a-MenuBar-item a-Menu--current"><a role="menuitem" class="a-MenuBar-label" aria-current="true" id="t_MenuNav_0i" href="../dim/home.html">Home</a></li>
-              <li role="none" id="t_MenuNav_1" class="a-MenuBar-item"><a role="menuitem" class="a-MenuBar-label" id="t_MenuNav_1i" href="../dim/received-medicine.html" tabindex="-1">Received Medicine Report</a></li>
-              <li role="none" id="t_MenuNav_2" class="a-MenuBar-item"><a role="menuitem" class="a-MenuBar-label" id="t_MenuNav_2i" href="../dim/medicine-details.html" tabindex="-1">Medicine Details</a></li>
-              <li role="none" id="t_MenuNav_3" class="a-MenuBar-item"><a role="menuitem" class="a-MenuBar-label" id="t_MenuNav_3i" href="download.html" tabindex="-1">Download Despatched Medicine</a></li>
             </ul>
           </div>
+          <div class="t-Header-navBar--end"></div>
         </div>
-      </header>
-      <div class="t-Body">
-        <div class="t-Body-main">
-          <div class="t-Body-title" id="t_Body_title" style=""></div>
-          <div class="t-Body-content" id="t_Body_content">
-            <div id="t_Body_content_offset"></div>
-            <main id="main" class="t-Body-mainContent">
-              <span id="APEX_SUCCESS_MESSAGE" data-template-id="238562751400702882270_S" class="apex-page-success u-hidden"></span><span id="APEX_ERROR_MESSAGE" data-template-id="238562751400702882270_E" class="apex-page-error u-hidden"></span>
-              <div class="t-Body-fullContent"></div>
-              <div class="t-Body-contentInner">
-                <div class="container">
-                  <div class="row ">
-                    <div class="col col-6 apex-col-auto col-start">
-                      <div class="t-Form-fieldContainer rel-col t-Form-fieldContainer--stretchInputs t-Form-fieldContainer--large apex-item-wrapper apex-item-wrapper--select-list" id="P7_NAME_OF_THE_DISTRICT_CONTAINER">
-                        <div class="t-Form-labelContainer col col-2">
-                          <label for="P7_NAME_OF_THE_DISTRICT" id="P7_NAME_OF_THE_DISTRICT_LABEL" class="t-Form-label">Name Of The District</label>
-                        </div>
-                        <div class="t-Form-inputContainer col col-4">
-                          <div class="t-Form-itemWrapper">
-                            <select id="P7_NAME_OF_THE_DISTRICT" name="P7_NAME_OF_THE_DISTRICT" class="selectlist apex-item-select" data-native-menu="false" size="1">
-                              <option value="" selected="selected">Select</option>
-                              <option value="Cuddalore">Cuddalore</option>
-                              <option value="Namakkal">Namakkal</option>
-                              <option value="Virudhu Nagar">Virudhu Nagar</option>
-                              <option value="Kallakurichi">Kallakurichi</option>
-                              <option value="Dharmapuri">Dharmapuri</option>
-                              <option value="Ariyalur">Ariyalur</option>
-                              <option value="Perambalur">Perambalur</option>
-                              <option value="Thanjavur">Thanjavur</option>
-                              <option value="Villupuram">Villupuram</option>
-                              <option value="Tirunelveli">Tirunelveli</option>
-                              <option value="Tiruvallur">Tiruvallur</option>
-                              <option value="Chengalpet">Chengalpet</option>
-                              <option value="Kancheepuram">Kancheepuram</option>
-                              <option value="Krishnagiri">Krishnagiri</option>
-                              <option value="Kanniyakumari">Kanniyakumari</option>
-                              <option value="Ranipet">Ranipet</option>
-                              <option value="Dindigul">Dindigul</option>
-                              <option value="Thiruvannamalai">Thiruvannamalai</option>
-                              <option value="Tiruvarur">Tiruvarur</option>
-                              <option value="Erode">Erode</option>
-                              <option value="Tirupattur">Tirupattur</option>
-                              <option value="Tiruppur">Tiruppur</option>
-                              <option value="Nagapattinam">Nagapattinam</option>
-                              <option value="Pudukottai">Pudukottai</option>
-                              <option value="Madurai">Madurai</option>
-                              <option value="Mayiladuthurai">Mayiladuthurai</option>
-                              <option value="Chennai">Chennai</option>
-                              <option value="The Nilgiris">The Nilgiris</option>
-                              <option value="Thoothukudi">Thoothukudi</option>
-                              <option value="Tenkasi">Tenkasi</option>
-                              <option value="Coimbatore">Coimbatore</option>
-                              <option value="Sivagangai">Sivagangai</option>
-                              <option value="Vellore">Vellore</option>
-                              <option value="Ramnad">Ramnad</option>
-                              <option value="Salem">Salem</option>
-                              <option value="Theni">Theni</option>
-                              <option value="Trichy">Trichy</option>
-                              <option value="Karur">Karur</option>
-                            </select>
-                          </div>
-                          <span id="P7_NAME_OF_THE_DISTRICT_error_placeholder" class="a-Form-error" data-template-id="428237130780249931341_ET"></span>
-                        </div>
+      </div>
+      <div class="top">
+        <img id="leftlogo" data-aos="fade-right" data-aos-duration="800" src="../assets/img/head-tnlogo.png"
+          class="aos-init aos-animate">
+        <h1 data-aos="zoom-in" data-aos-duration="800" class="dept-name text-middle aos-init aos-animate">Medicine
+          Indent</h1>
+        <h3 data-aos="zoom-in" data-aos-duration="800" class="dept-name2 text-middle aos-init aos-animate">Department of
+          Indian Medicine and Homoeopathy</h3>
+        <img id="rightlogo" data-aos="fade-left" data-aos-duration="800" src="../assets/img/head-dept-logo.png"
+          class="aos-init aos-animate">
+      </div>
+      <div class="t-Header-nav">
+        <div class="t-Header-nav-list js-tabLike js-tabLike a-MenuBar a-MenuBar--overflow a-MenuBar--tabs"
+          id="t_MenuNav" role="menubar">
+          <ul role="none">
+            <li role="none" id="t_MenuNav_0" class="a-MenuBar-item a-Menu--current"><a role="menuitem"
+                class="a-MenuBar-label" aria-current="true" id="t_MenuNav_0i" href="../dim/home.html">Home</a></li>
+            <li role="none" id="t_MenuNav_1" class="a-MenuBar-item"><a role="menuitem" class="a-MenuBar-label"
+                id="t_MenuNav_1i" href="../dim/received-medicine.html" tabindex="-1">Received Medicine Report</a></li>
+            <li role="none" id="t_MenuNav_2" class="a-MenuBar-item"><a role="menuitem" class="a-MenuBar-label"
+                id="t_MenuNav_2i" href="../dim/medicine-details.html" tabindex="-1">Medicine Details</a></li>
+            <li role="none" id="t_MenuNav_3" class="a-MenuBar-item"><a role="menuitem" class="a-MenuBar-label"
+                id="t_MenuNav_3i" href="download.html" tabindex="-1">Download Despatched Medicine</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="t-Body">
+      <div class="t-Body-main">
+        <div class="t-Body-title" id="t_Body_title" style=""></div>
+        <div class="t-Body-content" id="t_Body_content">
+          <div id="t_Body_content_offset"></div>
+          <main id="main" class="t-Body-mainContent">
+            <span id="APEX_SUCCESS_MESSAGE" data-template-id="238562751400702882270_S"
+              class="apex-page-success u-hidden"></span><span id="APEX_ERROR_MESSAGE"
+              data-template-id="238562751400702882270_E" class="apex-page-error u-hidden"></span>
+            <div class="t-Body-fullContent"></div>
+            <div class="t-Body-contentInner">
+              <div class="container">
+                <div class="row ">
+                  <div class="col col-6 apex-col-auto col-start">
+                    <div
+                      class="t-Form-fieldContainer rel-col t-Form-fieldContainer--stretchInputs t-Form-fieldContainer--large apex-item-wrapper apex-item-wrapper--select-list"
+                      id="P7_NAME_OF_THE_DISTRICT_CONTAINER">
+                      <div class="t-Form-labelContainer col col-2">
+                        <label for="P7_NAME_OF_THE_DISTRICT" id="P7_NAME_OF_THE_DISTRICT_LABEL"
+                          class="t-Form-label">Name Of The District</label>
                       </div>
-                    </div>
-                    <div class="col col-6 apex-col-auto col-end">
-                      <div class="t-Form-fieldContainer rel-col t-Form-fieldContainer--stretchInputs t-Form-fieldContainer--large apex-item-wrapper apex-item-wrapper--select-list" id="P7_NAME_OF_THE_INSTITUTION_CONTAINER">
-                        <div class="t-Form-labelContainer col col-2">
-                          <label for="P7_NAME_OF_THE_INSTITUTION" id="P7_NAME_OF_THE_INSTITUTION_LABEL" class="t-Form-label">Name of the Institution</label>
+                      <div class="t-Form-inputContainer col col-4">
+                        <div class="t-Form-itemWrapper">
+                          <select id="P7_NAME_OF_THE_DISTRICT" name="P7_NAME_OF_THE_DISTRICT"
+                            class="selectlist apex-item-select" data-native-menu="false" size="1">
+                          </select>
                         </div>
-                        <div class="t-Form-inputContainer col col-4">
-                          <div class="t-Form-itemWrapper">
-                            <select id="P7_NAME_OF_THE_INSTITUTION" name="P7_NAME_OF_THE_INSTITUTION" class="selectlist apex-item-select" data-native-menu="false" size="1">
-                              <option value="" selected="selected">Select</option>
-                            </select>
-                          </div>
-                          <span id="P7_NAME_OF_THE_INSTITUTION_error_placeholder" class="a-Form-error" data-template-id="428237130780249931341_ET"></span>
-                        </div>
+                        <span id="P7_NAME_OF_THE_DISTRICT_error_placeholder" class="a-Form-error"
+                          data-template-id="428237130780249931341_ET"></span>
                       </div>
                     </div>
                   </div>
-                  <div class="row ">
-                    <div class="col col-6 apex-col-auto col-start">
-                      <div class="t-Form-fieldContainer rel-col t-Form-fieldContainer--stretchInputs t-Form-fieldContainer--large apex-item-wrapper apex-item-wrapper--select-list" id="P7_SYSTEM_CONTAINER">
-                        <div class="t-Form-labelContainer col col-2">
-                          <label for="P7_SYSTEM" id="P7_SYSTEM_LABEL" class="t-Form-label">System</label>
-                        </div>
-                        <div class="t-Form-inputContainer col col-4">
-                          <div class="t-Form-itemWrapper">
-                            <select id="P7_SYSTEM" name="P7_SYSTEM" class="selectlist apex-item-select" data-native-menu="false" size="1">
-                              <option value="" selected="selected">Select</option>
-                              <option value="Yoga &amp; Naturopathy">Yoga &amp; Naturopathy</option>
-                              <option value="Unani">Unani</option>
-                              <option value="Siddha">Siddha</option>
-                              <option value="Homoeopathy">Homoeopathy</option>
-                              <option value="Ayurveda">Ayurveda</option>
-                            </select>
-                          </div>
-                          <span id="P7_SYSTEM_error_placeholder" class="a-Form-error" data-template-id="428237130780249931341_ET"></span>
-                        </div>
+                  <div class="col col-6 apex-col-auto col-end">
+                    <div
+                      class="t-Form-fieldContainer rel-col t-Form-fieldContainer--stretchInputs t-Form-fieldContainer--large apex-item-wrapper apex-item-wrapper--select-list"
+                      id="P7_NAME_OF_THE_INSTITUTION_CONTAINER">
+                      <div class="t-Form-labelContainer col col-2">
+                        <label for="P7_NAME_OF_THE_INSTITUTION" id="P7_NAME_OF_THE_INSTITUTION_LABEL"
+                          class="t-Form-label">Name of the Institution</label>
                       </div>
-                    </div>
-                    <div class="col col-6 apex-col-auto col-end">
-                      <div class="t-Form-fieldContainer rel-col t-Form-fieldContainer--stretchInputs t-Form-fieldContainer--large apex-item-wrapper apex-item-wrapper--select-list" id="P7_FINANCIAL_YEAR_CONTAINER">
-                        <div class="t-Form-labelContainer col col-2">
-                          <label for="P7_FINANCIAL_YEAR" id="P7_FINANCIAL_YEAR_LABEL" class="t-Form-label">Financial Year</label>
+                      <div class="t-Form-inputContainer col col-4">
+                        <div class="t-Form-itemWrapper">
+                          <select id="P7_NAME_OF_THE_INSTITUTION" name="P7_NAME_OF_THE_INSTITUTION"
+                            class="selectlist apex-item-select" data-native-menu="false" size="1">
+                            <option value="" selected="selected">Select</option>
+                          </select>
                         </div>
-                        <div class="t-Form-inputContainer col col-4">
-                          <div class="t-Form-itemWrapper">
-                            <select id="P7_FINANCIAL_YEAR" name="P7_FINANCIAL_YEAR" required="" class="selectlist apex-item-select" data-native-menu="false" size="1">
-                              <option value="" selected="selected">Select</option>
-                              <option value="2023 - 2024">2023 - 2024</option>
-                              <option value="2024 - 2025">2024 - 2025</option>
-                              <option value="2025 - 2026">2025 - 2026</option>
-                              <option value="2022 - 2023">2022 - 2023</option>
-                            </select>
-                          </div>
-                          <span id="P7_FINANCIAL_YEAR_error_placeholder" class="a-Form-error" data-template-id="428237130780249931341_ET"></span>
-                        </div>
+                        <span id="P7_NAME_OF_THE_INSTITUTION_error_placeholder" class="a-Form-error"
+                          data-template-id="428237130780249931341_ET"></span>
                       </div>
                     </div>
                   </div>
-                  <div class="row ">
-                    <div class="col col-6 apex-col-auto col-start">
-                      <div class="t-Form-fieldContainer rel-col t-Form-fieldContainer--stretchInputs t-Form-fieldContainer--large apex-item-wrapper apex-item-wrapper--select-list" id="P7_QUARTERS_CONTAINER">
-                        <div class="t-Form-labelContainer col col-2">
-                          <label for="P7_QUARTERS" id="P7_QUARTERS_LABEL" class="t-Form-label">Quarters</label>
-                        </div>
-                        <div class="t-Form-inputContainer col col-4">
-                          <div class="t-Form-itemWrapper">
-                            <select id="P7_QUARTERS" name="P7_QUARTERS" required="" class="selectlist apex-item-select" data-native-menu="false" size="1">
-                              <option value="" selected="selected">Select</option>
-                              <option value="1st Quarter">1st Quarter</option>
-                              <option value="2nd Quarter">2nd Quarter</option>
-                              <option value="3rd Quarter">3rd Quarter</option>
-                              <option value="4th Quarter">4th Quarter</option>
-                              <option value="Annual Indent">Annual Indent</option>
-                            </select>
-                          </div>
-                          <span id="P7_QUARTERS_error_placeholder" class="a-Form-error" data-template-id="428237130780249931341_ET"></span>
-                        </div>
+                </div>
+                <div class="row ">
+                  <div class="col col-6 apex-col-auto col-start">
+                    <div
+                      class="t-Form-fieldContainer rel-col t-Form-fieldContainer--stretchInputs t-Form-fieldContainer--large apex-item-wrapper apex-item-wrapper--select-list"
+                      id="P7_SYSTEM_CONTAINER">
+                      <div class="t-Form-labelContainer col col-2">
+                        <label for="P7_SYSTEM" id="P7_SYSTEM_LABEL" class="t-Form-label">System</label>
                       </div>
-                    </div>
-                    <div class="col col-6 apex-col-auto col-end">
-                      <div class="t-Form-fieldContainer rel-col t-Form-fieldContainer--stretchInputs t-Form-fieldContainer--large apex-item-wrapper apex-item-wrapper--select-list" id="P7_INDENT_TYPE_CONTAINER">
-                        <div class="t-Form-labelContainer col col-2">
-                          <label for="P7_INDENT_TYPE" id="P7_INDENT_TYPE_LABEL" class="t-Form-label">Indent Type</label>
+                      <div class="t-Form-inputContainer col col-4">
+                        <div class="t-Form-itemWrapper">
+                          <select id="P7_SYSTEM" name="P7_SYSTEM" class="selectlist apex-item-select"
+                            data-native-menu="false" size="1">
+                            <option value="" selected="selected">Select</option>
+                          </select>
                         </div>
-                        <div class="t-Form-inputContainer col col-4">
-                          <div class="t-Form-itemWrapper">
-                            <select id="P7_INDENT_TYPE" name="P7_INDENT_TYPE" class="selectlist apex-item-select" data-native-menu="false" size="1">
-                              <option value="" selected="selected">Select</option>
-                              <option value="Regular">Regular</option>
-                              <option value="Scheme">Scheme</option>
-                            </select>
-                          </div>
-                          <span id="P7_INDENT_TYPE_error_placeholder" class="a-Form-error" data-template-id="428237130780249931341_ET"></span>
-                        </div>
+                        <span id="P7_SYSTEM_error_placeholder" class="a-Form-error"
+                          data-template-id="428237130780249931341_ET"></span>
                       </div>
                     </div>
                   </div>
-                  <div class="row ">
-                    <div class="col col-4 apex-col-auto col-start">
-                      <div class="t-Form-fieldContainer rel-col t-Form-fieldContainer--stretchInputs t-Form-fieldContainer--large apex-item-wrapper apex-item-wrapper--select-list" id="P7_SCHEME_NAME_CONTAINER">
-                        <div class="t-Form-labelContainer col col-2">
-                          <label for="P7_SCHEME_NAME" id="P7_SCHEME_NAME_LABEL" class="t-Form-label">Scheme Name</label>
+                  <div class="col col-6 apex-col-auto col-end">
+                    <div
+                      class="t-Form-fieldContainer rel-col t-Form-fieldContainer--stretchInputs t-Form-fieldContainer--large apex-item-wrapper apex-item-wrapper--select-list"
+                      id="P7_FINANCIAL_YEAR_CONTAINER">
+                      <div class="t-Form-labelContainer col col-2">
+                        <label for="P7_FINANCIAL_YEAR" id="P7_FINANCIAL_YEAR_LABEL" class="t-Form-label">Financial
+                          Year</label>
+                      </div>
+                      <div class="t-Form-inputContainer col col-4">
+                        <div class="t-Form-itemWrapper">
+                          <select id="P7_FINANCIAL_YEAR" name="P7_FINANCIAL_YEAR" required=""
+                            class="selectlist apex-item-select" data-native-menu="false" size="1">
+                            <option value="" selected="selected">Select</option>
+                          </select>
                         </div>
-                        <div class="t-Form-inputContainer col col-2">
-                          <div class="t-Form-itemWrapper">
-                            <select id="P7_SCHEME_NAME" name="P7_SCHEME_NAME" class="selectlist apex-item-select" data-native-menu="false" size="1">
-                              <option value="" selected="selected">Select</option>
-                              <option value="50 Beded Places">50 Beded Places</option>
-                              <option value="Ayush Health &amp; Wellness Center">Ayush Health &amp; Wellness Center</option>
-                              <option value="Ayush Wellness">Ayush Wellness</option>
-                              <option value="Co-Location ISM Wings_Upgradation">Co-Location ISM Wings_Upgradation</option>
-                              <option value="Co-Location ISM Wings_x000D_
-                                ">Co-Location ISM Wings_x000D_</option>
-                              <option value="MSD">MSD</option>
-                              <option value="MSK Kit">MSK Kit</option>
-                              <option value="NRHM">NRHM</option>
-                              <option value="Nilavembu Kudineer">Nilavembu Kudineer</option>
-                              <option value="Public Health Out Reach">Public Health Out Reach</option>
-                              <option value="Public Health Out Reach Activities">Public Health Out Reach Activities</option>
-                              <option value="School Health Programme">School Health Programme</option>
-                              <option value="Tribal Units">Tribal Units</option>
-                              <option value="" selected="selected"></option>
-                            </select>
-                          </div>
-                          <span id="P7_SCHEME_NAME_error_placeholder" class="a-Form-error" data-template-id="428237130780249931341_ET"></span>
-                        </div>
+                        <span id="P7_FINANCIAL_YEAR_error_placeholder" class="a-Form-error"
+                          data-template-id="428237130780249931341_ET"></span>
                       </div>
                     </div>
-                    <div class="col col-4 apex-col-auto "><button onclick="apex.submit({request:'Search',validate:true});" class="t-Button t-Button--hot u-color-12  t-Button--large t-Button--success" type="button" id="B19360458845112244"><span class="t-Button-label">Search</span></button></div>
-                    <div class="col col-4 apex-col-auto col-end"><button class="t-Button t-Button--hot js-ignoreChange t-Button--large t-Button--warning" type="button" id="B19360871608112244"><span class="t-Button-label">Clear</span></button></div>
                   </div>
-                  <div class="row ">
-                    <div class="col col-12 apex-col-auto col-start col-end">
-                      <div id="R311550548639291051881" role="region" aria-label="Medicine Details" class="t-IRR-region js-apex-region">
-                        <div class="t-Region-orderBy"></div>
-                        <div id="R311550548639291051881_ir" class="a-IRR-container">
-                          <div id="R311550548639291051881_worksheet_region" class="a-IRR" aria-live="polite">
-                            <div id="R311550548639291051881_single_row_view" class="a-IRR-singleRowView" style="display: none;"></div>
-                            <div id="R311550548639291051881_full_view" class="a-IRR-fullView">
-                              <div id="R311550548639291051881_toolbar" class="a-IRR-toolbar">
-                                <div role="search" aria-label="Search bar of Medicine Details" id="R311550548639291051881_toolbar_controls" class="a-IRR-controls">
-                                  <div class="a-IRR-controlGroup a-IRR-controlGroup--search a-IRR-controlGroup--hidden">
-                                    <div class="a-IRR-search"><input type="hidden" id="R311550548639291051881_column_search_current_column"><input type="hidden" id="R311550548639291051881_search_field" value=""></div>
-                                  </div>
-                                  <div class="a-IRR-controlGroup a-IRR-controlGroup--views"></div>
-                                  <div class="a-IRR-controlGroup a-IRR-controlGroup--options">
-                                    <input type="hidden" id="R311550548639291051881_row_select" value="50">
-                                    <div class="a-IRR-actions"><button id="R311550548639291051881_actions_button" class="a-Button a-IRR-button a-IRR-button--actions" type="button" data-menu="R311550548639291051881_actions_menu" aria-haspopup="menu">Actions<span aria-hidden="true" class="a-Icon icon-menu-drop-down"></span></button></div>
-                                  </div>
+                </div>
+                <div class="row ">
+                  <div class="col col-6 apex-col-auto col-start">
+                    <div
+                      class="t-Form-fieldContainer rel-col t-Form-fieldContainer--stretchInputs t-Form-fieldContainer--large apex-item-wrapper apex-item-wrapper--select-list"
+                      id="P7_QUARTERS_CONTAINER">
+                      <div class="t-Form-labelContainer col col-2">
+                        <label for="P7_QUARTERS" id="P7_QUARTERS_LABEL" class="t-Form-label">Quarters</label>
+                      </div>
+                      <div class="t-Form-inputContainer col col-4">
+                        <div class="t-Form-itemWrapper">
+                          <select id="P7_QUARTERS" name="P7_QUARTERS" required="" class="selectlist apex-item-select"
+                            data-native-menu="false" size="1">
+                          </select>
+                        </div>
+                        <span id="P7_QUARTERS_error_placeholder" class="a-Form-error"
+                          data-template-id="428237130780249931341_ET"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col col-6 apex-col-auto col-end">
+                    <div
+                      class="t-Form-fieldContainer rel-col t-Form-fieldContainer--stretchInputs t-Form-fieldContainer--large apex-item-wrapper apex-item-wrapper--select-list"
+                      id="P7_INDENT_TYPE_CONTAINER">
+                      <div class="t-Form-labelContainer col col-2">
+                        <label for="P7_INDENT_TYPE" id="P7_INDENT_TYPE_LABEL" class="t-Form-label">Indent Type</label>
+                      </div>
+                      <div class="t-Form-inputContainer col col-4">
+                        <div class="t-Form-itemWrapper">
+                          <select id="P7_INDENT_TYPE" name="P7_INDENT_TYPE" class="selectlist apex-item-select"
+                            data-native-menu="false" size="1">
+                          </select>
+                        </div>
+                        <span id="P7_INDENT_TYPE_error_placeholder" class="a-Form-error"
+                          data-template-id="428237130780249931341_ET"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row ">
+                  <div class="col col-4 apex-col-auto col-start">
+                    <div
+                      class="t-Form-fieldContainer rel-col t-Form-fieldContainer--stretchInputs t-Form-fieldContainer--large apex-item-wrapper apex-item-wrapper--select-list"
+                      id="P7_SCHEME_NAME_CONTAINER">
+                      <div class="t-Form-labelContainer col col-2">
+                        <label for="P7_SCHEME_NAME" id="P7_SCHEME_NAME_LABEL" class="t-Form-label">Scheme Name</label>
+                      </div>
+                      <div class="t-Form-inputContainer col col-2">
+                        <div class="t-Form-itemWrapper">
+                          <select id="P7_SCHEME_NAME" name="P7_SCHEME_NAME" class="selectlist apex-item-select"
+                            data-native-menu="false" size="1">
+                            <option value="" selected="selected">Select</option>
+                          </select>
+                        </div>
+                        <span id="P7_SCHEME_NAME_error_placeholder" class="a-Form-error"
+                          data-template-id="428237130780249931341_ET"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col col-4 apex-col-auto "><button
+                      class="t-Button t-Button--hot u-color-12  t-Button--large t-Button--success" type="button"
+                      id="searchbtn"><span class="t-Button-label">Search</span></button></div>
+                  <div class="col col-4 apex-col-auto col-end"><button
+                      class="t-Button t-Button--hot js-ignoreChange t-Button--large t-Button--warning" type="button"
+                      id="clearBtn"><span class="t-Button-label">Clear</span></button></div>
+                </div>
+                <div class="row ">
+                  <div class="col col-12 apex-col-auto col-start col-end">
+                    <div id="R311550548639291051881" role="region" aria-label="Medicine Details"
+                      class="t-IRR-region js-apex-region">
+                      <div class="t-Region-orderBy"></div>
+                      <div id="R311550548639291051881_ir" class="a-IRR-container">
+                        <div id="R311550548639291051881_worksheet_region" class="a-IRR" aria-live="polite">
+                          <div id="R311550548639291051881_single_row_view" class="a-IRR-singleRowView"
+                            style="display: none;"></div>
+                          <div id="R311550548639291051881_full_view" class="a-IRR-fullView">
+                            <div id="R311550548639291051881_toolbar" class="a-IRR-toolbar">
+                              <div role="search" aria-label="Search bar of Medicine Details"
+                                id="R311550548639291051881_toolbar_controls" class="a-IRR-controls">
+                                <div class="a-IRR-controlGroup a-IRR-controlGroup--search a-IRR-controlGroup--hidden">
+                                  <div class="a-IRR-search"><input type="hidden"
+                                      id="R311550548639291051881_column_search_current_column"><input type="hidden"
+                                      id="R311550548639291051881_search_field" value=""></div>
+                                </div>
+                                <div class="a-IRR-controlGroup a-IRR-controlGroup--views"></div>
+                                <div class="a-IRR-controlGroup a-IRR-controlGroup--options">
+                                  <input type="hidden" id="R311550548639291051881_row_select" value="50">
+                                  <div class="a-IRR-actions"><button id="R311550548639291051881_actions_button"
+                                      class="a-Button a-IRR-button a-IRR-button--actions" type="button"
+                                      data-menu="R311550548639291051881_actions_menu" aria-haspopup="menu">Actions<span
+                                        aria-hidden="true" class="a-Icon icon-menu-drop-down"></span></button></div>
                                 </div>
                               </div>
-                              <div id="R311550548639291051881_content" class="a-IRR-content">
-                                <div id="R311550548639291051881_dialog_js" class="a-IRR-dialogBody" style="display:none"></div>
-                                <input type="hidden" id="R311550548639291051881_worksheet_id" value="19372355514074124">
-                                <input type="hidden" id="R311550548639291051881_app_user" value="9994793279">
-                                <input type="hidden" id="R311550548639291051881_report_id" value="19455314401869896">
-                                <input type="hidden" id="R311550548639291051881_view_mode" value="REPORT">
-                                <style id="R311550548639291051881_worksheet_css" type="text/css"></style>
-                                <div role="region" aria-label="Chart view of Medicine Details" id="R311550548639291051881_chart" class="a-IRR-chartView"></div>
-                                <div role="region" aria-label="Group by view of Medicine Details" id="R311550548639291051881_group_by" class="a-IRR-groupByView"></div>
-                                <div role="region" aria-label="Pivot view of Medicine Details" id="R311550548639291051881_pivot" class="a-IRR-pivotView"></div>
-                                <div role="region" aria-label="Data view of Medicine Details" id="R311550548639291051881_data_panel" class="a-IRR-reportView">
-                                  <div class="a-IRR-tableContainer">
-                                    <div class="t-fht-wrapper">
-                                      <div class="t-fht-thead js-stickyTableHeader js-stickyWidget-toggle" id="stickyTableHeader_1" style="z-index: 300; position: absolute; width: 1061.85px;">
-                                        <table aria-label="Medicine Details, Report = Primary Default, View = Report" class="a-IRR-table" id="19372355514074124" aria-hidden="true">
-                                          <tr>
-                                            <th class="a-IRR-header u-tC" id="C19372490328074125">
-                                              <span class="a-IRR-headerLabel">Sl No</span>
-                                              <div class="t-fht-cell" style="width: 36.9375px;"></div>
-                                            </th>
-                                            <th class="a-IRR-header u-tC" id="C19372600538074127">
-                                              <span class="a-IRR-headerLabel">Medicine Name</span>
-                                              <div class="t-fht-cell" style="width: 146.225px;"></div>
-                                            </th>
-                                            <th class="a-IRR-header u-tC" id="C19372732481074128">
-                                              <span class="a-IRR-headerLabel">Packing Size</span>
-                                              <div class="t-fht-cell" style="width: 60.1px;"></div>
-                                            </th>
-                                            <th class="a-IRR-header u-tC" id="C19372816861074129">
-                                              <span class="a-IRR-headerLabel">Amount</span>
-                                              <div class="t-fht-cell" style="width: 61.9625px;"></div>
-                                            </th>
-                                            <th class="a-IRR-header u-tC" id="C19372934550074130">
-                                              <span class="a-IRR-headerLabel">Quantity</span>
-                                              <div class="t-fht-cell" style="width: 65.2875px;"></div>
-                                            </th>
-                                            <th class="a-IRR-header u-tC" id="C19373050220074131">
-                                              <span class="a-IRR-headerLabel">Stock Availability</span>
-                                              <div class="t-fht-cell" style="width: 79.025px;"></div>
-                                            </th>
-                                            <th class="a-IRR-header u-tC" id="C19373163472074132">
-                                              <span class="a-IRR-headerLabel">Total Amount</span>
-                                              <div class="t-fht-cell" style="width: 71.8875px;"></div>
-                                            </th>
-                                            <th class="a-IRR-header u-tC" id="C19373293150074133">
-                                              <span class="a-IRR-headerLabel">System</span>
-                                              <div class="t-fht-cell" style="width: 60.3125px;"></div>
-                                            </th>
-                                            <th class="a-IRR-header u-tC" id="C19373369347074134">
-                                              <span class="a-IRR-headerLabel">Indent Type</span>
-                                              <div class="t-fht-cell" style="width: 64.15px;"></div>
-                                            </th>
-                                            <th class="a-IRR-header u-tC" id="C19373406599074135">
-                                              <span class="a-IRR-headerLabel">Scheme Name</span>
-                                              <div class="t-fht-cell" style="width: 59.6875px;"></div>
-                                            </th>
-                                            <th class="a-IRR-header u-tC" id="C19373535627074136">
-                                              <span class="a-IRR-headerLabel">Institution Type</span>
-                                              <div class="t-fht-cell" style="width: 75.0375px;"></div>
-                                            </th>
-                                            <th class="a-IRR-header u-tC" id="C19373693505074137">
-                                              <span class="a-IRR-headerLabel">Name Of The Institution</span>
-                                              <div class="t-fht-cell" style="width: 98.3875px;"></div>
-                                            </th>
-                                            <th class="a-IRR-header u-tC" id="C19373736063074138">
-                                              <span class="a-IRR-headerLabel">Quarters</span>
-                                              <div class="t-fht-cell" style="width: 65.1875px;"></div>
-                                            </th>
-                                            <th class="a-IRR-header u-tC" id="C19373848006074139">
-                                              <span class="a-IRR-headerLabel">Financial Year</span>
-                                              <div class="t-fht-cell" style="width: 65.675px;"></div>
-                                            </th>
-                                            <th class="a-IRR-header u-tC" id="C19373942793074140">
-                                              <span class="a-IRR-headerLabel">Name Of The District</span>
-                                              <div class="t-fht-cell" style="width: 101.75px;"></div>
-                                            </th>
-                                          </tr>
-                                        </table>
-                                      </div>
-                                      <div class="js-stickyWidget-placeholder" style="width: 1061.85px; height: 40px;"></div>
-                                      <div class="t-fht-tbody" style="width: auto;">
-                                        <table aria-label="Medicine Details, Report = Primary Default, View = Report" class="a-IRR-table" id="19372355514074124_orig" style="margin-top: -40.4px;">
-                                          <tbody>
-                                            <tr>
-                                              <th class="a-IRR-header u-tC" id="C19372490328074125">
-                                                <span class="a-IRR-headerLabel">Sl No</span>
-                                                <div class="t-fht-cell"></div>
-                                              </th>
-                                              <th class="a-IRR-header u-tC" id="C19372600538074127">
-                                                <span class="a-IRR-headerLabel">Medicine Name</span>
-                                                <div class="t-fht-cell"></div>
-                                              </th>
-                                              <th class="a-IRR-header u-tC" id="C19372732481074128">
-                                                <span class="a-IRR-headerLabel">Packing Size</span>
-                                                <div class="t-fht-cell"></div>
-                                              </th>
-                                              <th class="a-IRR-header u-tC" id="C19372816861074129">
-                                                <span class="a-IRR-headerLabel">Amount</span>
-                                                <div class="t-fht-cell"></div>
-                                              </th>
-                                              <th class="a-IRR-header u-tC" id="C19372934550074130">
-                                                <span class="a-IRR-headerLabel">Quantity</span>
-                                                <div class="t-fht-cell"></div>
-                                              </th>
-                                              <th class="a-IRR-header u-tC" id="C19373050220074131">
-                                                <span class="a-IRR-headerLabel">Stock Availability</span>
-                                                <div class="t-fht-cell"></div>
-                                              </th>
-                                              <th class="a-IRR-header u-tC" id="C19373163472074132">
-                                                <span class="a-IRR-headerLabel">Total Amount</span>
-                                                <div class="t-fht-cell"></div>
-                                              </th>
-                                              <th class="a-IRR-header u-tC" id="C19373293150074133">
-                                                <span class="a-IRR-headerLabel">System</span>
-                                                <div class="t-fht-cell"></div>
-                                              </th>
-                                              <th class="a-IRR-header u-tC" id="C19373369347074134">
-                                                <span class="a-IRR-headerLabel">Indent Type</span>
-                                                <div class="t-fht-cell"></div>
-                                              </th>
-                                              <th class="a-IRR-header u-tC" id="C19373406599074135">
-                                                <span class="a-IRR-headerLabel">Scheme Name</span>
-                                                <div class="t-fht-cell"></div>
-                                              </th>
-                                              <th class="a-IRR-header u-tC" id="C19373535627074136">
-                                                <span class="a-IRR-headerLabel">Institution Type</span>
-                                                <div class="t-fht-cell"></div>
-                                              </th>
-                                              <th class="a-IRR-header u-tC" id="C19373693505074137">
-                                                <span class="a-IRR-headerLabel">Name Of The Institution</span>
-                                                <div class="t-fht-cell"></div>
-                                              </th>
-                                              <th class="a-IRR-header u-tC" id="C19373736063074138">
-                                                <span class="a-IRR-headerLabel">Quarters</span>
-                                                <div class="t-fht-cell"></div>
-                                              </th>
-                                              <th class="a-IRR-header u-tC" id="C19373848006074139">
-                                                <span class="a-IRR-headerLabel">Financial Year</span>
-                                                <div class="t-fht-cell"></div>
-                                              </th>
-                                              <th class="a-IRR-header u-tC" id="C19373942793074140">
-                                                <span class="a-IRR-headerLabel">Name Of The District</span>
-                                                <div class="t-fht-cell"></div>
-                                              </th>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">1</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Kaba Sura Kudineer</td>
-                                              <td class=" u-tC" headers="C19372732481074128">500 gms</td>
-                                              <td class=" u-tC" headers="C19372816861074129">361.2</td>
-                                              <td class=" u-tC" headers="C19372934550074130">100</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">36120</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">PHC</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Kuruthancode</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Kanniyakumari</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">2</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Kaiyan Thailam</td>
-                                              <td class=" u-tC" headers="C19372732481074128">500 ml</td>
-                                              <td class=" u-tC" headers="C19372816861074129">174.82</td>
-                                              <td class=" u-tC" headers="C19372934550074130">50</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">8741</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">PHC</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Kuruthancode</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Kanniyakumari</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">3</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Kunthirika Thailam</td>
-                                              <td class=" u-tC" headers="C19372732481074128">500 ml</td>
-                                              <td class=" u-tC" headers="C19372816861074129">149.62</td>
-                                              <td class=" u-tC" headers="C19372934550074130">100</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">14962</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">PHC</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Kuruthancode</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Kanniyakumari</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">4</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Mathan Thailam</td>
-                                              <td class=" u-tC" headers="C19372732481074128">500 ml</td>
-                                              <td class=" u-tC" headers="C19372816861074129">245.18</td>
-                                              <td class=" u-tC" headers="C19372934550074130">50</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">12258.75</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">PHC</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Kuruthancode</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Kanniyakumari</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">5</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Nilavagai Chooranam</td>
-                                              <td class=" u-tC" headers="C19372732481074128">500 gms</td>
-                                              <td class=" u-tC" headers="C19372816861074129">170.62</td>
-                                              <td class=" u-tC" headers="C19372934550074130">50</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">8531</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">PHC</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Kuruthancode</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Kanniyakumari</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">6</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Adathodai Manappagu</td>
-                                              <td class=" u-tC" headers="C19372732481074128">500 ml</td>
-                                              <td class=" u-tC" headers="C19372816861074129">90.3</td>
-                                              <td class=" u-tC" headers="C19372934550074130">10</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">903</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">PHC</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Timiri</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Ranipet</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">7</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Arugan Thailam ++</td>
-                                              <td class=" u-tC" headers="C19372732481074128">500 ml</td>
-                                              <td class=" u-tC" headers="C19372816861074129">224.56</td>
-                                              <td class=" u-tC" headers="C19372934550074130">20</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">4491.2</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">PHC</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Timiri</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Ranipet</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">8</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Ferrosid Syrup ++</td>
-                                              <td class=" u-tC" headers="C19372732481074128">500 ml</td>
-                                              <td class=" u-tC" headers="C19372816861074129">61.04</td>
-                                              <td class=" u-tC" headers="C19372934550074130">10</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">610.4</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">PHC</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Timiri</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Ranipet</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">9</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Nilavagai Chooranam Tabs.</td>
-                                              <td class=" u-tC" headers="C19372732481074128">500 Nos</td>
-                                              <td class=" u-tC" headers="C19372816861074129">139.66</td>
-                                              <td class=" u-tC" headers="C19372934550074130">10</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">1396.6</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">PHC</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Timiri</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Ranipet</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">10</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Parangipattai Chooranam Tabs.</td>
-                                              <td class=" u-tC" headers="C19372732481074128">500 Nos</td>
-                                              <td class=" u-tC" headers="C19372816861074129">156.46</td>
-                                              <td class=" u-tC" headers="C19372934550074130">10</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">1564.6</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">PHC</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Timiri</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Ranipet</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">11</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Pain Balm ++</td>
-                                              <td class=" u-tC" headers="C19372732481074128">100 gms</td>
-                                              <td class=" u-tC" headers="C19372816861074129">168.56</td>
-                                              <td class=" u-tC" headers="C19372934550074130">105</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">17698.8</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">PHC</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Kuruthancode</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Kanniyakumari</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">12</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Vadakesari Thailam</td>
-                                              <td class=" u-tC" headers="C19372732481074128">500 ml</td>
-                                              <td class=" u-tC" headers="C19372816861074129">179.02</td>
-                                              <td class=" u-tC" headers="C19372934550074130">10</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">1790.2</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">PHC</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Timiri</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Ranipet</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">13</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Marutham Pattai Chooranam</td>
-                                              <td class=" u-tC" headers="C19372732481074128">500 gms</td>
-                                              <td class=" u-tC" headers="C19372816861074129">55.12</td>
-                                              <td class=" u-tC" headers="C19372934550074130">5</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">275.6</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">DHQHpl.</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Tirupattur</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Tirupattur</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">14</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Mathan Thailam</td>
-                                              <td class=" u-tC" headers="C19372732481074128">500 ml</td>
-                                              <td class=" u-tC" headers="C19372816861074129">245.18</td>
-                                              <td class=" u-tC" headers="C19372934550074130">30</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">7355.25</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">DHQHpl.</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Tirupattur</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Tirupattur</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">15</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Muthuchippi Parpam</td>
-                                              <td class=" u-tC" headers="C19372732481074128">100 gms</td>
-                                              <td class=" u-tC" headers="C19372816861074129">139.12</td>
-                                              <td class=" u-tC" headers="C19372934550074130">10</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">1391.2</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">DHQHpl.</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Tirupattur</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Tirupattur</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">16</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Muthuchippi Parpam Tabs.</td>
-                                              <td class=" u-tC" headers="C19372732481074128">100 Nos</td>
-                                              <td class=" u-tC" headers="C19372816861074129">48.82</td>
-                                              <td class=" u-tC" headers="C19372934550074130">10</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">488.2</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">DHQHpl.</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Tirupattur</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Tirupattur</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">17</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Neerkovai Mathirai</td>
-                                              <td class=" u-tC" headers="C19372732481074128">500 Nos</td>
-                                              <td class=" u-tC" headers="C19372816861074129">450.46</td>
-                                              <td class=" u-tC" headers="C19372934550074130">2</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">900.92</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">DHQHpl.</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Tirupattur</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Tirupattur</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">18</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Nerunjil Kudineer</td>
-                                              <td class=" u-tC" headers="C19372732481074128">500 gms</td>
-                                              <td class=" u-tC" headers="C19372816861074129">154.88</td>
-                                              <td class=" u-tC" headers="C19372934550074130">10</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">1548.75</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">DHQHpl.</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Tirupattur</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Tirupattur</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">19</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Nilavagai Chooranam Tabs.</td>
-                                              <td class=" u-tC" headers="C19372732481074128">500 Nos</td>
-                                              <td class=" u-tC" headers="C19372816861074129">139.66</td>
-                                              <td class=" u-tC" headers="C19372934550074130">10</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">1396.6</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">DHQHpl.</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Tirupattur</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Tirupattur</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">20</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Nochi Thailam</td>
-                                              <td class=" u-tC" headers="C19372732481074128">100 ml</td>
-                                              <td class=" u-tC" headers="C19372816861074129">65.1</td>
-                                              <td class=" u-tC" headers="C19372934550074130">50</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">3255</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">DHQHpl.</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Tirupattur</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Tirupattur</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">21</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Omatheeneer</td>
-                                              <td class=" u-tC" headers="C19372732481074128">500 ml</td>
-                                              <td class=" u-tC" headers="C19372816861074129">47.78</td>
-                                              <td class=" u-tC" headers="C19372934550074130">20</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">955.5</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">DHQHpl.</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Tirupattur</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Tirupattur</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">22</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Pain Balm ++</td>
-                                              <td class=" u-tC" headers="C19372732481074128">100 gms</td>
-                                              <td class=" u-tC" headers="C19372816861074129">168.56</td>
-                                              <td class=" u-tC" headers="C19372934550074130">30</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">5056.8</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">DHQHpl.</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Tirupattur</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Tirupattur</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">23</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Palagarai Parpam Tabs.</td>
-                                              <td class=" u-tC" headers="C19372732481074128">100 Nos</td>
-                                              <td class=" u-tC" headers="C19372816861074129">77.18</td>
-                                              <td class=" u-tC" headers="C19372934550074130">15</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">1157.63</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">DHQHpl.</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Tirupattur</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Tirupattur</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">24</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Palakarai Parpam</td>
-                                              <td class=" u-tC" headers="C19372732481074128">30 gms</td>
-                                              <td class=" u-tC" headers="C19372816861074129">59.32</td>
-                                              <td class=" u-tC" headers="C19372934550074130">10</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">593.2</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">DHQHpl.</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Tirupattur</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Tirupattur</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">25</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Pancha Deepakini Chooranam</td>
-                                              <td class=" u-tC" headers="C19372732481074128">20 gms</td>
-                                              <td class=" u-tC" headers="C19372816861074129">23.62</td>
-                                              <td class=" u-tC" headers="C19372934550074130">20</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">472.4</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">DHQHpl.</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Tirupattur</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Tirupattur</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">26</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Parangipattai Chooranam</td>
-                                              <td class=" u-tC" headers="C19372732481074128">500 gms</td>
-                                              <td class=" u-tC" headers="C19372816861074129">251.48</td>
-                                              <td class=" u-tC" headers="C19372934550074130">20</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">5029.5</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">DHQHpl.</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Tirupattur</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Tirupattur</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">27</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Parangipattai Chooranam Tabs.</td>
-                                              <td class=" u-tC" headers="C19372732481074128">500 Nos</td>
-                                              <td class=" u-tC" headers="C19372816861074129">156.46</td>
-                                              <td class=" u-tC" headers="C19372934550074130">20</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">3129.2</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">DHQHpl.</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Tirupattur</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Tirupattur</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">28</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Peenisa Thailam</td>
-                                              <td class=" u-tC" headers="C19372732481074128">500 ml</td>
-                                              <td class=" u-tC" headers="C19372816861074129">212.62</td>
-                                              <td class=" u-tC" headers="C19372934550074130">10</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">2126.2</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">DHQHpl.</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Tirupattur</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Tirupattur</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">29</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Rasagandhi Mezhugu</td>
-                                              <td class=" u-tC" headers="C19372732481074128">100 gms</td>
-                                              <td class=" u-tC" headers="C19372816861074129">83.05</td>
-                                              <td class=" u-tC" headers="C19372934550074130">10</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">830.5</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">DHQHpl.</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Tirupattur</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Tirupattur</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">30</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Sangu Parpam</td>
-                                              <td class=" u-tC" headers="C19372732481074128">100 gms</td>
-                                              <td class=" u-tC" headers="C19372816861074129">107.1</td>
-                                              <td class=" u-tC" headers="C19372934550074130">10</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">1071</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">DHQHpl.</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Tirupattur</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Tirupattur</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">31</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Sangu Parpam Tabs.</td>
-                                              <td class=" u-tC" headers="C19372732481074128">100 Nos</td>
-                                              <td class=" u-tC" headers="C19372816861074129">28.36</td>
-                                              <td class=" u-tC" headers="C19372934550074130">20</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">567.2</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">DHQHpl.</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Tirupattur</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Tirupattur</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">32</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Santha Chandrodhaya Mathirai</td>
-                                              <td class=" u-tC" headers="C19372732481074128">10 gms</td>
-                                              <td class=" u-tC" headers="C19372816861074129">21</td>
-                                              <td class=" u-tC" headers="C19372934550074130">20</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">420</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">DHQHpl.</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Tirupattur</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Tirupattur</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">33</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Chiraka Thailam</td>
-                                              <td class=" u-tC" headers="C19372732481074128">500 ml</td>
-                                              <td class=" u-tC" headers="C19372816861074129">357</td>
-                                              <td class=" u-tC" headers="C19372934550074130">50</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">17850</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">PHC</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Kuruthancode</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Kanniyakumari</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">34</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Silasathu Parpam</td>
-                                              <td class=" u-tC" headers="C19372732481074128">50 gms</td>
-                                              <td class=" u-tC" headers="C19372816861074129">47.26</td>
-                                              <td class=" u-tC" headers="C19372934550074130">10</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">472.6</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">DHQHpl.</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Tirupattur</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Tirupattur</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">35</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Swasakudori Tabs.++</td>
-                                              <td class=" u-tC" headers="C19372732481074128">100 Nos</td>
-                                              <td class=" u-tC" headers="C19372816861074129">31.5</td>
-                                              <td class=" u-tC" headers="C19372934550074130">10</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">315</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">DHQHpl.</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Tirupattur</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Tirupattur</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">36</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Tampitizer ++</td>
-                                              <td class=" u-tC" headers="C19372732481074128">500 ml</td>
-                                              <td class=" u-tC" headers="C19372816861074129">151.2</td>
-                                              <td class=" u-tC" headers="C19372934550074130">20</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">3024</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">DHQHpl.</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Tirupattur</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Tirupattur</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">37</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Thalisadhi Vadagam</td>
-                                              <td class=" u-tC" headers="C19372732481074128">100 Nos</td>
-                                              <td class=" u-tC" headers="C19372816861074129">36.22</td>
-                                              <td class=" u-tC" headers="C19372934550074130">20</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">724.4</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">DHQHpl.</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Tirupattur</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Tirupattur</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">38</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Thalisathi Chooranam Caps.</td>
-                                              <td class=" u-tC" headers="C19372732481074128">500 Nos</td>
-                                              <td class=" u-tC" headers="C19372816861074129">352.8</td>
-                                              <td class=" u-tC" headers="C19372934550074130">10</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">3528</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">DHQHpl.</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Tirupattur</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Tirupattur</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">39</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Thannervittan Nei</td>
-                                              <td class=" u-tC" headers="C19372732481074128">50 gms</td>
-                                              <td class=" u-tC" headers="C19372816861074129">29.85</td>
-                                              <td class=" u-tC" headers="C19372934550074130">20</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">597</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">DHQHpl.</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Tirupattur</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Tirupattur</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">40</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Thayirchundi Chooranam</td>
-                                              <td class=" u-tC" headers="C19372732481074128">500 gms</td>
-                                              <td class=" u-tC" headers="C19372816861074129">216.3</td>
-                                              <td class=" u-tC" headers="C19372934550074130">5</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">1081.5</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">DHQHpl.</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Tirupattur</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Tirupattur</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">41</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Thippili Rasayanam</td>
-                                              <td class=" u-tC" headers="C19372732481074128">100 gms</td>
-                                              <td class=" u-tC" headers="C19372816861074129">54</td>
-                                              <td class=" u-tC" headers="C19372934550074130">20</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">1080</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">DHQHpl.</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Tirupattur</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Tirupattur</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">42</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Thirikadugu Chooranam</td>
-                                              <td class=" u-tC" headers="C19372732481074128">500 gms</td>
-                                              <td class=" u-tC" headers="C19372816861074129">395.86</td>
-                                              <td class=" u-tC" headers="C19372934550074130">5</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">1979.3</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">DHQHpl.</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Tirupattur</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Tirupattur</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">43</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Thiripala Chooranam</td>
-                                              <td class=" u-tC" headers="C19372732481074128">500 gms</td>
-                                              <td class=" u-tC" headers="C19372816861074129">82.42</td>
-                                              <td class=" u-tC" headers="C19372934550074130">10</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">824.2</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">DHQHpl.</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Tirupattur</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Tirupattur</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">44</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Thiripala Chooranam Tabs.</td>
-                                              <td class=" u-tC" headers="C19372732481074128">500 Nos</td>
-                                              <td class=" u-tC" headers="C19372816861074129">95.56</td>
-                                              <td class=" u-tC" headers="C19372934550074130">10</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">955.6</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">DHQHpl.</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Tirupattur</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Tirupattur</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">45</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Vadakesari Thailam</td>
-                                              <td class=" u-tC" headers="C19372732481074128">500 ml</td>
-                                              <td class=" u-tC" headers="C19372816861074129">179.02</td>
-                                              <td class=" u-tC" headers="C19372934550074130">20</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">3580.4</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">DHQHpl.</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Tirupattur</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Tirupattur</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">46</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Vallarin Tablets ++</td>
-                                              <td class=" u-tC" headers="C19372732481074128">100 Nos</td>
-                                              <td class=" u-tC" headers="C19372816861074129">37.52</td>
-                                              <td class=" u-tC" headers="C19372934550074130">10</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">375.2</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">DHQHpl.</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Tirupattur</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Tirupattur</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">47</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Vasanthakusumaharam Mathirai</td>
-                                              <td class=" u-tC" headers="C19372732481074128">10 gms</td>
-                                              <td class=" u-tC" headers="C19372816861074129">31.4</td>
-                                              <td class=" u-tC" headers="C19372934550074130">30</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">942</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">DHQHpl.</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Tirupattur</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Tirupattur</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">48</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Venga Vennai</td>
-                                              <td class=" u-tC" headers="C19372732481074128">500 gms</td>
-                                              <td class=" u-tC" headers="C19372816861074129">479.86</td>
-                                              <td class=" u-tC" headers="C19372934550074130">20</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">9597.2</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">DHQHpl.</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Tirupattur</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Tirupattur</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">49</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Venthamarai Chooranam</td>
-                                              <td class=" u-tC" headers="C19372732481074128">500 gms</td>
-                                              <td class=" u-tC" headers="C19372816861074129">260.4</td>
-                                              <td class=" u-tC" headers="C19372934550074130">5</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">1302</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">DHQHpl.</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Tirupattur</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Tirupattur</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C19372490328074125">50</td>
-                                              <td class=" u-tC" headers="C19372600538074127">Venthamarai Chooranam Tabs</td>
-                                              <td class=" u-tC" headers="C19372732481074128">500 Nos</td>
-                                              <td class=" u-tC" headers="C19372816861074129">265.44</td>
-                                              <td class=" u-tC" headers="C19372934550074130">5</td>
-                                              <td class=" u-tC" headers="C19373050220074131">0</td>
-                                              <td class=" u-tC" headers="C19373163472074132">1327.2</td>
-                                              <td class=" u-tC" headers="C19373293150074133">Siddha</td>
-                                              <td class=" u-tC" headers="C19373369347074134">Regular</td>
-                                              <td class=" u-tC" headers="C19373406599074135"></td>
-                                              <td class=" u-tC" headers="C19373535627074136">DHQHpl.</td>
-                                              <td class=" u-tC" headers="C19373693505074137">Tirupattur</td>
-                                              <td class=" u-tC" headers="C19373736063074138">4th Quarter</td>
-                                              <td class=" u-tC" headers="C19373848006074139">2023 - 2024</td>
-                                              <td class=" u-tC" headers="C19373942793074140">Tirupattur</td>
-                                            </tr>
-                                          </tbody>
-                                        </table>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div role="region" aria-label="Pagination of Medicine Details" class="a-IRR-paginationWrap a-IRR-paginationWrap--bottom">
-                                    <ul class="a-IRR-pagination">
-                                      <li aria-hidden="true" class="a-IRR-pagination-item is-disabled"></li>
-                                      <li class="a-IRR-pagination-item"><span class="a-IRR-pagination-label">                   1 -                   50</span></li>
-                                      <li class="a-IRR-pagination-item"><button type="button" class="a-Button a-IRR-button a-IRR-button--pagination" aria-controls="R311550548639291051881" title="Next" aria-label="Next" data-pagination="pgR_min_row=51max_rows=50rows_fetched=50"><span class="a-Icon icon-right-chevron" aria-hidden="true"></span></button></li>
-                                    </ul>
-                                  </div>
+                            </div>
+                            <div id="R311550548639291051881_content" class="a-IRR-content">
+                              <div id="R311550548639291051881_dialog_js" class="a-IRR-dialogBody" style="display:none">
+                              </div>
+                              <input type="hidden" id="R311550548639291051881_worksheet_id" value="19372355514074124">
+                              <input type="hidden" id="R311550548639291051881_app_user" value="9994793279">
+                              <input type="hidden" id="R311550548639291051881_report_id" value="19455314401869896">
+                              <input type="hidden" id="R311550548639291051881_view_mode" value="REPORT">
+                              <style id="R311550548639291051881_worksheet_css" type="text/css"></style>
+                              <div role="region" aria-label="Chart view of Medicine Details"
+                                id="R311550548639291051881_chart" class="a-IRR-chartView"></div>
+                              <div role="region" aria-label="Group by view of Medicine Details"
+                                id="R311550548639291051881_group_by" class="a-IRR-groupByView"></div>
+                              <div role="region" aria-label="Pivot view of Medicine Details"
+                                id="R311550548639291051881_pivot" class="a-IRR-pivotView"></div>
+                              <div role="region" aria-label="Data view of Medicine Details"
+                                id="R311550548639291051881_data_panel" class="a-IRR-reportView">
+                                <div class="a-IRR-tableContainer">
+                                  <table id="viewIndentTable" class="a-IRR-table" style="width:100%">
+                                    <thead>
+                                      <tr>
+                                        <th class="a-IRR-header u-tC">
+                                          <span class="a-IRR-headerLabel">Sl No</span>
+                                          <div class="t-fht-cell"></div>
+                                        </th>
+                                        <th class="a-IRR-header u-tC">
+                                          <span class="a-IRR-headerLabel">Medicine Name</span>
+                                          <div class="t-fht-cell"></div>
+                                        </th>
+                                        <th class="a-IRR-header u-tC">
+                                          <span class="a-IRR-headerLabel">Packing Size</span>
+                                          <div class="t-fht-cell"></div>
+                                        </th>
+                                        <th class="a-IRR-header u-tC">
+                                          <span class="a-IRR-headerLabel">Amount</span>
+                                          <div class="t-fht-cell"></div>
+                                        </th>
+                                        <th class="a-IRR-header u-tC">
+                                          <span class="a-IRR-headerLabel">Quantity</span>
+                                          <div class="t-fht-cell"></div>
+                                        </th>
+                                        <th class="a-IRR-header u-tC">
+                                          <span class="a-IRR-headerLabel">Stock Availability</span>
+                                          <div class="t-fht-cell"></div>
+                                        </th>
+                                        <th class="a-IRR-header u-tC">
+                                          <span class="a-IRR-headerLabel">Total Amount</span>
+                                          <div class="t-fht-cell"></div>
+                                        </th>
+                                        <th class="a-IRR-header u-tC">
+                                          <span class="a-IRR-headerLabel">System</span>
+                                          <div class="t-fht-cell"></div>
+                                        </th>
+                                        <th class="a-IRR-header u-tC">
+                                          <span class="a-IRR-headerLabel">Indent Type</span>
+                                          <div class="t-fht-cell"></div>
+                                        </th>
+                                        <th class="a-IRR-header u-tC">
+                                          <span class="a-IRR-headerLabel">Scheme Name</span>
+                                          <div class="t-fht-cell"></div>
+                                        </th>
+                                        <th class="a-IRR-header u-tC">
+                                          <span class="a-IRR-headerLabel">Institution Type</span>
+                                          <div class="t-fht-cell"></div>
+                                        </th>
+                                        <th class="a-IRR-header u-tC">
+                                          <span class="a-IRR-headerLabel">Name Of The Institution</span>
+                                          <div class="t-fht-cell"></div>
+                                        </th>
+                                        <th class="a-IRR-header u-tC">
+                                          <span class="a-IRR-headerLabel">Quarters</span>
+                                          <div class="t-fht-cell"></div>
+                                        </th>
+                                        <th class="a-IRR-header u-tC">
+                                          <span class="a-IRR-headerLabel">Financial Year</span>
+                                          <div class="t-fht-cell"></div>
+                                        </th>
+                                        <th class="a-IRR-header u-tC">
+                                          <span class="a-IRR-headerLabel">Name Of The District</span>
+                                          <div class="t-fht-cell"></div>
+                                        </th>
+                                      </tr>
+
+                                    </thead>
+                                    <tbody></tbody>
+                                  </table>
                                 </div>
+                               
                               </div>
                             </div>
                           </div>
@@ -1308,113 +450,298 @@
                   </div>
                 </div>
               </div>
-            </main>
-            <footer class="t-Footer" id="t_Footer" role="contentinfo">
-              <div class="t-Footer-body">
-                <div class="t-Footer-content"></div>
-                <div class="t-Footer-apex">
-                  <!-- <div class="t-Footer-version">    </div>
+            </div>
+          </main>
+          <footer class="t-Footer" id="t_Footer" role="contentinfo">
+            <div class="t-Footer-body">
+              <div class="t-Footer-content"></div>
+              <div class="t-Footer-apex">
+                <!-- <div class="t-Footer-version">    </div>
                     <div class="t-Footer-customize"></div>
                      -->
-                  <div class="row">
-                    <div class="col-6"> 
-                      <p class="text-middle"><img class="footer-logo" src="../assets/img/head-dept-logo.png"><br>Content owned by Department of Indian Medicine and Homoeopathy ©</p>
-                    </div>
-                    <div class="col-6">
-                      <p class="text-middle"><img class="footer-logo" src="../assets/img/tnegalogo.png"><br>Designed and Developed by Tamil Nadu e-Governance Agency</p>
-                    </div>
+                <div class="row">
+                  <div class="col-6">
+                    <p class="text-middle"><img class="footer-logo" src="../assets/img/head-dept-logo.png"><br>Content
+                      owned by Department of Indian Medicine and Homoeopathy ©</p>
+                  </div>
+                  <div class="col-6">
+                    <p class="text-middle"><img class="footer-logo" src="../assets/img/tnegalogo.png"><br>Designed and
+                      Developed by Tamil Nadu e-Governance Agency</p>
                   </div>
                 </div>
               </div>
-              <div class="t-Footer-top">
-                <a href="#top" class="t-Footer-topButton" id="t_Footer_topButton" title="Start of page" aria-label="Start of page"><span class="a-Icon icon-up-chevron" aria-hidden="true"></span></a>
-              </div>
-            </footer>
-          </div>
+            </div>
+            <div class="t-Footer-top">
+              <a href="#top" class="t-Footer-topButton" id="t_Footer_topButton" title="Start of page"
+                aria-label="Start of page"><span class="a-Icon icon-up-chevron" aria-hidden="true"></span></a>
+            </div>
+          </footer>
         </div>
       </div>
-      <div class="t-Body-inlineDialogs" id="t_Body_inlineDialogs"></div>
-      <input type="hidden" id="pPageFormRegionChecksums" value="[]">
-      <input type="hidden" id="pPageItemsRowVersion" value=""><input type="hidden" id="pPageItemsProtected" value="/1TkMKGJPam5l0tbNZET48ArE0YE-1msWIzTB7fVZnaQAFxdthnSB46DfZ_0-wyExZXUZmDOSwz9oEJ8JAac92A">
-    </form>
-    <script>
-      var apex_img_dir = "\u002Fi\u002F";
-      var apex = {env: {APP_USER: "9994793279",APP_ID: "117",APP_PAGE_ID: "7",APP_SESSION: "2368821413423",APP_FILES: "r\u002Fdimdev\u002F117\u002Ffiles\u002Fstatic\u002Fv194\u002F",WORKSPACE_FILES: "r\u002Fdimdev\u002Ffiles\u002Fstatic\u002Fv38\u002F",APEX_VERSION: "23.1.0",APEX_BASE_VERSION: "23.1"},
-      libVersions:{ckeditor5:"36.0.0",cropperJs:"1.5.13",domPurify:"2.4.3",fullcalendar:"5.11.3",hammer:"2.0.8",jquery:"3.6.4",jqueryUi:"1.13.2",maplibre:"2.4.0",markedJs:"4.2.5",prismJs:"1.29.0",oraclejet:"14.0.0",tinymce:"6.3.1",turndown:"7.1.1",monacoEditor:"0.32.1",lessJs:"4.1.3"}};
-    </script>
-
-
-    <script src="../assets/js/jquery-3.6.0.min.js"></script>
-    <script src="../assets/js/desktop_all.min.js"></script>
-    <script src="../assets/js/widget.stickyWidget.min.js"></script>
-    <script src="../assets/js/theme42.min.js"></script>
-    <script src="../assets/js/aos.js"></script>
-
-    <script type="text/javascript">
-      apex.session.initTimeouts(900,{"idle_time_ms":1200000,"life_time_ms":28476000,"max_idle_time_ms":1200000},'\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fhome','\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fhome');
-      apex.jQuery( function() {
-      apex.page.init( this, function() {
-      try {
-      (function(){var e = apex.jQuery("#t_MenuNav", apex.gPageContext$);
-      if (e.hasClass("js-addActions")) {
-        apex.actions.addFromMarkup( e );
-      }
-      e.menu({
-        behaveLikeTabs: e.hasClass("js-tabLike"),
-        menubarShowSubMenuIcon: e.hasClass("js-showSubMenuIcons") || null,
-        menubar: true,
-        menubarOverflow: true,
-        callout: e.hasClass("js-menu-callout")
-      });
-      })();
-      (function(){apex.widget.selectList("#P7_NAME_OF_THE_DISTRICT",{"nullValue":"","ajaxIdentifier":"SVRFTSBUWVBFfjUxMjB-MTc0MjU1MDE1NjMyMjU0NTA\u002Fhcq8v-szseOsEJ-pv7L9SL2sJEhctfkEpQ2NqacmTmhG9yroiwIkQVLJ2QTYL4KMNZJNBsXaS1oMANoaPiGPpg"});})();
-      (function(){apex.widget.selectList("#P7_NAME_OF_THE_INSTITUTION",{"nullValue":"","dependingOnSelector":"#P7_NAME_OF_THE_DISTRICT","optimizeRefresh":true,"pageItemsToSubmit":"#P7_NAME_OF_THE_DISTRICT","ajaxIdentifier":"SVRFTSBUWVBFfjUxMjB-MTkzNzAwNjcxMDUwNzQxMDE\u002FkitUSMTCVrpPrVyAgP782KsDjTYc_t9_-JjMsCN48QZY25EFXvILqSzKIPbgeqU2qLoLXPWpZfiydGcW_1RrDg"});})();
-      (function(){apex.widget.selectList("#P7_SYSTEM",{"nullValue":"","ajaxIdentifier":"SVRFTSBUWVBFfjUxMjB-MTkzNzAxMjk4NjAwNzQxMDI\u002FaEYJFk3odMLOwB-Cg_QTa851KR-C2tXrgb5lYTFKNvPlIvc0L6Yvhe4h6q4UPWmkLuvbYDz7mDLa1KQlwcBmaA"});})();
-      (function(){apex.widget.selectList("#P7_FINANCIAL_YEAR",{"nullValue":"","ajaxIdentifier":"SVRFTSBUWVBFfjUxMjB-MTYwNDQ2OTgxMDcyNDIxNjIxOTMz\u002FzldE_PK0SdLsN2RMZ72lYLgGcfbaBfJZQv96DPIrGA1r5Cu3uIv6C5PDipv0wevqRxY-OdVSalYLCUbRe_iCMQ"});})();
-      (function(){apex.widget.selectList("#P7_QUARTERS",{"nullValue":"","ajaxIdentifier":"SVRFTSBUWVBFfjUxMjB-MzU0NjUwMDkwMzU4NDIxNDY\u002FoWpE9-_-pijOZLHPApup0RuFVm1IWFHAWPHaXgGKOVUDQntTaRM-iZrRPF3cj-b5v3KH278g5_WHBMbsUUI4Gg"});})();
-      (function(){apex.widget.selectList("#P7_INDENT_TYPE",{"nullValue":"","ajaxIdentifier":"SVRFTSBUWVBFfjUxMjB-MzY1ODQ4NDU0MzgyODIxNDQ\u002FzapttV_imIs9Z65BHSC5wuwERZtLHnT7cBUJqGuIVPAEAzQ-7-7uokYEQvJUfqT0wz5jPc9rW-nym4mbEJt6lw"});})();
-      (function(){apex.widget.selectList("#P7_SCHEME_NAME",{"nullValue":"","ajaxIdentifier":"SVRFTSBUWVBFfjUxMjB-MzY1ODQ5NzY2NDkyODIxNDU\u002FPDSgRC3U589O2CrDfcM_dQN0_0lTN6yLD3JffGzUPeDCZ4zts6-a95RFc0WUVHlAvUaAkq6pasdtnTGbK0qTQg"});})();
-      (function(){apex.jQuery('#R311550548639291051881_ir').interactiveReport({"regionId":"R311550548639291051881","searchField":false,"reportsSelect":false,"selectColumns":false,"filter":false,"rowsPerPage":false,"sort":false,"controlBreak":false,"highlight":false,"compute":false,"aggregate":false,"chart":false,"groupBy":false,"pivot":false,"flashback":false,"reset":false,"help":false,"downloadContentDisposition":"ATTACHMENT","subscription":false,"pageItems":"#P7_FINANCIAL_YEAR,#P7_QUARTERS","lazyLoading":true,"ajaxIdentifier":"UkVHSU9OIFRZUEV-fjMxMTU1MDU0ODYzOTI5MTA1MTg4MQ\u002FulGJ6rGUhU84ZUH2AM4I0qYm4gBhrThEOQ6WX9XmbIe7mHRg3fI-MJNkF24Cai2fgflB77pXkNDbdhxYv6UWXA"});})();
-      } catch(e) {apex.debug.error(e)};
-      apex.item.waitForDelayLoadItems().done(function() {
-      try {
-      apex.theme42.initializePage.noSideCol();
-      
-      apex.page.warnOnUnsavedChanges();
-      } finally {
-      apex.event.trigger(apex.gPageContext$,'apexreadyend');
-      };
-      });
-      });
-      });apex.pwa.init( { serviceWorkerPath:'\u002Fords\u002Fr\u002Fdimdev\u002Fimim\u002Fsw.js?v=23.1.0-249998717\u0026lang=en' } );
-    </script>
-    <script>
-      AOS.init();
-    </script>
-    <div id="pushModal" style="width: 100%; display:none; height: 100%;" class="u-DisplayNone u-Overlay--glass"></div>
-    <div id="R311550548639291051881_actions_menu" role="menu" class="a-Menu" style="display: none;"></div>
-    <div role="dialog" aria-label="Column Actions" aria-modal="true" class="a-IRR-sortWidget" id="R311550548639291051881_sort_widget" style="display:none;">
-      <h1 class="u-vh" aria-roledescription="Visually hidden dialog title">Column Actions</h1>
-      <ul role="toolbar" class="a-IRR-sortWidget-actions" id="R311550548639291051881_sort_widget_actions">
-        <li role="none" class="a-IRR-sortWidget-actions-item" id="R311550548639291051881_sort_widget_action_up"><button class="a-Button a-IRR-button a-IRR-sortWidget-button" type="button" title="Sort Ascending" aria-label="Sort Ascending" data-option="up"><span aria-hidden="true" class="a-Icon icon-irr-sort-asc"></span></button></li>
-        <li role="none" class="a-IRR-sortWidget-actions-item" id="R311550548639291051881_sort_widget_action_down"><button class="a-Button a-IRR-button a-IRR-sortWidget-button" type="button" title="Sort Descending" aria-label="Sort Descending" data-option="down"><span aria-hidden="true" class="a-Icon icon-irr-sort-desc"></span></button></li>
-        <li role="none" class="a-IRR-sortWidget-actions-item" id="R311550548639291051881_sort_widget_action_hide"><button class="a-Button a-IRR-button a-IRR-sortWidget-button" type="button" title="Hide Column" aria-label="Hide Column" data-option="hide"><span aria-hidden="true" class="a-Icon icon-irr-remove-col"></span></button></li>
-        <li role="none" class="a-IRR-sortWidget-actions-item" id="R311550548639291051881_sort_widget_action_break"><button class="a-Button a-IRR-button a-IRR-sortWidget-button" type="button" title="Control Break" aria-label="Control Break" data-option="break"><span aria-hidden="true" class="a-Icon icon-irr-control-break"></span></button></li>
-        <li role="none" class="a-IRR-sortWidget-actions-item" id="R311550548639291051881_sort_widget_action_help"><button class="a-Button a-IRR-button a-IRR-sortWidget-button" type="button" title="Help" aria-label="Help" data-option="help" aria-pressed="false"><span aria-hidden="true" class="a-Icon icon-irr-help"></span></button></li>
-        <li role="none" class="a-IRR-sortWidget-actions-item" id="R311550548639291051881_sort_widget_action_computation"><button class="a-Button a-IRR-button a-IRR-sortWidget-button" type="button" title="Compute" aria-label="Compute" data-option="computation"><span aria-hidden="true" class="a-Icon icon-irr-calculator"></span></button></li>
-      </ul>
-      <div role="region" aria-label="Help" class="a-IRR-sortWidget-help" id="R311550548639291051881_sort_widget_help"></div>
-      <div role="search" class="a-IRR-sortWidget-search" id="R311550548639291051881_sort_widget_search">
-        <label for="R311550548639291051881_sort_widget_search_field" class="a-IRR-sortWidget-searchLabel"><span class="u-vh">Search</span></label><input id="R311550548639291051881_sort_widget_search_field" class="a-IRR-sortWidget-searchField" type="text" placeholder="Filter...">
-        <div role="group" aria-label="Filter suggestions" class="a-IRR-sortWidget-rows" id="R311550548639291051881_sort_widget_rows"></div>
-      </div>
     </div>
-    <div class="t-NavigationBar-menu a-Menu" style="display: none" id="menu_L428237300758551931558" role="menu">
-      <ul>
-        <li class="" data-current="false" data-icon="fa fa-sign-out"><a href="apex_authentication.logout?p_app_id=117&amp;p_session_id=2368821413423" title="" target="">Sign Out</a></li>
-      </ul>
+    <div class="t-Body-inlineDialogs" id="t_Body_inlineDialogs"></div>
+    <input type="hidden" id="pPageFormRegionChecksums" value="[]">
+    <input type="hidden" id="pPageItemsRowVersion" value=""><input type="hidden" id="pPageItemsProtected"
+      value="/1TkMKGJPam5l0tbNZET48ArE0YE-1msWIzTB7fVZnaQAFxdthnSB46DfZ_0-wyExZXUZmDOSwz9oEJ8JAac92A">
+  </form>
+
+
+  <script src="../assets/js/jquery-3.6.0.min.js"></script>
+  <script src="../assets/js/desktop_all.min.js"></script>
+  <script src="../assets/js/widget.stickyWidget.min.js"></script>
+  <script src="../assets/js/theme42.min.js"></script>
+  <script src="../assets/js/aos.js"></script>
+
+  <div id="pushModal" style="width: 100%; display:none; height: 100%;" class="u-DisplayNone u-Overlay--glass"></div>
+  <div id="R311550548639291051881_actions_menu" role="menu" class="a-Menu" style="display: none;"></div>
+  <div role="dialog" aria-label="Column Actions" aria-modal="true" class="a-IRR-sortWidget"
+    id="R311550548639291051881_sort_widget" style="display:none;">
+    <h1 class="u-vh" aria-roledescription="Visually hidden dialog title">Column Actions</h1>
+    <ul role="toolbar" class="a-IRR-sortWidget-actions" id="R311550548639291051881_sort_widget_actions">
+      <li role="none" class="a-IRR-sortWidget-actions-item" id="R311550548639291051881_sort_widget_action_up"><button
+          class="a-Button a-IRR-button a-IRR-sortWidget-button" type="button" title="Sort Ascending"
+          aria-label="Sort Ascending" data-option="up"><span aria-hidden="true"
+            class="a-Icon icon-irr-sort-asc"></span></button></li>
+      <li role="none" class="a-IRR-sortWidget-actions-item" id="R311550548639291051881_sort_widget_action_down"><button
+          class="a-Button a-IRR-button a-IRR-sortWidget-button" type="button" title="Sort Descending"
+          aria-label="Sort Descending" data-option="down"><span aria-hidden="true"
+            class="a-Icon icon-irr-sort-desc"></span></button></li>
+      <li role="none" class="a-IRR-sortWidget-actions-item" id="R311550548639291051881_sort_widget_action_hide"><button
+          class="a-Button a-IRR-button a-IRR-sortWidget-button" type="button" title="Hide Column"
+          aria-label="Hide Column" data-option="hide"><span aria-hidden="true"
+            class="a-Icon icon-irr-remove-col"></span></button></li>
+      <li role="none" class="a-IRR-sortWidget-actions-item" id="R311550548639291051881_sort_widget_action_break"><button
+          class="a-Button a-IRR-button a-IRR-sortWidget-button" type="button" title="Control Break"
+          aria-label="Control Break" data-option="break"><span aria-hidden="true"
+            class="a-Icon icon-irr-control-break"></span></button></li>
+      <li role="none" class="a-IRR-sortWidget-actions-item" id="R311550548639291051881_sort_widget_action_help"><button
+          class="a-Button a-IRR-button a-IRR-sortWidget-button" type="button" title="Help" aria-label="Help"
+          data-option="help" aria-pressed="false"><span aria-hidden="true" class="a-Icon icon-irr-help"></span></button>
+      </li>
+      <li role="none" class="a-IRR-sortWidget-actions-item" id="R311550548639291051881_sort_widget_action_computation">
+        <button class="a-Button a-IRR-button a-IRR-sortWidget-button" type="button" title="Compute" aria-label="Compute"
+          data-option="computation"><span aria-hidden="true" class="a-Icon icon-irr-calculator"></span></button>
+      </li>
+    </ul>
+    <div role="region" aria-label="Help" class="a-IRR-sortWidget-help" id="R311550548639291051881_sort_widget_help">
     </div>
-    <iframe frameborder="0" scrolling="no" style="background-color: transparent; border: 0px; display: none;"></iframe>
-    <div id="GOOGLE_INPUT_CHEXT_FLAG" style="display: none;" input="" input_stat="{&quot;tlang&quot;:true,&quot;tsbc&quot;:true,&quot;pun&quot;:true,&quot;mk&quot;:true,&quot;ss&quot;:true}"></div>
-  </body>
+    <div role="search" class="a-IRR-sortWidget-search" id="R311550548639291051881_sort_widget_search">
+      <label for="R311550548639291051881_sort_widget_search_field" class="a-IRR-sortWidget-searchLabel"><span
+          class="u-vh">Search</span></label><input id="R311550548639291051881_sort_widget_search_field"
+        class="a-IRR-sortWidget-searchField" type="text" placeholder="Filter...">
+      <div role="group" aria-label="Filter suggestions" class="a-IRR-sortWidget-rows"
+        id="R311550548639291051881_sort_widget_rows"></div>
+    </div>
+  </div>
+  <div class="t-NavigationBar-menu a-Menu" style="display: none" id="menu_L428237300758551931558" role="menu">
+    <ul>
+      <li class="" data-current="false" data-icon="fa fa-sign-out"><a
+          href="apex_authentication.logout?p_app_id=117&amp;p_session_id=2368821413423" title="" target="">Sign Out</a>
+      </li>
+    </ul>
+  </div>
+  <iframe frameborder="0" scrolling="no" style="background-color: transparent; border: 0px; display: none;"></iframe>
+  <div id="GOOGLE_INPUT_CHEXT_FLAG" style="display: none;" input=""
+    input_stat="{&quot;tlang&quot;:true,&quot;tsbc&quot;:true,&quot;pun&quot;:true,&quot;mk&quot;:true,&quot;ss&quot;:true}">
+  </div>
+</body>
+
 </html>
+<!-- jQuery -->
+<script src="../assets/js/jquery-3.6.0.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- DataTables -->
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="../assets/js/widget.treeView.min.js"></script>
+<script src="../assets/common.js"></script>
+<script src="../assets/js/widget.interactiveReport.min.js"></script>
+<script src="../assets/js/widget.iconList.min.js"></script>
+<script src="../assets/js/widget.stickyTableHeader.min.js"></script>
+<script src="../assets/js/widget.stickyWidget.min.js"></script>
+<script src="../assets/js/item.Colorpicker.min.js"></script>
+<script src="../assets/js/jetCommonBundle.min.js"></script>
+<script src="../assets/js/chartBundle.min.js"></script>
+
+<script src="../assets/js/toastUtil.js"></script>
+<script src="../assets/js/validation.js"></script>
+<script src="../assets/js/dataTableUtil.js"></script>
+<script src="../assets/js/crypto-js.min.js"></script>
+<script src="../assets/js/theme42.min.js"></script>
+<script src="../assets/js/global.js"></script>
+<script src="../assets/js/encrypt_decrypt.js"></script>
+<script src="../assets/js/singleFileUpload.js"></script>
+<script src="../assets/js/globalHeader.js"></script>
+<script src="../assets/js/validation.js"></script>
+<script>
+
+  const apiUrl = 'https://tngis.tnega.org/medical_indent_api/v1/commonfunction';
+  const mobnumber = localStorage.getItem('userMobileNumber') || "";
+
+  function fetchAndPopulateDropdown({ payload, dropdownId, placeholder }) {
+    $.ajax({
+      url: apiUrl,
+      method: 'POST',
+      headers: {
+        'X-APP-Key': 'edm',
+        'X-APP-Name': 'edm'
+      },
+      data: {
+        data: encryptData(payload)
+      },
+      dataType: 'json',
+      success(response) {
+        const decrypted = decryptData(response.data);
+        console.log(`Decrypted Data for ${payload.function_name}:`, decrypted);
+
+        const $dropdown = $(`#${dropdownId}`);
+        $dropdown.empty().append(`<option value="">${placeholder}</option>`);
+
+        decrypted.forEach(item => {
+          const value = item.district || item.year || item.system || item.scheme || item.type || item.quarter;
+          $dropdown.append(`<option value="${value}">${value}</option>`);
+        });
+      },
+      error(xhr, status, error) {
+        console.error(`${payload.function_name} API Error:`, error);
+      }
+    });
+  }
+  // 🚀 Make API calls
+  fetchAndPopulateDropdown({
+    payload: {
+      action: "function_call",
+      function_name: "im_own_district_fn",
+      params: { null: null }
+    },
+    dropdownId: "P7_NAME_OF_THE_DISTRICT",
+    placeholder: "--Select District--"
+  });
+  $('#P7_NAME_OF_THE_DISTRICT').on('change', function () {
+    var selectedDistrict = $(this).val();
+    console.log(selectedDistrict);
+
+    fetchAndPopulateDropdown({
+      payload: {
+        action: "function_call",
+        function_name: "im_institude_fn",
+        params: { selecetedDistrict: selectedDistrict }
+      },
+      dropdownId: "P7_NAME_OF_THE_INSTITUTION",
+      placeholder: "--Select Institution--"
+    });
+  });
+  fetchAndPopulateDropdown({
+    payload: {
+      action: "function_call",
+      function_name: "im_system_fn",
+      params: { mobnumber: mobnumber }
+    },
+    dropdownId: "P7_SYSTEM",
+    placeholder: "--Select System--"
+  });
+  fetchAndPopulateDropdown({
+    payload: {
+      action: "function_call",
+      function_name: "im_year_fn",
+      params: {}
+    },
+    dropdownId: "P7_FINANCIAL_YEAR",
+    placeholder: "--Select Financial Year--"
+  });
+  fetchAndPopulateDropdown({
+    payload: {
+      action: "function_call",
+      function_name: "im_scheme_names_fn",
+      params: {}
+    },
+    dropdownId: "P7_SCHEME_NAME",
+    placeholder: "--Select Scheme--"
+  });
+  fetchAndPopulateDropdown({
+    payload: {
+      action: "function_call",
+      function_name: "im_quarter_fn",
+      params: {}
+    },
+    dropdownId: "P7_QUARTERS",
+    placeholder: "--Select Quarters--"
+  });
+  fetchAndPopulateDropdown({
+    payload: {
+      action: "function_call",
+      function_name: "im_Indent_typ_fn",
+      params: {}
+    },
+    dropdownId: "P7_INDENT_TYPE",
+    placeholder: "--Select Indent--"
+  });
+  function getPayload() {
+    return {
+      action: "function_call",
+      function_name: "im_get_indent_medicine_details_with_stock_fn",
+      params: {
+        p_institution: $('#P7_NAME_OF_THE_INSTITUTION').val() || null,
+        p_district: $('#P7_NAME_OF_THE_DISTRICT').val() || null,
+        p_financial_year: $('#P7_FINANCIAL_YEAR').val() || null,
+        p_quarters: $('#P7_QUARTERS').val() || null,
+        p_system: $('#P7_SYSTEM').val() || null,
+        p_indent_type: $('#P7_INDENT_TYPE').val() || null,
+        p_scheme_name: $('#P7_SCHEME_NAME').val() || null
+      }
+    };
+  }
+
+  function fetchTableData() {
+    const payload = getPayload();
+    loadDataToTable({
+      tableId: 'viewIndentTable',
+      apiUrl,
+      httpMethod: 'POST',
+      payload: encryptData(payload),
+      rowBuilder: (item) => {
+        console.log(item);
+        return `
+                  <tr>
+                    <td class="u-tC">${item.sl_no || 'N/A'}</td>
+                    <td class="u-tC">${item.medicine_name || 'N/A'}</td>
+                    <td class="u-tC">${item.packing_size || 'N/A'}</td>
+                    <td class="u-tC">${item.amount || 'N/A'}</td>
+                    <td class="u-tC">${item.quantity || 'N/A'}</td>
+                    <td class="u-tC">${item.actual_quantity || 'N/A'}</td>
+                    <td class="u-tC">${item.total_amount || 'N/A'}</td>
+                    <td class="u-tC">${item.system || 'N/A'}</td>
+                    <td class="u-tC">${item.indent_type || 'N/A'}</td>
+                    <td class="u-tC">${item.scheme_name || 'N/A'}</td>
+                    <td class="u-tC">${item.institution_type || 'N/A'}</td>
+                    <td class="u-tC">${item.name_of_the_institution || 'N/A'}</td>
+                    <td class="u-tC">${item.quarters || 'N/A'}</td>
+                    <td class="u-tC">${item.financial_year || 'N/A'}</td>
+                    <td class="u-tC">${item.name_of_the_district || 'N/A'}</td>
+                  </tr>
+                `;
+      },
+      onTableInit: function (dtRef) {
+        dataTableRef = dtRef;
+      }
+    });
+  }
+  $('#searchbtn').on('click', function () {
+    fetchTableData();
+  });
+  $('#clearBtn').on('click', function () {
+    $('#P7_NAME_OF_THE_INSTITUTION').val("");
+    $('#P7_NAME_OF_THE_DISTRICT').val("");
+    $('#P7_FINANCIAL_YEAR').val("");
+    $('#P7_QUARTERS').val("");
+    $('#P7_SYSTEM').val("");
+    $('#P7_INDENT_TYPE').val("");
+    $('#P7_SCHEME_NAME').val("");
+  }); 
+</script>
+<script>
+  $(document).ready(function () {
+    var userName = localStorage.getItem("userName") || "Guest";
+    $('#username .t-Button-label').text(userName);
+  });
+</script>
