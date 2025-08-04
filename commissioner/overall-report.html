@@ -1,89 +1,289 @@
-<html class="page-64 app-IMIM" lang="en" style="--js-sticky-top: 204.4px;">
+<html class="page-64 app-IMIM" lang="en" style="--js-sticky-top: 204.4px">
   <head>
-    <meta http-equiv="x-ua-compatible" content="IE=edge">
-    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge" />
+    <meta charset="utf-8" />
     <title>Overall Report for Commissioner</title>
-    
-    <link rel="apple-touch-icon" href="../assets/img/app-icon-192.png">
-    <link rel="icon" href="../assets/img/app-icon-32.png">
 
-    <link rel="stylesheet" href="../assets/css/Core.min.css" type="text/css">
-    <link rel="stylesheet" href="../assets/css/Theme-Standard.min.css" type="text/css">
-    <link rel="stylesheet" href="../assets/css/font-apex.min.css" type="text/css">
-    <link rel="stylesheet" href="../assets/css/Core_theme.min.css" type="text/css">
-    <link rel="stylesheet" href="../assets/css/custom.min.css" type="text/css">
-    <link rel="stylesheet" href="../assets/css/aos.min.css" type="text/css"> 
-    <link rel="stylesheet" href="../assets/css/theme.css" type="text/css">
-    
+    <link rel="apple-touch-icon" href="../assets/img/app-icon-192.png" />
+    <link rel="icon" href="../assets/img/app-icon-32.png" />
+
+    <link rel="stylesheet" href="../assets/css/Core.min.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="../assets/css/Theme-Standard.min.css"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="../assets/css/font-apex.min.css"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="../assets/css/Core_theme.min.css"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="../assets/css/custom.min.css"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="../assets/css/aos.min.css" type="text/css" />
+    <link rel="stylesheet" href="../assets/css/theme.css" type="text/css" />
+
     <style type="text/css">
+      .dataTables_paginate {
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+        gap: 5px;
+      }
+
+      .paginate_button {
+        background-color: #f2f2f2;
+        border: 1px solid #ccc;
+        padding: 6px 12px;
+        margin: 0 2px;
+        border-radius: 4px;
+        color: #333;
+        text-decoration: none;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background-color 0.2s ease;
+      }
+
+      .paginate_button:hover:not(.disabled),
+      .paginate_button:focus {
+        background-color: #007bff;
+        color: white;
+      }
+
+      .paginate_button.current {
+        background-color: #007bff;
+        color: white;
+        font-weight: bold;
+      }
+
+      .paginate_button.disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+      }
       .a-Menu--top.submenu {
-      position: absolute; /* Make submenu appear outside of parent li */
-      top: 100%; /* Place submenu right below parent */
-      left: 0; /* Align submenu with parent */
-      min-width: 200px; /* Adjust width if needed */
-      background: white; /* Ensure it has a background */
-      border: 1px solid #ccc; /* Add a border for visibility */
-      z-index: 1000; /* Ensure it appears above other elements */
-      display: none; /* Initially hidden */
+        position: absolute; /* Make submenu appear outside of parent li */
+        top: 100%; /* Place submenu right below parent */
+        left: 0; /* Align submenu with parent */
+        min-width: 200px; /* Adjust width if needed */
+        background: white; /* Ensure it has a background */
+        border: 1px solid #ccc; /* Add a border for visibility */
+        z-index: 1000; /* Ensure it appears above other elements */
+        display: none; /* Initially hidden */
       }
       .cusdrop {
-      top: 13.5rem;
-      left: initial !important;
+        top: 13.5rem;
+        left: initial !important;
       }
       .navpage {
-      height: 100%;
-      text-decoration: none;
-      color: #fff;
-      padding: 12px;
-      line-height: 3.2;
+        height: 100%;
+        text-decoration: none;
+        color: #fff;
+        padding: 12px;
+        line-height: 3.2;
       }
       .a-MenuBar-item a {
-      display: block;
-      width: 100%;
-      height: 100%;
-      text-decoration: none;
-      color: inherit;
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        color: inherit;
       }
     </style>
 
-
-
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="-1">
-    <meta http-equiv="Cache-Control" content="no-cache">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style type="text/css">.t-fht-cell { height: 1px; overflow: hidden; } .t-fht-wrapper { width: 100%; overflow: hidden; position: relative; } .t-fht-thead { overflow: hidden; position: relative; } .t-fht-tbody { overflow: auto; } </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="-1" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style type="text/css">
+      .t-fht-cell {
+        height: 1px;
+        overflow: hidden;
+      }
+      .t-fht-wrapper {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+      }
+      .t-fht-thead {
+        overflow: hidden;
+        position: relative;
+      }
+      .t-fht-tbody {
+        overflow: auto;
+      }
+    </style>
   </head>
-  <body class="t-PageBody t-PageBody--hideLeft t-PageBody--hideActions t-PageTemplate--standard apex-top-nav apex-icons-fontapex apex-theme-vita-standard js-HeaderExpanded t-PageBody--topNav" id="t_PageBody" data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
+  <body
+    class="t-PageBody t-PageBody--hideLeft t-PageBody--hideActions t-PageTemplate--standard apex-top-nav apex-icons-fontapex apex-theme-vita-standard js-HeaderExpanded t-PageBody--topNav"
+    id="t_PageBody"
+    data-aos-easing="ease"
+    data-aos-duration="400"
+    data-aos-delay="0"
+  >
     <a href="#main" id="t_Body_skipToContent">Skip to Main Content</a>
-    <form action="wwv_flow.accept?p_context=imim/overall-report-for-commissioner/5821089868360" method="post" name="wwv_flow" id="wwvFlowForm" data-oj-binding-provider="none" novalidate="" autocomplete="off">
-      <input type="hidden" name="p_flow_id" value="117" id="pFlowId"><input type="hidden" name="p_flow_step_id" value="64" id="pFlowStepId"><input type="hidden" name="p_instance" value="5821089868360" id="pInstance"><input type="hidden" name="p_page_submission_id" value="166690687564052869491158709260367506869" id="pPageSubmissionId"><input type="hidden" name="p_request" value="" id="pRequest"><input type="hidden" name="p_reload_on_submit" value="S" id="pReloadOnSubmit"><input type="hidden" value="imim/overall-report-for-commissioner/5821089868360" id="pContext"><input type="hidden" value="166690687564052869491158709260367506869" id="pSalt">
-        <header class="t-Header" id="t_Header" role="banner">
+    <form
+      action="wwv_flow.accept?p_context=imim/overall-report-for-commissioner/5821089868360"
+      method="post"
+      name="wwv_flow"
+      id="wwvFlowForm"
+      data-oj-binding-provider="none"
+      novalidate=""
+      autocomplete="off"
+    >
+      <input type="hidden" name="p_flow_id" value="117" id="pFlowId" /><input
+        type="hidden"
+        name="p_flow_step_id"
+        value="64"
+        id="pFlowStepId"
+      /><input
+        type="hidden"
+        name="p_instance"
+        value="5821089868360"
+        id="pInstance"
+      /><input
+        type="hidden"
+        name="p_page_submission_id"
+        value="166690687564052869491158709260367506869"
+        id="pPageSubmissionId"
+      /><input type="hidden" name="p_request" value="" id="pRequest" /><input
+        type="hidden"
+        name="p_reload_on_submit"
+        value="S"
+        id="pReloadOnSubmit"
+      /><input
+        type="hidden"
+        value="imim/overall-report-for-commissioner/5821089868360"
+        id="pContext"
+      /><input
+        type="hidden"
+        value="166690687564052869491158709260367506869"
+        id="pSalt"
+      />
+      <header class="t-Header" id="t_Header" role="banner">
         <div class="t-Header-branding">
           <div class="t-Header-controls">
-            <button class="t-Button t-Button--icon t-Button--header t-Button--headerTree" aria-label="Main Navigation" title="Main Navigation" id="t_Button_navControl" type="button"><span class="t-Header-controlsIcon" aria-hidden="true"></span></button>
+            <button
+              class="t-Button t-Button--icon t-Button--header t-Button--headerTree"
+              aria-label="Main Navigation"
+              title="Main Navigation"
+              id="t_Button_navControl"
+              type="button"
+            >
+              <span class="t-Header-controlsIcon" aria-hidden="true"></span>
+            </button>
           </div>
           <div class="t-Header-logo">
             <!-- <a href="&#x2F;ords&#x2F;r&#x2F;dimdev&#x2F;imim&#x2F;home?session=7587523802442" class="t-Header-logo-link"><img src="r&#x2F;dimdev&#x2F;117&#x2F;files&#x2F;static&#x2F;v194&#x2F;app-251298-logo.jpeg" alt="" class="apex-logo-img" /><span class="apex-logo-text">DIRECTORATE OF INDIAN MEDICINE  - INDENT MANAGEMENT</span></a> -->
             <div class="gigw">
-              <li><a data-aos="fade-up" data-aos-delay="200" class="linkedin btn-decrease aos-init aos-animate"><span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="font size Decrease"><i></i> A -</span></a></li>
-              <li><a data-aos="fade-up" data-aos-delay="300" class="linkedin btn-orig aos-init aos-animate"><span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Reset font"><i></i> A <sup></sup></span></a></li>
-              <li><a data-aos="fade-up" data-aos-delay="400" class="instagram btn-increase aos-init aos-animate"><span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="font size Increase"><i></i> A +</span></a></li>
-              <li><a data-aos="fade-up" data-aos-delay="500" class="aos-init aos-animate"><span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Dark Mode"><i class="t-Icon fa fa-moon-o" id="darkmode"></i></span></a></li>
-              <li><a data-aos="fade-up" data-aos-delay="600" class="form-check form-switch aos-init aos-animate"><label class="form-check-label" for="screenReaderSwitch">
-                <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Screen Reader">
-                <i id="sound" class="t-Icon fa fa-volume-up"></i></span></label><input class="form-check-input" type="checkbox" role="switch" id="screenReaderSwitch" onclick="readText(document.getElementsByTagName('body')[0])"></a>
+              <li>
+                <a
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                  class="linkedin btn-decrease aos-init aos-animate"
+                  ><span
+                    class="d-inline-block"
+                    tabindex="0"
+                    data-toggle="tooltip"
+                    title="font size Decrease"
+                    ><i></i> A -</span
+                  ></a
+                >
+              </li>
+              <li>
+                <a
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                  class="linkedin btn-orig aos-init aos-animate"
+                  ><span
+                    class="d-inline-block"
+                    tabindex="0"
+                    data-toggle="tooltip"
+                    title="Reset font"
+                    ><i></i> A <sup></sup></span
+                ></a>
+              </li>
+              <li>
+                <a
+                  data-aos="fade-up"
+                  data-aos-delay="400"
+                  class="instagram btn-increase aos-init aos-animate"
+                  ><span
+                    class="d-inline-block"
+                    tabindex="0"
+                    data-toggle="tooltip"
+                    title="font size Increase"
+                    ><i></i> A +</span
+                  ></a
+                >
+              </li>
+              <li>
+                <a
+                  data-aos="fade-up"
+                  data-aos-delay="500"
+                  class="aos-init aos-animate"
+                  ><span
+                    class="d-inline-block"
+                    tabindex="0"
+                    data-toggle="tooltip"
+                    title="Dark Mode"
+                    ><i class="t-Icon fa fa-moon-o" id="darkmode"></i></span
+                ></a>
+              </li>
+              <li>
+                <a
+                  data-aos="fade-up"
+                  data-aos-delay="600"
+                  class="form-check form-switch aos-init aos-animate"
+                  ><label class="form-check-label" for="screenReaderSwitch">
+                    <span
+                      class="d-inline-block"
+                      tabindex="0"
+                      data-toggle="tooltip"
+                      title="Screen Reader"
+                    >
+                      <i
+                        id="sound"
+                        class="t-Icon fa fa-volume-up"
+                      ></i></span></label
+                  ><input
+                    class="form-check-input"
+                    type="checkbox"
+                    role="switch"
+                    id="screenReaderSwitch"
+                    onclick="readText(document.getElementsByTagName('body')[0])"
+                /></a>
               </li>
             </div>
           </div>
           <div class="t-Header-navBar">
             <div class="t-Header-navBar--start"></div>
             <div class="t-Header-navBar--center">
-              <ul class="t-NavigationBar " id="428237243222882931397">
-                <li class="t-NavigationBar-item ">
-                  <button class="t-Button t-Button--icon t-Button t-Button--header t-Button--navBar" type="button" id="L428237300758551931558" data-menu="menu_L428237300758551931558" title="" aria-haspopup="menu">
-                  <span class="t-Icon fa fa-user" aria-hidden="true"></span><span class="t-Button-label">Siva</span><span class="t-Button-badge"></span><span class="a-Icon icon-down-arrow" aria-hidden="true"></span>
+              <ul class="t-NavigationBar" id="428237243222882931397">
+                <li class="t-NavigationBar-item">
+                  <button
+                    class="t-Button t-Button--icon t-Button t-Button--header t-Button--navBar"
+                    type="button"
+                    id="L428237300758551931558"
+                    data-menu="menu_L428237300758551931558"
+                    title=""
+                    aria-haspopup="menu"
+                  >
+                    <span class="t-Icon fa fa-user" aria-hidden="true"></span
+                    ><span class="t-Button-label">Siva</span
+                    ><span class="t-Button-badge"></span
+                    ><span
+                      class="a-Icon icon-down-arrow"
+                      aria-hidden="true"
+                    ></span>
                   </button>
                 </li>
               </ul>
@@ -92,50 +292,61 @@
           </div>
         </div>
         <div class="top">
-          <img id="leftlogo" data-aos="fade-right" data-aos-duration="800" src="../assets/img/head-tnlogo.png" class="aos-init aos-animate">
-          <h1 data-aos="zoom-in" data-aos-duration="800" class="dept-name text-middle aos-init aos-animate">Medicine Indent</h1>
-          <h3 data-aos="zoom-in" data-aos-duration="800" class="dept-name2 text-middle aos-init aos-animate">Department of Indian Medicine and Homoeopathy</h3>
-          <img id="rightlogo" data-aos="fade-left" data-aos-duration="800" src="../assets/img/head-dept-logo.png" class="aos-init aos-animate">
+          <img
+            id="leftlogo"
+            data-aos="fade-right"
+            data-aos-duration="800"
+            src="../assets/img/head-tnlogo.png"
+            class="aos-init aos-animate"
+          />
+          <h1
+            data-aos="zoom-in"
+            data-aos-duration="800"
+            class="dept-name text-middle aos-init aos-animate"
+          >
+            Medicine Indent
+          </h1>
+          <h3
+            data-aos="zoom-in"
+            data-aos-duration="800"
+            class="dept-name2 text-middle aos-init aos-animate"
+          >
+            Department of Indian Medicine and Homoeopathy
+          </h3>
+          <img
+            id="rightlogo"
+            data-aos="fade-left"
+            data-aos-duration="800"
+            src="../assets/img/head-dept-logo.png"
+            class="aos-init aos-animate"
+          />
         </div>
         <div class="t-Header-nav">
-          <div class="t-Header-nav-list js-tabLike js-tabLike a-MenuBar a-MenuBar--overflow a-MenuBar--tabs" id="t_MenuNav" role="menubar">
+          <div
+            class="t-Header-nav-list js-tabLike js-tabLike a-MenuBar a-MenuBar--overflow a-MenuBar--tabs"
+            id="t_MenuNav"
+            role="menubar"
+          >
             <ul role="none">
-             <li class="a-MenuBar-item1">   
+              <li class="a-MenuBar-item1">
                 <a href="../commissioner/home.html" class="navpage">Home</a>
               </li>
-              <li role="none" id="t_MenuNav_1" class="a-MenuBar-item a-Menu--split parent_menu">
-                <a role="menuitem" class="a-MenuBar-label" aria-roledescription="Split Menu" id="t_MenuNav_1i" href="../factory/medicine-details.html" tabindex="-1">Overall Report for Commissioner</a>
-                <span class="a-Menu-subMenuCol" role="button" aria-roledescription="Split Button" id="t_MenuNav_1isb" aria-label="Medicine Details." aria-expanded="false" tabindex="-1">
-                <span class="a-Icon icon-menu-split-drop-down"></span>
-                </span>
-                <div id="t_MenuNav_1m" class="a-Menu a-Menu--top submenu cusdrop" role="menu" style="min-width: 158.837px; display: none;">
-                  <div class="a-Menu-content">
-                    <ul role="none">
-                      <li id="t_MenuNav_1_0" class="a-Menu-item">
-                        <div class="a-Menu-inner">
-                          <span class="a-Menu-labelContainer">
-                          <span class="a-Menu-statusCol"></span>
-                          <a href="../commissioner/overall-dashboard.html" role="menuitem" class="a-Menu-label">Overall Dashboard Report for Commissioner</a>
-                          </span>
-                          <span class="a-Menu-accelContainer">
-                          <span class="a-Menu-subMenuCol"></span>
-                          </span>
-                        </div>
-                      </li>
-                      <li id="t_MenuNav_1_1" class="a-Menu-item">
-                        <div class="a-Menu-inner">
-                          <span class="a-Menu-labelContainer">
-                          <span class="a-Menu-statusCol"></span> 
-                          <a href="../commissioner/all-stocks-details.html" id="t_MenuNav_1_1i" role="menuitem" class="a-Menu-label">All Stickes Details</a>
-                          </span>
-                          <span class="a-Menu-accelContainer">
-                          <span class="a-Menu-subMenuCol"></span>
-                          </span>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+              <li class="a-MenuBar-item1">
+                <a
+                  href="../commissioner/all-stocks-details.html"
+                  class="navpage"
+                  >All stocks detail</a
+                >
+              </li>
+              <li class="a-MenuBar-item1">
+                <a href="../commissioner/overall-report.html" class="navpage"
+                  >Overall Report</a
+                >
+              </li>
+              <li class="a-MenuBar-item1">
+                <a href="../commissioner/overall-dashboard.html" class="navpage"
+                  >Overall Dashboard</a
+                >
               </li>
             </ul>
           </div>
@@ -147,456 +358,170 @@
           <div class="t-Body-content" id="t_Body_content">
             <div id="t_Body_content_offset"></div>
             <main id="main" class="t-Body-mainContent">
-              <span id="APEX_SUCCESS_MESSAGE" data-template-id="238562751400702882270_S" class="apex-page-success u-hidden"></span><span id="APEX_ERROR_MESSAGE" data-template-id="238562751400702882270_E" class="apex-page-error u-hidden"></span>
+              <span
+                id="APEX_SUCCESS_MESSAGE"
+                data-template-id="238562751400702882270_S"
+                class="apex-page-success u-hidden"
+              ></span
+              ><span
+                id="APEX_ERROR_MESSAGE"
+                data-template-id="238562751400702882270_E"
+                class="apex-page-error u-hidden"
+              ></span>
               <div class="t-Body-fullContent"></div>
               <div class="t-Body-contentInner">
-                <input type="hidden" name="P64_FINANCIAL_YEAR" id="P64_FINANCIAL_YEAR" value=""><input type="hidden" data-for="P64_FINANCIAL_YEAR" value="bCuIW-fcZBuFHJ72Yl8zcODCuO2zpdFeWHQbYb8_V_kNcrancpGLV4vxMJyS8ARMLhUGTl-QJ8ujO2u-DYf85Q"><input type="hidden" name="P64_QUARTERS" id="P64_QUARTERS" value=""><input type="hidden" data-for="P64_QUARTERS" value="qnb5mZviaWiL1bkekaXEinJufiz5gS4hE_1IXN0WHUVg8cNjWPdYN_4TbKOate_mO_zTb8sKCBOssxxv41LeYA"><input type="hidden" name="P64_INDENT_TYPE" id="P64_INDENT_TYPE" value=""><input type="hidden" data-for="P64_INDENT_TYPE" value="s8D8wpJPet0e2RPR5UzGO8ORLTPBLuliFIHXPIFR_QplCXTPyZXNoemk53w106RQBtgMNnenbIfnLFA0nI7Q8A"><input type="hidden" name="P64_SCHEME_NAME" id="P64_SCHEME_NAME" value=""><input type="hidden" data-for="P64_SCHEME_NAME" value="wYudDv6nRVN7C3xK3o0K7514XhyWY8QmHnoMSezRmyyKumF9f1uTtfhkpgPjtMLQaPIzwyLIYIAhjqd00MuhjQ">
                 <div class="container">
-                  <div class="row ">
+                  <div class="row">
                     <div class="col col-12 apex-col-auto col-start col-end">
-                      <div id="R311550877864066340851" role="region" aria-label="Medicine Details" class="t-IRR-region js-apex-region">
-                        <div class="t-Region-orderBy"></div>
-                        <div id="R311550877864066340851_ir" class="a-IRR-container">
-                          <div id="R311550877864066340851_worksheet_region" class="a-IRR" aria-live="polite">
-                            <div id="R311550877864066340851_single_row_view" class="a-IRR-singleRowView"></div>
-                            <div id="R311550877864066340851_full_view" class="a-IRR-fullView">
-                              <div id="R311550877864066340851_toolbar" class="a-IRR-toolbar">
-                                <div role="search" aria-label="Search bar of Medicine Details" id="R311550877864066340851_toolbar_controls" class="a-IRR-controls">
-                                  <div class="a-IRR-controlGroup a-IRR-controlGroup--search a-IRR-controlGroup--hidden">
-                                    <div class="a-IRR-search"><input type="hidden" id="R311550877864066340851_column_search_current_column"><input type="hidden" id="R311550877864066340851_search_field" value=""></div>
+                      <div
+                        id="R311550877864066340851"
+                        role="region"
+                        aria-label="Medicine Details"
+                        class="t-IRR-region js-apex-region"
+                      >
+                        <div
+                          id="R311550877864066340851_ir"
+                          class="a-IRR-container"
+                        >
+                          <div
+                            id="R311550877864066340851_worksheet_region"
+                            class="a-IRR"
+                            aria-live="polite"
+                          >
+                            <div
+                              id="R311550877864066340851_single_row_view"
+                              class="a-IRR-singleRowView"
+                            ></div>
+                            <div
+                              id="R311550877864066340851_full_view"
+                              class="a-IRR-fullView"
+                            >
+                              <div
+                                id="R311550877864066340851_toolbar"
+                                class="a-IRR-toolbar"
+                              >
+                                <div
+                                  role="search"
+                                  aria-label="Search bar of Medicine Details"
+                                  id="R311550877864066340851_toolbar_controls"
+                                  class="a-IRR-controls"
+                                >
+                                  <div
+                                    class="a-IRR-controlGroup a-IRR-controlGroup--search a-IRR-controlGroup--hidden"
+                                  >
+                                    <div class="a-IRR-search">
+                                      <input
+                                        type="hidden"
+                                        id="R311550877864066340851_column_search_current_column"
+                                      /><input
+                                        type="hidden"
+                                        id="R311550877864066340851_search_field"
+                                        value=""
+                                      />
+                                    </div>
                                   </div>
-                                  <div class="a-IRR-controlGroup a-IRR-controlGroup--views"></div>
-                                  <div class="a-IRR-controlGroup a-IRR-controlGroup--options">
-                                    <input type="hidden" id="R311550877864066340851_row_select" value="50">
-                                    <div class="a-IRR-actions"><button id="R311550877864066340851_actions_button" class="a-Button a-IRR-button a-IRR-button--actions" type="button" data-menu="R311550877864066340851_actions_menu" aria-haspopup="menu">Actions<span aria-hidden="true" class="a-Icon icon-menu-drop-down"></span></button></div>
+                                  <div
+                                    class="a-IRR-controlGroup a-IRR-controlGroup--views"
+                                  ></div>
+                                  <div
+                                    class="a-IRR-controlGroup a-IRR-controlGroup--options"
+                                  >
+                                    <input
+                                      type="hidden"
+                                      id="R311550877864066340851_row_select"
+                                      value="50"
+                                    />
+                                    <div class="a-IRR-actions">
+                                      <button
+                                        id="R311550877864066340851_actions_button"
+                                        class="a-Button a-IRR-button a-IRR-button--actions"
+                                        type="button"
+                                        data-menu="R311550877864066340851_actions_menu"
+                                        aria-haspopup="menu"
+                                      >
+                                        Actions<span
+                                          aria-hidden="true"
+                                          class="a-Icon icon-menu-drop-down"
+                                        ></span>
+                                      </button>
+                                    </div>
                                   </div>
                                 </div>
                               </div>
-                              <div id="R311550877864066340851_content" class="a-IRR-content ">
-                                <div id="R311550877864066340851_dialog_js" class="a-IRR-dialogBody" style="display:none"></div>
-                                <input type="hidden" id="R311550877864066340851_worksheet_id" value="311550877962275340851">
-                                <input type="hidden" id="R311550877864066340851_app_user" value="9994793279">
-                                <input type="hidden" id="R311550877864066340851_report_id" value="311551321946311584659">
-                                <input type="hidden" id="R311550877864066340851_view_mode" value="REPORT">
-                                <style id="R311550877864066340851_worksheet_css" type="text/css"></style>
-                                <div role="region" aria-label="Chart view of Medicine Details" id="R311550877864066340851_chart" class="a-IRR-chartView"></div>
-                                <div role="region" aria-label="Group by view of Medicine Details" id="R311550877864066340851_group_by" class="a-IRR-groupByView"></div>
-                                <div role="region" aria-label="Pivot view of Medicine Details" id="R311550877864066340851_pivot" class="a-IRR-pivotView"></div>
-                                <div role="region" aria-label="Data view of Medicine Details" id="R311550877864066340851_data_panel" class="a-IRR-reportView">
-                                  <div class="a-IRR-tableContainer">
-                                    <div class="t-fht-wrapper">
-                                      <div class="t-fht-thead js-stickyTableHeader js-stickyWidget-toggle" id="stickyTableHeader_1" style="z-index: 300; width: 1062.97px; position: absolute; top: auto;">
-                                        <table aria-label="Medicine Details, Report = Primary Default, View = Report" class="a-IRR-table" id="311550877962275340851" aria-hidden="true">
-                                          <tr>
-                                            <th class="a-IRR-header u-tC" id="C18290885598947611">
-                                              <span class="a-IRR-headerLabel">Sl No</span>
-                                              <div class="t-fht-cell" style="width: 78.5875px;"></div>
-                                            </th>
-                                            <th class="a-IRR-header u-tC" id="C311550878408818340852">
-                                              <span class="a-IRR-headerLabel">Medicine Name</span>
-                                              <div class="t-fht-cell" style="width: 435.375px;"></div>
-                                            </th>
-                                            <th class="a-IRR-header u-tC" id="C18291159721947614">
-                                              <span class="a-IRR-headerLabel">Total Packing Size</span>
-                                              <div class="t-fht-cell" style="width: 198.425px;"></div>
-                                            </th>
-                                            <th class="a-IRR-header u-tC" id="C82473879689977381241">
-                                              <span class="a-IRR-headerLabel">Total Quantity</span>
-                                              <div class="t-fht-cell" style="width: 163.738px;"></div>
-                                            </th>
-                                            <th class="a-IRR-header u-tC" id="C18291078882947613">
-                                              <span class="a-IRR-headerLabel">Total Units</span>
-                                              <div class="t-fht-cell" style="width: 183.65px;"></div>
-                                            </th>
-                                          </tr>
-                                        </table>
-                                      </div>
-                                      <div class="js-stickyWidget-placeholder" style="width: 1062.96px; height: 40px;"></div>
-                                      <div class="t-fht-tbody" style="width: auto;">
-                                        <table aria-label="Medicine Details, Report = Primary Default, View = Report" class="a-IRR-table" id="311550877962275340851_orig" style="margin-top: -40.4px;">
-                                          <tbody>
-                                            <tr>
-                                              <th class="a-IRR-header u-tC" id="C18290885598947611">
-                                                <span class="a-IRR-headerLabel">Sl No</span>
-                                                <div class="t-fht-cell"></div>
-                                              </th>
-                                              <th class="a-IRR-header u-tC" id="C311550878408818340852">
-                                                <span class="a-IRR-headerLabel">Medicine Name</span>
-                                                <div class="t-fht-cell"></div>
-                                              </th>
-                                              <th class="a-IRR-header u-tC" id="C18291159721947614">
-                                                <span class="a-IRR-headerLabel">Total Packing Size</span>
-                                                <div class="t-fht-cell"></div>
-                                              </th>
-                                              <th class="a-IRR-header u-tC" id="C82473879689977381241">
-                                                <span class="a-IRR-headerLabel">Total Quantity</span>
-                                                <div class="t-fht-cell"></div>
-                                              </th>
-                                              <th class="a-IRR-header u-tC" id="C18291078882947613">
-                                                <span class="a-IRR-headerLabel">Total Units</span>
-                                                <div class="t-fht-cell"></div>
-                                              </th>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">1</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">1Dram-  empty plastic container (1 Gross)</td>
-                                              <td class=" u-tC" headers="C18291159721947614">1 Gross</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">12588</td>
-                                              <td class=" u-tC" headers="C18291078882947613">12588 Numbers</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">2</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">5 Phos -6X-BIOCHEMIC  TAB - 3 Grain</td>
-                                              <td class=" u-tC" headers="C18291159721947614">91500 Grams</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">3672</td>
-                                              <td class=" u-tC" headers="C18291078882947613">1836 Kg</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">3</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">ASF 3x(Trituration Tablets)</td>
-                                              <td class=" u-tC" headers="C18291159721947614">47700 Grams</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">449</td>
-                                              <td class=" u-tC" headers="C18291078882947613">202.05 Kg</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">4</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">Aavarai Kudineer Choom /10 nos.</td>
-                                              <td class=" u-tC" headers="C18291159721947614">4350 Grams</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">34678</td>
-                                              <td class=" u-tC" headers="C18291078882947613">346.78 Kg</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">5</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">Aavarai Kudineer Chooranam</td>
-                                              <td class=" u-tC" headers="C18291159721947614">2232100 Grams</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">97685.75</td>
-                                              <td class=" u-tC" headers="C18291078882947613">35424.435 Kg</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">6</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">Abhaya Arishtam</td>
-                                              <td class=" u-tC" headers="C18291159721947614">124600 ml</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">25943</td>
-                                              <td class=" u-tC" headers="C18291078882947613">5188.6 Litres</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">7</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">Abroma AugMother Tincture – Q</td>
-                                              <td class=" u-tC" headers="C18291159721947614">690 ml</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">4660</td>
-                                              <td class=" u-tC" headers="C18291078882947613">69.9 Litres</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">8</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">Abrotanum - 200  Potency</td>
-                                              <td class=" u-tC" headers="C18291159721947614">1400 ml</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">25</td>
-                                              <td class=" u-tC" headers="C18291078882947613">2.5 Litres</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">9</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">Abrotanum.-DILUTION  30th Potency</td>
-                                              <td class=" u-tC" headers="C18291159721947614">1200 ml</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">216</td>
-                                              <td class=" u-tC" headers="C18291078882947613">21.6 Litres</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">10</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">AcalyphaindicaMother Tincture – Q</td>
-                                              <td class=" u-tC" headers="C18291159721947614">780 ml</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">4611</td>
-                                              <td class=" u-tC" headers="C18291078882947613">69.165 Litres</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">11</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">Acetic Acid - 200  Potency</td>
-                                              <td class=" u-tC" headers="C18291159721947614">1900 ml</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">136</td>
-                                              <td class=" u-tC" headers="C18291078882947613">13.6 Litres</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">12</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">Acetic Acid.-DILUTION  30th Potency</td>
-                                              <td class=" u-tC" headers="C18291159721947614">900 ml</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">1017</td>
-                                              <td class=" u-tC" headers="C18291078882947613">101.7 Litres</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">13</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">Acoinitum napellus(200 POTENCY)</td>
-                                              <td class=" u-tC" headers="C18291159721947614">3200 ml</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">44</td>
-                                              <td class=" u-tC" headers="C18291078882947613">4.4 Litres</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">14</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">Aconitum Napellus - 200  Potency</td>
-                                              <td class=" u-tC" headers="C18291159721947614">4800 ml</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">175</td>
-                                              <td class=" u-tC" headers="C18291078882947613">17.5 Litres</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">15</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">Aconitum Napellus.-DILUTION  30th Potency</td>
-                                              <td class=" u-tC" headers="C18291159721947614">3000 ml</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">149</td>
-                                              <td class=" u-tC" headers="C18291078882947613">14.9 Litres</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">16</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">ActaeRacemosa - 200  Potency</td>
-                                              <td class=" u-tC" headers="C18291159721947614">2600 ml</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">255</td>
-                                              <td class=" u-tC" headers="C18291078882947613">25.5 Litres</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">17</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">ActaeRacemosa.-DILUTION  30th Potency</td>
-                                              <td class=" u-tC" headers="C18291159721947614">1100 ml</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">124</td>
-                                              <td class=" u-tC" headers="C18291078882947613">12.4 Litres</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">18</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">Actea racemosa(200 POTENCY)</td>
-                                              <td class=" u-tC" headers="C18291159721947614">1300 ml</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">28</td>
-                                              <td class=" u-tC" headers="C18291078882947613">2.8 Litres</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">19</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">Adathodai Kudineer</td>
-                                              <td class=" u-tC" headers="C18291159721947614">426600 Grams</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">46683.2</td>
-                                              <td class=" u-tC" headers="C18291078882947613">7739.3 Kg</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">20</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">Adathodai Kudineer Chooranam</td>
-                                              <td class=" u-tC" headers="C18291159721947614">101600 Grams</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">97060</td>
-                                              <td class=" u-tC" headers="C18291078882947613">4853 Kg</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">21</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">Adathodai Manappagu</td>
-                                              <td class=" u-tC" headers="C18291159721947614">3743100 ml</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">263363</td>
-                                              <td class=" u-tC" headers="C18291078882947613">90210.7 Litres</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">22</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">Adhumadhura Chooranam</td>
-                                              <td class=" u-tC" headers="C18291159721947614">317880 Grams</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">197075</td>
-                                              <td class=" u-tC" headers="C18291078882947613">9498.31 Kg</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">23</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">Adonis vernalisMother Tincture – Q</td>
-                                              <td class=" u-tC" headers="C18291159721947614">585 ml</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">2304</td>
-                                              <td class=" u-tC" headers="C18291078882947613">34.56 Litres</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">24</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">Aesculus Ointment– in Collapsible tubes</td>
-                                              <td class=" u-tC" headers="C18291159721947614">3950 Grams</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">22453</td>
-                                              <td class=" u-tC" headers="C18291078882947613">561.325 Kg</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">25</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">Aesculus hip(200 POTENCY)</td>
-                                              <td class=" u-tC" headers="C18291159721947614">3000 ml</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">268</td>
-                                              <td class=" u-tC" headers="C18291078882947613">26.8 Litres</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">26</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">Aesculus hipMother Tincture – Q</td>
-                                              <td class=" u-tC" headers="C18291159721947614">585 ml</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">3204</td>
-                                              <td class=" u-tC" headers="C18291078882947613">48.06 Litres</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">27</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">Aesculus(OINTMENTS)</td>
-                                              <td class=" u-tC" headers="C18291159721947614">970 Grams</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">13009</td>
-                                              <td class=" u-tC" headers="C18291078882947613">130.09 Kg</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">28</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">Aesculus– in Collapsible tubes</td>
-                                              <td class=" u-tC" headers="C18291159721947614">625 Grams</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">4100</td>
-                                              <td class=" u-tC" headers="C18291078882947613">102.5 Kg</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">29</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">AfalfaMother Tincture – Q</td>
-                                              <td class=" u-tC" headers="C18291159721947614">1545 ml</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">18820</td>
-                                              <td class=" u-tC" headers="C18291078882947613">282.3 Litres</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">30</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">Agasthiya Rasayanam</td>
-                                              <td class=" u-tC" headers="C18291159721947614">222750 Grams</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">10574</td>
-                                              <td class=" u-tC" headers="C18291078882947613">4392.25 Kg</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">31</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">Agmark Gingley Oil</td>
-                                              <td class=" u-tC" headers="C18291159721947614">15960 Kg</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">7155</td>
-                                              <td class=" u-tC" headers="C18291078882947613">107325 Kg</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">32</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">Agnus castus syrup</td>
-                                              <td class=" u-tC" headers="C18291159721947614">1050 ml</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">4670</td>
-                                              <td class=" u-tC" headers="C18291078882947613">140.1 Litres</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">33</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">Agnus castusMother Tincture – Q</td>
-                                              <td class=" u-tC" headers="C18291159721947614">540 ml</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">2570</td>
-                                              <td class=" u-tC" headers="C18291078882947613">38.55 Litres</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">34</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">Alfalfa-Q (In syrup base)</td>
-                                              <td class=" u-tC" headers="C18291159721947614">5310 ml</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">34152</td>
-                                              <td class=" u-tC" headers="C18291078882947613">1024.56 Litres</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">35</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">Allium Cepa - 200  Potency</td>
-                                              <td class=" u-tC" headers="C18291159721947614">4000 ml</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">191</td>
-                                              <td class=" u-tC" headers="C18291078882947613">19.1 Litres</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">36</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">Allium Cepa.-DILUTION  30th Potency</td>
-                                              <td class=" u-tC" headers="C18291159721947614">2000 ml</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">249</td>
-                                              <td class=" u-tC" headers="C18291078882947613">24.9 Litres</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">37</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">Allium cepa(200 POTENCY)</td>
-                                              <td class=" u-tC" headers="C18291159721947614">2800 ml</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">98</td>
-                                              <td class=" u-tC" headers="C18291078882947613">9.8 Litres</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">38</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">Allium cepa(MOTHER TINCTURE Q.)</td>
-                                              <td class=" u-tC" headers="C18291159721947614">630 ml</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">3910</td>
-                                              <td class=" u-tC" headers="C18291078882947613">58.65 Litres</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">39</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">Allium cepaMother Tincture – Q</td>
-                                              <td class=" u-tC" headers="C18291159721947614">735 ml</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">4325</td>
-                                              <td class=" u-tC" headers="C18291078882947613">64.875 Litres</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">40</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">Allium sativumMother Tincture – Q</td>
-                                              <td class=" u-tC" headers="C18291159721947614">1110 ml</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">9350</td>
-                                              <td class=" u-tC" headers="C18291078882947613">140.25 Litres</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">41</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">Aloe Socotrina - 200  Potency</td>
-                                              <td class=" u-tC" headers="C18291159721947614">3000 ml</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">334</td>
-                                              <td class=" u-tC" headers="C18291078882947613">33.4 Litres</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">42</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">Aloe Socotrina.-DILUTION  30th Potency</td>
-                                              <td class=" u-tC" headers="C18291159721947614">1400 ml</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">24</td>
-                                              <td class=" u-tC" headers="C18291078882947613">2.4 Litres</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">43</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">Aloe socotrina(200 POTENCY)</td>
-                                              <td class=" u-tC" headers="C18291159721947614">1300 ml</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">215</td>
-                                              <td class=" u-tC" headers="C18291078882947613">21.5 Litres</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">44</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">Alumina - 200  Potency</td>
-                                              <td class=" u-tC" headers="C18291159721947614">3900 ml</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">673</td>
-                                              <td class=" u-tC" headers="C18291078882947613">67.3 Litres</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">45</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">Alumina(200 POTENCY)</td>
-                                              <td class=" u-tC" headers="C18291159721947614">2200 ml</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">39</td>
-                                              <td class=" u-tC" headers="C18291078882947613">3.9 Litres</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">46</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">Alumina.-DILUTION  30th Potency</td>
-                                              <td class=" u-tC" headers="C18291159721947614">1400 ml</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">117</td>
-                                              <td class=" u-tC" headers="C18291078882947613">11.7 Litres</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">47</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">Amirtha Arishtam</td>
-                                              <td class=" u-tC" headers="C18291159721947614">93600 ml</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">18316</td>
-                                              <td class=" u-tC" headers="C18291078882947613">3663.2 Litres</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">48</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">Amirtha Vennai</td>
-                                              <td class=" u-tC" headers="C18291159721947614">3476500 Grams</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">71669.2</td>
-                                              <td class=" u-tC" headers="C18291078882947613">30081.8 Kg</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">49</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">Amla Muraba</td>
-                                              <td class=" u-tC" headers="C18291159721947614">65500 Grams</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">3445</td>
-                                              <td class=" u-tC" headers="C18291078882947613">1157.75 Kg</td>
-                                            </tr>
-                                            <tr>
-                                              <td class=" u-tC" headers="C18290885598947611">50</td>
-                                              <td class=" u-tL" headers="C311550878408818340852">Ammivisnaga– in Collapsible tubes</td>
-                                              <td class=" u-tC" headers="C18291159721947614">1550 Grams</td>
-                                              <td class=" u-tC" headers="C82473879689977381241">7424</td>
-                                              <td class=" u-tC" headers="C18291078882947613">185.6 Kg</td>
-                                            </tr>
-                                          </tbody>
-                                        </table>
-                                      </div>
-                                    </div>
+                              <div
+                                id="R311550877864066340851_content"
+                                class="a-IRR-content"
+                              >
+                                <div>
+                                  <div class="t-fht-wrapper">
+                                    <table
+                                      class="a-IRR-table"
+                                      id="pressReleaseTable"
+                                      class="display"
+                                      style="width: 100%"
+                                    >
+                                      <thead>
+                                        <tr>
+                                          <th class="a-IRR-header u-tC">
+                                            <span class="a-IRR-headerLabel"
+                                              >Sl No</span
+                                            >
+                                          </th>
+                                          <th class="a-IRR-header u-tC">
+                                            <span class="a-IRR-headerLabel"
+                                              >Medicine Name</span
+                                            >
+                                          </th>
+                                          <th class="a-IRR-header u-tC">
+                                            <span class="a-IRR-headerLabel"
+                                              >Total Packing Size</span
+                                            >
+                                          </th>
+                                          <th class="a-IRR-header u-tC">
+                                            <span class="a-IRR-headerLabel"
+                                              >Total Quantity</span
+                                            >
+                                          </th>
+                                          <th class="a-IRR-header u-tC">
+                                            <span class="a-IRR-headerLabel"
+                                              >Total Units</span
+                                            >
+                                          </th>
+                                        </tr>
+                                      </thead>
+                                    </table>
                                   </div>
-                                  <div role="region" aria-label="Pagination of Medicine Details" class="a-IRR-paginationWrap a-IRR-paginationWrap--bottom">
+
+                                  <div
+                                    role="region"
+                                    aria-label="Pagination of Medicine Details"
+                                    class="a-IRR-paginationWrap a-IRR-paginationWrap--bottom"
+                                  >
                                     <ul class="a-IRR-pagination">
-                                      <li aria-hidden="true" class="a-IRR-pagination-item is-disabled"></li>
-                                      <li class="a-IRR-pagination-item"><span class="a-IRR-pagination-label">                   1 -                   50</span></li>
-                                      <li class="a-IRR-pagination-item"><button type="button" class="a-Button a-IRR-button a-IRR-button--pagination" aria-controls="R311550877864066340851" title="Next" aria-label="Next" data-pagination="pgR_min_row=51max_rows=50rows_fetched=50"><span class="a-Icon icon-right-chevron" aria-hidden="true"></span></button></li>
+                                      <li
+                                        aria-hidden="true"
+                                        class="a-IRR-pagination-item is-disabled"
+                                      ></li>
+                                      <li class="a-IRR-pagination-item">
+                                        <span class="a-IRR-pagination-label">
+                                          1 - 50</span
+                                        >
+                                      </li>
+                                      <li class="a-IRR-pagination-item">
+                                        <button
+                                          type="button"
+                                          class="a-Button a-IRR-button a-IRR-button--pagination"
+                                          aria-controls="R311550877864066340851"
+                                          title="Next"
+                                          aria-label="Next"
+                                          data-pagination="pgR_min_row=51max_rows=50rows_fetched=50"
+                                        >
+                                          <span
+                                            class="a-Icon icon-right-chevron"
+                                            aria-hidden="true"
+                                          ></span>
+                                        </button>
+                                      </li>
                                     </ul>
                                   </div>
                                 </div>
@@ -619,103 +544,112 @@
                      -->
                   <div class="row">
                     <div class="col-6">
-                      <p class="text-middle"><img class="footer-logo" src="r/dimdev/117/files/static/v194/head-dept-logo.png"><br>Content owned by Department of Indian Medicine and Homoeopathy ©</p>
+                      <p class="text-middle">
+                        <img
+                          class="footer-logo"
+                          src="r/dimdev/117/files/static/v194/head-dept-logo.png"
+                        /><br />Content owned by Department of Indian Medicine
+                        and Homoeopathy ©
+                      </p>
                     </div>
                     <div class="col-6">
-                      <p class="text-middle"><img class="footer-logo" src="r/dimdev/117/files/static/v194/tnegalogo.png"><br>Designed and Developed by Tamil Nadu e-Governance Agency</p>
+                      <p class="text-middle">
+                        <img
+                          class="footer-logo"
+                          src="r/dimdev/117/files/static/v194/tnegalogo.png"
+                        /><br />Designed and Developed by Tamil Nadu
+                        e-Governance Agency
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="t-Footer-top">
-                <a href="#top" class="t-Footer-topButton" id="t_Footer_topButton" title="Start of page" aria-label="Start of page"><span class="a-Icon icon-up-chevron" aria-hidden="true"></span></a>
+                <a
+                  href="#top"
+                  class="t-Footer-topButton"
+                  id="t_Footer_topButton"
+                  title="Start of page"
+                  aria-label="Start of page"
+                  ><span
+                    class="a-Icon icon-up-chevron"
+                    aria-hidden="true"
+                  ></span
+                ></a>
               </div>
             </footer>
           </div>
         </div>
       </div>
       <div class="t-Body-inlineDialogs" id="t_Body_inlineDialogs"></div>
-      <input type="hidden" id="pPageFormRegionChecksums" value="[]">
-      <input type="hidden" id="pPageItemsRowVersion" value=""><input type="hidden" id="pPageItemsProtected" value="UDY0X0ZJTkFOQ0lBTF9ZRUFSOlA2NF9RVUFSVEVSUzpQNjRfSU5ERU5UX1RZUEU6.,UDY0X1NDSEVNRV9OQU1F/cYObA8385Jy1HI_wfLb7c58X2V6Y38Fi7hQW-yNjdh5bJTX21xx7Vk2VqslAHtj1flS1nHIUeugppaE5ZiyJBw">
+      <input type="hidden" id="pPageFormRegionChecksums" value="[]" />
+      <input type="hidden" id="pPageItemsRowVersion" value="" /><input
+        type="hidden"
+        id="pPageItemsProtected"
+        value="UDY0X0ZJTkFOQ0lBTF9ZRUFSOlA2NF9RVUFSVEVSUzpQNjRfSU5ERU5UX1RZUEU6.,UDY0X1NDSEVNRV9OQU1F/cYObA8385Jy1HI_wfLb7c58X2V6Y38Fi7hQW-yNjdh5bJTX21xx7Vk2VqslAHtj1flS1nHIUeugppaE5ZiyJBw"
+      />
     </form>
 
-
+    <!-- jQuery -->
     <script src="../assets/js/jquery-3.6.0.min.js"></script>
-    <script src="../assets/js/desktop_all.min.js"></script>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- DataTables -->
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="../assets/js/widget.treeView.min.js"></script>
+    <script src="../assets/common.js"></script>
+    <script src="../assets/js/widget.interactiveReport.min.js"></script>
+    <script src="../assets/js/widget.iconList.min.js"></script>
+    <script src="../assets/js/widget.stickyTableHeader.min.js"></script>
     <script src="../assets/js/widget.stickyWidget.min.js"></script>
+    <script src="../assets/js/item.Colorpicker.min.js"></script>
+    <script src="../assets/js/jetCommonBundle.min.js"></script>
+    <script src="../assets/js/chartBundle.min.js"></script>
+
+    <!-- <script src="../assets/js/toastUtil.js"></script> -->
+    <script src="../assets/js/crypto-js.min.js"></script>
     <script src="../assets/js/theme42.min.js"></script>
-    <script src="../assets/js/aos.js"></script>
+    <script src="../assets/js/global.js"></script>
+    <script src="../assets/js/encrypt_decrypt.js"></script>
+    <script src="../assets/js/singleFileUpload.js"></script>
+    <script src="../assets/js/globalHeader.js"></script>
+    <script src="../assets/js/dataTableUtil.js"></script>
 
     <script>
       AOS.init();
     </script>
-    <script type="text/javascript">
-      $(document).ready(function () {
-      $(".a-MenuBar-item > a, .a-Menu-subMenuCol").click(function (e) {
-        e.preventDefault(); // Prevent default anchor behavior
-      
-        var parentMenu = $(this).closest(".a-MenuBar-item");
-        var submenu = parentMenu.find("> .a-Menu"); // Only select direct submenu
-      
-        // Toggle the submenu
-        if (submenu.is(":visible")) {
-            submenu.slideUp();
-            parentMenu.find(".a-Menu-subMenuCol").attr("aria-expanded", "false");
-        } else {
-            $(".a-Menu").slideUp(); // Hide other submenus
-            submenu.css({
-                "position": "absolute",
-                // "top": parentMenu.outerHeight() + "px", // Ensures it is below the li
-                // "left": "0",
-                "z-index": "1000"
-            }).slideDown();
-            parentMenu.find(".a-Menu-subMenuCol").attr("aria-expanded", "true");
-        }
-      
-        e.stopPropagation(); // Prevent event bubbling to document
-      });
-      
-      // Handle nested submenus positioning
-      $(".a-Menu-item").hover(
-        function () {
-            var submenu = $(this).find("> .a-Menu");
-            if (submenu.length) {
-                submenu.css({
-                    "position": "absolute",
-                    // "top": "13.5rem", // Place below parent item
-                    // "left": "0",
-                    "z-index": "1000"
-                }).stop(true, true).slideDown();
-            }
-        },
-        function () {
-            var submenu = $(this).find("> .a-Menu");
-            if (submenu.length) {
-                submenu.stop(true, true).slideUp();
-            }
-        }
-      );
-      
-      // Close submenu when clicking outside
-      $(document).click(function (e) {
-        if (!$(e.target).closest(".a-MenuBar-item").length) {
-            $(".a-Menu").slideUp();
-            $(".a-Menu-subMenuCol").attr("aria-expanded", "false");
-        }
-      });
-      }); 
-      
+    <script>
+      const apiUrl =
+        "https://tngis.tnega.org/medical_indent_api/v1/commonfunction";
+      function fetchTableData() {
+        const payload = {
+          action: "function_call",
+          function_name: "im_medicine_summary_fn",
+          params: {},
+        };
+        loadDataToTable({
+          tableId: "pressReleaseTable",
+          apiUrl,
+          httpMethod: "POST",
+          payload: encryptData(payload),
+          rowBuilder: (item) => {
+            // console.log(item);
+            return `
+                  <tr>
+                    <td class="u-tC">${item.sl_no || "N/A"}</td>
+                    <td class="u-tC">${item.medicine_name || "N/A"}</td>
+                    <td class="u-tC">${item.total_packing_size || "N/A"}</td>
+                    <td class="u-tC">${item.total_quantity || "N/A"}</td>
+                    <td class="u-tC">${item.total_units || "N/A"}</td>
+                  </tr>
+                `;
+          },
+          onTableInit: function (dtRef) {
+            dataTableRef = dtRef;
+          },
+        });
+      }
+      fetchTableData();
     </script>
-    <script type="text/javascript">
-      $(document).ready(function () {
-      $(".a-MenuBar-item").on("click", function () {
-      window.location.href = $(this).find("a").attr("href");
-      });
-      });
-      
-      
-    </script>
-
-    
   </body>
 </html>
