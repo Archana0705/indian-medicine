@@ -519,28 +519,28 @@
       };
     }
     function initColumnFilter(tableId) {
-  // Destroy if already initialized
-        if ($.fn.DataTable.isDataTable(`#${tableId}`)) {
-          $(`#${tableId}`).DataTable().destroy();
-        }
-
-        // Initialize again
-        const table = $(`#${tableId}`).DataTable({
-          initComplete: function () {
-            this.api().columns().every(function () {
-              const column = this;
-              $('input', this.header()).on('keyup change clear', function () {
-                if (column.search() !== this.value) {
-                  column.search(this.value).draw();
-                }
-              });
-            });
-          },
-          orderCellsTop: true,
-          fixedHeader: true,
-          pageLength: 10
-        });
+      if ($.fn.DataTable.isDataTable(`#${tableId}`)) {
+        $(`#${tableId}`).DataTable().destroy();
       }
+
+      const table = $(`#${tableId}`).DataTable({
+        initComplete: function () {
+          this.api().columns().every(function () {
+            const column = this;
+            $('input', this.header()).on('keyup change clear', function () {
+              // Normalize input: trim, lowercase, single space
+              let inputVal = this.value.trim().toLowerCase().replace(/\s+/g, ' ');
+              if (column.search() !== inputVal) {
+                column.search(inputVal).draw();
+              }
+            });
+          });
+        },
+        orderCellsTop: true,
+        fixedHeader: true,
+        pageLength: 10
+      });
+    }
 
     function fetchTableData() {
       const payload = getPayload();
