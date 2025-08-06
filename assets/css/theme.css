@@ -2207,3 +2207,8 @@ ul.submenu a {
   padding: 0px 15px;
 
 }
+
+div#pivotContainer {
+  display: flex;
+  overflow: auto;
+}

@@ -21,7 +21,8 @@ window.generatePivotTable = function (data, containerId) {
     });
 
     // Build HTML
-    let html = "<table border='1' cellspacing='0' cellpadding='4'><thead><tr>";
+    // let html = "<table border='1' cellspacing='0' cellpadding='4'><thead><tr>";
+    let html = "<table id='pivotTable' class='display' border='1' cellspacing='0' cellpadding='4'><thead><tr>";
     html += "<th>Medicine Name</th><th>Packing Size</th><th>Amount</th>";
     cols.forEach(col => html += `<th>${col}</th>`);
     html += "<th>Total</th></tr></thead><tbody>";
@@ -39,7 +40,18 @@ window.generatePivotTable = function (data, containerId) {
     });
 
     // Column totals
-    html += "<tr><td colspan='3'><strong>Total</strong></td>";
+    // html += "<tr><td colspan='3'><strong>Total</strong></td>";
+    // let grandTotal = 0;
+    // cols.forEach(col => {
+    //     let colTotal = 0;
+    //     rows.forEach(rowKey => colTotal += pivot[rowKey][col]);
+    //     html += `<td><strong>${colTotal}</strong></td>`;
+    //     grandTotal += colTotal;
+    // });
+    // html += `<td><strong>${grandTotal}</strong></td></tr>`;
+
+    // Column totals row
+    html += "<tr><td><strong>Total</strong></td><td></td><td></td>";
     let grandTotal = 0;
     cols.forEach(col => {
         let colTotal = 0;
@@ -49,7 +61,32 @@ window.generatePivotTable = function (data, containerId) {
     });
     html += `<td><strong>${grandTotal}</strong></td></tr>`;
 
+
     html += "</tbody></table>";
 
     document.getElementById(containerId).innerHTML = html;
+
+    // Defensive: destroy previous instance if exists
+    if ($.fn.DataTable.isDataTable('#pivotTable')) {
+        $('#pivotTable').DataTable().destroy();
+    }
+
+    // Delay to ensure DOM renders
+    setTimeout(() => {
+        const headerCount = document.querySelectorAll('#pivotTable thead th').length;
+        const row = document.querySelector('#pivotTable tbody tr');
+        const cellCount = row ? row.querySelectorAll('td').length : 0;
+
+        if (headerCount === cellCount) {
+            $('#pivotTable').DataTable({
+                paging: true,
+                searching: true,
+                ordering: true,
+                pageLength: 10
+            });
+        } else {
+            console.error('Mismatch in column count: header =', headerCount, 'body row =', cellCount);
+        }
+    }, 0);
+
 };
