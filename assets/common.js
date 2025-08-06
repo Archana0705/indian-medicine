@@ -20,22 +20,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     { name: 'Patient Details', href: '../amo/patient-details.html' }
                 ],
                 admin: [
-                    {
-                        name: 'Home',
-                        href: '../admin/home.html'
-                    },
-                    {
-                        name: 'Medicine Details',
-                        href: '#',
-                        submenu: [
-                            { name: 'Add Medicine', href: '../admin/add-medicine.html' },
-                            { name: 'Edit Medicine', href: '../admin/edit-medicine.html' }
-                        ]
-                    },
-                    {
-                        name: 'User Details',
-                        href: '../admin/user-details.html'
-                    }
+                    { name: 'Home', href: '../admin/home.html' },
+                    { name: 'Medicine Details', href: '../admin/medicine-details.html' },
+                    { name: 'User Details', href: '../admin/user-details.html' }
                 ],
                 commissioner: [
                     { name: 'Dashboard', href: '../commissioner/overall-dashboard.html' },
@@ -55,18 +42,38 @@ document.addEventListener("DOMContentLoaded", function () {
                 factory: [
                     { name: 'Home', href: '../factory/home.html' },
                     {
-                        name: 'Medicine Details', href: '#',
-                        submenu: [
-                            { name: 'Add Medicine', href: '../admin/add-medicine.html' },
-                            { name: 'Edit Medicine', href: '../admin/edit-medicine.html' }
+                        name: 'Medicine Details',
+                        href: '#',
+                        children: [
+                            { name: 'District Financial year only', href: '../factory/report-scheme.html' },
+                            { name: 'District, Financial year, System, Quarter', href: '../factory/monthly-reports.html' },
+                            { name: 'District, Financial year, System, Quarter, Regular', href: '../factory/monthly-reports.html' },
+                            { name: 'District, Financial year, System, Quarter, Scheme', href: '../factory/monthly-reports.html' }
+
                         ]
                     },
-                    { name: 'View Indent', href: '../factory/view-indent.html' }
+                    { name: 'Download Despatched Medicine', href: '../factory/view-indent.html' },
+                    { name: 'AMO Approved Medicine', href: '../factory/view-indent.html' },
+                    {
+                        name: 'Consolidate Report - District wise',
+                        href: '#',
+                        children: [
+                            { name: 'Financial year only', href: '../factory/report-scheme.html' },
+                            { name: 'Financial year, Quarter, Regular', href: '../factory/monthly-reports.html' },
+                            { name: 'Financial year, Quarter, Scheme', href: '../factory/monthly-reports.html' }
+                        ]
+                    },
                 ],
                 nodal: [
                     { name: 'Home', href: '../nodal/home.html' },
-                    { name: 'Report Only', href: '../nodal/report-only.html' },
-                    { name: 'Medicine Yearly', href: '../nodal/medicine-yearly.html' }
+                    {
+                        name: 'Reports',
+                        href: '#',
+                        children: [
+                            { name: 'Report Only', href: '../nodal/report-only.html' },
+                            { name: 'Medicine Yearly', href: '../nodal/medicine-yearly.html' }
+                        ]
+                    }
                 ]
             };
 
@@ -80,46 +87,53 @@ document.addEventListener("DOMContentLoaded", function () {
                     li.setAttribute("role", "none");
                     li.classList.add("a-MenuBar-item");
 
-                    // Add active class if current page matches
-                    const isActive = link.href?.includes(currentPage);
-                    if (isActive) {
-                        li.classList.add("a-Menu--current");
-                    }
-
-                    // Create main link
-                    const mainLink = document.createElement("a");
-                    mainLink.classList.add("a-MenuBar-label");
-                    mainLink.setAttribute("role", "menuitem");
-                    mainLink.href = link.href || "#";
-                    mainLink.textContent = link.name;
-                    li.appendChild(mainLink);
-
                     // Check for submenu
-                    if (link.submenu && Array.isArray(link.submenu)) {
-                        const subUl = document.createElement("ul");
-                        subUl.classList.add("a-Menu-subMenu");
-                        subUl.setAttribute("role", "menu");
+                    if (link.children && link.children.length) {
+                        li.innerHTML = `
+            <a role="menuitem" class="a-MenuBar-label" href="#">${link.name} &#9660;</a>
+            <ul class="submenu" style="list-style:none;margin-left:15px;padding-left:10px;border-left:2px solid #ccc;display:none;"></ul>
+        `;
 
-                        link.submenu.forEach(sub => {
+                        const submenu = li.querySelector(".submenu");
+
+                        link.children.forEach(sub => {
                             const subLi = document.createElement("li");
-                            subLi.setAttribute("role", "none");
-                            subLi.classList.add("a-MenuBar-item");
+                            const subA = document.createElement("a");
+                            subA.href = sub.href;
+                            subA.className = "a-MenuBar-label";
+                            subA.style.display = "block";
+                            subA.style.padding = "4px 0";
+                            subA.innerText = sub.name;
 
                             if (sub.href.includes(currentPage)) {
-                                subLi.classList.add("a-Menu--current");
+                                li.classList.add("a-Menu--current");
+                                subA.style.fontWeight = "bold";
                             }
 
-                            subLi.innerHTML = `
-                                <a role="menuitem" class="a-MenuBar-label" href="${sub.href}">${sub.name}</a>
-                            `;
-                            subUl.appendChild(subLi);
+                            subLi.appendChild(subA);
+                            submenu.appendChild(subLi);
                         });
 
-                        li.appendChild(subUl);
+                        // Toggle submenu
+                        li.querySelector("a").addEventListener("click", (e) => {
+                            e.preventDefault();
+                            submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+                        });
+
+                    } else {
+                        // Normal menu item
+                        if (link.href.includes(currentPage)) {
+                            li.classList.add("a-Menu--current");
+                        }
+
+                        li.innerHTML = `
+            <a role="menuitem" class="a-MenuBar-label" href="${link.href}">${link.name}</a>
+        `;
                     }
 
                     ul.appendChild(li);
                 });
+
             }
         })
         .catch((err) => {

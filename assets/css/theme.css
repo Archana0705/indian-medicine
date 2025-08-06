@@ -2195,28 +2195,15 @@ a#signOutBtn {
   list-style: none;
 }
 
-.a-Menu-subMenu {
-  display: none;
-  position: absolute;
-  background-color: white;
-  z-index: 1000;
-  padding-left: 0;
-  list-style: none;
-  margin: 0;
+ul.submenu a {
+  color: #333;
+  z-index: 9999999999;
+}
+
+#nav-links ul.submenu {
+  position: fixed;
+  z-index: 9999999999;
   border: 1px solid #ccc;
-  min-width: 180px;
-}
+  padding: 0px 15px;
 
-.a-MenuBar-item {
-  position: relative;
-}
-
-.a-MenuBar-item:hover>.a-Menu-subMenu {
-  display: block;
-}
-
-.a-Menu-subMenu .a-MenuBar-item a {
-  padding: 8px 12px;
-  display: block;
-  white-space: nowrap;
 }
