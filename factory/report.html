@@ -312,24 +312,11 @@
                                     <div class="t-fht-thead js-stickyTableHeader js-stickyWidget-toggle"
                                       id="stickyTableHeader_1"
                                       style="z-index: 300; width: 1061.85px; position: absolute; top: auto;">
-                                      <table id="pressReleaseTable" class="display" style="width:100%">
-                                        <thead>
-                                          <tr>
-                                            <th>SI No</th>
-                                            <th>Edm Id</th>
-                                            <th>Date</th>
-                                            <th>Activity</th>
-                                            <th>Notes</th>
-                                            <th>Time Spend</th>
-                                            <th>Inspection Report</th>
-                                            <th>Image Attachment1</th>
-                                            <th>Image Attachment2</th>
-                                            <th>Image Attachment3</th>
-                                            <th>Image Attachment4</th>
-                                          </tr>
-                                        </thead>
+                                      <div id="pivotContainer"></div>
+                                      <!-- <table id="pressReleaseTable" class="display" style="width:100%">
+                                        <thead></thead>
                                         <tbody></tbody>
-                                      </table>
+                                      </table> -->
                                     </div>
                                     <div class="js-stickyWidget-placeholder" style="width: 1061.85px; height: 72px;">
                                     </div>
@@ -349,30 +336,6 @@
               </div>
             </div>
           </main>
-          <footer class="t-Footer" id="t_Footer" role="contentinfo">
-            <div class="t-Footer-body">
-              <div class="t-Footer-content"></div>
-              <div class="t-Footer-apex">
-                <!-- <div class="t-Footer-version">    </div>
-                    <div class="t-Footer-customize"></div>
-                     -->
-                <div class="row">
-                  <div class="col-6">
-                    <p class="text-middle"><img class="footer-logo" src="../assets/img/head-dept-logo.png"><br>Content
-                      owned by Department of Indian Medicine and Homoeopathy ©</p>
-                  </div>
-                  <div class="col-6">
-                    <p class="text-middle"><img class="footer-logo" src="../assets/img/tnegalogo.png"><br>Designed and
-                      Developed by Tamil Nadu e-Governance Agency</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="t-Footer-top">
-              <a href="#top" class="t-Footer-topButton" id="t_Footer_topButton" title="Start of page"
-                aria-label="Start of page"><span class="a-Icon icon-up-chevron" aria-hidden="true"></span></a>
-            </div>
-          </footer>
         </div>
       </div>
     </div>
@@ -400,6 +363,7 @@
 
   <script src="../assets/js/toastUtil.js"></script>
   <script type="module" src="../assets/js/dataTableUtil.js"></script>
+  <script type="module" src="../assets/js/buildAndRenderPivotTable.js"></script>
   <script src="../assets/js/crypto-js.min.js"></script>
   <script src="../assets/js/theme42.min.js"></script>
   <script src="../assets/js/global.js"></script>
@@ -486,32 +450,44 @@
             p_quarters: $('#P37_QUARTERS').val() || '',
           }
         };
-        loadDataToTable({
-          tableId: 'pressReleaseTable',
-          apiUrl,
-          httpMethod: 'POST',
-          payload: encryptData(payload),
-          rowBuilder: (item) => {
-            return `
-                  <tr>
-                    <td class="u-tC">${item.sl_no || 'N/A'}</td>
-                    <td class="u-tC">${item.ts_edm_id || 'N/A'}</td>
-                    <td class="u-tC">${item.ts_date || 'N/A'}</td>
-                    <td class="u-tC">${item.ts_activity || 'N/A'}</td>
-                    <td class="u-tC">${item.ts_notes || 'N/A'}</td>
-                    <td class="u-tC">${item.ts_created_date || 'N/A'}</td>
-                    <td class="u-tC">${item.inspection_report || 'N/A'}</td>
-                    <td>${createDownloadLink(item.image_attachment1, item.mime_type1, item.file_name1)}</td>
-                    <td>${createDownloadLink(item.image_attachment2, item.mime_type2, item.file_name2)}</td>
-                    <td>${createDownloadLink(item.image_attachment3, item.mime_type3, item.file_name3)}</td>
-                    <td>${createDownloadLink(item.image_attachment4, item.mime_type4, item.file_name4)}</td>
-                  </tr>
-                `;
+        $.ajax({
+          url: apiUrl,
+          method: 'POST',
+          headers: {
+            'X-APP-Key': 'edm',
+            'X-APP-Name': 'edm'
           },
-          onTableInit: function (dtRef) {
-            dataTableRef = dtRef;
+          data: {
+            data: encryptData(payload)
+          },
+          dataType: 'json',
+          success(response) {
+            const data = decryptData(response.data);
+
+            if (!data || data.length === 0) {
+              $('#pressReleaseTable tbody').html('<tr><td colspan="10" class="text-center">No Data Found</td></tr>');
+              return;
+            }
+
+            // Define which fields you want the pivot to use
+            const pivotFields = [
+              "name_of_the_district",
+              "medicine_name",
+              "packing_size",
+              "quantity",
+              "amount",
+              "total_quantity"
+            ];
+
+            generatePivotTable(data, 'pivotContainer');
+
+          },
+
+          error(xhr, status, error) {
+            console.error(`${payload.function_name} API Error:`, error);
           }
         });
+
       }
 
       $('#searchBtn').on('click', function () {
