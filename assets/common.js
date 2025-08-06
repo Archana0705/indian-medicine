@@ -58,9 +58,9 @@ document.addEventListener("DOMContentLoaded", function () {
                         name: 'Consolidate Report - District wise',
                         href: '#',
                         children: [
-                            { name: 'Financial year only', href: '../factory/report-scheme.html' },
-                            { name: 'Financial year, Quarter, Regular', href: '../factory/monthly-reports.html' },
-                            { name: 'Financial year, Quarter, Scheme', href: '../factory/monthly-reports.html' }
+                            { name: 'Financial year only', href: '../factory/report.html' },
+                            { name: 'Financial year, Quarter, Regular', href: '../factory/report-regular.html' },
+                            { name: 'Financial year, Quarter, Scheme', href: '../factory/report-scheme.html' }
                         ]
                     },
                 ],
