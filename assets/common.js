@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         ]
                     },
                     { name: 'Download Despatched Medicine', href: '../factory/download.html' },
-                    { name: 'AMO Approved Medicine', href: '../factory/view-indent.html' },
+                    { name: 'AMO Approved Medicine', href: '../factory/amo-approved.html' },
                     {
                         name: 'Consolidate Report - District wise',
                         href: '#',
