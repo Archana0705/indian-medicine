@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         name: 'Medicine Details',
                         href: '#',
                         children: [
-                            { name: 'District Financial year only', href: '../factory/report-scheme.html' },
+                            { name: 'District Financial year only', href: '../factory/medicine-details.html' },
                             { name: 'District, Financial year, System, Quarter', href: '../factory/monthly-reports.html' },
                             { name: 'District, Financial year, System, Quarter, Regular', href: '../factory/monthly-reports.html' },
                             { name: 'District, Financial year, System, Quarter, Scheme', href: '../factory/monthly-reports.html' }
