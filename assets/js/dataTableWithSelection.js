@@ -1,5 +1,4 @@
 // loadTableWithSelection.js
-import { decryptData } from './encrypt_decrypt.js';
 
 let currentTableData = [];
 
