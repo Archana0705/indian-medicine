@@ -2212,3 +2212,40 @@ div#pivotContainer {
   display: flex;
   overflow: auto;
 }
+
+a#pressReleaseTable_previous {
+  text-decoration: none;
+  padding: 12px;
+}
+
+table#pressReleaseTable {
+  font-size: small;
+}
+
+#pressReleaseTable {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#pressReleaseTable th,
+#pressReleaseTable td {
+  /* border: 0.1px solid #545353; */
+  /* Black border */
+  padding: 20px;
+  text-align: center;
+
+}
+
+#pressReleaseTable thead th {
+  background-color: #f9f9f9;
+  font-weight: bold;
+}
+
+/* Optional: Alternate row coloring for better readability */
+#pressReleaseTable tbody tr:nth-child(odd) {
+  background-color: #f5f5f5;
+}
+
+#pressReleaseTable tbody tr:nth-child(even) {
+  background-color: #ffffff;
+}

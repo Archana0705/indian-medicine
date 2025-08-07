@@ -619,7 +619,7 @@
             $dropdown.empty().append(`<option value="">${placeholder}</option>`);
 
             decrypted.forEach(item => {
-              const value = item.district || item.d || item.quarter || item.year || item.type || item.scheme;
+              const value = item.district || item.d || item.quarter || item.year || item.type || item.scheme || item.system;
               $dropdown.append(`<option value="${value}">${value}</option>`);
             });
           },
@@ -661,7 +661,7 @@
         payload: {
           action: "function_call",
           function_name: "im_system_fn",
-          params: {}
+          params: { mobnumber: null }
         },
         dropdownId: "P15_SYSTEM",
         placeholder: "--Select System Name--"
@@ -782,7 +782,7 @@
         $('#P15_FINANCIAL_YEAR').val('');
         $('#P15_QUARTERS').val('');
         $('#P15_INDENT_TYPE').val('');
-        $('#P46_SYSTEM').val('');
+        $('#P15_SYSTEM').val('');
         $('#P15_SCHEME_NAME').val('');
 
         fetchTableData();
