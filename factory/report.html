@@ -206,7 +206,7 @@
                   <div class="col col-6 apex-col-auto col-start"><button class="t-Button u-color-12" type="button"
                       id="searchBtn"><span class="t-Button-label">Search</span></button></div>
                   <div class="col col-6 apex-col-auto col-end"><button class="t-Button js-ignoreChange" type="button"
-                      id="B18834064872614510"><span class="t-Button-label">Clear</span></button></div>
+                      id="clearBtn"><span class="t-Button-label">Clear</span></button></div>
                 </div>
                 <div class="row ">
                   <div class="col col-12 apex-col-auto col-start col-end">
@@ -425,8 +425,12 @@
 
       });
 
+      $('#clearBtn').on('click', function () {
+        $('#P37_FINANCIAL_YEAR').val('');
+        $('#P37_QUARTERS').val('');
+      });
 
-    });
+    }); 
   </script>
 </body>
 
