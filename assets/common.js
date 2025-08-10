@@ -70,20 +70,20 @@ document.addEventListener("DOMContentLoaded", function () {
                         name: 'Medicine Details',
                         href: '#',
                         children: [
-                            { name: 'District Financial year only', href: '../nodal/medicine-details.html' },
-                            { name: 'District, Financial year, System, Quarter', href: '../nodal/medicine-details-quarter.html' },
-                            { name: 'District, Financial year, System, Quarter, Regular', href: '../nodal/monthly-reports.html' },
-                            { name: 'District, Financial year, System, Quarter, Scheme', href: '../nodal/monthly-reports.html' }
+                            { name: 'District Financial year only', href: '../nodal/medicine-yearly.html' },
+                            { name: 'District, Financial year, System, Quarter', href: '../nodal/medicine-quarter.html' },
+                            { name: 'District, Financial year, System, Quarter, Regular', href: '../nodal/medicine-regular.html' },
+                            { name: 'District, Financial year, System, Quarter, Scheme', href: '../nodal/medicine-scheme.html' }
 
                         ]
                     },
                     { name: 'Download Despatched Medicine', href: '../nodal/download.html' },
-                    { name: 'AMO Approved Medicine', href: '../nodal/amo-approved.html' },
+                    { name: 'AMO Approved Medicine', href: '../nodal/amo.html' },
                     {
                         name: 'Consolidate Report - District wise',
                         href: '#',
                         children: [
-                            { name: 'Financial year only', href: '../nodal/report.html' },
+                            { name: 'Financial year only', href: '../nodal/report-only.html' },
                             { name: 'Financial year, Quarter, Regular', href: '../nodal/report-regular.html' },
                             { name: 'Financial year, Quarter, Scheme', href: '../nodal/report-scheme.html' }
                         ]

@@ -443,7 +443,6 @@
   <script src="assets/js/encrypt_decrypt.js"></script>
   <script src="assets/js/singleFileUpload.js"></script>
   <script src="assets/js/globalHeader.js"></script>
-  <script src="assets/js/validateField.js"></script>
   <script src="assets/js/auth.js"></script>
 
 
@@ -505,7 +504,7 @@
           window.location.href = `${folder}/home.html`;
         } catch (error) {
           console.error("Login Error:", error);
-          showErrorToast("Login failed. Check console for details.");
+          showErrorToast("Login failed Please Try Again.");
         } finally {
           signInButton.disabled = false;
           signInButton.innerHTML = 'Sign In';

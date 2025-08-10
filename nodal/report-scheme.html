@@ -1,9 +1,9 @@
-<html class="page-40 app-IMIM" lang="en" style="--js-sticky-top: 204.375px;">
+<html class="page-60 app-IMIM" lang="en" style="--js-sticky-top: 204.375px;">
 
 <head>
   <meta http-equiv="x-ua-compatible" content="IE=edge">
   <meta charset="utf-8">
-  <title>Financial year, Quarter, Regular</title>
+  <title>Financial year, Quarter, Scheme</title>
 
   <link rel="apple-touch-icon" href="../assets/img/app-icon-192.png">
   <link rel="icon" href="../assets/img/app-icon-32.png">
@@ -145,18 +145,18 @@
             <div class="t-Body-contentInner">
               <div class="container">
                 <div class="row ">
-                  <div class="col col-3 apex-col-auto col-start">
+                  <div class="col col-4 apex-col-auto col-start">
                     <div
-                      class="t-Form-fieldContainer is-required rel-col t-Form-fieldContainer--stretchInputs t-Form-fieldContainer--indicatorAsterisk t-Form-fieldContainer--large apex-item-wrapper apex-item-wrapper--select-list"
-                      id="P40_FINANCIAL_YEAR_CONTAINER">
+                      class="t-Form-fieldContainer rel-col t-Form-fieldContainer--stretchInputs t-Form-fieldContainer--large apex-item-wrapper apex-item-wrapper--select-list"
+                      id="P60_FINANCIAL_YEAR_CONTAINER">
                       <div class="t-Form-labelContainer col col-2">
-                        <label for="P40_FINANCIAL_YEAR" id="P40_FINANCIAL_YEAR_LABEL" class="t-Form-label">Financial
-                          Year </label>
+                        <label for="P60_FINANCIAL_YEAR" id="P60_FINANCIAL_YEAR_LABEL" class="t-Form-label">Financial
+                          Year</label>
                       </div>
-                      <div class="t-Form-inputContainer col col-8">
+                      <div class="t-Form-inputContainer col col-2">
                         <div class="t-Form-itemWrapper">
-                          <select id="P40_FINANCIAL_YEAR" name="P40_FINANCIAL_YEAR" required=""
-                            class="selectlist apex-item-select" data-native-menu="false" size="1">
+                          <select id="P60_FINANCIAL_YEAR" name="P60_FINANCIAL_YEAR" class="selectlist apex-item-select"
+                            data-native-menu="false" size="1">
                             <option value="" selected="selected">Select</option>
                             <option value="2023 - 2024">2023 - 2024</option>
                             <option value="2024 - 2025">2024 - 2025</option>
@@ -164,24 +164,21 @@
                             <option value="2022 - 2023">2022 - 2023</option>
                           </select>
                         </div>
-                        <div class="t-Form-itemAssistance">
-                          <span id="P40_FINANCIAL_YEAR_error_placeholder" class="a-Form-error"
-                            data-template-id="428237131064519931341_ET"></span>
-                          <div class="t-Form-itemRequired" aria-hidden="true">Required</div>
-                        </div>
+                        <span id="P60_FINANCIAL_YEAR_error_placeholder" class="a-Form-error"
+                          data-template-id="428237130780249931341_ET"></span>
                       </div>
                     </div>
                   </div>
-                  <div class="col col-3 apex-col-auto ">
+                  <div class="col col-4 apex-col-auto ">
                     <div
-                      class="t-Form-fieldContainer is-required rel-col t-Form-fieldContainer--stretchInputs t-Form-fieldContainer--indicatorAsterisk t-Form-fieldContainer--large apex-item-wrapper apex-item-wrapper--select-list"
-                      id="P40_QUARTERS_CONTAINER">
+                      class="t-Form-fieldContainer rel-col t-Form-fieldContainer--stretchInputs t-Form-fieldContainer--large apex-item-wrapper apex-item-wrapper--select-list"
+                      id="P60_QUARTERS_CONTAINER">
                       <div class="t-Form-labelContainer col col-2">
-                        <label for="P40_QUARTERS" id="P40_QUARTERS_LABEL" class="t-Form-label">Quarters </label>
+                        <label for="P60_QUARTERS" id="P60_QUARTERS_LABEL" class="t-Form-label">Quarters</label>
                       </div>
-                      <div class="t-Form-inputContainer col col-6">
+                      <div class="t-Form-inputContainer col col-2">
                         <div class="t-Form-itemWrapper">
-                          <select id="P40_QUARTERS" name="P40_QUARTERS" required="" class="selectlist apex-item-select"
+                          <select id="P60_QUARTERS" name="P60_QUARTERS" class="selectlist apex-item-select"
                             data-native-menu="false" size="1">
                             <option value="" selected="selected">Select</option>
                             <option value="1st Quarter">1st Quarter</option>
@@ -191,62 +188,145 @@
                             <option value="Annual Indent">Annual Indent</option>
                           </select>
                         </div>
-                        <div class="t-Form-itemAssistance">
-                          <span id="P40_QUARTERS_error_placeholder" class="a-Form-error"
-                            data-template-id="428237131064519931341_ET"></span>
-                          <div class="t-Form-itemRequired" aria-hidden="true">Required</div>
-                        </div>
+                        <span id="P60_QUARTERS_error_placeholder" class="a-Form-error"
+                          data-template-id="428237130780249931341_ET"></span>
                       </div>
                     </div>
                   </div>
-                  <div class="col col-8 apex-col-auto ">
-                    <button class="t-Button t-Button--hot u-color-12  t-Button--large t-Button--success" type="button"
-                      id="searchBtn"><span class="t-Button-label">Search</span></button>
+                  <div class="col col-4 apex-col-auto col-end">
+                    <div
+                      class="t-Form-fieldContainer rel-col t-Form-fieldContainer--stretchInputs t-Form-fieldContainer--large apex-item-wrapper apex-item-wrapper--select-list"
+                      id="P60_SCHEME_NAME_CONTAINER">
+                      <div class="t-Form-labelContainer col col-2">
+                        <label for="P60_SCHEME_NAME" id="P60_SCHEME_NAME_LABEL" class="t-Form-label">Scheme Name</label>
+                      </div>
+                      <div class="t-Form-inputContainer col col-2">
+                        <div class="t-Form-itemWrapper">
+                          <select id="P60_SCHEME_NAME" name="P60_SCHEME_NAME" class="selectlist apex-item-select"
+                            data-native-menu="false" size="1">
+                            <option value="" selected="selected">Select</option>
+                            <option value="50 Beded Places">50 Beded Places</option>
+                            <option value="Ayush Health &amp; Wellness Center">Ayush Health &amp; Wellness Center
+                            </option>
+                            <option value="Ayush Wellness">Ayush Wellness</option>
+                            <option value="Co-Location ISM Wings_Upgradation">Co-Location ISM Wings_Upgradation</option>
+                            <option value="Co-Location ISM Wings_x000D_
+                                ">Co-Location ISM Wings_x000D_</option>
+                            <option value="MSD">MSD</option>
+                            <option value="MSK Kit">MSK Kit</option>
+                            <option value="NRHM">NRHM</option>
+                            <option value="Nilavembu Kudineer">Nilavembu Kudineer</option>
+                            <option value="Public Health Out Reach">Public Health Out Reach</option>
+                            <option value="Public Health Out Reach Activities">Public Health Out Reach Activities
+                            </option>
+                            <option value="School Health Programme">School Health Programme</option>
+                            <option value="Tribal Units">Tribal Units</option>
+                            <option value="" selected="selected"></option>
+                          </select>
+                        </div>
+                        <span id="P60_SCHEME_NAME_error_placeholder" class="a-Form-error"
+                          data-template-id="428237130780249931341_ET"></span>
+                      </div>
+                    </div>
                   </div>
-                  <div class="col col-3 apex-col-auto col-end"><button
+                </div>
+                <div class="row ">
+                  <div class="col col-6 apex-col-auto col-start"><button
+                      class="t-Button t-Button--hot u-color-12  t-Button--large t-Button--success" type="button"
+                      id="searchBtn"><span class="t-Button-label">Search</span></button></div>
+                  <div class="col col-6 apex-col-auto col-end"><button
                       class="t-Button t-Button--hot js-ignoreChange t-Button--large t-Button--warning" type="button"
-                      id="clearBtn"><span class="t-Button-label">Clear</span></button></div>
+                      id="B18846843869605093"><span class="t-Button-label">Clear</span></button></div>
                 </div>
                 <div class="row ">
                   <div class="col col-12 apex-col-auto col-start col-end">
-                    <div id="R311550027872192549316" role="region" aria-label="Medicine Details"
+                    <div id="R311550034244310544728" role="region" aria-label="Medicine Details"
                       class="t-IRR-region js-apex-region">
                       <div class="t-Region-orderBy"></div>
-                      <div id="R311562979901797611632_ir" class="a-IRR-container">
-                        <div id="R311562979901797611632_worksheet_region" class="a-IRR" aria-live="polite">
-                          <div id="R311562979901797611632_single_row_view" class="a-IRR-singleRowView"></div>
-                          <div id="R311562979901797611632_full_view" class="a-IRR-fullView">
-                            <div id="R311562979901797611632_toolbar" class="a-IRR-toolbar">
+                      <div id="R311550034244310544728_ir" class="a-IRR-container">
+                        <div id="R311550034244310544728_worksheet_region" class="a-IRR" aria-live="polite">
+                          <div id="R311550034244310544728_single_row_view" class="a-IRR-singleRowView"></div>
+                          <div id="R311550034244310544728_full_view" class="a-IRR-fullView">
+                            <div id="R311550034244310544728_toolbar" class="a-IRR-toolbar">
 
                             </div>
-
-
-                          </div>
-                          <div role="region" aria-label="Chart view of Medicine Details"
-                            id="R311562979901797611632_chart" class="a-IRR-chartView"></div>
-                          <div role="region" aria-label="Group by view of Medicine Details"
-                            id="R311562979901797611632_group_by" class="a-IRR-groupByView"></div>
-                          <div role="region" aria-label="Pivot view of Medicine Details"
-                            id="R311562979901797611632_pivot" class="a-IRR-pivotView">
-                            <div class="a-IRR-tableContainer">
-                              <div class="t-fht-wrapper">
-                                <div class="t-fht-thead js-stickyTableHeader js-stickyWidget-toggle"
-                                  id="stickyTableHeader_1"
-                                  style="z-index: 300; width: 1061.85px; position: absolute; top: auto;">
-                                  <div id="pivotContainer"></div>
-                                  <!-- <table id="pressReleaseTable" class="display" style="width:100%">
-                                        <thead></thead>
-                                        <tbody></tbody>
-                                      </table> -->
-                                </div>
-                                <div class="js-stickyWidget-placeholder" style="width: 1061.85px; height: 72px;">
-                                </div>
-
+                            <div id="R311550034244310544728_content" class="a-IRR-content ">
+                              <div id="R311550034244310544728_dialog_js" class="a-IRR-dialogBody" style="display:none">
                               </div>
+                              <input type="hidden" id="R311550034244310544728_worksheet_id"
+                                value="311550034342519544728">
+                              <input type="hidden" id="R311550034244310544728_app_user" value="9994793279">
+                              <input type="hidden" id="R311550034244310544728_report_id" value="311550478326555788536">
+                              <input type="hidden" id="R311550034244310544728_view_mode" value="PIVOT">
+                              <div role="region" aria-label="Report settings of Medicine Details"
+                                class="a-MediaBlock a-IRR-controlsContainer a-Collapsible is-expanded"
+                                id="R311550034244310544728_control_panel">
+                                <div class="a-MediaBlock-graphic">
+                                  <h3 aria-hidden="true" class="u-vh a-Collapsible-heading"
+                                    id="a_Collapsible1_R311550034244310544728_control_panel_heading">Report Settings
+                                  </h3>
+                                  <span role="heading" aria-level="3"><button type="button"
+                                      class="a-Button a-IRR-button a-IRR-button--controls"
+                                      aria-labelledby="a_Collapsible1_R311550034244310544728_control_panel_heading"
+                                      aria-controls="a_Collapsible1_R311550034244310544728_control_panel_content"
+                                      aria-expanded="true"><span class="a-Icon a-Collapsible-icon icon-down-arrow"
+                                        aria-hidden="true"></span></button></span>
+                                </div>
+
+                                <div class=" a-IRR-reportSummaryContainer"
+                                  id="R311550034244310544728_control_panel_summary" style="display: none;">
+                                  <ul class="a-IRR-reportSummary">
+                                    <li class="a-IRR-reportSummary-item a-IRR-reportSummary-item--pivot"><a href="#"
+                                        class="a-IRR-reportSummary-label" data-setting="pivot"><span
+                                          class="a-IRR-reportSummary-icon" aria-label="Pivot" role="img"><span
+                                            class="a-Icon icon-irr-pivot"></span></span><span
+                                          class="a-IRR-reportSummary-value">Edit Pivot</span></a></li>
+                                  </ul>
+                                </div>
+                              </div>
+                              <div role="region" aria-label="Chart view of Medicine Details"
+                                id="R311550034244310544728_chart" class="a-IRR-chartView"></div>
+                              <div role="region" aria-label="Group by view of Medicine Details"
+                                id="R311550034244310544728_group_by" class="a-IRR-groupByView"></div>
+                              <div role="region" aria-label="Pivot view of Medicine Details"
+                                id="R311550034244310544728_pivot" class="a-IRR-pivotView">
+                                <!-- <table id="pressReleaseTable" class="display" style="width:100%">
+                                  <thead>
+                                    <tr>
+                                      <th>SI No</th>
+                                      <th>Edm Id</th>
+                                      <th>Date</th>
+                                      <th>Activity</th>
+                                      <th>Notes</th>
+                                      <th>Time Spend</th>
+                                      <th>Inspection Report</th>
+                                      <th>Image Attachment1</th>
+                                      <th>Image Attachment2</th>
+                                      <th>Image Attachment3</th>
+                                      <th>Image Attachment4</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody></tbody>
+                                </table> -->
+                                <div id="pivotContainer"></div>
+                                <div role="region" aria-label="Pagination of Medicine Details"
+                                  class="a-IRR-paginationWrap a-IRR-paginationWrap--bottom">
+                                  <ul class="a-IRR-pagination">
+                                    <li aria-hidden="true" class="a-IRR-pagination-item is-disabled"></li>
+                                    <li class="a-IRR-pagination-item"><span class="a-IRR-pagination-label"> 1 -
+                                        50</span></li>
+                                    <li class="a-IRR-pagination-item"><button type="button"
+                                        class="a-Button a-IRR-button a-IRR-button--pagination"
+                                        aria-controls="R311550034244310544728" title="Next" aria-label="Next"
+                                        data-pagination="pgR_min_row=51max_rows=50rows_fetched=50"><span
+                                          class="a-Icon icon-right-chevron" aria-hidden="true"></span></button></li>
+                                  </ul>
+                                </div>
+                              </div>
+                              <div role="region" aria-label="Data view of Medicine Details"
+                                id="R311550034244310544728_data_panel" class="a-IRR-reportView"></div>
                             </div>
                           </div>
-                          <div role="region" aria-label="Data view of Medicine Details"
-                            id="R311562979901797611632_data_panel" class="a-IRR-reportView"></div>
                         </div>
                       </div>
                     </div>
@@ -255,16 +335,38 @@
               </div>
             </div>
           </main>
-
+          <footer class="t-Footer" id="t_Footer" role="contentinfo">
+            <div class="t-Footer-body">
+              <div class="t-Footer-content"></div>
+              <div class="t-Footer-apex">
+                <!-- <div class="t-Footer-version">    </div>
+                    <div class="t-Footer-customize"></div>
+                     -->
+                <div class="row">
+                  <div class="col-6">
+                    <p class="text-middle"><img class="footer-logo" src="../assets/img/head-dept-logo.png"><br>Content
+                      owned by Department of Indian Medicine and Homoeopathy ©</p>
+                  </div>
+                  <div class="col-6">
+                    <p class="text-middle"><img class="footer-logo" src="../assets/img/tnegalogo.png"><br>Designed and
+                      Developed by Tamil Nadu e-Governance Agency</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="t-Footer-top">
+              <a href="#top" class="t-Footer-topButton" id="t_Footer_topButton" title="Start of page"
+                aria-label="Start of page"><span class="a-Icon icon-up-chevron" aria-hidden="true"></span></a>
+            </div>
+          </footer>
         </div>
       </div>
     </div>
     <div class="t-Body-inlineDialogs" id="t_Body_inlineDialogs"></div>
     <input type="hidden" id="pPageFormRegionChecksums" value="[]">
     <input type="hidden" id="pPageItemsRowVersion" value=""><input type="hidden" id="pPageItemsProtected"
-      value="/AB6NLwl9pHwDBrPj09OpUJzE4c61w-meLGEBH08YwJFf4eIadeADe8REDzbKCuJvAQAPgw437SS89Io-kg1N6Q">
+      value="/pfiG74lq1_XDWLRjalu73zk438rKho9inGm2eHN3GwS38ImMcamIt1dzRNR8SWUyHODy-p2Ybb_Cer3o1t0r1g">
   </form>
-
   <!-- jQuery -->
   <script src="../assets/js/jquery-3.6.0.min.js"></script>
   <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -331,7 +433,7 @@
             $dropdown.empty().append(`<option value="">${placeholder}</option>`);
 
             decrypted.forEach(item => {
-              const value = item.district || item.d || item.quarter || item.year;
+              const value = item.district || item.d || item.quarter || item.year || item.scheme;
               $dropdown.append(`<option value="${value}">${value}</option>`);
             });
           },
@@ -347,7 +449,7 @@
           function_name: "im_quarter_fn",
           params: {}
         },
-        dropdownId: "P40_QUARTERS",
+        dropdownId: "P60_QUARTERS",
         placeholder: "--Select Quarters Name--"
       });
 
@@ -357,17 +459,28 @@
           function_name: "im_year_fn",
           params: {}
         },
-        dropdownId: "P40_FINANCIAL_YEAR",
+        dropdownId: "P60_FINANCIAL_YEAR",
         placeholder: "--Select Financial Year--"
+      });
+
+      fetchAndPopulateDropdown({
+        payload: {
+          action: "function_call",
+          function_name: "im_scheme_name_fn",
+          params: {}
+        },
+        dropdownId: "P60_SCHEME_NAME",
+        placeholder: "--Select Scheme Name--"
       });
 
       function fetchTableData() {
         const payload = {
           action: "function_call",
-          function_name: "im_get_regular_indent_report_fn",
+          function_name: "im_get_scheme_indent_report_fn",
           params: {
-            p_financial_year: $('#P40_FINANCIAL_YEAR').val() || '',
-            p_quarters: $('#P40_QUARTERS').val() || '',
+            p_financial_year: $('#P60_FINANCIAL_YEAR').val() || '',
+            p_quarters: $('#P60_QUARTERS').val() || '',
+            p_scheme_name: $('#P60_SCHEME_NAME').val() || '',
           }
         };
         $.ajax({
@@ -411,20 +524,16 @@
       }
 
       $('#searchBtn').on('click', function () {
-        const financialYear = $('#P40_FINANCIAL_YEAR').val();
-        const quarters = $('#P40_QUARTERS').val();
+        // const financialYear = $('#P60_FINANCIAL_YEAR').val();
+        // const quarters = $('#P60_QUARTERS').val();
 
-        if (!financialYear || !quarters) {
-          showErrorToast("Please select both Financial Year and Quarters.");
-          return;
-        }
+        // if (!financialYear || !quarters) {
+        //   showErrorToast("Please select both Financial Year and Quarters.");
+        //   return;
+        // }
         fetchTableData();
       });
 
-      $('#clearBtn').on('click', function () {
-        $('#P40_FINANCIAL_YEAR').val('');
-        $('#P40_QUARTERS').val('');
-      });
     });
   </script>
 </body>
