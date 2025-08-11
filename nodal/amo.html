@@ -214,17 +214,24 @@
                                       <table id="pressReleaseTable" class="display" style="width:100%">
                                         <thead>
                                           <tr>
-                                            <th>SI No</th>
-                                            <th>Edm Id</th>
-                                            <th>Date</th>
-                                            <th>Activity</th>
-                                            <th>Notes</th>
-                                            <th>Time Spend</th>
-                                            <th>Inspection Report</th>
-                                            <th>Image Attachment1</th>
-                                            <th>Image Attachment2</th>
-                                            <th>Image Attachment3</th>
-                                            <th>Image Attachment4</th>
+                                            <th>Medicine Name</th>
+                                            <th>Packing Size</th>
+                                            <th>Amount</th>
+                                            <th>Indented Quantity</th>
+                                            <th>Stock Available</th>
+                                            <th>GoDown Stock Availability</th>
+                                            <th>Supply Quantity</th>
+                                            <th>Supply Price</th>
+                                            <th>Percentage of Dispatch Quantity</th>
+                                            <th>Balance Quantity to be supplied</th>
+                                            <th>Forward to</th>
+                                            <th>Remarks</th>
+                                            <th>Received Quantity</th>
+                                            <th>Price</th>
+                                            <th>Name</th>
+                                            <th>Expiry Date</th>
+                                            <th>Batch</th>
+                                            <th>Mobile</th>
                                           </tr>
                                         </thead>
                                         <tbody></tbody>
@@ -346,17 +353,24 @@
           rowBuilder: (item) => {
             return `
                   <tr>
-                    <td class="u-tC">${item.sl_no || 'N/A'}</td>
-                    <td class="u-tC">${item.ts_edm_id || 'N/A'}</td>
-                    <td class="u-tC">${item.ts_date || 'N/A'}</td>
-                    <td class="u-tC">${item.ts_activity || 'N/A'}</td>
-                    <td class="u-tC">${item.ts_notes || 'N/A'}</td>
-                    <td class="u-tC">${item.ts_created_date || 'N/A'}</td>
-                    <td class="u-tC">${item.inspection_report || 'N/A'}</td>
-                    <td>${createDownloadLink(item.image_attachment1, item.mime_type1, item.file_name1)}</td>
-                    <td>${createDownloadLink(item.image_attachment2, item.mime_type2, item.file_name2)}</td>
-                    <td>${createDownloadLink(item.image_attachment3, item.mime_type3, item.file_name3)}</td>
-                    <td>${createDownloadLink(item.image_attachment4, item.mime_type4, item.file_name4)}</td>
+                    <td class="u-tC">${item.medicine_name || 'N/A'}</td>
+                    <td class="u-tC">${item.packing_size || 'N/A'}</td>
+                    <td class="u-tC">${item.amount || 'N/A'}</td>
+                    <td class="u-tC">${item.indented_quantity || 'N/A'}</td>
+                    <td class="u-tC">${item.stock_availble || 'N/A'}</td>
+                    <td class="u-tC">${item.godown_stock_availablity || 'N/A'}</td>
+                    <td class="u-tC">${item.supply_quantity || 'N/A'}</td>
+                    <td class="u-tC">${item.supply_price || 'N/A'}</td>
+                    <td class="u-tC">${item.percentage_of_despatch_quantity || 'N/A'}</td>
+                    <td class="u-tC">${item.balance_quantity_to_be_supplied || 'N/A'}</td>
+                    <td class="u-tC">${item.forward_to || 'N/A'}</td>
+                    <td class="u-tC">${item.remarks || 'N/A'}</td>
+                    <td class="u-tC">${item.received_quantity || 'N/A'}</td>
+                    <td class="u-tC">${item.price || 'N/A'}</td>
+                    <td class="u-tC">${item.name || 'N/A'}</td>
+                    <td class="u-tC">${item.expiry_date || 'N/A'}</td>
+                    <td class="u-tC">${item.batch || 'N/A'}</td>  
+                    <td class="u-tC">${item.mobile || 'N/A'}</td>
                   </tr>
                 `;
           },

@@ -2249,3 +2249,8 @@ table#pressReleaseTable {
 #pressReleaseTable tbody tr:nth-child(even) {
   background-color: #ffffff;
 }
+
+a#pressReleaseTable_next {
+  text-decoration: none;
+  padding: 12px;
+}
