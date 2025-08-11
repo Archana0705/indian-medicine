@@ -315,7 +315,7 @@
                                   id="stickyTableHeader_1"
                                   style="z-index: 300; width: 1061.85px; position: absolute; top: auto;">
                                   <div id="pivotContainer"></div>
-                                  <!-- <table id="pressReleaseTable" class="display" style="width:100%">
+                                  <!-- <table id="pivotTable" class="display" style="width:100%">
                                         <thead></thead>
                                         <tbody></tbody>
                                       </table> -->
@@ -499,32 +499,32 @@
           success(response) {
             // If API explicitly says no data
             if (response.success === 0 || response.message === "Data not found") {
-              if ($.fn.DataTable.isDataTable('#pressReleaseTable')) {
-                $('#pressReleaseTable').DataTable().clear().destroy();
+              if ($.fn.DataTable.isDataTable('#pivotTable')) {
+                $('#pivotTable').DataTable().clear().destroy();
               }
-              $('#pressReleaseTable tbody').html('<tr><td colspan="10" class="text-center">No Data Found</td></tr>');
+              $('#pivotTable tbody').html('<tr><td colspan="10" class="text-center">No Data Found</td></tr>');
               return;
             }
 
             const data = decryptData(response.data);
 
             if (!Array.isArray(data) || data.length === 0) {
-              if ($.fn.DataTable.isDataTable('#pressReleaseTable')) {
-                $('#pressReleaseTable').DataTable().clear().destroy();
+              if ($.fn.DataTable.isDataTable('#pivotTable')) {
+                $('#pivotTable').DataTable().clear().destroy();
               }
-              $('#pressReleaseTable tbody').html('<tr><td colspan="10" class="text-center">No Data Found</td></tr>');
+              $('#pivotTable tbody').html('<tr><td colspan="10" class="text-center">No Data Found</td></tr>');
               return;
             }
 
             // Destroy old DataTable before creating a new one
-            if ($.fn.DataTable.isDataTable('#pressReleaseTable')) {
-              $('#pressReleaseTable').DataTable().clear().destroy();
+            if ($.fn.DataTable.isDataTable('#pivotTable')) {
+              $('#pivotTable').DataTable().clear().destroy();
             }
 
             generatePivotTable(data, 'pivotContainer');
 
             // Initialize DataTable again
-            dataTableRef = $('#pressReleaseTable').DataTable({
+            dataTableRef = $('#pivotTable').DataTable({
               pageLength: 10,
               destroy: true
             });

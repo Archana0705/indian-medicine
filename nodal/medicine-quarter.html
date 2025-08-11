@@ -282,7 +282,7 @@
                                   id="stickyTableHeader_1"
                                   style="z-index: 300; width: 1061.85px; position: absolute; top: auto;">
                                   <div id="pivotContainer"></div>
-                                  <!-- <table id="pressReleaseTable" class="display" style="width:100%">
+                                  <!-- <table id="pivotTable" class="display" style="width:100%">
                                         <thead></thead>
                                         <tbody></tbody>
                                       </table> -->
@@ -456,27 +456,25 @@
           },
           dataType: 'json',
           success(response) {
-            const data = decryptData(response.data);
-
-            if (!data || data.length === 0) {
-              $('#pressReleaseTable tbody').html('<tr><td colspan="10" class="text-center">No Data Found</td></tr>');
+            if (response.success === 0 || response.message === "Data not found") {
+              if ($.fn.DataTable.isDataTable('#pivotTable')) {
+                $('#pivotTable').DataTable().clear().destroy();
+              }
+              $('#pivotContainer').html('<div class="text-center">No Data Found</div>');
               return;
             }
 
-            // Define which fields you want the pivot to use
-            const pivotFields = [
-              "name_of_the_district",
-              "medicine_name",
-              "packing_size",
-              "quantity",
-              "amount",
-              "total_quantity"
-            ];
+            const data = decryptData(response.data);
 
+            if (!Array.isArray(data) || data.length === 0) {
+              if ($.fn.DataTable.isDataTable('#pivotTable')) {
+                $('#pivotTable').DataTable().clear().destroy();
+              }
+              $('#pivotContainer').html('<div class="text-center">No Data Found</div>');
+              return;
+            }
             generatePivotTable(data, 'pivotContainer');
-
           },
-
           error(xhr, status, error) {
             console.error(`${payload.function_name} API Error:`, error);
           }
