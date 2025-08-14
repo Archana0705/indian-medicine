@@ -367,10 +367,10 @@
                     value="3f2H2YMStcmnhPBLmFHIgiXuS99ngMSRpJjK_Saj-VJiZXut5a_LGGbeCYp_VKN1t3u7OS-t2jQkWX-NK3qFyQ">
                 </div>
                 <div class="t-Login-buttons"><button onclick="void(0);"
-                    class="t-Button t-Button--hot u-color-12  t-Button--large" type="button"
-                    id="B9768046738447308"><span class="t-Button-label">Send OTP</span></button><button
-                    onclick="validateOtpandAllow()" class="t-Button t-Button--hot login-but u-color-12" type="button"
-                    id="B9768786719447315" style="display: none;"><span class="t-Button-label">Login</span></button>
+                    class="t-Button t-Button--hot u-color-12  t-Button--large" type="button" id="sendOtp"><span
+                      class="t-Button-label">Send OTP</span></button><button
+                    class="t-Button t-Button--hot login-but u-color-12" type="button" id="B9768786719447315"
+                    style="display: none;"><span class="t-Button-label">Login</span></button>
                 </div>
                 <div class="t-Login-links"></div>
                 <div class="t-Login-subRegions"></div>
@@ -446,10 +446,10 @@
   <script src="assets/js/auth.js"></script>
 
 
-  <script>
+  <!-- <script>
     document.addEventListener('DOMContentLoaded', () => {
 
-      const signInButton = document.getElementById('B9768046738447308');
+      const signInButton = document.getElementById('sendOtp');
       const debugConsole = document.getElementById('debug-console'); // Add this <div>
 
       if (!signInButton) {
@@ -471,6 +471,46 @@
         //   window.location.href = `/amo/home.html`;
         // }
 
+        $("#sendOtp").on("click", function () {
+          var lv_template_id = '1007683387239602324';
+          var lv_entity_id = '1201159707397388965';
+          var lv_api_key = 'Zs0MmjX6';
+          var lv_sender_id = 'IMANDH';
+
+          var otp = $("#P9999_PASSWORD").val(); // hidden field
+          var mobile = $("#P9999_USERNAME").val().trim();
+
+          // Validate mobile
+          if (!mobile || mobile.length !== 10 || !/^[0-9]{10}$/.test(mobile)) {
+            alert("Please enter a valid 10-digit mobile number.");
+            return;
+          }
+
+          var lv_mobile_number = "91" + mobile;
+          var lv_content = 'Your OTP for the Indian Medicine and Homeopathy, Medicine Indent app is ' +
+            otp + '. Please enter this OTP to complete your login.';
+
+          var lv_url = 'https://tmegov.onex-aura.com/api/sms?key=' + lv_api_key +
+            '&to=' + lv_mobile_number +
+            '&from=' + lv_sender_id +
+            '&body=' + encodeURIComponent(lv_content) +
+            '&entityid=' + lv_entity_id +
+            '&templateid=' + lv_template_id;
+
+          $.ajax({
+            type: 'GET',
+            url: lv_url,
+            success: function () {
+              alert("OTP has been sent to your mobile number.");
+              $("#P9999_OTP_NUMBER_CONTAINER").show();
+              $(".login-but").show();
+              $("#sendOtp").hide();
+            },
+            error: function () {
+              alert("Error sending SMS. Please try again.");
+            }
+          });
+        });
 
         try {
           debugger
@@ -511,7 +551,84 @@
         }
       });
     });
+  </script> -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const signInButton = document.getElementById('sendOtp');
+
+      if (!signInButton) {
+        console.error("Sign-in button not found!");
+        return;
+      }
+
+      signInButton.addEventListener('click', async (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const mobInput = document.getElementById('P9999_USERNAME');
+        const mobnumber = mobInput?.value?.trim();
+
+        // Validate mobile number
+        if (!mobnumber || mobnumber.length !== 10 || isNaN(mobnumber)) {
+          showErrorToast("Please enter a valid 10-digit mobile number.");
+          return;
+        }
+
+        // OTP Sending Logic
+        const lv_template_id = '1007683387239602324';
+        const lv_entity_id = '1201159707397388965';
+        const lv_api_key = 'Zs0MmjX6';
+        const lv_sender_id = 'IMANDH';
+        const otp = document.getElementById("P9999_PASSWORD").value;
+        const lv_mobile_number = "91" + mobnumber;
+        const lv_content = `Your OTP for the Indian Medicine and Homeopathy, Medicine Indent app is ${otp}. Please enter this OTP to complete your login.`;
+
+        const lv_url = `https://tmegov.onex-aura.com/api/sms?key=${lv_api_key}&to=${lv_mobile_number}&from=${lv_sender_id}&body=${encodeURIComponent(lv_content)}&entityid=${lv_entity_id}&templateid=${lv_template_id}`;
+
+        try {
+          await $.ajax({
+            type: 'GET',
+            url: lv_url
+          });
+
+          alert("OTP has been sent to your mobile number.");
+          $("#P9999_OTP_NUMBER_CONTAINER").show();
+          $(".login-but").show();
+          $("#sendOtp").hide();
+
+          // Initialize user session
+          await initializeUserSession(mobnumber);
+          localStorage.setItem('userMobileNumber', mobnumber);
+
+          // Role-based redirection
+          const role = localStorage.getItem('userRole') || '';
+          let folder = '';
+
+          if (role.toLowerCase().includes('amo')) {
+            folder = 'amo';
+          } else if (role.toLowerCase().includes('dsmo')) {
+            folder = 'dsmo';
+          } else if (role.toLowerCase().includes('factory')) {
+            folder = 'factory';
+          } else if (role.toLowerCase().includes('nodal')) {
+            folder = 'nodal';
+          } else {
+            throw new Error('Unknown role: ' + role);
+          }
+
+          window.location.href = `${folder}/home.html`;
+        } catch (error) {
+          console.error("Error:", error);
+          showErrorToast("Login failed. Please try again.");
+        } finally {
+          signInButton.disabled = false;
+          signInButton.innerHTML = 'Sign In';
+        }
+      });
+    });
   </script>
+
+
 </body>
 
 </html>

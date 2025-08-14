@@ -136,24 +136,15 @@
                       </div>
                       <div class="t-Form-inputContainer col col-4">
                         <div class="t-Form-itemWrapper">
-                          <a-date-picker id="P38_FROM_DATE" change-month="true" change-year="true" display-as="popup"
-                            display-weeks="none" format="DS" previous-next-distance="one-month"
-                            show-days-outside-month="visible" show-on="focus" show-time="false"
-                            time-increment-minute="15" today-button="true" valid-example="3/5/2025"
-                            year-selection-range="5" class="apex-item-datepicker--popup"><input aria-haspopup="dialog"
-                              class="apex-item-text apex-item-datepicker" name="P38_FROM_DATE" size="30" type="text"
-                              id="P38_FROM_DATE_input" aria-labelledby="P38_FROM_DATE_LABEL"><button
-                              aria-haspopup="dialog" aria-label="Select Date" class="a-Button a-Button--calendar"
-                              tabindex="-1" title="Select Date" type="button" aria-describedby="P38_FROM_DATE_LABEL"
-                              aria-controls="P38_FROM_DATE_input"><span class="a-Icon icon-calendar"></span></button>
-                          </a-date-picker>
+                          <input type="date" id="P38_FROM_DATE" name="P38_FROM_DATE"
+                            class="apex-item-text apex-item-datepicker" required>
                         </div>
                         <div class="t-Form-itemAssistance">
-                          <span id="P38_FROM_DATE_error_placeholder" class="a-Form-error"
-                            data-template-id="428237131064519931341_ET"></span>
+                          <span id="P38_FROM_DATE_error_placeholder" class="a-Form-error"></span>
                           <div class="t-Form-itemRequired" aria-hidden="true">Required</div>
                         </div>
                       </div>
+
                     </div>
                   </div>
                   <div class="col col-6 apex-col-auto col-end">
@@ -163,7 +154,7 @@
                       <div class="t-Form-labelContainer col col-2">
                         <label for="P38_TO_DATE" id="P38_TO_DATE_LABEL" class="t-Form-label">To Date </label>
                       </div>
-                      <div class="t-Form-inputContainer col col-4">
+                      <!-- <div class="t-Form-inputContainer col col-4">
                         <div class="t-Form-itemWrapper">
                           <a-date-picker id="P38_TO_DATE" change-month="true" change-year="true" display-as="popup"
                             display-weeks="none" format="DS" previous-next-distance="one-month"
@@ -182,15 +173,27 @@
                             data-template-id="428237131064519931341_ET"></span>
                           <div class="t-Form-itemRequired" aria-hidden="true">Required</div>
                         </div>
+                      </div> -->
+                      <div class="t-Form-inputContainer col col-4">
+                        <div class="t-Form-itemWrapper">
+
+                          <input type="date" id="P38_TO_DATE" name="P38_TO_DATE"
+                            class="apex-item-text apex-item-datepicker" required>
+                        </div>
+                        <div class="t-Form-itemAssistance">
+                          <span id="P38_TO_DATE_error_placeholder" class="a-Form-error"></span>
+                          <div class="t-Form-itemRequired" aria-hidden="true">Required</div>
+                        </div>
                       </div>
+
                     </div>
                   </div>
                 </div>
                 <div class="row ">
                   <div class="col col-3  col-start"><span class="apex-grid-nbsp">&nbsp;</span></div>
-                  <div class="col col-3 apex-col-auto "><button onclick="apex.submit({request:'Search',validate:true});"
-                      class="t-Button t-Button--large t-Button--success t-Button--gapTop t-Button--gapBottom"
-                      type="button" id="B162239396611876571905"><span class="t-Button-label">Search</span></button>
+                  <div class="col col-3 apex-col-auto ">
+                    <button class="t-Button t-Button--large t-Button--success t-Button--gapTop t-Button--gapBottom"
+                      type="button" id="searchBtn"><span class="t-Button-label">Search</span></button>
                   </div>
                   <div class="col col-6 apex-col-auto col-end"><button
                       class="t-Button t-Button--hot js-ignoreChange t-Button--large t-Button--gapTop t-Button--gapBottom"
@@ -313,13 +316,9 @@
   <script src="../assets/js/globalHeader.js"></script>
   <script src="../assets/js/validateField.js"></script>
   <script>
-    $(document).ready(function () {
-      $('#P10_EXPIRY_DATE_picker').datepicker({
-        format: 'mm/dd/yyyy',
-        todayHighlight: true,
-        autoclose: true
-      });
-    });
+    document.getElementById("P38_FROM_DATE").max = new Date().toISOString().split("T")[0];
+    document.getElementById("P38_TO_DATE").max = new Date().toISOString().split("T")[0];
+
   </script>
 
   <script>
@@ -329,184 +328,70 @@
       let uploadFile = null;
       let uploadPayload = null;
       const apiUrl = 'https://tngis.tnega.org/medical_indent_api/v1/commonfunction';
-      // const userId = localStorage.getItem('userId');
-      // const secretKey = 'V7gN4dY8pT2xB3kRz';
-      // const district = localStorage.getItem('userDistrict');
-      // const username = localStorage.getItem('userName');
       const mobnumber = localStorage.getItem('userMobileNumber') || '9941256207';
 
       const district = localStorage.getItem('userDistrict');
       const nameOfTheInstitution = localStorage.getItem('userInstitutionName');
       const system = localStorage.getItem('userSystem');
-      $('#openPatientLogBtn').off('click').on('click', function (event) {
-        event.preventDefault();
+      function fetchTableData() {
+        const fromDateInput = document.getElementById("P38_FROM_DATE");
+        fromDateInput.max = new Date().toISOString().split("T")[0];
 
-        const modalInstance = bootstrap.Modal.getOrCreateInstance(document.getElementById('patientLogModal'));
-        modalInstance.show();
-
-        function fetchAndPopulateDropdown({ payload, dropdownId, placeholder }) {
-          $.ajax({
-            url: apiUrl,
-            method: 'POST',
-            headers: {
-              'X-APP-Key': 'edm',
-              'X-APP-Name': 'edm'
-            },
-            data: {
-              data: encryptData(payload)
-            },
-            dataType: 'json',
-            success(response) {
-              const decrypted = decryptData(response.data);
-              console.log(`Decrypted Data for ${payload.function_name}:`, decrypted);
-
-              const $dropdown = $(`#${dropdownId}`);
-              $dropdown.empty().append(`<option value="">${placeholder}</option>`);
-
-              decrypted.forEach(item => {
-                const value = item.p_institude || item.p_size || item.im_medicine_price_fn || item.gender || item.medicine;
-                $dropdown.append(`<option value="${value}">${value}</option>`);
-              });
-            },
-            error(xhr, status, error) {
-              console.error(`${payload.function_name} API Error:`, error);
-            }
-          });
+        // Get and format directly here
+        let formattedDate = null;
+        if (fromDateInput.value) {
+          const [year, month, day] = fromDateInput.value.split("-");
+          formattedDate = `${parseInt(day)}/${parseInt(month)}/${year}`;
         }
-
-        if (nameOfTheInstitution) {
-          const nameOfTheInstitutionSelect = $('#P10_INSTITUTION_NAME');
-          nameOfTheInstitutionSelect.append(`<option value="${nameOfTheInstitution}" selected>${nameOfTheInstitution}</option>`);
-        } else {
-          console.warn('Institution not found in localStorage');
-        }
-
-        if (nameOfTheInstitution) {
-          fetchAndPopulateDropdown({
-            payload: {
-              action: "function_call",
-              function_name: "im_medicine_name_fn",
-              params: { institution_name: nameOfTheInstitution }
-            },
-            dropdownId: "P10_MEDICINE_NAME",
-            placeholder: "--Select Medicine Name--"
-          });
-        }
-        $('#P10_MEDICINE_NAME').off('change').on('change', function () {
-          const selectedMedicine = $(this).val();
-
-          if (selectedMedicine) {
-            fetchAndPopulateDropdown({
-              payload: {
-                action: "function_call",
-                function_name: "im_pack_size_fn",
-                params: { institution_name: selectedMedicine }
-              },
-              dropdownId: "P10_PACKAGE_SIZE",
-              placeholder: "--Select Packing size--"
-            });
-          } else {
-            // Clear medicine dropdown if no institution selected
-            $('#P10_PACKAGE_SIZE').empty().append('<option value="">--Select Packing Size--</option>');
-          }
-        });
-
-
-      });
-
-      $('#submitBtn').on('click', async function (event) {
-        event.preventDefault();
-        $('.field-error').remove();
-
-        var nameOfTheInstitution = $('#P10_INSTITUTION_NAME').val()?.trim();
-        var medicineName = $('#P10_MEDICINE_NAME').val()?.trim();
-        var medicineQuantity = $('#P10_QUANTITY').val()?.trim();
-        var medicinePackageSize = $('#P10_PACKAGE_SIZE').val()?.trim();
-        var medicineBatchNo = $('#P10_BATCH_NO').val()?.trim();
-        var medicineExpiryDate = $('#P10_EXPIRY_DATE').val()?.trim();
-        // Basic validation function
-        function showError(selector, message) {
-          $(selector).after(`<div class="field-error" style="color:red;font-size:12px;">${message}</div>`);
-        }
-
-        let isValid = true;
-
-        if (!nameOfTheInstitution) {
-          showError('#P10_INSTITUTION_NAME', 'Institution name is required.');
-          showErrorToast("Institution name is required.");
-          isValid = false;
-        }
-        if (!medicineName) {
-          showError('#P10_MEDICINE_NAME', 'Medicine name is required.');
-          showErrorToast("Medicine name is required.");
-          isValid = false;
-        }
-        if (!medicineQuantity || isNaN(medicineQuantity)) {
-          showError('#P10_QUANTITY', 'Valid quantity is required.');
-          showErrorToast("Valid quantity is required.");
-          isValid = false;
-        }
-        if (!medicinePackageSize) {
-          showError('#P10_PACKAGE_SIZE', 'Packing size is required.');
-          showErrorToast("Packing size is required.");
-          isValid = false;
-        }
-        if (!medicineBatchNo) {
-          showError('#P10_BATCH_NO', 'Batch number is required.');
-          showErrorToast("Batch number is required.");
-          isValid = false;
-        }
-        if (!medicineExpiryDate) {
-          showError('#P10_EXPIRY_DATE', 'Expiry date is required.');
-          showErrorToast("Expiry date is required.");
-          isValid = false;
-        }
-
-
-        if (!isValid) return;
         const payload = {
-          action: "procedure_call",
-          procedure_name: "im_stock_dtls_ins_sp",
+          action: "function_call",
+          function_name: "im_patient_details_by_date_fn",
           params: {
-            p_medicine: medicineName,
-            p_size: medicinePackageSize,
-            p_qty: medicineQuantity,
-            p_batch: medicineBatchNo,
-            expiry_date: medicineExpiryDate,
-            p_user: localStorage.getItem('userMobileNumber') || '9941256207',
-            p_institude: nameOfTheInstitution,
+            // p_from_date: $('#P38_FROM_DATE').val() || null,
+            // p_to_date: $('#P38_TO_DATE').val() || null,
+            p_from_date: formattedDate,
+            p_to_date: "8/7/2025",
+            p_mobnumber: "9941256207",
           }
         };
-
-        // API call
-        $.ajax({
-          url: apiUrl,
-          method: "POST",
-          headers: {
-            'X-APP-Key': "edm",
-            'X-APP-Name': "edm"
+        loadDataToTable({
+          tableId: 'pressReleaseTable',
+          apiUrl,
+          httpMethod: 'POST',
+          payload: encryptData(payload),
+          rowBuilder: (item) => {
+            return `
+                  <tr>
+                    <td class="u-tC">${item.sl_no || 'N/A'}</td>
+                    <td class="u-tC">${item.ts_edm_id || 'N/A'}</td>
+                    <td class="u-tC">${item.ts_date || 'N/A'}</td>
+                    <td class="u-tC">${item.ts_activity || 'N/A'}</td>
+                    <td class="u-tC">${item.ts_notes || 'N/A'}</td>
+                    <td class="u-tC">${item.ts_created_date || 'N/A'}</td>
+                    <td class="u-tC">${item.inspection_report || 'N/A'}</td>
+                    <td>${createDownloadLink(item.image_attachment1, item.mime_type1, item.file_name1)}</td>
+                    <td>${createDownloadLink(item.image_attachment2, item.mime_type2, item.file_name2)}</td>
+                    <td>${createDownloadLink(item.image_attachment3, item.mime_type3, item.file_name3)}</td>
+                    <td>${createDownloadLink(item.image_attachment4, item.mime_type4, item.file_name4)}</td>
+                  </tr>
+                `;
           },
-          data: {
-            data: encryptData(payload)
-          },
-          dataType: 'json',
-          cache: false,
-          success: function (response) {
-            alert("Inserted Successfully");
-          },
-          error: function (xhr, status, error) {
-            console.error("API call failed:", {
-              status: xhr.status,
-              statusText: xhr.statusText,
-              responseText: xhr.responseText,
-              error: error
-            });
+          onTableInit: function (dtRef) {
+            dataTableRef = dtRef;
           }
         });
+      }
 
-        console.log(payload);
+      $('#searchBtn').on('click', function () {
+        var fromDate = $('#P38_FROM_DATE').val();
+        var toDate = $('#P38_TO_DATE').val();
+
+        if (!fromDate || !toDate) {
+          showErrorToast('Please select both From Date and To Date.');
+          return;
+        }
+        fetchTableData();
       });
-
 
     });
   </script>
