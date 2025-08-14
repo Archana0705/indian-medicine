@@ -554,53 +554,66 @@
   </script> -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const signInButton = document.getElementById('sendOtp');
+      const sendOtpButton = document.getElementById('sendOtp');
+      const loginButton = document.querySelector('.login-but');
+      let generatedOtp = '';
 
-      if (!signInButton) {
-        console.error("Sign-in button not found!");
-        return;
-      }
-
-      signInButton.addEventListener('click', async (e) => {
+      // Step 1: Send OTP
+      sendOtpButton.addEventListener('click', async (e) => {
         e.preventDefault();
         e.stopPropagation();
 
-        const mobInput = document.getElementById('P9999_USERNAME');
-        const mobnumber = mobInput?.value?.trim();
-
-        // Validate mobile number
+        const mobnumber = document.getElementById('P9999_USERNAME')?.value?.trim();
         if (!mobnumber || mobnumber.length !== 10 || isNaN(mobnumber)) {
           showErrorToast("Please enter a valid 10-digit mobile number.");
           return;
         }
 
-        // OTP Sending Logic
+        generatedOtp = document.getElementById("P9999_PASSWORD").value ||
+          Math.floor(100000 + Math.random() * 900000).toString();
+
         const lv_template_id = '1007683387239602324';
         const lv_entity_id = '1201159707397388965';
         const lv_api_key = 'Zs0MmjX6';
         const lv_sender_id = 'IMANDH';
-        const otp = document.getElementById("P9999_PASSWORD").value;
         const lv_mobile_number = "91" + mobnumber;
-        const lv_content = `Your OTP for the Indian Medicine and Homeopathy, Medicine Indent app is ${otp}. Please enter this OTP to complete your login.`;
+        const lv_content = `Your OTP for the Indian Medicine and Homeopathy, Medicine Indent app is ${generatedOtp}. Please enter this OTP to complete your login.`;
 
         const lv_url = `https://tmegov.onex-aura.com/api/sms?key=${lv_api_key}&to=${lv_mobile_number}&from=${lv_sender_id}&body=${encodeURIComponent(lv_content)}&entityid=${lv_entity_id}&templateid=${lv_template_id}`;
 
         try {
-          await $.ajax({
-            type: 'GET',
-            url: lv_url
-          });
-
+          await $.ajax({ type: 'GET', url: lv_url });
           alert("OTP has been sent to your mobile number.");
           $("#P9999_OTP_NUMBER_CONTAINER").show();
           $(".login-but").show();
           $("#sendOtp").hide();
+        } catch (error) {
+          console.error("Error sending OTP:", error);
+          showErrorToast("Error sending SMS. Please try again.");
+        }
+      });
 
-          // Initialize user session
+      // Step 2: Validate OTP and Navigate
+      loginButton.addEventListener('click', async (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const enteredOtp = document.getElementById('P9999_OTP_NUMBER')?.value?.trim();
+        if (!enteredOtp) {
+          showErrorToast("Please enter the OTP.");
+          return;
+        }
+
+        if (enteredOtp !== generatedOtp) {
+          showErrorToast("Invalid OTP. Please try again.");
+          return;
+        }
+
+        const mobnumber = document.getElementById('P9999_USERNAME')?.value?.trim();
+        try {
           await initializeUserSession(mobnumber);
           localStorage.setItem('userMobileNumber', mobnumber);
 
-          // Role-based redirection
           const role = localStorage.getItem('userRole') || '';
           let folder = '';
 
@@ -618,15 +631,13 @@
 
           window.location.href = `${folder}/home.html`;
         } catch (error) {
-          console.error("Error:", error);
+          console.error("Login Error:", error);
           showErrorToast("Login failed. Please try again.");
-        } finally {
-          signInButton.disabled = false;
-          signInButton.innerHTML = 'Sign In';
         }
       });
     });
   </script>
+
 
 
 </body>
